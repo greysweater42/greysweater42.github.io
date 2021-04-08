@@ -28,12 +28,12 @@
       <pubDate>Wed, 17 Feb 2021 16:13:51 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/pytorch/</guid>
-      <description>1. What is pytorch and why is it interesting?   Pytorch is one of the most popular artificial neural network python package, used mainly for deep learning.
+      <description>1. What is pytorch and why is it interesting?   Pytorch is one of the most popular artificial neural network python packages, used mainly for deep learning.
   Comparing to other NN frameworks, pytorch:
   makes using CUDA trivial
   has excellent abstractions for working with neural networks (dataset, dataloader, nn.Module)
   works well with Tensorboard
-    2. A typical NN structure Pytorch NN scripts share a very similar structure.</description>
+    2. A typical NN structure Pytorch NN scripts share a very similar structure: many models used in production environment are even almost exactly the same.</description>
     </item>
     
     <item>
