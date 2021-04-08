@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -317,48 +317,34 @@
     Feb 4, 2018 &emsp;  &emsp; 4 minutes read
 </div>
 
-
-
 <h2 id="1-what-are-r-packages-and-why-would-you-use-them">1. What are R packages and why would you use them?</h2>
-
 <ul>
-<li><p>R packaging is a convenient way to store and share your R code.</p></li>
-
-<li><p>It lets you incorporate testing with <a href="http://tomis9.com/testthat">testthat</a> specially prepared tools (you can use testthat without creating a package, but it&rsquo;s slightly more complicated).</p></li>
-
-<li><p>It lets you easily list dependencies with <a href="http://tomis9.com/packrat">packrat</a>. You can also achieve this without using a package.</p></li>
-
-<li><p>You can easily version your code. Yes, you can use github tags.</p></li>
+<li>
+<p>R packaging is a convenient way to store and share your R code.</p>
+</li>
+<li>
+<p>It lets you incorporate testing with <a href="http://tomis9.com/testthat">testthat</a> specially prepared tools (you can use testthat without creating a package, but it&rsquo;s slightly more complicated).</p>
+</li>
+<li>
+<p>It lets you easily list dependencies with <a href="http://tomis9.com/packrat">packrat</a>. You can also achieve this without using a package.</p>
+</li>
+<li>
+<p>You can easily version your code. Yes, you can use github tags.</p>
+</li>
 </ul>
-
 <p>You may say: well, I can benefit from all of these advantages by simply keeping my code in a git repo and you know what? You would be right. Maybe except the dependencies, however if you do explicitly tell which function comes from which foreign package, users will be fine.</p>
-
 <p>In general, I don&rsquo;t recommend encapsulating your code into a package, unless you want to publish it on cran. Your workflow will require one more step whenever you change your code, i.e. you will have to reinstall the package.</p>
-
 <h2 id="2-creating-and-installing-a-package">2. Creating and installing a package</h2>
-
 <p>A <code>devtools</code> package makes creating and developing packages easy:</p>
-
 <pre><code>library(devtools)
-</code></pre>
-
-<p>Set the directory where you want your package to live:</p>
-
+</code></pre><p>Set the directory where you want your package to live:</p>
 <pre><code>setwd('~/')
-</code></pre>
-
-<p>Now create the package with <code>devtools::create()</code>.</p>
-
+</code></pre><p>Now create the package with <code>devtools::create()</code>.</p>
 <pre><code>devtools::create('helloWorldPackage')
 setwd('./hello_world_package')
-</code></pre>
-
-<p><em>You can of course skip the <code>devtools::</code> part once you have loaded the <code>devtools</code> package using <code>library(devtools)</code>. But keep in mind that when you write a package and whenever you use any function from a foreign package, always use <code>foreign_package_name::</code> naming convention. Otherwise if a user has loaded a function with the same name, but imported from a different package, the other function will be run.</em></p>
-
+</code></pre><p><em>You can of course skip the <code>devtools::</code> part once you have loaded the <code>devtools</code> package using <code>library(devtools)</code>. But keep in mind that when you write a package and whenever you use any function from a foreign package, always use <code>foreign_package_name::</code> naming convention. Otherwise if a user has loaded a function with the same name, but imported from a different package, the other function will be run.</em></p>
 <h2 id="3-folders-and-files-in-your-package-directory">3. Folders and files in your package directory</h2>
-
 <p><code>Devtools</code> creates a frame for your package, which consists of:</p>
-
 <pre><code>.
 
 ├── DESCRIPTION
@@ -366,14 +352,9 @@ setwd('./hello_world_package')
 ├── NAMESPACE
 └── R
 1 directory, 3 files 
-</code></pre>
-
-<p><code>R</code> is a directory where you will store your R functions.</p>
-
+</code></pre><p><code>R</code> is a directory where you will store your R functions.</p>
 <p><code>DESCRIPTION</code> is the file which you should update with the basic information about your package. It already contains default values, so don&rsquo;t worry if you forget doing this. So many people forget. What a nightmare. Please don&rsquo;t forget about updating this file.</p>
-
 <p>Default <code>DESCRIPTION</code> file:</p>
-
 <pre><code>Package: helloWorldPackage
 Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
@@ -383,26 +364,14 @@ Depends: R (&gt;= 3.4.4)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-</code></pre>
-
-<p><code>NAMESPACE</code> contains a list of functions which you want to be exported from the package, i.e. visible to the users. You don&rsquo;t have to update it by hand, as <code>devtools::document()</code> function:</p>
-
+</code></pre><p><code>NAMESPACE</code> contains a list of functions which you want to be exported from the package, i.e. visible to the users. You don&rsquo;t have to update it by hand, as <code>devtools::document()</code> function:</p>
 <pre><code>devtools::document()  # creates manual/documentation using function from roxygen2 package
-</code></pre>
-
-<p>does it automatically.</p>
-
+</code></pre><p>does it automatically.</p>
 <p>Last but not least, once you&rsquo;ve finished writing your code:</p>
-
 <pre><code>devtools::install('.')  # install package
-</code></pre>
-
-<p>install the package. Since the you will be able to load the functions from this package using <code>library(helloWorldPackage)</code>.</p>
-
+</code></pre><p>install the package. Since the you will be able to load the functions from this package using <code>library(helloWorldPackage)</code>.</p>
 <h2 id="3-documenting-your-package">3. Documenting your package</h2>
-
 <p>As I mentioned in the previous point, you don&rsquo;t have to build documentation by yourself, but you have to provide all the important information, so it could be built automatically. Every function that you want to export should begin with something similar to python&rsquo;s docstring:</p>
-
 <pre><code>#' Markov clustering function
 #'
 #' Markov clustering function algorithm based on Data Mining and Analysis: 
@@ -427,36 +396,35 @@ LazyData: true
 markovClust &lt;- function(M, inflation=2.5, expansion=2, e_stop=0.001, 
                         max_it=100, name) {
     ...
-</code></pre>
-
-<p>It has a well-defined structure.</p>
-
+</code></pre><p>It has a well-defined structure.</p>
 <ul>
-<li><p><em>Markov slustering function</em> - name of a function.</p></li>
-
-<li><p><em>Markov clustering function algorithm &hellip;</em> - description of a function.</p></li>
-
-<li><p>@param - description of a parameter of a function.</p></li>
-
-<li><p>@keywords make your function easy searchable.</p></li>
-
-<li><p>@import - which foreign packages the function uses.</p></li>
-
-<li><p>@export - should the function be visible to end users? If you do not include this line, function will not be exported.</p></li>
-
-<li><p>@examples - example usage of a function.</p></li>
+<li>
+<p><em>Markov slustering function</em> - name of a function.</p>
+</li>
+<li>
+<p><em>Markov clustering function algorithm &hellip;</em> - description of a function.</p>
+</li>
+<li>
+<p>@param - description of a parameter of a function.</p>
+</li>
+<li>
+<p>@keywords make your function easy searchable.</p>
+</li>
+<li>
+<p>@import - which foreign packages the function uses.</p>
+</li>
+<li>
+<p>@export - should the function be visible to end users? If you do not include this line, function will not be exported.</p>
+</li>
+<li>
+<p>@examples - example usage of a function.</p>
+</li>
 </ul>
-
 <p>Under the &ldquo;docstring&rdquo; you provide the definition of a function.</p>
-
 <p>A good practice is to keep only one function in each R file, but if the functions are short, they are not exported or depend on each other, you may keep them in one file.</p>
-
 <h2 id="3-useful-links">3. Useful links</h2>
-
 <p>A nice basic tutorial on writing R packages is available <a href="https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/">here</a>.</p>
-
 <h2 id="4-subjects-still-to-cover">4. Subjects still to cover</h2>
-
 <ul>
 <li>packrat (TODO)</li>
 </ul>

@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -329,24 +329,19 @@
     Feb 4, 2018 &emsp;  &emsp; 5 minutes read
 </div>
 
-
-
 <h2 id="1-what-is-testing-and-why-would-you-use-it">1. What is testing and why would you use it?</h2>
-
 <ul>
-<li><p>testing or <a href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a> (TDD) is a discipline, which relies on writing a test for every functionality <em>before</em> creating it;</p></li>
-
-<li><p>at first the test will fail, as we have not provided the proper functionality yet. Our goal is to fulfill this functionality, so the test will pass.</p></li>
+<li>
+<p>testing or <a href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a> (TDD) is a discipline, which relies on writing a test for every functionality <em>before</em> creating it;</p>
+</li>
+<li>
+<p>at first the test will fail, as we have not provided the proper functionality yet. Our goal is to fulfill this functionality, so the test will pass.</p>
+</li>
 </ul>
-
 <p>In reality you modify your tests as you create the functionality or even write the tests after you are finished writing it. It&rsquo;s OK as long as you remember to cover all the functions with tests.</p>
-
 <h2 id="2-hello-world-examples">2. &ldquo;Hello World&rdquo; examples</h2>
-
 <h3 id="r-testthat">R (testthat)</h3>
-
 <p>Let&rsquo;s go through testing two simple functions:</p>
-
 <pre><code>library(testthat)
 
 context(&quot;simple example tests&quot;)
@@ -384,32 +379,32 @@ test_that(
     expect_equal(summer(2, 3), 5, info = &quot;two and three is five&quot;)
   }
 )
-</code></pre>
-
-<p>What have we done here?</p>
-
+</code></pre><p>What have we done here?</p>
 <ul>
-<li><p>we loaded <code>testthat</code> package;</p></li>
-
-<li><p>we provided a context - this is the first message that appears in tests summary and serves as a title for this particular group of tests;</p></li>
+<li>
+<p>we loaded <code>testthat</code> package;</p>
+</li>
+<li>
+<p>we provided a context - this is the first message that appears in tests summary and serves as a title for this particular group of tests;</p>
+</li>
 </ul>
-
-<p>*Couriously, in order to run test properly, you <em>have to</em> provide context <a href="https://stackoverflow.com/questions/50083521/error-in-xmethod-attempt-to-apply-non-function-in-testthat-test-when">link</a>*.</p>
-
+<p><em>Couriously, in order to run test properly, you <em>have to</em> provide context <a href="https://stackoverflow.com/questions/50083521/error-in-xmethod-attempt-to-apply-non-function-in-testthat-test-when">link</a></em>.</p>
 <ul>
-<li><p>we wrote a function <code>divider</code>, which divides two numbers and <code>summer</code>, which adds twwo numbers (clever!); as you can see, there is a strange bug in <code>summer</code></p></li>
-
-<li><p><code>test_that</code> functions belong to <code>testthat</code> package and they will check if these functions run properly;</p></li>
-
-<li><p>there are various types of <code>expect_...</code>, a pretty interesting one is <code>expect_fail(expect_...())</code>;</p></li>
-
-<li><p>you should provide additional description (<code>desc</code>) to each <code>test_that</code> function, so you could easily find which test failed; you can also provide info for every single <code>expect_...</code>.</p></li>
+<li>
+<p>we wrote a function <code>divider</code>, which divides two numbers and <code>summer</code>, which adds twwo numbers (clever!); as you can see, there is a strange bug in <code>summer</code></p>
+</li>
+<li>
+<p><code>test_that</code> functions belong to <code>testthat</code> package and they will check if these functions run properly;</p>
+</li>
+<li>
+<p>there are various types of <code>expect_...</code>, a pretty interesting one is <code>expect_fail(expect_...())</code>;</p>
+</li>
+<li>
+<p>you should provide additional description (<code>desc</code>) to each <code>test_that</code> function, so you could easily find which test failed; you can also provide info for every single <code>expect_...</code>.</p>
+</li>
 </ul>
-
 <p>Now we can run our tests with <code>testthat::test_file(&lt;name_of_file&gt;)</code> or <code>testthat::test_dir('tests')</code>, depending on where you store your functions with tests. In production, you obviously keep testing functions in separate files, preferably in a <code>tests</code> folder and each file is called <code>test_...</code>.  In that case you source all the functions you want to test simply with <code>source()</code>.</p>
-
 <p>Testing our above file will result in:</p>
-
 <pre><code>R&gt; test_file('test.R')                                                          
 ✔ | OK F W S | Context
 ✖ |  4 1     | simple example tests
@@ -426,37 +421,22 @@ OK:       4
 Failed:   1
 Warnings: 0
 Skipped:  0
-</code></pre>
-
-<p>Information, that 4 tests have passed, one has failed. The one that failes was in 37th line of the test file, when we were &lsquo;checking proper summing by summer&rsquo;. According to <code>summer</code> two and three is not five.</p>
-
+</code></pre><p>Information, that 4 tests have passed, one has failed. The one that failes was in 37th line of the test file, when we were &lsquo;checking proper summing by summer&rsquo;. According to <code>summer</code> two and three is not five.</p>
 <h3 id="python-pytest">Python (pytest)</h3>
-
 <p>When testing Python code, I usually use <code>pytest</code>, however <code>unittest</code> still seems seems to be standard among the community, quite surprisingly. The main advantage of <code>pytest</code> comparing to <code>unittest</code> is it&rsquo;s simplicity: it may take even less than a minute to start being productiove with testing.</p>
-
 <p>Let&rsquo;s create a very simple function and save it to a file:</p>
-
 <p>func.py</p>
-
 <pre><code>def divider(a, b):
     return a / b
-</code></pre>
-
-<p>and a functioh which will test it&rsquo;s validity:</p>
-
+</code></pre><p>and a functioh which will test it&rsquo;s validity:</p>
 <p>test_divider.py</p>
-
 <pre><code>from func import divider
 
 
 def test_divider():
     assert divider(10, 2) == 5
-</code></pre>
-
-<p><em>A testing file&rsquo;s name should begin with <code>test_</code>, so pytest would recognize it. If you create many of these files, you can keep them in one file called <code>tests</code>.</em></p>
-
+</code></pre><p><em>A testing file&rsquo;s name should begin with <code>test_</code>, so pytest would recognize it. If you create many of these files, you can keep them in one file called <code>tests</code>.</em></p>
 <p>Now run <code>pytest</code> command from console and you will see</p>
-
 <pre><code>$ pytest
 ================================ test session starts ================================
 platform linux -- Python 3.5.2, pytest-3.7.2, py-1.5.4, pluggy-0.7.1
@@ -467,14 +447,9 @@ collected 1 item
 test_divider.py .                                                             [100%]
 
 ============================= 1 passed in 0.01 seconds ==============================
-</code></pre>
-
-<p>that the test passed. If you want to receive more specific information, use the verbose flag: <code>pytest -v</code>.</p>
-
+</code></pre><p>that the test passed. If you want to receive more specific information, use the verbose flag: <code>pytest -v</code>.</p>
 <p>What happens if the test failes? Let&rsquo;s write another test, which will clearly cause an error:</p>
-
 <p>test_divider.py</p>
-
 <pre><code>from func import divider
 
 
@@ -483,10 +458,7 @@ def test_divider():
 
 def test_divider_by_zero:
     assert divider(10, 0)
-</code></pre>
-
-<p>Running pytest causes:</p>
-
+</code></pre><p>Running pytest causes:</p>
 <pre><code>$ pytest
 =================================== test session starts ===================================
 platform linux -- Python 3.5.2, pytest-3.7.2, py-1.5.4, pluggy-0.7.1
@@ -513,32 +485,33 @@ E       ZeroDivisionError: division by zero
 
 func.py:2: ZeroDivisionError
 =========================== 1 failed, 1 passed in 0.02 seconds ============================
-</code></pre>
-
-<p>As we can see, dividing by zero raises a ZeroDivisionError.</p>
-
+</code></pre><p>As we can see, dividing by zero raises a ZeroDivisionError.</p>
 <h2 id="3-useful-links">3. Useful links</h2>
-
 <ul>
-<li><p>R:</p>
-
+<li>
+<p>R:</p>
 <ul>
-<li><p><a href="https://journal.r-project.org/archive/2011/RJ-2011-002/RJ-2011-002.pdf">Hadley Wichkam&rsquo;s article on testthat</a></p></li>
-
-<li><p><a href="https://github.com/r-lib/usethis">usethis</a> - useful if you want to test a package</p></li>
-</ul></li>
-
-<li><p>Python:</p>
-
-<ul>
-<li><p><a href="https://learning.oreilly.com/library/view/test-driven-development-with/9781449365141/">Test driven development with Python</a></p></li>
-
-<li><p><a href="https://docs.python-guide.org/writing/tests/">Probably the best book with snippets and &ldquo;Hello World&rdquo; examples: The Hitchhiker&rsquo;s Guide to Python</a></p></li>
-</ul></li>
+<li>
+<p><a href="https://journal.r-project.org/archive/2011/RJ-2011-002/RJ-2011-002.pdf">Hadley Wichkam&rsquo;s article on testthat</a></p>
+</li>
+<li>
+<p><a href="https://github.com/r-lib/usethis">usethis</a> - useful if you want to test a package</p>
+</li>
 </ul>
-
+</li>
+<li>
+<p>Python:</p>
+<ul>
+<li>
+<p><a href="https://learning.oreilly.com/library/view/test-driven-development-with/9781449365141/">Test driven development with Python</a></p>
+</li>
+<li>
+<p><a href="https://docs.python-guide.org/writing/tests/">Probably the best book with snippets and &ldquo;Hello World&rdquo; examples: The Hitchhiker&rsquo;s Guide to Python</a></p>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="4-subjects-still-to-cover">4. Subjects still to cover</h2>
-
 <ul>
 <li>unittest, coverage (TODO)</li>
 </ul>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>virtualenv on greaysweater42&#39;s cookbook</title>
@@ -16,9 +16,9 @@
       <pubDate>Sun, 12 Aug 2018 15:32:40 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/pyenv/</guid>
-      <description>1. What are pyenv, virtualenv and freeze and why would you use them?  these three Python packages let you install your favourite Python version with your favourite Python packages&amp;rsquo; versions on any machine independently to those already installed on the system; you can even store many Python versions and Python packages&amp;rsquo; versions;
- pyenv let&amp;rsquo;s you install any Python version you like;
- virtualenv let&amp;rsquo;s you install any Python&amp;rsquo;s package version you like;</description>
+      <description>1. What are pyenv, virtualenv and freeze and why would you use them?   these three Python packages let you install your favourite Python version with your favourite Python packages&amp;rsquo; versions on any machine independently to those already installed on the system; you can even store many Python versions and Python packages&amp;rsquo; versions;
+  pyenv let&amp;rsquo;s you install any Python version you like;
+  virtualenv let&amp;rsquo;s you install any Python&amp;rsquo;s package version you like;</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&#43;&#43; on greaysweater42&#39;s cookbook</title>
@@ -16,10 +16,10 @@
       <pubDate>Sun, 04 Feb 2018 12:03:14 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/rcpp/</guid>
-      <description>1. What is Rcpp and why would you use it?  Rcpp is a R library which let&#39;s you embed C++ code inside your R program.
+      <description>1. What is Rcpp and why would you use it?  Rcpp is a R library which let’s you embed C++ code inside your R program.
  Useful when you have a bottleneck in your code which makes the execution last forever. In that case you can rewrite in into super-fast C++.
   Or you can switch to Python. Or data.table. Or write it in C.
- 2. A &amp;quot;Hello World&amp;quot; example Example taken from Avanced R by Hadley Wickam (link).</description>
+ 2. A “Hello World” example Example taken from Avanced R by Hadley Wickam (link).</description>
     </item>
     
   </channel>

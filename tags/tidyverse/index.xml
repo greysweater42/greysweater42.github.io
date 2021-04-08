@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tidyverse on greaysweater42&#39;s cookbook</title>
@@ -29,7 +29,7 @@
       <guid>https://greysweater42.github.io/ggplot2/</guid>
       <description>1. What is ggplot(2) and why would you use it?  ggplot2 is an R package which makes creating nice-looking plots easy;
  the plots you create are highly customizable;
-  Once you learn ggplot2, you will not make any production plots using basic R. However, due to it&#39;s verbosity, for simple exploratory analysis I still use basic functions: plot, lines, hist and boxplot.</description>
+  Once you learn ggplot2, you will not make any production plots using basic R. However, due to it’s verbosity, for simple exploratory analysis I still use basic functions: plot, lines, hist and boxplot.</description>
     </item>
     
   </channel>

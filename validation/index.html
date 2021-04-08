@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -322,7 +322,7 @@
 
 <div id="what-is-model-validation-and-why-would-you-do-it" class="section level2">
 <h2>1. What is model validation and why would you do it?</h2>
-<p>You learned your model and naturally you are wondering how good it is. There are several ways to find out, like measuring the accuracy of predictions, but you may also want to check where exactly particular predictions come from, as this is far from obvious for &quot;black box&quot; models.</p>
+<p>You learned your model and naturally you are wondering how good it is. There are several ways to find out, like measuring the accuracy of predictions, but you may also want to check where exactly particular predictions come from, as this is far from obvious for “black box” models.</p>
 </div>
 <div id="examples" class="section level2">
 <h2>2. Examples</h2>
@@ -352,18 +352,18 @@ y_test &lt;- test$Species == species[2]</code></pre>
 <p>and the logistic regression itself:</p>
 <pre class="r"><code>m &lt;- glm(Species ~ Sepal.Length, train, family = &quot;binomial&quot;)
 y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</code></pre>
-<p>We've prepared our predictions, as well as testing target, as vectors of binary values:</p>
+<p>We’ve prepared our predictions, as well as testing target, as vectors of binary values:</p>
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     1     9    10    13    14    16    18    20    23    29 
-## FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</code></pre>
+<pre><code>##     6    10    14    15    19    21    24    31    32    33 
+##  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    14    2
-##      TRUE      1   13</code></pre>
+##      FALSE     9    2
+##      TRUE      6   13</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
@@ -375,26 +375,26 @@ confusionMatrix(predict(m2, test), test$Species)</code></pre>
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         14          2
-##   versicolor      1         13
+##   setosa          9          2
+##   versicolor      6         13
 ##                                           
-##                Accuracy : 0.9             
-##                  95% CI : (0.7347, 0.9789)
+##                Accuracy : 0.7333          
+##                  95% CI : (0.5411, 0.8772)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 4.215e-06       
+##     P-Value [Acc &gt; NIR] : 0.008062        
 ##                                           
-##                   Kappa : 0.8             
+##                   Kappa : 0.4667          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 1               
+##  Mcnemar&#39;s Test P-Value : 0.288844        
 ##                                           
-##             Sensitivity : 0.9333          
+##             Sensitivity : 0.6000          
 ##             Specificity : 0.8667          
-##          Pos Pred Value : 0.8750          
-##          Neg Pred Value : 0.9286          
+##          Pos Pred Value : 0.8182          
+##          Neg Pred Value : 0.6842          
 ##              Prevalence : 0.5000          
-##          Detection Rate : 0.4667          
-##    Detection Prevalence : 0.5333          
-##       Balanced Accuracy : 0.9000          
+##          Detection Rate : 0.3000          
+##    Detection Prevalence : 0.3667          
+##       Balanced Accuracy : 0.7333          
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
@@ -424,10 +424,10 @@ lr.fit(X_train, y_train)</code></pre>
 </div>
 <div id="roc-auc" class="section level3">
 <h3>ROC, AUC</h3>
-<p>Let's say you created a simple classifier, e.g. using logistic regression. The classifier does not return classes though, but the probability that this particular observation belongs to class 1. As what we need are classes, not probabilities, we have to somehow <em>map</em> these probabilities into classes. The easiest way to achieve this is by using a function like:</p>
+<p>Let’s say you created a simple classifier, e.g. using logistic regression. The classifier does not return classes though, but the probability that this particular observation belongs to class 1. As what we need are classes, not probabilities, we have to somehow <em>map</em> these probabilities into classes. The easiest way to achieve this is by using a function like:</p>
 <p><span class="math display">\[ f(t) = \begin{cases} 1 &amp; \text{when $p \geqslant t$} \\ 0 &amp; \text{when $p &lt; t$} \\ \end{cases} \]</span></p>
 <p>where <span class="math inline">\(t\)</span> is a threshold set by <em>you</em>. Choose wisely ;)</p>
-<p>Choosing a proper value of <span class="math inline">\(t\)</span> is known as a &quot;Precision / Recall tradeoff&quot;:</p>
+<p>Choosing a proper value of <span class="math inline">\(t\)</span> is known as a “Precision / Recall tradeoff”:</p>
 <ul>
 <li><p><a href="https://towardsdatascience.com/precision-vs-recall-386cf9f89488">a wonderful, intuitive article</a></p></li>
 <li><p><a href="https://towardsdatascience.com/beyond-accuracy-precision-and-recall-3da06bea9f6c">another good article</a></p></li>
@@ -459,7 +459,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.9622222</code></pre>
+<pre><code>## [1] 0.8555556</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],
@@ -469,7 +469,9 @@ plot_roc_get_auc(
 <p><a href="https://towardsdatascience.com/supervised-machine-learning-model-validation-a-step-by-step-approach-771109ae0253" class="uri">https://towardsdatascience.com/supervised-machine-learning-model-validation-a-step-by-step-approach-771109ae0253</a></p>
 <p>ROC - TPR vs FPR, where</p>
 <p><span class="math display">\[ \textrm{TPR} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FP}} \]</span></p>
-<p>TPR - True Positive Rate TP - True Positive FP - False Positive</p>
+<p>TPR - True Positive Rate
+TP - True Positive
+FP - False Positive</p>
 <p>parameter search</p>
 <p><a href="https://scikit-learn.org/stable/modules/grid_search.html#tuning-the-hyper-parameters-of-an-estimator" class="uri">https://scikit-learn.org/stable/modules/grid_search.html#tuning-the-hyper-parameters-of-an-estimator</a></p>
 <p>TODO: <a href="https://rviews.rstudio.com/2019/03/01/some-r-packages-for-roc-curves/" class="uri">https://rviews.rstudio.com/2019/03/01/some-r-packages-for-roc-curves/</a></p>

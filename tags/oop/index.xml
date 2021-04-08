@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OOP on greaysweater42&#39;s cookbook</title>
@@ -19,7 +19,7 @@
       <description>1. Why would you use OOP in R? Object oriented programming in R is unfortunately rather complicated comparing to Python (which seems to be the only reasonable alternative for data science programming).
 However, there are certain cases when OOP may come up helpful:
  when you write your own package and you want users to work on an object that your function returns (print, summary, plot);
- learning OOP in R is a good investment, because it let&#39;s you understand better how functions like print, plot etc.</description>
+ learning OOP in R is a good investment, because it let’s you understand better how functions like print, plot etc.</description>
     </item>
     
   </channel>

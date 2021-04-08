@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -317,38 +317,35 @@
     Dec 23, 2018 &emsp;  &emsp; 3 minutes read
 </div>
 
-
-
 <h2 id="1-what-is-rstanarm-and-why-would-you-use-it">1. What is rstanarm and why would you use it?</h2>
-
 <ul>
-<li><p>it&rsquo;s an R interface to <a href="https://mc-stan.org/">stan</a></p></li>
-
-<li><p>it&rsquo;s better than rstan, because (according to <a href="https://mc-stan.org/users/interfaces/rstanarm">rstanarm webpage</a>)</p>
-
+<li>
+<p>it&rsquo;s an R interface to <a href="https://mc-stan.org/">stan</a></p>
+</li>
+<li>
+<p>it&rsquo;s better than rstan, because (according to <a href="https://mc-stan.org/users/interfaces/rstanarm">rstanarm webpage</a>)</p>
 <ul>
-<li><p>models are specified with formula syntax,</p></li>
-
-<li><p>data is provided as a data frame, and</p></li>
-
-<li><p>additional arguments are available to specify priors.</p></li>
-</ul></li>
-
-<li><p>in a nutshell, rstanarm let&rsquo;s you estimate various Bayesian models and examine them with <a href="https://mc-stan.org/users/interfaces/shinystan">shinystan</a>.</p></li>
+<li>
+<p>models are specified with formula syntax,</p>
+</li>
+<li>
+<p>data is provided as a data frame, and</p>
+</li>
+<li>
+<p>additional arguments are available to specify priors.</p>
+</li>
 </ul>
-
+</li>
+<li>
+<p>in a nutshell, rstanarm let&rsquo;s you estimate various Bayesian models and examine them with <a href="https://mc-stan.org/users/interfaces/shinystan">shinystan</a>.</p>
+</li>
+</ul>
 <h2 id="2-a-hello-world-example">2. A &ldquo;Hello World&rdquo; example</h2>
-
 <p>Let&rsquo;s begin our adventure with rstanarm with a package on which rstanarm is built, i.e. rstan. Why was rstanarm even created? It provides a nice R interface for many rstan fucntions, in particular, you do not have to keep your model definition in a separate &ldquo;.stan&rdquo; file nor in a string, but you write it just as you did in R, with a function + formula syntax.</p>
-
 <p>In the following examples we will calculate coefficients of the simplest statistical model, which is linear regression.</p>
-
 <h3 id="rstan-example">rstan example</h3>
-
 <p>Let&rsquo;s see how we can estimate coefficients of linear regression in rstan.</p>
-
 <p><em>based on <a href="http://thestatsgeek.com/2015/06/08/my-first-foray-with-stan/">http://thestatsgeek.com/2015/06/08/my-first-foray-with-stan/</a></em></p>
-
 <pre><code>model_code &lt;- &quot;
 data {
   int N;
@@ -377,38 +374,32 @@ fit &lt;- stan(model_code = model_code, data = mydata,
 fit
 
 summary(lm(y~x))
-</code></pre>
-
-<p>Having the coefs estimated, let&rsquo;s see the results in a graphical, interactive form:</p>
-
+</code></pre><p>Having the coefs estimated, let&rsquo;s see the results in a graphical, interactive form:</p>
 <p><em>base on <a href="http://mc-stan.org/shinystan/articles/shinystan-package.html">http://mc-stan.org/shinystan/articles/shinystan-package.html</a></em></p>
-
 <pre><code>library(shinystan)
 my_sso &lt;- launch_shinystan(fit)
-</code></pre>
-
-<p>What happened here?</p>
-
+</code></pre><p>What happened here?</p>
 <ul>
-<li><p>we defined <code>model_code</code>, in which we provided all the important information about estimation of the model; we could have save it in a <code>.stan</code> file;</p></li>
-
-<li><p>we created a sample dataset and saved it into a list <code>mydata</code>;</p></li>
-
-<li><p>we fitted the model with <code>stan</code>;</p></li>
-
-<li><p>we may compare it&rsquo;s results with a regular model estimated with <code>lm()</code>;</p></li>
-
-<li><p>we launched the <code>shinystan</code> GUI to look into the model.</p></li>
+<li>
+<p>we defined <code>model_code</code>, in which we provided all the important information about estimation of the model; we could have save it in a <code>.stan</code> file;</p>
+</li>
+<li>
+<p>we created a sample dataset and saved it into a list <code>mydata</code>;</p>
+</li>
+<li>
+<p>we fitted the model with <code>stan</code>;</p>
+</li>
+<li>
+<p>we may compare it&rsquo;s results with a regular model estimated with <code>lm()</code>;</p>
+</li>
+<li>
+<p>we launched the <code>shinystan</code> GUI to look into the model.</p>
+</li>
 </ul>
-
 <p>Concluding, modelling in rstan does not really resemble R programming language that we use every day.</p>
-
 <h3 id="rstanarm-example">rstanarm example</h3>
-
 <p>Let&rsquo;s use the dataset from the previous section (rstan example) for estimating coefficients of linear regression.</p>
-
 <p><em>based on <a href="http://m-clark.github.io/workshops/bayesian/04_R.html#rstanarm">http://m-clark.github.io/workshops/bayesian/04_R.html#rstanarm</a></em></p>
-
 <pre><code>library(rstanarm)
 
 mydata_df &lt;- data.frame(y = y, x = x)
@@ -417,50 +408,54 @@ fit2
 
 library(shinystan)
 launch_shinystan(fit2)
-</code></pre>
-
-<p>What happened here?</p>
-
+</code></pre><p>What happened here?</p>
 <ul>
-<li><p>we loaded <code>rstanarm</code> package;</p></li>
-
-<li><p>we created a <code>data.frame</code>, which contains our vectors from previous section;</p></li>
-
-<li><p>we fitted a generalised linear model with <code>glm()</code></p></li>
-
-<li><p>and launched <code>shinystan</code> to view it in GUI.</p></li>
+<li>
+<p>we loaded <code>rstanarm</code> package;</p>
+</li>
+<li>
+<p>we created a <code>data.frame</code>, which contains our vectors from previous section;</p>
+</li>
+<li>
+<p>we fitted a generalised linear model with <code>glm()</code></p>
+</li>
+<li>
+<p>and launched <code>shinystan</code> to view it in GUI.</p>
+</li>
 </ul>
-
 <p>Rstanarm provides a much more familiar syntax, comparing to rstan.</p>
-
 <h2 id="3-useful-links">3. Useful links</h2>
-
 <h4 id="rstan">rstan</h4>
-
 <ul>
-<li><p><a href="http://thestatsgeek.com/2015/06/08/my-first-foray-with-stan/">example of least squares in rstan</a></p></li>
-
-<li><p><a href="https://mc-stan.org/users/interfaces/rstan.html">RStan</a></p></li>
+<li>
+<p><a href="http://thestatsgeek.com/2015/06/08/my-first-foray-with-stan/">example of least squares in rstan</a></p>
+</li>
+<li>
+<p><a href="https://mc-stan.org/users/interfaces/rstan.html">RStan</a></p>
+</li>
 </ul>
-
 <h4 id="rstanarm">rstanarm</h4>
-
 <ul>
-<li><p><a href="http://m-clark.github.io/workshops/bayesian/04_R.html#rstanarm">a very good introductory article</a></p></li>
-
-<li><p><a href="https://cran.r-project.org/web/packages/rstanarm/vignettes/rstanarm.html">tutorial/documentation/vignette</a></p></li>
-
-<li><p><a href="http://mc-stan.org/rstanarm/articles/">other vignettes</a></p></li>
-
-<li><p><a href="http://kemacdonald.com/materials/langcog_rstanarm_tutorial_sleep.nb.html">rstanarm + mixed effects</a></p></li>
-
-<li><p><a href="https://www.datacamp.com/courses/bayesian-regression-modeling-with-rstanarm">datacamp course of rstanarm</a></p></li>
-
-<li><p><a href="http://www.tqmp.org/RegularArticles/vol14-2/p099/p099.pdf">User-friendly Bayesian regression modeling: A tutorial with rstanarm and shinystan</a></p></li>
+<li>
+<p><a href="http://m-clark.github.io/workshops/bayesian/04_R.html#rstanarm">a very good introductory article</a></p>
+</li>
+<li>
+<p><a href="https://cran.r-project.org/web/packages/rstanarm/vignettes/rstanarm.html">tutorial/documentation/vignette</a></p>
+</li>
+<li>
+<p><a href="http://mc-stan.org/rstanarm/articles/">other vignettes</a></p>
+</li>
+<li>
+<p><a href="http://kemacdonald.com/materials/langcog_rstanarm_tutorial_sleep.nb.html">rstanarm + mixed effects</a></p>
+</li>
+<li>
+<p><a href="https://www.datacamp.com/courses/bayesian-regression-modeling-with-rstanarm">datacamp course of rstanarm</a></p>
+</li>
+<li>
+<p><a href="http://www.tqmp.org/RegularArticles/vol14-2/p099/p099.pdf">User-friendly Bayesian regression modeling: A tutorial with rstanarm and shinystan</a></p>
+</li>
 </ul>
-
 <h4 id="bayes">Bayes</h4>
-
 <ul>
 <li><a href="https://www.goodreads.com/book/show/9003187-doing-bayesian-data-analysis">Doing Bayesian Data Analysis</a> - <em>probably</em> the best book to learn the Bayesian philosophy</li>
 </ul>

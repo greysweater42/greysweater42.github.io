@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -317,74 +317,83 @@
     Jul 26, 2019 &emsp;  &emsp; 5 minutes read
 </div>
 
-
-
-<h1 id="1-why-writing-a-cookbook-blog">1. Why writing a cookbook/blog?</h1>
-
+<h1 id="1-why-writing-a-cookbookblog">1. Why writing a cookbook/blog?</h1>
 <p>In 2016, when I decided to become a data scientist, I was overwhelmed by the number of skills I had to possess to start this sort of career. Reading job offers convinced me that I should be a specialist in:</p>
-
 <ul>
-<li><p>statistics and mathematics (which I learned at the univerity),</p></li>
-
-<li><p>machine learning and data mining (which are fairly easy to learn by yourself if you have a statistical background),</p></li>
-
-<li><p>computer science skills, including:</p>
-
+<li>
+<p>statistics and mathematics (which I learned at the univerity),</p>
+</li>
+<li>
+<p>machine learning and data mining (which are fairly easy to learn by yourself if you have a statistical background),</p>
+</li>
+<li>
+<p>computer science skills, including:</p>
 <ul>
-<li><p>programming (R, Python, VBA, html + css + javascript, SQL, bash - for the beginning)</p></li>
-
-<li><p>big data / operating systems / algorithms / Linux - understanding parallel computing and why we even need big data, so to understand limitations of local computing (CPU/GPU, RAM, disk and how they depend on each other)</p></li>
-
-<li><p>software development tools - knowing the programming language is not enough if your statistical model is a part of a bigger system. You sould be familiar with intermediate-level git commands (i.e. which do you prefer? merge or rebase and why?), running your code in a production environment (virtualenv, pyenv, pipenv, docker, virtual machines) with CI/CD pipelines and docker on a production server. Don&rsquo;t forget about TDD, it may save your life once in a while, about logging, so you could debug your code efficiently, and packages, to keep your code in a well-organized, professional way. And documentation.</p></li>
-
-<li><p>showing your results with an API (flask / django / plumber if you want to work in R) - then you should better read a little about REST APIs, or as a dashboard (flask + html, css, javascript / shiny)</p></li>
-</ul></li>
+<li>
+<p>programming (R, Python, VBA, html + css + javascript, SQL, bash - for the beginning)</p>
+</li>
+<li>
+<p>big data / operating systems / algorithms / Linux - understanding parallel computing and why we even need big data, so to understand limitations of local computing (CPU/GPU, RAM, disk and how they depend on each other)</p>
+</li>
+<li>
+<p>software development tools - knowing the programming language is not enough if your statistical model is a part of a bigger system. You sould be familiar with intermediate-level git commands (i.e. which do you prefer? merge or rebase and why?), running your code in a production environment (virtualenv, pyenv, pipenv, docker, virtual machines) with CI/CD pipelines and docker on a production server. Don&rsquo;t forget about TDD, it may save your life once in a while, about logging, so you could debug your code efficiently, and packages, to keep your code in a well-organized, professional way. And documentation.</p>
+</li>
+<li>
+<p>showing your results with an API (flask / django / plumber if you want to work in R) - then you should better read a little about REST APIs, or as a dashboard (flask + html, css, javascript / shiny)</p>
+</li>
 </ul>
-
+</li>
+</ul>
 <p>So not only you should be a statistician/mathematician, but also a computer scientist.</p>
-
 <p>Many of the skills above are used rather rarely. You may produce only two dashboards a year, write a bash script only once a month, set up a CI/CD pipeline once a year. It would be cumbersome and daunting to learn these things over and over again and it&rsquo;s normal that you forget them, because as a data scientist you usually learn 20 new skills every six months. In result you do not concentrate on consolidation of knowledge, but on possessing new skills, because there are new super tools that there is currently hype on (aw, there is tensorflow 2.0&hellip; and snowflake db!) and you should be at least familiar with them or even have them tested to see if they are worth being implemented.</p>
-
 <p>This cookbook presents my way of struggling with the hurricane of knowledge and skills that come through my head, so they stayed with me for a little longer. The posts I write let me quickly get back on tracks with tools that I haven&rsquo;t been using for a long time (e.g. a year or so).</p>
-
 <p>I recommed this way of gathering knowledge to everyone.</p>
-
-<h1 id="2-how-to-write-a-cookbook-blog">2. How to write a cookbook/blog?</h1>
-
+<h1 id="2-how-to-write-a-cookbookblog">2. How to write a cookbook/blog?</h1>
 <p>In the same way as every project you make. Start with something simple and make it better over time. This is the way I went through:</p>
-
 <ul>
-<li><p>writing notes in txt files in a folder on my desktop</p></li>
-
-<li><p>creating a git repository on github with my notes, so I could easily access them from work</p></li>
-
-<li><p>starting using <a href="https://yihui.name/knitr/">knitr</a>, which let me embed chunks of code in my notes and even execute them and embed the results - very handy! Works for R, Python and bash.</p></li>
-
-<li><p>publishing my notes on <a href="https://pages.github.com/">github pages</a></p></li>
-
-<li><p>writing a frontend for my notes in html and css</p></li>
-
-<li><p>as the number of posts was growing, I found it difficult to keep track of them, so I moved to <a href="https://bookdown.org/yihui/blogdown/">blogdown and hugo</a></p></li>
-
-<li><p>publishing posts manually required a lot of work, so I wrote a CI/CD pipeline with <a href="https://travis-ci.org/">travis-ci</a>, which was publishing posts on tomis9.github.io automatically after pushing changes to my git repo;</p></li>
-
-<li><p>when I reached ~50 posts, it was taking at least 12 minutes to build my blog on travis. The most time-consuming part was installing dependencies and packages required to execute code embedded in posts, so I started using <a href="https://hub.docker.com/">docker hub</a> to keep all the dependencies already installed in an easy-to-acces docker image.</p></li>
-
-<li><p>I really wanted to give <a href="https://aws.amazon.com/">AWS</a> a try, so I moved my blog to Amazon S3 and bought a domain at Amazon Route 53.</p></li>
-
-<li><p>by then I was using one of Hugo&rsquo;s free blog templates (<a href="https://github.com/orianna-zzo/AllinOne">link</a>), but it didn&rsquo;t work properly on mobile devices, so I wrote <a href="https://github.com/tomis9/random_forest">my own template</a></p></li>
-
-<li><p>I migrated this blog to django and hosted in on <a href="https://heroku.com">heroku</a>. My goals were:</p>
-
+<li>
+<p>writing notes in txt files in a folder on my desktop</p>
+</li>
+<li>
+<p>creating a git repository on github with my notes, so I could easily access them from work</p>
+</li>
+<li>
+<p>starting using <a href="https://yihui.name/knitr/">knitr</a>, which let me embed chunks of code in my notes and even execute them and embed the results - very handy! Works for R, Python and bash.</p>
+</li>
+<li>
+<p>publishing my notes on <a href="https://pages.github.com/">github pages</a></p>
+</li>
+<li>
+<p>writing a frontend for my notes in html and css</p>
+</li>
+<li>
+<p>as the number of posts was growing, I found it difficult to keep track of them, so I moved to <a href="https://bookdown.org/yihui/blogdown/">blogdown and hugo</a></p>
+</li>
+<li>
+<p>publishing posts manually required a lot of work, so I wrote a CI/CD pipeline with <a href="https://travis-ci.org/">travis-ci</a>, which was publishing posts on tomis9.github.io automatically after pushing changes to my git repo;</p>
+</li>
+<li>
+<p>when I reached ~50 posts, it was taking at least 12 minutes to build my blog on travis. The most time-consuming part was installing dependencies and packages required to execute code embedded in posts, so I started using <a href="https://hub.docker.com/">docker hub</a> to keep all the dependencies already installed in an easy-to-acces docker image.</p>
+</li>
+<li>
+<p>I really wanted to give <a href="https://aws.amazon.com/">AWS</a> a try, so I moved my blog to Amazon S3 and bought a domain at Amazon Route 53.</p>
+</li>
+<li>
+<p>by then I was using one of Hugo&rsquo;s free blog templates (<a href="https://github.com/orianna-zzo/AllinOne">link</a>), but it didn&rsquo;t work properly on mobile devices, so I wrote <a href="https://github.com/tomis9/random_forest">my own template</a></p>
+</li>
+<li>
+<p>I migrated this blog to django and hosted in on <a href="https://heroku.com">heroku</a>. My goals were:</p>
 <ul>
-<li><p>to learn django, with help of an excellent book <a href="https://www.amazon.com/Django-Example-powerful-reliable-applications/dp/1788472489">Django 2 by Example</a></p></li>
-
-<li><p>to add some extra functionalities, e.g. user accounts and maybe even article recommendations.</p></li>
-</ul></li>
+<li>
+<p>to learn django, with help of an excellent book <a href="https://www.amazon.com/Django-Example-powerful-reliable-applications/dp/1788472489">Django 2 by Example</a></p>
+</li>
+<li>
+<p>to add some extra functionalities, e.g. user accounts and maybe even article recommendations.</p>
+</li>
 </ul>
-
+</li>
+</ul>
 <p>Eventually I managed to accomplish only the first goal, as Django turned out to be very complex and as a data scientist I see no point in delving any deeper into this subject for fun. I already spent a lot of time on this, and I have more interesting projects on my TODO list. Besides django does not seem to be as popular in industry as I expected: PHP, Ruby, even flask are still super-popular.</p>
-
 <ul>
 <li>Having learnt django, I migrated back to hosting a static blog on s3. There was no point in spending 7 bucks a month for functionalities which I have for free on Amazon S3.</li>
 </ul>

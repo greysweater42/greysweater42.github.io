@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -321,33 +321,33 @@
     Jan 1, 2019 &emsp;  &emsp; 5 minutes read
 </div>
 
-
-
 <h2 id="1-what-is-tensorflow-and-why-would-you-use-it">1. What is tensorflow and why would you use it?</h2>
-
 <ul>
-<li><p>tensorflow is a machine learning framework</p></li>
-
-<li><p>which has APIs to Python, C++ and R</p></li>
-
-<li><p>and let&rsquo;s you evaluate any machine learning algorithm, especially deep learning:</p>
-
+<li>
+<p>tensorflow is a machine learning framework</p>
+</li>
+<li>
+<p>which has APIs to Python, C++ and R</p>
+</li>
+<li>
+<p>and let&rsquo;s you evaluate any machine learning algorithm, especially deep learning:</p>
 <ul>
-<li><p>quickly (all the computations are performed in C++)</p></li>
-
-<li><p>easily - you can view your results in a GUI - Tensorboard</p></li>
-
-<li><p>on a huge amount of data, as tensorflow scales easily to many machines and can even make use of GPU.</p></li>
-</ul></li>
+<li>
+<p>quickly (all the computations are performed in C++)</p>
+</li>
+<li>
+<p>easily - you can view your results in a GUI - Tensorboard</p>
+</li>
+<li>
+<p>on a huge amount of data, as tensorflow scales easily to many machines and can even make use of GPU.</p>
+</li>
 </ul>
-
-<h2 id="2-a-simple-example-linear-regression">2. A simple example - linear regression</h2>
-
+</li>
+</ul>
+<h2 id="2-a-simple-example---linear-regression">2. A simple example - linear regression</h2>
 <p>There are two additional files used in this example: <a href="functions.py">functions.py</a> and <a href="logging_config.json">logging_config.json</a>. I will not go through any of them, as they do not use tensorflow at all.</p>
-
 <p>We will be working on a well-known housing data available in sklearn.</p>
-
-<pre><code class="language-python">import tensorflow as tf
+<pre><code class="language-{python}" data-lang="{python}">import tensorflow as tf
 import numpy as np
 import logging.config
 import functions
@@ -446,75 +446,88 @@ logger.info(&quot;execution ended&quot;)
 # 14
 pd_comp = functions.compare_scores(X_np, y_np, best_theta.ravel())
 logger.info(pd_comp)
-</code></pre>
-
-<p>What happened here?</p>
-
+</code></pre><p>What happened here?</p>
 <ol>
-<li><p>tensorflow logging is usefull if you want to see the steps of your calculations in Tensorboard. During every execution of your code, you should provide a different logging directory. Using timestamps is a comfortable way to achieve this.</p></li>
-
-<li><p>Metaparameters for the algorithm. 10 epochs is enough for SGD to reach the minimum of Least Squares.</p></li>
-
-<li><p>Preparing the dataset. I split it into batches right here, which is not the nicest solution, but sufficient for the purposes of this tutorial. (TODO)</p></li>
-
-<li><p>This is where graph creation beging:</p>
-
+<li>
+<p>tensorflow logging is usefull if you want to see the steps of your calculations in Tensorboard. During every execution of your code, you should provide a different logging directory. Using timestamps is a comfortable way to achieve this.</p>
+</li>
+<li>
+<p>Metaparameters for the algorithm. 10 epochs is enough for SGD to reach the minimum of Least Squares.</p>
+</li>
+<li>
+<p>Preparing the dataset. I split it into batches right here, which is not the nicest solution, but sufficient for the purposes of this tutorial. (TODO)</p>
+</li>
+<li>
+<p>This is where graph creation beging:</p>
 <ul>
-<li><p>creating placeholders, which are empty slots for the data. In general, in tensorflow your create variables for parameter values and placeholders for the data.</p></li>
-
-<li><p>as you can see, creating computations, like matrix multipication, is rather straightforward, but remember to give your new variable a <code>name</code> in the tendorflow graph.</p></li>
-</ul></li>
-
-<li><p>You can encapsulate several nodes into one scope, which will make the final graph easier to read. Here we also create an optimiser, which is Gradient Descent in this case, and minimisation target: mse.</p></li>
-
-<li><p>This is where the graph definition ends. Now we prepare for the execution, first by initialising the variables (or, strictly speaking, creating an initialiser). We also create a saver, which saves the parameters of the model to a file.</p></li>
-
-<li><p>Here we declare what we want to export to our log file. Clearly we don&rsquo;t have to export anything nor even use a log file.</p></li>
-
-<li><p>Execution phase starts with creating a session. All the computations are run within a session, so it is convenient to use the <code>with</code> clause, which will eventually close the session for us, even if an exception occurs.</p></li>
-
-<li><p>In every epoch, for every batch we choose a subset of our dataset.</p></li>
-
-<li><p>Every tenth batch produces a tensorflow log message, which we will be able to see plotted in Tensorboard.</p></li>
-
-<li><p>This is where the cumputation is run, e.g. the gradient is calculated and the parameter values are updated. Notice that we have to <code>feed_dict</code> the values of the placeholders with the data.</p></li>
-
-<li><p>Let&rsquo;s save the resulting parameters to a variable. So far this is our goal - to compare the results of tensorflow optimisation to sklearn regression.</p></li>
-
-<li><p>We save our model. We don&rsquo;t have to do that, but it may come up useful in the future.</p></li>
-
-<li><p>We compare the results with sklearn.linear_model (more on that <a href="tomis9.githu.io/sklearn_regerssion">here</a>). They are almost identical.</p></li>
-</ol>
-
-<h2 id="3-tensorboard">3. Tensorboard</h2>
-
-<p>I mentioned several times that Tensorboard is a nice and usefull tool for diagnosing our algorithm.</p>
-
-<p>Simply start it with</p>
-
-<pre><code>tensorboard --logdir tf_logs/  
-</code></pre>
-
-<p>I believe the interface is simple enough so it needs no tutorial :)</p>
-
-<h2 id="3-useful-links">3. Useful links</h2>
-
-<ul>
-<li><p><a href="http://shop.oreilly.com/product/0636920052289.do">Hands-On Machine Learning with Scikit-Learn and TensorFlow</a> - definitely the best book on machine learning I&rsquo;ve ever read, the second best is <a href="http://www.dataminingbook.info/pmwiki.php">Data mining and analysis</a></p></li>
-
-<li><p><a href="https://github.com/yahoo/TensorFlowOnSpark">Tensorflow on Spark</a> - an interesting combo</p></li>
-
-<li><p><a href="https://tensorflow.rstudio.com/">tensorflow for R</a></p></li>
-
-<li><p><a href="https://www.r-bloggers.com/step-by-step-tutorial-deep-learning-with-tensorflow-in-r/">example of tensorflow for R</a></p></li>
-
-<li><p><a href="https://github.com/aymericdamien/TensorFlow-Examples">good examples of tensorflow</a></p></li>
-
-<li><p><a href="https://towardsdatascience.com/lstm-by-example-using-tensorflow-feb0c1968537">LSTM using tensorflow</a></p></li>
-
-<li><p><a href="https://www.tensorflow.org/tutorials/representation/word2vec">word2vec using tensorflow</a></p></li>
+<li>
+<p>creating placeholders, which are empty slots for the data. In general, in tensorflow your create variables for parameter values and placeholders for the data.</p>
+</li>
+<li>
+<p>as you can see, creating computations, like matrix multipication, is rather straightforward, but remember to give your new variable a <code>name</code> in the tendorflow graph.</p>
+</li>
 </ul>
-
+</li>
+<li>
+<p>You can encapsulate several nodes into one scope, which will make the final graph easier to read. Here we also create an optimiser, which is Gradient Descent in this case, and minimisation target: mse.</p>
+</li>
+<li>
+<p>This is where the graph definition ends. Now we prepare for the execution, first by initialising the variables (or, strictly speaking, creating an initialiser). We also create a saver, which saves the parameters of the model to a file.</p>
+</li>
+<li>
+<p>Here we declare what we want to export to our log file. Clearly we don&rsquo;t have to export anything nor even use a log file.</p>
+</li>
+<li>
+<p>Execution phase starts with creating a session. All the computations are run within a session, so it is convenient to use the <code>with</code> clause, which will eventually close the session for us, even if an exception occurs.</p>
+</li>
+<li>
+<p>In every epoch, for every batch we choose a subset of our dataset.</p>
+</li>
+<li>
+<p>Every tenth batch produces a tensorflow log message, which we will be able to see plotted in Tensorboard.</p>
+</li>
+<li>
+<p>This is where the cumputation is run, e.g. the gradient is calculated and the parameter values are updated. Notice that we have to <code>feed_dict</code> the values of the placeholders with the data.</p>
+</li>
+<li>
+<p>Let&rsquo;s save the resulting parameters to a variable. So far this is our goal - to compare the results of tensorflow optimisation to sklearn regression.</p>
+</li>
+<li>
+<p>We save our model. We don&rsquo;t have to do that, but it may come up useful in the future.</p>
+</li>
+<li>
+<p>We compare the results with sklearn.linear_model (more on that <a href="tomis9.githu.io/sklearn_regerssion">here</a>). They are almost identical.</p>
+</li>
+</ol>
+<h2 id="3-tensorboard">3. Tensorboard</h2>
+<p>I mentioned several times that Tensorboard is a nice and usefull tool for diagnosing our algorithm.</p>
+<p>Simply start it with</p>
+<pre><code>tensorboard --logdir tf_logs/  
+</code></pre><p>I believe the interface is simple enough so it needs no tutorial :)</p>
+<h2 id="3-useful-links">3. Useful links</h2>
+<ul>
+<li>
+<p><a href="http://shop.oreilly.com/product/0636920052289.do">Hands-On Machine Learning with Scikit-Learn and TensorFlow</a> - definitely the best book on machine learning I&rsquo;ve ever read, the second best is <a href="http://www.dataminingbook.info/pmwiki.php">Data mining and analysis</a></p>
+</li>
+<li>
+<p><a href="https://github.com/yahoo/TensorFlowOnSpark">Tensorflow on Spark</a> - an interesting combo</p>
+</li>
+<li>
+<p><a href="https://tensorflow.rstudio.com/">tensorflow for R</a></p>
+</li>
+<li>
+<p><a href="https://www.r-bloggers.com/step-by-step-tutorial-deep-learning-with-tensorflow-in-r/">example of tensorflow for R</a></p>
+</li>
+<li>
+<p><a href="https://github.com/aymericdamien/TensorFlow-Examples">good examples of tensorflow</a></p>
+</li>
+<li>
+<p><a href="https://towardsdatascience.com/lstm-by-example-using-tensorflow-feb0c1968537">LSTM using tensorflow</a></p>
+</li>
+<li>
+<p><a href="https://www.tensorflow.org/tutorials/representation/word2vec">word2vec using tensorflow</a></p>
+</li>
+</ul>
 <p><em>tensorflow 2.0 has just been released! <a href="https://www.youtube.com/watch?v=k5c-vg4rjBw">https://www.youtube.com/watch?v=k5c-vg4rjBw</a></em></p>
 
 </div>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tensorflow on greaysweater42&#39;s cookbook</title>
@@ -16,12 +16,12 @@
       <pubDate>Tue, 01 Jan 2019 18:17:38 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/tensorflow/</guid>
-      <description>1. What is tensorflow and why would you use it?  tensorflow is a machine learning framework
- which has APIs to Python, C++ and R
- and let&amp;rsquo;s you evaluate any machine learning algorithm, especially deep learning:
- quickly (all the computations are performed in C++)
- easily - you can view your results in a GUI - Tensorboard
- on a huge amount of data, as tensorflow scales easily to many machines and can even make use of GPU.</description>
+      <description>1. What is tensorflow and why would you use it?   tensorflow is a machine learning framework
+  which has APIs to Python, C++ and R
+  and let&amp;rsquo;s you evaluate any machine learning algorithm, especially deep learning:
+  quickly (all the computations are performed in C++)
+  easily - you can view your results in a GUI - Tensorboard
+  on a huge amount of data, as tensorflow scales easily to many machines and can even make use of GPU.</description>
     </item>
     
   </channel>

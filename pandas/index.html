@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -344,8 +344,8 @@ pandas (TODO)
 </div>
 <div id="examples" class="section level1">
 <h1>2. Examples</h1>
-<p>One of the simplest, yet powerful interfaces to work with tables has SQL, so I will describe <code>pandas</code>' equivalents to SQL's functions.</p>
-<p>But first let's prepare a dataset:</p>
+<p>One of the simplest, yet powerful interfaces to work with tables has SQL, so I will describe <code>pandas</code>’ equivalents to SQL’s functions.</p>
+<p>But first let’s prepare a dataset:</p>
 <pre class="python"><code>import pandas as pd
 import re
 from sklearn.datasets import load_iris
@@ -364,14 +364,14 @@ def prepare_iris_as_in_r():
     iris = pd.merge(iris, species, on=&#39;species_index&#39;)
     iris.drop(&#39;species_index&#39;, axis=1, inplace=True)
     return iris</code></pre>
-<p>We've been working on this dataset in almost every post I wrote for this blog. It's rather small and simple, so we will not take advantage of <code>pandas</code>'s processing efficiency.</p>
+<p>We’ve been working on this dataset in almost every post I wrote for this blog. It’s rather small and simple, so we will not take advantage of <code>pandas</code>’s processing efficiency.</p>
 <pre class="python"><code>iris = prepare_iris_as_in_r()</code></pre>
 <div id="reading-data-from-a-file" class="section level2">
 <h2>reading data from a file</h2>
 <p>In our examples we will not be doing this, because we have already loeaded the data from <code>sklearn</code>. You can do it with:</p>
 <pre class="python"><code>data = pd.read_csv()</code></pre>
 <blockquote>
-<p>Don't name your datasets <code>data</code>. Everything we work on is data, so this name conveys no information. I named our dataset that way for the same reason as in most tutorials the default password is &quot;password&quot;.</p>
+<p>Don’t name your datasets <code>data</code>. Everything we work on is data, so this name conveys no information. I named our dataset that way for the same reason as in most tutorials the default password is “password”.</p>
 </blockquote>
 <p>useful parameters:</p>
 <ul>
@@ -379,7 +379,7 @@ def prepare_iris_as_in_r():
 <li><p><code>delimiter</code></p></li>
 <li><p><code>header</code></p></li>
 </ul>
-<p>Parameters are rather self-explanatory. And yes, I know that in SQL we don't read files ;)</p>
+<p>Parameters are rather self-explanatory. And yes, I know that in SQL we don’t read files ;)</p>
 </div>
 <div id="where-filtering" class="section level2">
 <h2>WHERE filtering</h2>
@@ -466,7 +466,7 @@ plt.show()</code></pre>
 <h1>pivot table</h1>
 </div>
 <div id="indexes-or-series-vs.-dataframe" class="section level1">
-<h1>indexes, or Series vs. DataFrame</h1>
+<h1>indexes, or Series vs. DataFrame</h1>
 <p>You may have noticed that pandas uses indexes extensively, which may be not very intuitive if you come with R or SQL background (especially that index in pandas is means something different than in SQL, which <em>is</em> misleading). In general the easiest way to cope with their problematic nature is trying to avoid them.</p>
 <pre class="python"><code>plt.scatter(iris.sepal_length, iris.sepal_width)</code></pre>
 <p><img src="https://greysweater42.github.io/pandas_files/figure-html/unnamed-chunk-9-1.png" /><!-- --></p>
@@ -476,7 +476,7 @@ plt.show()</code></pre>
 <pre class="python"><code>import numpy as np
 col1 = list(&#39;abcdefghij&#39;)
 start_date = pd.date_range(pd.datetime.today(), periods=10).tolist()</code></pre>
-<pre><code>## /usr/bin/python3:1: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime instead.</code></pre>
+<pre><code>## &lt;string&gt;:1: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.</code></pre>
 <pre class="python"><code>end_date = pd.date_range(pd.datetime.today(), periods=10).tolist()
 
 df = pd.DataFrame(dict(col1=col1, start_date=start_date, end_date=end_date))
@@ -486,26 +486,26 @@ df.melt(id_vars=&#39;col1&#39;,
         var_name=&#39;is_start_end&#39;,
         value_name=&#39;date&#39;)</code></pre>
 <pre><code>##    col1 is_start_end                       date
-## 0     a   start_date 2021-03-16 12:27:10.442944
-## 1     b   start_date 2021-03-17 12:27:10.442944
-## 2     c   start_date 2021-03-18 12:27:10.442944
-## 3     d   start_date 2021-03-19 12:27:10.442944
-## 4     e   start_date 2021-03-20 12:27:10.442944
-## 5     f   start_date 2021-03-21 12:27:10.442944
-## 6     g   start_date 2021-03-22 12:27:10.442944
-## 7     h   start_date 2021-03-23 12:27:10.442944
-## 8     i   start_date 2021-03-24 12:27:10.442944
-## 9     j   start_date 2021-03-25 12:27:10.442944
-## 10    a     end_date 2021-03-16 12:27:10.447284
-## 11    b     end_date 2021-03-17 12:27:10.447284
-## 12    c     end_date 2021-03-18 12:27:10.447284
-## 13    d     end_date 2021-03-19 12:27:10.447284
-## 14    e     end_date 2021-03-20 12:27:10.447284
-## 15    f     end_date 2021-03-21 12:27:10.447284
-## 16    g     end_date 2021-03-22 12:27:10.447284
-## 17    h     end_date 2021-03-23 12:27:10.447284
-## 18    i     end_date 2021-03-24 12:27:10.447284
-## 19    j     end_date 2021-03-25 12:27:10.447284</code></pre>
+## 0     a   start_date 2021-04-08 18:49:51.280984
+## 1     b   start_date 2021-04-09 18:49:51.280984
+## 2     c   start_date 2021-04-10 18:49:51.280984
+## 3     d   start_date 2021-04-11 18:49:51.280984
+## 4     e   start_date 2021-04-12 18:49:51.280984
+## 5     f   start_date 2021-04-13 18:49:51.280984
+## 6     g   start_date 2021-04-14 18:49:51.280984
+## 7     h   start_date 2021-04-15 18:49:51.280984
+## 8     i   start_date 2021-04-16 18:49:51.280984
+## 9     j   start_date 2021-04-17 18:49:51.280984
+## 10    a     end_date 2021-04-08 18:49:51.288471
+## 11    b     end_date 2021-04-09 18:49:51.288471
+## 12    c     end_date 2021-04-10 18:49:51.288471
+## 13    d     end_date 2021-04-11 18:49:51.288471
+## 14    e     end_date 2021-04-12 18:49:51.288471
+## 15    f     end_date 2021-04-13 18:49:51.288471
+## 16    g     end_date 2021-04-14 18:49:51.288471
+## 17    h     end_date 2021-04-15 18:49:51.288471
+## 18    i     end_date 2021-04-16 18:49:51.288471
+## 19    j     end_date 2021-04-17 18:49:51.288471</code></pre>
 </div>
 
 </div>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>scratchpad on greaysweater42&#39;s cookbook</title>
@@ -45,7 +45,7 @@ the linux command line book p. 113 - top, which is an older brother of htop</des
       <pubDate>Thu, 07 Feb 2019 11:27:29 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/featuretools/</guid>
-      <description>This is not a proper blog post yet, just my notes. featuretools (TODO) 
+      <description>featuretools (TODO)
 https://blog.featurelabs.com/deep-feature-synthesis/
 https://towardsdatascience.com/why-automated-feature-engineering-will-change-the-way-you-do-machine-learning-5c15bf188b96
 https://docs.featuretools.com/#minute-quick-start
@@ -58,10 +58,11 @@ https://blog.featurelabs.com/featuretools-on-spark-2/</description>
       <pubDate>Tue, 05 Feb 2019 17:33:24 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/cassandra/</guid>
-      <description>This is not a proper blog post yet, just my notes. cassandra (TODO) 
+      <description>cassandra (TODO)
 Installation is described on the cassandra webpage, but it didn&amp;rsquo;t work for me, so I&amp;rsquo;ve decided to use cassandra&amp;rsquo;s docker image.
 This is a very nice tutorial of setting up a 3-node cluster of cassandra od docker, creating a simple table, populating it with data and retrieving results.
-Looks like a decent example of using cassandra on (docker with python)[https://mannekentech.</description>
+Looks like a decent example of using cassandra on (docker with python)[https://mannekentech.com/2017/01/02/playing-with-a-cassandra-cluster-via-docker/].
+CQL</description>
     </item>
     
     <item>
@@ -70,11 +71,11 @@ Looks like a decent example of using cassandra on (docker with python)[https://m
       <pubDate>Tue, 05 Feb 2019 09:34:23 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/passing_arguments/</guid>
-      <description>This is not a proper blog post yet, just my notes. passing arguments (TODO) 
+      <description>passing arguments (TODO)
 caffee
 R A good article on passing arguments to R scripts
 You can read the docs of commandArgs for more info, but the general use is very simple:
-args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector of values  Rscript file.R one two 3  If trailingOnly is set to FALSE, args will contain some other argument values, e.</description>
+args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector of values Rscript file.R one two 3 If trailingOnly is set to FALSE, args will contain some other argument values, e.g. &amp;ldquo;&amp;ndash;slave&amp;rdquo;, &amp;ldquo;&amp;ndash;no-restore&amp;rdquo;, which are usually not particularly useful and are definitely not provided by the user.</description>
     </item>
     
     <item>
@@ -93,7 +94,7 @@ args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector o
       <pubDate>Sun, 06 Jan 2019 19:44:53 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/caffee/</guid>
-      <description>This is not a proper blog post yet, just my notes. caffee (TODO) 
+      <description>caffee (TODO)
 caffee</description>
     </item>
     
@@ -103,7 +104,7 @@ caffee</description>
       <pubDate>Sun, 06 Jan 2019 19:36:46 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/theano/</guid>
-      <description>This is not a proper blog post yet, just my notes. theano (TODO) 
+      <description>theano (TODO)
 theano vs tensorflow</description>
     </item>
     
@@ -113,16 +114,16 @@ theano vs tensorflow</description>
       <pubDate>Fri, 09 Nov 2018 23:01:35 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/hugo/</guid>
-      <description>This is not a proper blog post yet, just my notes. hugo (TODO) 
+      <description>hugo (TODO)
 A short tutorial
 A really good introductory film:
- And a &amp;hellip;
+And a &amp;hellip;
 Clone your favourite theme do /themes
 Update config.toml based on the themes&amp;rsquo; website
 moving your site to Amazon S3
 Why would you do this?
- you want to have your own domain, like tomis9.com, not tomis9.github.io
- you want to find out what Amazon offers for cloud computing - this is a good training project</description>
+  you want to have your own domain, like tomis9.com, not tomis9.github.io
+  you want to find out what Amazon offers for cloud computing - this is a good training project</description>
     </item>
     
     <item>
@@ -142,8 +143,8 @@ In general, Rmarkdown is just markdown with a possibility to add R chunks of cod
       <pubDate>Sun, 21 Oct 2018 20:49:20 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/redis/</guid>
-      <description>This is not a proper blog post yet, just my notes. redis (TODO) 
-docker pull redis  import redis import pandas as pd # https://www.youtube.com/watch?v=Hbt56gFj998 # https://redis-py.readthedocs.io/en/latest/ # open up a redis-server session in redis/src/redis-server redis_host = &amp;quot;localhost&amp;quot; redis_port = 6379 redis_password = &amp;quot;&amp;quot; r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_password, decode_responses=True) r.flushall() # save data to redis d = {key: str(value) for key, value in zip(list(&#39;abcdefghij&#39;), range(10))} for key, value in d.</description>
+      <description>redis (TODO)
+docker pull redis import redis import pandas as pd # https://www.youtube.com/watch?v=Hbt56gFj998 # https://redis-py.readthedocs.io/en/latest/ # open up a redis-server session in redis/src/redis-server redis_host = &amp;quot;localhost&amp;quot; redis_port = 6379 redis_password = &amp;quot;&amp;quot; r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_password, decode_responses=True) r.flushall() # save data to redis d = {key: str(value) for key, value in zip(list(&#39;abcdefghij&#39;), range(10))} for key, value in d.items(): r.set(key, value) # get data from redis vals = dict() for key in r.</description>
     </item>
     
     <item>
@@ -152,7 +153,7 @@ docker pull redis  import redis import pandas as pd # https://www.youtube.com/wa
       <pubDate>Tue, 21 Aug 2018 17:56:38 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/gitlab_ci/</guid>
-      <description>This is not a proper blog post yet, just my notes. gitlab-ci (TODO) 
+      <description>gitlab-ci (TODO)
 or gitlab Continuous Integration &amp;amp; Deployment/Continuous Delivery
 link to documentation
 example of use in python and flask
@@ -166,7 +167,7 @@ https://medium.com/90seconds/continuous-integration-and-deployment-for-data-pipe
       <pubDate>Sat, 18 Aug 2018 14:33:57 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/kafka/</guid>
-      <description>This is not a proper blog post yet, just my notes. kafka (TODO) 
+      <description>kafka (TODO)
 kafka tutorial
 A gentle Introduction to Stream Processing
 Kafka on docker</description>
@@ -178,7 +179,7 @@ Kafka on docker</description>
       <pubDate>Sat, 18 Aug 2018 14:24:14 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/marathon/</guid>
-      <description>This is not a proper blog post yet, just my notes. marathon (TODO) 
+      <description>marathon (TODO)
 marathon If you want to have Marathon up and running, follow this tutorial.</description>
     </item>
     

@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -317,22 +317,20 @@
     Feb 6, 2018 &emsp;  &emsp; 2 minutes read
 </div>
 
-
-
 <h2 id="1-why-would-you-extend-r-with-c-language">1. Why would you extend R with C language?</h2>
-
 <ul>
-<li><p>some parts of your program may run too slowly. One of the possible solutions is to rewrite them into C;</p></li>
-
-<li><p>if you create a library and you want it to be extremely fast, you will probably end up writing most of your functions in C.;</p></li>
-
-<li><p>it&rsquo;s worth learning even the basic example, as most basic R functions are written in C.</p></li>
+<li>
+<p>some parts of your program may run too slowly. One of the possible solutions is to rewrite them into C;</p>
+</li>
+<li>
+<p>if you create a library and you want it to be extremely fast, you will probably end up writing most of your functions in C.;</p>
+</li>
+<li>
+<p>it&rsquo;s worth learning even the basic example, as most basic R functions are written in C.</p>
+</li>
 </ul>
-
 <h2 id="a-hello-world-example">A &ldquo;Hello World&rdquo; example</h2>
-
 <p>Let&rsquo;s create a trivial C function, which sums elements of a given vector.</p>
-
 <pre><code>#include &lt;R.h&gt; 
 #include &lt;Rmath.h&gt; 
 #include &lt;math.h&gt;
@@ -348,29 +346,24 @@ void my_sum(double *x, int *n, double *s) {
 
     *s = sum;
 }
-</code></pre>
-
-<p>As you can see:</p>
-
+</code></pre><p>As you can see:</p>
 <ul>
-<li><p>we do not provide a return clause; instead, we modify one of function&rsquo;s arguments, or, being more precise, a place in computer&rsquo;s memory at which this argument points;</p></li>
-
-<li><p>as every scalar is in fact a vector in R, the easiest way to pass elements from R to C is by using pointers.</p></li>
+<li>
+<p>we do not provide a return clause; instead, we modify one of function&rsquo;s arguments, or, being more precise, a place in computer&rsquo;s memory at which this argument points;</p>
+</li>
+<li>
+<p>as every scalar is in fact a vector in R, the easiest way to pass elements from R to C is by using pointers.</p>
+</li>
 </ul>
-
 <p>Having the above function saved as <code>my_sum.c</code>, let&rsquo;s compile it with <code>R CMD SHLIB my_sum.c</code>. Comparing to a standard compilation with <code>gcc</code>, ,<code>R CMD SHLIB</code> prodides additional information about special R libraries directories. Compilation will create two new files: <code>my_sum.o</code> and <code>my_sum.so</code>. How do we use them in R?</p>
-
 <p>my_func_test.R</p>
-
 <pre><code>dyn.load(&quot;my_sum.so&quot;)
 
 x &lt;- c(1, 2, 3, 4)
 sum_ &lt;- .C(&quot;my_sum&quot;, x = x, n = length(x), s = 0)
 
 sum_
-</code></pre>
-
-<pre><code>## $x
+</code></pre><pre><code>## $x
 ## [1] 1 2 3 4
 ## 
 ## $n
@@ -379,12 +372,8 @@ sum_
 ## $s
 ## [1] 10
 
-</code></pre>
-
-<p>As you can see, the result is a list of function arguments, but some of their values (in this case <em>s</em>) were updated by our C function.</p>
-
+</code></pre><p>As you can see, the result is a list of function arguments, but some of their values (in this case <em>s</em>) were updated by our C function.</p>
 <h2 id="3-usful-links">3. Usful links</h2>
-
 <p>As &lsquo;C&rsquo; and &lsquo;R&rsquo; are not the easient terms to search on the internet, <a href="http://www.biostat.jhsph.edu/~rpeng/docs/interface.pdf">here&rsquo;s</a> a short tutorial.</p>
 
 </div>

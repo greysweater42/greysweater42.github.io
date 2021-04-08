@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C on greaysweater42&#39;s cookbook</title>
@@ -16,9 +16,9 @@
       <pubDate>Tue, 06 Feb 2018 22:07:51 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/cinr/</guid>
-      <description>1. Why would you extend R with C language?  some parts of your program may run too slowly. One of the possible solutions is to rewrite them into C;
- if you create a library and you want it to be extremely fast, you will probably end up writing most of your functions in C.;
- it&amp;rsquo;s worth learning even the basic example, as most basic R functions are written in C.</description>
+      <description>1. Why would you extend R with C language?   some parts of your program may run too slowly. One of the possible solutions is to rewrite them into C;
+  if you create a library and you want it to be extremely fast, you will probably end up writing most of your functions in C.;
+  it&amp;rsquo;s worth learning even the basic example, as most basic R functions are written in C.</description>
     </item>
     
   </channel>

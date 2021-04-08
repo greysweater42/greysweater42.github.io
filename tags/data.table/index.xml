@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>data.table on greaysweater42&#39;s cookbook</title>
@@ -27,8 +27,8 @@
       <pubDate>Thu, 02 Mar 2017 15:45:27 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/data.table/</guid>
-      <description>1. What is data.table and why would you use it?  data.table is an R packge which let&#39;s you work on tabular datasets quickly and easily;
- comparing to base R or dplyr it&#39;s significantly faster;
+      <description>1. What is data.table and why would you use it?  data.table is an R packge which let’s you work on tabular datasets quickly and easily;
+ comparing to base R or dplyr it’s significantly faster;
  data.table has a concise and SQL-like syntax.
    2. Basic functionalities Creating a data.table library(data.table) df &amp;lt;- data.frame(x = c(&amp;quot;b&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;), v = rnorm(5)) dt &amp;lt;- data.table(x = c(&amp;quot;b&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;), v = rnorm(5)) is exactly the same as creating a data.</description>
     </item>
@@ -39,9 +39,9 @@
       <pubDate>Wed, 01 Mar 2017 13:07:39 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/reshape2/</guid>
-      <description>1. What is reshape2 and why would you use it? reshape2 is an R package that let&#39;s you change the shape of any dataframe, i.e. to pivot and to &amp;quot;unpivot&amp;quot;.
+      <description>1. What is reshape2 and why would you use it? reshape2 is an R package that let’s you change the shape of any dataframe, i.e. to pivot and to “unpivot”.
 Keep in mind that if your favourite R package for dataframes manipulation is data.table, functions dcast and melt are already in this package and work exactly the same as those in reshape2.
- 2. A &amp;quot;Hello World&amp;quot; example In fact there are only two functions worth mentioning: dcast, which is equivalent to MS Excel pivot table, and melt, which does the opposite or unpivots a table.</description>
+ 2. A “Hello World” example In fact there are only two functions worth mentioning: dcast, which is equivalent to MS Excel pivot table, and melt, which does the opposite or unpivots a table.</description>
     </item>
     
   </channel>

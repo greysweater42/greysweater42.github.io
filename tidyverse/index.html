@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -329,12 +329,12 @@
 <p>To be honest, I prefer <a href="http://tomis9.com/data.table">data.table</a> to tidyverse, as it resembles basic R data.frames, is faster, more concise and, IMHO, more SQL-ish. But it takes longer to master and may be more difficult to understand, even your own code after some time. So, there is no obvious choice between data.table and dplyr.</p>
 </div>
 <div id="a-few-hello-world-examples" class="section level2">
-<h2>2. A few &quot;Hello World&quot; examples</h2>
+<h2>2. A few “Hello World” examples</h2>
 <div id="readr" class="section level3">
 <h3>readr</h3>
 <p>Or how do we read and write data in <code>tidyverse</code>.</p>
 <p>Nobody uses basic R functions to read tabular data anymore. <code>data.table::fread()</code> and <code>readr::read_csv()</code> are smarter and faster.</p>
-<p>Let's create a sample dataset:</p>
+<p>Let’s create a sample dataset:</p>
 <pre class="r"><code>sample_data &lt;- data.frame(
   col_a = letters[1:5],
   col_b = sample(1:100, 5)
@@ -342,29 +342,31 @@
 
 class(sample_data)</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<p>Then let's write it and read back to R:</p>
-<pre class="r"><code>readr::write_csv(x = sample_data, path = &#39;sample_data.csv&#39;)
-
-data_t &lt;- readr::read_csv(file = &#39;sample_data.csv&#39;)</code></pre>
-<pre><code>## Parsed with column specification:
+<p>Then let’s write it and read back to R:</p>
+<pre class="r"><code>readr::write_csv(x = sample_data, path = &#39;sample_data.csv&#39;)</code></pre>
+<pre><code>## Warning: The `path` argument of `write_csv()` is deprecated as of readr 1.4.0.
+## Please use the `file` argument instead.</code></pre>
+<pre class="r"><code>data_t &lt;- readr::read_csv(file = &#39;sample_data.csv&#39;)</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   col_a = col_character(),
 ##   col_b = col_double()
 ## )</code></pre>
 <p>As you can see, readr was happy to inform us that it imported column <code>col_a</code> as characters and column <code>col_b</code> as integers, which is exactly what we wanted. You can customise this behaviour. How to do it? <code>readr</code> has an extensive documentation ;).</p>
-<p>The data we read is an object of class &quot;tibble&quot;, which has a nice printing method.</p>
+<p>The data we read is an object of class “tibble”, which has a nice printing method.</p>
 <pre class="r"><code>class(data_t)</code></pre>
 <pre><code>## [1] &quot;spec_tbl_df&quot; &quot;tbl_df&quot;      &quot;tbl&quot;         &quot;data.frame&quot;</code></pre>
 <pre class="r"><code>print(data_t)</code></pre>
 <pre><code>## # A tibble: 5 x 2
 ##   col_a col_b
 ##   &lt;chr&gt; &lt;dbl&gt;
-## 1 a        74
-## 2 b        80
-## 3 c        82
-## 4 d        19
-## 5 e        61</code></pre>
-<p>Tibbles do not differ much from data.frames, except (according to the documentation, i.e. <code>?tibble::tibble</code>):</p>
+## 1 a        31
+## 2 b        72
+## 3 c        78
+## 4 d         1
+## 5 e        27</code></pre>
+<p>Tibbles do not differ much from data.frames, except (according to the documentation, i.e. <code>?tibble::tibble</code>):</p>
 <blockquote>
 <pre><code>‘tibble()’ is a trimmed down version of ‘data.frame()’ that:
 
@@ -386,10 +388,8 @@ data_t &lt;- readr::read_csv(file = &#39;sample_data.csv&#39;)</code></pre>
 </blockquote>
 <p>Btw, to create a tibble by hand, you use:</p>
 <pre class="r"><code>tibble::data_frame(a = 1:5, b = letters[1:5])</code></pre>
-<pre><code>## Warning: `data_frame()` is deprecated as of tibble 1.1.0.
-## Please use `tibble()` instead.
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
+<pre><code>## Warning: `data_frame()` was deprecated in tibble 1.1.0.
+## Please use `tibble()` instead.</code></pre>
 <pre><code>## # A tibble: 5 x 2
 ##       a b    
 ##   &lt;int&gt; &lt;chr&gt;
@@ -398,12 +398,12 @@ data_t &lt;- readr::read_csv(file = &#39;sample_data.csv&#39;)</code></pre>
 ## 3     3 c    
 ## 4     4 d    
 ## 5     5 e</code></pre>
-<p>So it's exactly the same as creating a usual <code>data.frame</code>.</p>
+<p>So it’s exactly the same as creating a usual <code>data.frame</code>.</p>
 </div>
 <div id="dplyr" class="section level3">
 <h3>dplyr</h3>
 <p>Or smart SQL (DDL + DML) in R.</p>
-<p>Let's have a look at the most common expressions:</p>
+<p>Let’s have a look at the most common expressions:</p>
 <pre class="r"><code>library(dplyr)</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
@@ -420,19 +420,19 @@ data_t &lt;- readr::read_csv(file = &#39;sample_data.csv&#39;)</code></pre>
     arrange(-disp) %&gt;%
     mutate(col_a = cyl * 2, col_b = &quot;hi&quot;) %&gt;%
     head()</code></pre>
-<pre><code>##    mpg cyl disp col_a col_b
-## 1 10.4   8  472    16    hi
-## 2 10.4   8  460    16    hi
-## 3 14.7   8  440    16    hi
-## 4 19.2   8  400    16    hi
-## 5 18.7   8  360    16    hi
-## 6 14.3   8  360    16    hi</code></pre>
+<pre><code>##                      mpg cyl disp col_a col_b
+## Cadillac Fleetwood  10.4   8  472    16    hi
+## Lincoln Continental 10.4   8  460    16    hi
+## Chrysler Imperial   14.7   8  440    16    hi
+## Pontiac Firebird    19.2   8  400    16    hi
+## Hornet Sportabout   18.7   8  360    16    hi
+## Duster 360          14.3   8  360    16    hi</code></pre>
 <p>What happened here:</p>
 <ul>
 <li><p>we used one of basic R datasets: mtcars;</p></li>
 <li><p>we piped it with <code>%&gt;%</code> to the next function <em>(piping, or pipelines, is one of the oldest Unix concepts, dating back to 1970s)</em>;</p></li>
 <li><p>we used a <code>select</code> to select columns we were interested in, just like in SQL;</p></li>
-<li><p>we used a <code>filter</code> function just as SQL's where clause;</p></li>
+<li><p>we used a <code>filter</code> function just as SQL’s where clause;</p></li>
 <li><p>we ordered the dataset with <code>arrange</code>;</p></li>
 <li><p>we added two new columns with <code>mutate</code>;</p></li>
 <li><p>we used a <code>head()</code> function to print only a few first rows of our dataframe.</p></li>
@@ -441,17 +441,16 @@ data_t &lt;- readr::read_csv(file = &#39;sample_data.csv&#39;)</code></pre>
 <pre class="r"><code>mtcars %&gt;% 
     group_by(cyl) %&gt;% 
     summarise(count = n(), mean_hp = mean(hp))</code></pre>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 3 x 3
 ##     cyl count mean_hp
-##   &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;
+## * &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;
 ## 1     4    11    82.6
 ## 2     6     7   122. 
 ## 3     8    14   209.</code></pre>
 <p>What happened here:</p>
 <ul>
 <li><p>we aggregated our data with <code>group_by</code> in the same way as we do in SQL;</p></li>
-<li><p>we wrote the aggregation functions: <code>n()</code> stands for number of objects or <code>count</code> in SQL and <code>mean()</code> is an example of an aggreagtion function (<code>sum</code>, <code>sd</code>, <code>median</code>, ...)</p></li>
+<li><p>we wrote the aggregation functions: <code>n()</code> stands for number of objects or <code>count</code> in SQL and <code>mean()</code> is an example of an aggreagtion function (<code>sum</code>, <code>sd</code>, <code>median</code>, …)</p></li>
 </ul>
 <p>Another example of grouping, woth count (count is exactly the same as <code>group_by() %&gt;% summarise(n = n())</code>, but shorter):</p>
 <pre class="r"><code>mtcars %&gt;% 

@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -332,8 +332,8 @@
 </ul>
 </div>
 <div id="a-hello-world-example" class="section level2">
-<h2>2. A &quot;Hello World&quot; example</h2>
-<p>Let's assume we want to model US population as a function of year.</p>
+<h2>2. A “Hello World” example</h2>
+<p>Let’s assume we want to model US population as a function of year.</p>
 <pre class="r"><code>USPop &lt;- data.frame(
   year = seq(from = 1790, to = 2000, by = 10),
   population = c(3.929, 5.308, 7.240, 9.638, 12.861, 17.063, 23.192, 31.443, 
@@ -345,11 +345,11 @@ plot(population ~ year, data = USPop,
      main = &quot;US population over the last 200 years or so&quot;)
 abline(lm(population ~ year, data = USPop), col = &quot;red&quot;, lwd = 2)</code></pre>
 <p><img src="https://greysweater42.github.io/nls_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<p><em>USPop dataset used to be available in car package, curiously it isn't anymore.</em></p>
+<p><em>USPop dataset used to be available in car package, curiously it isn’t anymore.</em></p>
 <p>Yeah, I love these statistical, ascetic plots. The black line is a line proposed by linear regression and as we can see, it does not really fit the data. We can observe a rising trend, but it definitely is not linear. Modeling this process as a nonlinear function of year seems to be a reasonable approach.</p>
-<p>But what kind of nonlinear function should we use? One of the most popular nonlinear functions is a <a href="https://en.wikipedia.org/wiki/Logistic_function">logistic function</a>. In this case we will use it's more general form, in which the maximum value of the function is not 1, but <span class="math inline">\(\theta_1\)</span>:</p>
+<p>But what kind of nonlinear function should we use? One of the most popular nonlinear functions is a <a href="https://en.wikipedia.org/wiki/Logistic_function">logistic function</a>. In this case we will use it’s more general form, in which the maximum value of the function is not 1, but <span class="math inline">\(\theta_1\)</span>:</p>
 <p><span class="math display">\[ f(\textrm{year}) = \frac{\theta_1}{1 + e^{-(\theta_2 + \theta_3 * \textrm{year})}} \]</span></p>
-<p>Before we'll move to the estimation of the parameters, let's calculate starting values for minimisation (least squares) algorithm. A natural candidate would be coefficients of a linear regression, where our dependant variable is linearised with a <code>logit()</code> function. Note that is the linearised model we will not extimate the Intercept, as we scale the dependant variable by diving all the values by a little more than it's maximum, so that <span class="math inline">\(\textrm{population}\in(0,1)\)</span>. Our estimation of the Intercept is this maximum value that we divided by.</p>
+<p>Before we’ll move to the estimation of the parameters, let’s calculate starting values for minimisation (least squares) algorithm. A natural candidate would be coefficients of a linear regression, where our dependant variable is linearised with a <code>logit()</code> function. Note that is the linearised model we will not extimate the Intercept, as we scale the dependant variable by diving all the values by a little more than it’s maximum, so that <span class="math inline">\(\textrm{population}\in(0,1)\)</span>. Our estimation of the Intercept is this maximum value that we divided by.</p>
 <pre class="r"><code>t1 &lt;- max(USPop$population) * 1.05
 model_start &lt;- lm(car::logit(population / t1) ~ year, USPop)
 starts &lt;- c(t1, model_start$coefficients)
@@ -357,7 +357,7 @@ names(starts) &lt;- c(&quot;theta1&quot;, &quot;theta2&quot;, &quot;theta3&quot;
 print(starts)</code></pre>
 <pre><code>##       theta1       theta2       theta3 
 ## 295.49310000 -57.46319522   0.02968818</code></pre>
-<p>Let's estimate the model coefficients using <code>nls()</code> function.</p>
+<p>Let’s estimate the model coefficients using <code>nls()</code> function.</p>
 <pre class="r"><code>form &lt;- population ~ theta1  / (1 + exp(-(theta2 + theta3 * year)))
 model &lt;- nls(formula = form, data = USPop, start = starts)
 print(model)</code></pre>
@@ -365,12 +365,12 @@ print(model)</code></pre>
 ##   model: population ~ theta1/(1 + exp(-(theta2 + theta3 * year)))
 ##    data: USPop
 ##    theta1    theta2    theta3 
-## 440.83109 -42.70710   0.02161 
+## 440.83108 -42.70710   0.02161 
 ##  residual sum-of-squares: 457.8
 ## 
 ## Number of iterations to convergence: 7 
-## Achieved convergence tolerance: 7.273e-06</code></pre>
-<p>As we can observe, the estimated parameters' values do not differ much from starting values.</p>
+## Achieved convergence tolerance: 7.271e-06</code></pre>
+<p>As we can observe, the estimated parameters’ values do not differ much from starting values.</p>
 <p>The plot below presents a much better fit of a model with logistic function, comparing to linear regression.</p>
 <pre class="r"><code>plot(population ~ year, data = USPop, 
      main = &quot;US population over the last 200 years or so&quot;)

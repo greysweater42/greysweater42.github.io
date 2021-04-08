@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>statistics on greaysweater42&#39;s cookbook</title>
@@ -18,7 +18,7 @@
       <guid>https://greysweater42.github.io/nls/</guid>
       <description>1. What is nls and why would you use it?  nls, or nonlinear least squares is a statistical method used to describe a process as a nonlinear function of deterministic variables and a random variable;
  you may think of it as an older and stronger brother of linear regression - more robust, powerful, smarter and difficult to understand ;)
-   2. A &amp;quot;Hello World&amp;quot; example Let&#39;s assume we want to model US population as a function of year.</description>
+   2. A “Hello World” example Let’s assume we want to model US population as a function of year.</description>
     </item>
     
   </channel>

@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -321,42 +321,42 @@
     Feb 17, 2021 &emsp;  &emsp; 4 minutes read
 </div>
 
-
-
 <h2 id="1-what-is-pytorch-and-why-is-it-interesting">1. What is pytorch and why is it interesting?</h2>
-
 <ul>
-<li><p>Pytorch is one of the most popular artificial neural network python package, used mainly for deep learning.</p></li>
-
-<li><p>Comparing to other NN frameworks, pytorch:</p>
-
+<li>
+<p>Pytorch is one of the most popular artificial neural network python package, used mainly for deep learning.</p>
+</li>
+<li>
+<p>Comparing to other NN frameworks, pytorch:</p>
 <ul>
-<li><p>makes using CUDA trivial</p></li>
-
-<li><p>has excellent abstractions for working with neural networks (dataset, dataloader, nn.Module)</p></li>
-
-<li><p>works well with Tensorboard</p></li>
-</ul></li>
+<li>
+<p>makes using CUDA trivial</p>
+</li>
+<li>
+<p>has excellent abstractions for working with neural networks (dataset, dataloader, nn.Module)</p>
+</li>
+<li>
+<p>works well with Tensorboard</p>
+</li>
 </ul>
-
+</li>
+</ul>
 <h2 id="2-a-typical-nn-structure">2. A typical NN structure</h2>
-
 <p>Pytorch NN scripts share a very similar structure. Many models used in production environment are even almost exactly the same. Let&rsquo;s have a look at these common parts.</p>
-
 <h3 id="dataset">Dataset</h3>
-
 <p>Dataset class presents your data in a python-friendly manner. Having spent some time on processing data, you may have noticed that the most basic characteristics of a dataset are:</p>
-
 <ul>
-<li><p>its <strong>length</strong>, which means that a dataset actually <em>is</em> a <em>set</em> of rows/observations/items,</p></li>
-
-<li><p>so you can <strong>extract</strong> any <strong>subset</strong> according to your wish</p></li>
-
-<li><p>and each dataset usually consists of raw, unprocessed data, where all the rows/observations/items should be <strong>transformed</strong> in exactly the same way right at the start.</p></li>
+<li>
+<p>its <strong>length</strong>, which means that a dataset actually <em>is</em> a <em>set</em> of rows/observations/items,</p>
+</li>
+<li>
+<p>so you can <strong>extract</strong> any <strong>subset</strong> according to your wish</p>
+</li>
+<li>
+<p>and each dataset usually consists of raw, unprocessed data, where all the rows/observations/items should be <strong>transformed</strong> in exactly the same way right at the start.</p>
+</li>
 </ul>
-
 <p>Pytorch <code>Dataset</code> class complies with all the specifics above. Let&rsquo;s see a basic example:</p>
-
 <pre><code>import pandas as pd
 
 class MyDataset(Dataset):
@@ -373,28 +373,16 @@ class MyDataset(Dataset):
             sample = self.transform(sample)
 
         return sample
-</code></pre>
-
-<p>Quite often you don&rsquo;t have to create your own Dataset class. You can use one of pytorch&rsquo;s predefined datasets, e.g.  <code>from dataset import Mnist</code> or classes written specifically for handling a particular type of data, e.g. <a href="https://pytorch.org/vision/0.8/datasets.html#imagefolder">ImageFolder</a>.</p>
-
+</code></pre><p>Quite often you don&rsquo;t have to create your own Dataset class. You can use one of pytorch&rsquo;s predefined datasets, e.g.  <code>from dataset import Mnist</code> or classes written specifically for handling a particular type of data, e.g. <a href="https://pytorch.org/vision/0.8/datasets.html#imagefolder">ImageFolder</a>.</p>
 <p>More on datasets you will find in <a href="https://pytorch.org/tutorials/beginner/data_loading_tutorial.html">pytorch docs</a>.</p>
-
 <h3 id="dataloader">DataLoader</h3>
-
 <p>Once you&rsquo;ve defined your dataset you can concentrate on how to feed the data into your neural network. Pytorch proposes using a handy <code>DataLoader</code> object:</p>
-
 <pre><code>from torch.utils.data import DataLoader
 loader = DataLoader(dataset, batch_size=10, shuffle=True)
-</code></pre>
-
-<p>which returns an iterator over your dataset. The arguments to the loader&rsquo;s initializer seem rather self-explanatory, except maybe one of them, which turns out to be particurarily useful: <code>sampler</code>, which can balance the dataset if necessary. More on <code>WeightedRandomSampler</code> you will find in <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.WeightedRandomSampler">pytorch docs</a>.</p>
-
+</code></pre><p>which returns an iterator over your dataset. The arguments to the loader&rsquo;s initializer seem rather self-explanatory, except maybe one of them, which turns out to be particurarily useful: <code>sampler</code>, which can balance the dataset if necessary. More on <code>WeightedRandomSampler</code> you will find in <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.WeightedRandomSampler">pytorch docs</a>.</p>
 <h3 id="neural-net">Neural Net</h3>
-
 <p>We have finally reached the core part of the whole script: the neural network definition. Classicaly, as most of the neural networks use backpropagation for optimization, neural network performs two types of operation: <strong>forward</strong> and backward passes. Pytorch handles backward pass by itself as a reversed forward pass, however it is us who defines the forwars pass, which in practice is equivalent to defining the whole neoral network&rsquo;s structure.</p>
-
 <p>An example of a very simple comvolutional network:</p>
-
 <pre><code>IMAGE_SIZE = (64, 64)
 
 class Net(nn.Module):
@@ -411,14 +399,9 @@ class Net(nn.Module):
         x = self.features(x)
         x = self.fc(x.view(-1, 32 * IMAGE_SIZE[0] * IMAGE_SIZE[1]))
         return x
-</code></pre>
-
-<p>In practice, you often use transfer learning, i.e. instead of learning all the weights by yourself, you load the weights provided by researchers or any external companies to the majority of layers of your network. Example: (TODO)</p>
-
+</code></pre><p>In practice, you often use transfer learning, i.e. instead of learning all the weights by yourself, you load the weights provided by researchers or any external companies to the majority of layers of your network. Example: (TODO)</p>
 <h3 id="training-the-model">training the model</h3>
-
 <p>In this tutorial I do not use CUDA anywhere, as I try to keep the examples as simple as possible, but in real life you may be tempted to speed up the training process, despite the relatively high cost of renting a GPU. A minimal example of training a neural net:</p>
-
 <pre><code>net = Net()
 optimizer = torch.optim.Adam(net.parameters(), lr=0.0001)
 criterion = nn.CrossEntropyLoss()
@@ -433,14 +416,9 @@ for i in range(5):
         optimizer.zero_grad()  # zero the previous gradients
         loss.backward()  # calculates the gradient on weights
         optimizer.step()  # goes down the gradient
-</code></pre>
-
-<h3 id="evaluating-the-model">evaluating the model</h3>
-
+</code></pre><h3 id="evaluating-the-model">evaluating the model</h3>
 <p>Model evaluation remains a rather difficult subject and deep neural nets are still being considered black boxes, which means that they may behave in unexpected ways under specific circumstances.  In practice, I usually stick to the traditional machine learning techniques used for classification and regression models (ROC curve, precision/recall, accuracy etc.), but as a hobby I keep searching for more informative metrics provided by additional models or algorithms, which I briefly discuss in <a href="https://greysweater42@github.io/explanation">this post on <em>explanation</em></a>.</p>
-
 <p>A trivial example of accuracy measure and confusion matrix:</p>
-
 <pre><code>from sklearn.metrics import confusion_matrix
 
 net.eval()
@@ -463,14 +441,14 @@ print(f&quot;Accuracy: {pos / n_all}&quot;)
 
 print(&quot;Confusion matrix:&quot;)
 print(confusion_matrix(np.concatenate(trues), np.concatenate(preds)))
-</code></pre>
-
-<h2 id="3-recommended-resources">3. Recommended resources</h2>
-
+</code></pre><h2 id="3-recommended-resources">3. Recommended resources</h2>
 <ul>
-<li><p>My favourite book on Pytorch is by now <a href="https://www.amazon.com/Programming-PyTorch-Deep-Learning-Applications/dp/1492045357">Programming PyTorch for Deep Learning</a></p></li>
-
-<li><p>and a legendary book by Ian Goodfellow: <a href="https://www.amazon.com/Deep-Learning-NONE-Ian-Goodfellow-ebook/dp/B01MRVFGX4">Deep Learning (Adaptive Computation and Machine Learning series)</a>, which concentrates mostly on mathematical side of neural networks and (I think) does not even mention Pytorch at all. Worth reading, in any case. Eventually knowing pytorch is useless unless you understand neural networks well.</p></li>
+<li>
+<p>My favourite book on Pytorch is by now <a href="https://www.amazon.com/Programming-PyTorch-Deep-Learning-Applications/dp/1492045357">Programming PyTorch for Deep Learning</a></p>
+</li>
+<li>
+<p>and a legendary book by Ian Goodfellow: <a href="https://www.amazon.com/Deep-Learning-NONE-Ian-Goodfellow-ebook/dp/B01MRVFGX4">Deep Learning (Adaptive Computation and Machine Learning series)</a>, which concentrates mostly on mathematical side of neural networks and (I think) does not even mention Pytorch at all. Worth reading, in any case. Eventually knowing pytorch is useless unless you understand neural networks well.</p>
+</li>
 </ul>
 
 </div>

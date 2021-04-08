@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>lubridate on greaysweater42&#39;s cookbook</title>
@@ -16,9 +16,9 @@
       <pubDate>Fri, 03 Mar 2017 13:46:45 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/lubridate/</guid>
-      <description>1. What is lubridate and why would you use it?  it&#39;s an R package that makes working with dates easy;
+      <description>1. What is lubridate and why would you use it?  it’s an R package that makes working with dates easy;
  because in basic, no-frills R working with dates may be a little bit daunting
-   2. A few &amp;quot;Hello World&amp;quot; examples Load the package
+   2. A few “Hello World” examples Load the package
 library(lubridate) Convert a string to class Date:
 # the base way d &amp;lt;- as.Date(&amp;quot;2017-03-03&amp;quot;) class(d) ## [1] &amp;quot;Date&amp;quot; # the lubridate way d &amp;lt;- ymd(&amp;quot;2017-03-03&amp;quot;) class(d) ## [1] &amp;quot;Date&amp;quot; Extract year, month and day</description>
     </item>

@@ -57,8 +57,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
@@ -81,6 +79,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
@@ -98,10 +98,6 @@
         <div class="dropdown-menu scrollable-menu">
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
           
@@ -121,13 +117,17 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
           
@@ -169,10 +169,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/basic_pytorch/"> basic pytorch</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
@@ -189,9 +185,13 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
           
@@ -245,10 +245,6 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
         <div class="dropdown-menu scrollable-menu">
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/caffee/">caffee</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cassandra/">cassandra</a>
@@ -256,6 +252,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/featuretools/">featuretools</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/gitlab_ci/">gitlab-ci</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hugo/">Hugo</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/kafka/">kafka</a>
           
@@ -270,6 +268,8 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/file/">Rmarkdown total basics</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
           
@@ -325,27 +325,21 @@
     Oct 20, 2018 &emsp;  &emsp; 3 minutes read
 </div>
 
-
-
 <h2 id="1-what-is-logging-and-why-would-you-use-it">1. What is logging and why would you use it?</h2>
-
 <ul>
-<li><p>Logging, in general, sends information about the execution of a program to the outside of the program, e.g. to stdout or to a file. Why would that be useful?</p></li>
-
-<li><p>You may get the information of how and when the program was executed, e.g. who was using it&rsquo;s functionalities and if all the pieces of your program finished correctly.</p></li>
+<li>
+<p>Logging, in general, sends information about the execution of a program to the outside of the program, e.g. to stdout or to a file. Why would that be useful?</p>
+</li>
+<li>
+<p>You may get the information of how and when the program was executed, e.g. who was using it&rsquo;s functionalities and if all the pieces of your program finished correctly.</p>
+</li>
 </ul>
-
 <p><a href="https://logmatic.io/blog/beyond-application-monitoring-discover-logging-best-practices/">https://logmatic.io/blog/beyond-application-monitoring-discover-logging-best-practices/</a></p>
-
 <h2 id="2-hello-world-examples">2. &ldquo;Hello World&rdquo; examples</h2>
-
 <h2 id="python">Python</h2>
-
 <p><code>logging</code> module, which is available in python&rsquo;s standard library, contains various functions and objects, which make logging easy and standardised.</p>
-
 <h4 id="basic-configuration">Basic configuration</h4>
-
-<pre><code class="language-python">import logging
+<pre><code class="language-{python}" data-lang="{python}">import logging
 
 format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 logging.basicConfig(filename='logs.log', level=logging.INFO, format=format)
@@ -354,11 +348,8 @@ logging.debug('some debug')
 logging.info('some info')
 logging.warning('another warning')
 logging.error('some error')
-</code></pre>
-
-<p>or using a <code>logger</code>:</p>
-
-<pre><code class="language-python">import logging
+</code></pre><p>or using a <code>logger</code>:</p>
+<pre><code class="language-{python}" data-lang="{python}">import logging
 
 format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 logging.basicConfig(filename='logs.log', level=logging.INFO, 
@@ -369,11 +360,8 @@ logging.debug('some debug')
 logging.info('some info')
 logging.warning('another warning')
 logging.error('some error')
-</code></pre>
-
-<h4 id="not-so-basic-configuration">Not so basic configuration</h4>
-
-<pre><code class="language-python">import logging
+</code></pre><h4 id="not-so-basic-configuration">Not so basic configuration</h4>
+<pre><code class="language-{python}" data-lang="{python}">import logging
 import sys
 
 logger = logging.getLogger()
@@ -389,11 +377,8 @@ logger.addHandler(hdl_file)
 logger.addHandler(hdl_stdout)
 
 logger.debug('some debug')
-</code></pre>
-
-<h4 id="keeping-configuration-in-a-dictionary">Keeping configuration in a dictionary</h4>
-
-<pre><code class="language-python">config = {
+</code></pre><h4 id="keeping-configuration-in-a-dictionary">Keeping configuration in a dictionary</h4>
+<pre><code class="language-{python}" data-lang="{python}">config = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
@@ -428,13 +413,9 @@ logging.config.dictConfig(config)
 logger = logging.getLogger(__name__)
 
 logger.debug('some debug')
-</code></pre>
-
-<h4 id="keeping-configuration-in-a-separate-file">Keeping configuration in a separate file</h4>
-
+</code></pre><h4 id="keeping-configuration-in-a-separate-file">Keeping configuration in a separate file</h4>
 <p><em>app.py</em></p>
-
-<pre><code class="language-python">import logging.config
+<pre><code class="language-{python}" data-lang="{python}">import logging.config
 import json
 from import_app import func
 
@@ -445,10 +426,7 @@ logging.config.dictConfig(config)
 logger = logging.getLogger('app')
 
 logger.debug('some debug')
-</code></pre>
-
-<p><em>config.json</em></p>
-
+</code></pre><p><em>config.json</em></p>
 <pre><code>{
   &quot;version&quot;: 1,
   &quot;disable_existing_loggers&quot;: &quot;False&quot;,
@@ -480,75 +458,49 @@ logger.debug('some debug')
     }
   }
 }
-</code></pre>
-
-<h4 id="tips-and-tricks">Tips and tricks</h4>
-
+</code></pre><h4 id="tips-and-tricks">Tips and tricks</h4>
 <ul>
 <li>resetting basic config set in another file</li>
 </ul>
-
-<pre><code class="language-python">for handler in logging.root.handlers[:]:
+<pre><code class="language-{python}" data-lang="{python}">for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
-</code></pre>
-
-<h4 id="useful-links">Useful links</h4>
-
+</code></pre><h4 id="useful-links">Useful links</h4>
 <p><a href="https://www.toptal.com/python/in-depth-python-logging">https://www.toptal.com/python/in-depth-python-logging</a></p>
-
 <h2 id="r">R</h2>
-
 <p>There are several packages for logging in R, e.g:</p>
-
 <ul>
-<li><p><code>futile.logger</code>,</p></li>
-
-<li><p><code>logging</code>,</p></li>
-
-<li><p><code>r-logging</code>.</p></li>
+<li>
+<p><code>futile.logger</code>,</p>
+</li>
+<li>
+<p><code>logging</code>,</p>
+</li>
+<li>
+<p><code>r-logging</code>.</p>
+</li>
 </ul>
-
 <p>I will discuss only <code>futile.logger</code>, because this is tne only one I&rsquo;ve been using by now. However I the nearest future I am planning to give <code>logging</code> a try, as it seems to be analogical to python&rsquo;s standard <code>logging</code>.</p>
-
 <h4 id="a-few-hello-world-examples">A few &ldquo;Hello World&rdquo; examples</h4>
-
 <p>This is how you print basic log messages:</p>
-
-<pre><code class="language-r">library(futile.logger)
+<pre><code class="language-{r}" data-lang="{r}">library(futile.logger)
 flog.info(&quot;My first log statement with futile.logger&quot;)
 flog.warn(&quot;This statement has higher severity&quot;)
 flog.fatal(&quot;This one is really scary&quot;)
-</code></pre>
-
-<p>You can easily create log messages dynamically:</p>
-
-<pre><code class="language-r">flog.info(&quot;This is my %s log statement, %s&quot;, 'second', 'ever')
-</code></pre>
-
-<p>As in python&rsquo;s <code>logging</code>, you can set the level (in <code>futile.logger</code> it&rsquo;s called <em>threshold</em>) of the messages:</p>
-
-<pre><code class="language-r">flog.threshold(WARN)
+</code></pre><p>You can easily create log messages dynamically:</p>
+<pre><code class="language-{r}" data-lang="{r}">flog.info(&quot;This is my %s log statement, %s&quot;, 'second', 'ever')
+</code></pre><p>As in python&rsquo;s <code>logging</code>, you can set the level (in <code>futile.logger</code> it&rsquo;s called <em>threshold</em>) of the messages:</p>
+<pre><code class="language-{r}" data-lang="{r}">flog.threshold(WARN)
 flog.info(&quot;Log statement %s is hidden!&quot;, 3)
 flog.warn(&quot;However warning messages will still appear&quot;)
-</code></pre>
-
-<p>Instead of printing log messages to the standard output, you can append them to a file. You can also name the handler for future reference, e.g. &ldquo;data.io&rdquo; as in the following exaple:</p>
-
-<pre><code class="language-r">flog.appender(appender.file(&quot;data.io.log&quot;), name=&quot;data.io&quot;)
-</code></pre>
-
-<p>There are two types of appenders: standard output (known as <em>console</em>) and a file.</p>
-
-<pre><code class="language-r">appender.console() 
+</code></pre><p>Instead of printing log messages to the standard output, you can append them to a file. You can also name the handler for future reference, e.g. &ldquo;data.io&rdquo; as in the following exaple:</p>
+<pre><code class="language-{r}" data-lang="{r}">flog.appender(appender.file(&quot;data.io.log&quot;), name=&quot;data.io&quot;)
+</code></pre><p>There are two types of appenders: standard output (known as <em>console</em>) and a file.</p>
+<pre><code class="language-{r}" data-lang="{r}">appender.console() 
 appender.file()
-</code></pre>
-
-<h2 id="3-subjects-still-to-cover">3. Subjects still to cover</h2>
-
+</code></pre><h2 id="3-subjects-still-to-cover">3. Subjects still to cover</h2>
 <ul>
 <li>ftry (TODO) how does ftry cope with exceptions?</li>
 </ul>
-
 <p>Simple, isn&rsquo;t it?</p>
 
 </div>

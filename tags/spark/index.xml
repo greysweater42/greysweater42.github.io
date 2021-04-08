@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>spark on greaysweater42&#39;s cookbook</title>
@@ -16,9 +16,9 @@
       <pubDate>Fri, 23 Nov 2018 12:58:49 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/spark/</guid>
-      <description>1. What is spark and why would use use it?  Spark is a smooth framework for working with big data, i.e. hdfs;
- it can be accessed from Python, R, scala (spark is actually written in scala) and java;
- it is probably the most popular big data tool nowadays for data scientists.
+      <description>1. What is spark and why would use use it?   Spark is a smooth framework for working with big data, i.e. hdfs;
+  it can be accessed from Python, R, scala (spark is actually written in scala) and java;
+  it is probably the most popular big data tool nowadays for data scientists.
   2. A few &amp;ldquo;Hello World&amp;rdquo; examples a) pyspark Prerequisites Installation of pyspark In this tutorial we will work on a development python version of spark.</description>
     </item>
     
