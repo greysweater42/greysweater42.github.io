@@ -308,95 +308,93 @@
 <div class="article-categories">
   
     <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
-    <a href="https://greysweater42.github.io/categories/r" role="button">R </a>
+    <a href="https://greysweater42.github.io/categories/python" role="button">Python </a>
+    &emsp;
+  
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/machine-learning" role="button">Machine learning </a>
     &emsp;
   </br>
 </div>
 <div class="article-title">
   
-  RMariaDB (former RMySQL)
+  keras
 
 </div>
 <div class="article-info">
-    Feb 12, 2018 &emsp;  &emsp; 2 minutes read
+    Apr 8, 2021 &emsp;  &emsp; 2 minutes read
 </div>
 
+<h1 id="1-what-is-keras-and-why-would-you-still-use-pytorch">1. What is keras and why would you still use pytorch?</h1>
+<ul>
+<li>
+<p>Just kidding with <a href="https://greysweater42.github.io/pytorch">pytorch</a> ;) but still you will have to choose between these two (or even more) frameworks at the very early stage of the analysis.</p>
+</li>
+<li>
+<p>Keras is a high-level framework for working with neural networks, written in Python and capable of running on top of either TensorFlow, Microsoft Cognitive Toolkit (CNTK) or Theano</p>
+</li>
+</ul>
+<h1 id="2-example-usage">2. Example usage</h1>
+<h2 id="an-absoolutely-basic-example">An absoolutely basic example</h2>
+<p>Yes, it&rsquo;s going to be MNIST ;)</p>
+<p>Based on <a href="https://www.manning.com/books/deep-learning-with-python">Deep learning with Python</a>, chapter 2.</p>
+<pre><code>from keras.datasets import mnist
+from keras.utils import to_categorical
+
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+
+X_train = X_train.reshape((60000, 28 * 28)).astype('float32') / 255
+X_test = X_test.reshape((10000, 28 * 28)).astype('float32') / 255
+
+y_train = to_categorical(y_train)
+y_test = to_categorical(y_test)
+
+from keras import models, layers
+network = models.Sequential()
+network.add(layers.Dense(512, activation='relu', input_shape=(28 * 28,)))
+network.add(layers.Dense(10, activation='softmax'))
+network.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
 
 
+network.fit(X_train, y_train, epochs=5, batch_size=128)
 
-<div id="what-is-rmariadb-and-why-would-you-use-it" class="section level2">
-<h2>1. What is RMariaDB and why would you use it?</h2>
-<ul>
-<li><code>RMariaDB</code> is an R package available at CRAN that let’s you connect to various SQL databases easily.</li>
-</ul>
-<p>Why did I switch from RMySQL to RMariaDB? Because of invalid long integer format when downloading data from a database. A pretty nasty bug in RMySQL, which was resolved in RMariaDB.</p>
-</div>
-<div id="usage" class="section level2">
-<h2>2. Usage</h2>
-<p>First you have to create a connection to the database. Remember that you should not provide any credentials in your scripts! Keep them in a separate file or in envorionment variables.</p>
-<pre class="r"><code>con &lt;- RMariaDB::dbConnect(
-  drv      = RMariaDB::MariaDB(), 
-  user     = &quot;&quot;,
-  password = &quot;&quot;,
-  host     = &quot;&quot;, 
-  dbname   = &quot;&quot;
-)</code></pre>
-<p>After you are done with working on your database data, you should close the connection with:</p>
-<pre class="r"><code>RMariaDB::dbDisconnect(con)</code></pre>
-<div id="a-using-plain-r" class="section level3">
-<h3>a) using plain R</h3>
-<ul>
-<li><h3 id="just-querying">just querying</h3></li>
-</ul>
-<pre class="r"><code>query &lt;- &quot;delete from my_table;&quot;
+test_loss, test_acc = network.evaluate(X_test, y_test)
+# y_hat = network.predict(X_test)  # and this is how you make predictions
+</code></pre><h2 id="gpu-support">GPU support</h2>
+<p>TO be honest, I&rsquo;ve enver used any other backend than tensorflow and I don&rsquo;t see any particular reason for doing otherwise. Keras does not provide any interface to force calculation on GPU, so we have to go under the hood, straight to tensorflow.</p>
+<pre><code>import tensorflow as tf
+from tensorflow.python.keras import backend as K
 
-RMariaDB::dbSendQuery(con, query)</code></pre>
+# adjust values to your needs
+config = tf.compat.v1.ConfigProto( device_count = {'GPU': 1 , 'CPU': 8} )
+sess = tf.compat.v1.Session(config=config) 
+K.set_session(sess)
+</code></pre><p>Solution provided by <a href="https://stackoverflow.com/a/66047607">stackoverflow</a>.</p>
+<p>You can test it on <a href="https://colab.research.google.com/">Google Colab</a>, which provides modest, but free GPU in cloud to have fun with. Just remebmber to initiate GPU support in Edit &gt; Notebook settings &gt; HArdware accelerator &gt; GPU.</p>
+<h1 id="3-interesting-resources">3. Interesting resources</h1>
 <ul>
-<li><h3 id="retrieving-data-from-db">retrieving data from db</h3></li>
+<li>
+<p>if you still prefer R over Python, take a look at this introductory article: <a href="https://www.datacamp.com/community/tutorials/keras-r-deep-learning">keras: deep learning in R</a></p>
+</li>
+<li>
+<p>a very good book not only about keras, but about deep learning in general: <a href="https://www.manning.com/books/deep-learning-with-python">Deep learning with Python</a></p>
+</li>
 </ul>
-<pre class="r"><code>query &lt;- &quot;select * from my_table;&quot;
-
-rs &lt;- RMariaDB::dbSendQuery(con, query)
-tab &lt;- RMariaDB::dbFetch(rs, n = -1)
-RMariaDB::dbClearResult(rs)
-
-# equivalent to select * from my_table;
-d &lt;- RMariaDB::dbReadTable(con, &quot;my_table&quot;)</code></pre>
+<h1 id="4-subjects-still-to-cover">4. Subjects still to cover</h1>
 <ul>
-<li><h3 id="sending-data-to-db">sending data to db</h3></li>
+<li>
+<p>is there an easy way to read images into the network? TODO yes, with ImageDataGenerator</p>
+</li>
+<li>
+<p>saving and loading networks? TODO</p>
+</li>
+<li>
+<p>transfer learning? TODO</p>
+</li>
+<li>
+<p>data augmentation? TODO</p>
+</li>
 </ul>
-<pre class="r"><code># data.frame&#39;s colnames should be the same as in the database
-dt &lt;- data.frame(id = 1:10, text = letters[1:10])
-
-RMariaDB::dbWriteTable(
-  conn = con, 
-  name = &quot;my_table&quot;, 
-  value = dt, 
-  overwrite = FALSE,
-  append = TRUE,
-  row.names = F
-)</code></pre>
-</div>
-<div id="b-using-dplyr" class="section level3">
-<h3>b) using <a href="http://tomis9.com/tidyverse/#/dplyr">dplyr</a></h3>
-<ul>
-<li><h4 id="just-querying-retrieving-data-from-db">just querying / retrieving data from db</h4></li>
-</ul>
-<pre class="r"><code>tab_name &lt;- dplyr::tbl(con, &quot;tab_name&quot;)
-tab &lt;- dplyr::collect(tab_name)  # you can `library(dplyr)` and then `tab_name %&gt;% collect()`</code></pre>
-<ul>
-<li><h3 id="sending-data-to-db-1">sending data to db</h3></li>
-</ul>
-<pre class="r"><code>dplyr::db_insert_into(con, &quot;my_table&quot;, tab)</code></pre>
-</div>
-</div>
-<div id="useful-links" class="section level2">
-<h2>3. Useful links</h2>
-<ul>
-<li><a href="https://github.com/r-dbi/RMariaDB">github page with an informative README</a></li>
-<li><a href="https://cran.r-project.org/web/packages/RMariaDB/README.html">cran README</a></li>
-</ul>
-</div>
 
 </div>
 

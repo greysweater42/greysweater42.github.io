@@ -5,10 +5,20 @@
     <link>https://greysweater42.github.io/categories/machine-learning/</link>
     <description>Recent content in Machine learning on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Mar 2021 18:26:08 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 08 Apr 2021 18:19:38 +0100</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>keras</title>
+      <link>https://greysweater42.github.io/keras/</link>
+      <pubDate>Thu, 08 Apr 2021 18:19:38 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/keras/</guid>
+      <description>1. What is keras and why would you still use pytorch?   Just kidding with pytorch ;) but still you will have to choose between these two (or even more) frameworks at the very early stage of the analysis.
+  Keras is a high-level framework for working with neural networks, written in Python and capable of running on top of either TensorFlow, Microsoft Cognitive Toolkit (CNTK) or Theano</description>
+    </item>
     
     <item>
       <title>fastai</title>
