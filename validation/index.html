@@ -146,28 +146,6 @@
     
       
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
-        <div class="dropdown-menu scrollable-menu">
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
-          
-        </div>
-      </li>
-    
-      
-      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
@@ -204,6 +182,28 @@
     
       
       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">DevOps</a>
         <div class="dropdown-menu scrollable-menu">
           
@@ -226,6 +226,14 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/vagrant/">vagrant</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Genomics</a>
+        <div class="dropdown-menu scrollable-menu">
           
         </div>
       </li>
@@ -360,45 +368,46 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     1     2     3     5    10    12    15    26    29    30 
-## FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</code></pre>
+<pre><code>##     2     3     5    15    16    22    23    26    28    33 
+## FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    14    0
-##      TRUE      1   15</code></pre>
+##      FALSE    12    3
+##      TRUE      3   12</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
 <p><code>caret</code> provides a much broader summary of confusion matrix:</p>
 <pre class="r"><code>library(caret)
-m2 &lt;- train(Species ~ Sepal.Length, train, method = &quot;glm&quot;, family = binomial)
-confusionMatrix(predict(m2, test), test$Species)</code></pre>
+m2 &lt;- train(Species ~ Sepal.Length, train, method = &quot;glm&quot;, family = binomial)</code></pre>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre class="r"><code>confusionMatrix(predict(m2, test), test$Species)</code></pre>
 <pre><code>## Confusion Matrix and Statistics
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         14          0
-##   versicolor      1         15
+##   setosa         12          3
+##   versicolor      3         12
 ##                                           
-##                Accuracy : 0.9667          
-##                  95% CI : (0.8278, 0.9992)
+##                Accuracy : 0.8             
+##                  95% CI : (0.6143, 0.9229)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 2.887e-08       
+##     P-Value [Acc &gt; NIR] : 0.0007155       
 ##                                           
-##                   Kappa : 0.9333          
+##                   Kappa : 0.6             
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 1               
+##  Mcnemar&#39;s Test P-Value : 1.0000000       
 ##                                           
-##             Sensitivity : 0.9333          
-##             Specificity : 1.0000          
-##          Pos Pred Value : 1.0000          
-##          Neg Pred Value : 0.9375          
-##              Prevalence : 0.5000          
-##          Detection Rate : 0.4667          
-##    Detection Prevalence : 0.4667          
-##       Balanced Accuracy : 0.9667          
+##             Sensitivity : 0.8             
+##             Specificity : 0.8             
+##          Pos Pred Value : 0.8             
+##          Neg Pred Value : 0.8             
+##              Prevalence : 0.5             
+##          Detection Rate : 0.4             
+##    Detection Prevalence : 0.5             
+##       Balanced Accuracy : 0.8             
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
@@ -463,7 +472,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.9288889</code></pre>
+<pre><code>## [1] 0.9333333</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],

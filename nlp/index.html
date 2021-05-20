@@ -146,28 +146,6 @@
     
       
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
-        <div class="dropdown-menu scrollable-menu">
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
-          
-        </div>
-      </li>
-    
-      
-      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
@@ -204,6 +182,28 @@
     
       
       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">DevOps</a>
         <div class="dropdown-menu scrollable-menu">
           
@@ -226,6 +226,14 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/vagrant/">vagrant</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Genomics</a>
+        <div class="dropdown-menu scrollable-menu">
           
         </div>
       </li>
@@ -338,7 +346,7 @@ Sounds like text mining? The former concentrates more on predictive modeling, wh
 <p>The input data is usually very messy. Just as in traditional machine learning (I refer here to classical, matrix-transformable tabular format) the data must be &lsquo;clean&rsquo; so the results would not come out messy as well. What does &lsquo;clean data&rsquo; in nlp stand for? In general having run through the following steps should give us a fairly usable, valid dataset:</p>
 <ul>
 <li>
-<p><strong>tokenization</strong> - an absolutely basic concept, yet surprisingly simple. In practice tokenization stands for dividing your text into a list of words (sometimes pairs or triples of words, entire sentences or even syllables). A var brief tutorial should be enough, e.g. this one: <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><strong>tokenization</strong> - an absolutely basic concept, yet surprisingly simple. In practice tokenization stands for dividing your text into a list of words (sometimes pairs or triples of words, entire sentences or even syllables). A var brief tutorial should be enough, e.g. this one: <iframe width="800" height="449" src="https://www.youtube.com/embed/nxhCyeRR75Q?list=PLIG2x2RJ_4LTF-IIu7-J3y_yg8LRe1WZq" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 </li>
 <li>
 <p>excluding <strong>stop words</strong> - the most popular approach (yet not the best one) is to find a list of stop words for a particular language on the Internet. But&hellip; a better way is to exclude specific parts of speech, e.g. conjunctions. To do this, you have to tag each word with its part of speech (for Polish <a href="http://morfeusz.sgjp.pl/">morfeusz</a> seems to be the best choice, with <a href="https://spacy.io/usage/spacy-101#annotations-pos-deps">spaCy</a>&lsquo;s API, so again I recommend <a href="https://www.amazon.com/Natural-Language-Processing-Computational-Linguistics-ebook/dp/B07BWH779J">Natural Language Processing and Computational Linguistics: A practical guide to text analysis with Python, Gensim, spaCy, and Keras</a>).</p>

@@ -146,28 +146,6 @@
     
       
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
-        <div class="dropdown-menu scrollable-menu">
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
-          
-        </div>
-      </li>
-    
-      
-      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
@@ -204,6 +182,28 @@
     
       
       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">DevOps</a>
         <div class="dropdown-menu scrollable-menu">
           
@@ -226,6 +226,14 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/vagrant/">vagrant</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Genomics</a>
+        <div class="dropdown-menu scrollable-menu">
           
         </div>
       </li>
@@ -340,12 +348,12 @@
   Mar = rnorm(5, 10, 3)
 )
 print(d)</code></pre>
-<pre><code>##   account_no       Jan      Feb       Mar
-## 1         71 10.160607 8.979867 12.135847
-## 2         72 10.903947 8.240049  7.736086
-## 3         73 12.087995 7.596006 14.531498
-## 4         74  8.448589 8.483208 12.019896
-## 5         75 10.265933 8.434968 13.128502</code></pre>
+<pre><code>##   account_no       Jan       Feb       Mar
+## 1         71 10.928129  7.124114 11.601837
+## 2         72 11.172639 12.037881 11.483808
+## 3         73  9.814725 11.774069  8.470845
+## 4         74 10.001237  7.175358 11.655862
+## 5         75  7.663667 11.631129 11.690322</code></pre>
 <p>Transormation into a normalized table (unpivot):</p>
 <pre class="r"><code>dn &lt;- reshape2::melt(
   data = d, 
@@ -355,33 +363,33 @@ print(d)</code></pre>
 )
 print(dn)</code></pre>
 <pre><code>##    account_no month   revenue
-## 1          71   Jan 10.160607
-## 2          72   Jan 10.903947
-## 3          73   Jan 12.087995
-## 4          74   Jan  8.448589
-## 5          75   Jan 10.265933
-## 6          71   Feb  8.979867
-## 7          72   Feb  8.240049
-## 8          73   Feb  7.596006
-## 9          74   Feb  8.483208
-## 10         75   Feb  8.434968
-## 11         71   Mar 12.135847
-## 12         72   Mar  7.736086
-## 13         73   Mar 14.531498
-## 14         74   Mar 12.019896
-## 15         75   Mar 13.128502</code></pre>
+## 1          71   Jan 10.928129
+## 2          72   Jan 11.172639
+## 3          73   Jan  9.814725
+## 4          74   Jan 10.001237
+## 5          75   Jan  7.663667
+## 6          71   Feb  7.124114
+## 7          72   Feb 12.037881
+## 8          73   Feb 11.774069
+## 9          74   Feb  7.175358
+## 10         75   Feb 11.631129
+## 11         71   Mar 11.601837
+## 12         72   Mar 11.483808
+## 13         73   Mar  8.470845
+## 14         74   Mar 11.655862
+## 15         75   Mar 11.690322</code></pre>
 <p>And back to the previous format using a pivot:</p>
 <pre class="r"><code>reshape2::dcast(
   data = dn, 
   formula = account_no ~ month, 
   value.var = &quot;revenue&quot;
 )</code></pre>
-<pre><code>##   account_no       Jan      Feb       Mar
-## 1         71 10.160607 8.979867 12.135847
-## 2         72 10.903947 8.240049  7.736086
-## 3         73 12.087995 7.596006 14.531498
-## 4         74  8.448589 8.483208 12.019896
-## 5         75 10.265933 8.434968 13.128502</code></pre>
+<pre><code>##   account_no       Jan       Feb       Mar
+## 1         71 10.928129  7.124114 11.601837
+## 2         72 11.172639 12.037881 11.483808
+## 3         73  9.814725 11.774069  8.470845
+## 4         74 10.001237  7.175358 11.655862
+## 5         75  7.663667 11.631129 11.690322</code></pre>
 </div>
 <div id="links" class="section level2">
 <h2>3. Links</h2>

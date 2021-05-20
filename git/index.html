@@ -146,28 +146,6 @@
     
       
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
-        <div class="dropdown-menu scrollable-menu">
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
-          
-        </div>
-      </li>
-    
-      
-      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
@@ -204,6 +182,28 @@
     
       
       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">DevOps</a>
         <div class="dropdown-menu scrollable-menu">
           
@@ -226,6 +226,14 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/vagrant/">vagrant</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Genomics</a>
+        <div class="dropdown-menu scrollable-menu">
           
         </div>
       </li>
@@ -363,7 +371,7 @@
 </li>
 </ul>
 <p>If you know all of them, you can update your LinkedIn profile with &ldquo;knowledge of git&rdquo;. If not, I recommend youtube tutorials, like this one:</p>
-<!-- raw HTML omitted -->
+<iframe width="853" height="480" src="https://www.youtube.com/embed/HVsySz-h9r4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h2 id="4-slightly-more-advanced-subjects">4. Slightly more advanced subjects</h2>
 <h4 id="git-rebase">git rebase</h4>
 <p>In it&rsquo;s consequences, <code>git rebase</code> is equivalent to merge, but there are certain differences:</p>
@@ -384,12 +392,19 @@
 <li>completely remove a submodule</li>
 </ul>
 <p>Just replace the <code>&lt;name&gt;</code> with your submodule&rsquo;s name.</p>
-<!-- raw HTML omitted -->
+<textarea rows = "5" cols = "50" name = "git_submodule" style='font-family: "Courier New"; color: #505050;'>
+submodule=<name>
+git submodule deinit -f -\- $submodule
+rm -rf .git/modules/$submodule
+git rm -f $submodule
+</textarea><br>
 <ul>
 <li>remove a remote branch</li>
 </ul>
 <p>Once you do rebase and merge, before pushing your changes you may want to delete the merged branch first. You can do it with:</p>
-<!-- raw HTML omitted -->
+<textarea rows = "2" cols = "50" name = "git_submodule" style='font-family: "Courier New"; color: #505050;'>
+git push origin -\-delete <branch_name>
+</textarea><br>
 <h2 id="5-interesting-commands">5. Interesting commands</h2>
 <p>Let&rsquo;s face the truth, after a long period of working on a project, dozens of branches appear and the repo is a complete mess. There are a few commands though, which make cleaning things up easier:</p>
 <ul>

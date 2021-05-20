@@ -5,10 +5,19 @@
     <link>https://greysweater42.github.io/categories/</link>
     <description>Recent content in Categories on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 08 Apr 2021 18:19:38 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 20 May 2021 16:40:46 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Projects</title>
+      <link>https://greysweater42.github.io/categories/projects/</link>
+      <pubDate>Thu, 20 May 2021 16:40:46 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/categories/projects/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Machine learning</title>
@@ -34,15 +43,6 @@
       <pubDate>Wed, 17 Feb 2021 16:56:08 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/categories/scratchpad/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Projects</title>
-      <link>https://greysweater42.github.io/categories/projects/</link>
-      <pubDate>Sun, 19 Jan 2020 20:17:16 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/categories/projects/</guid>
       <description></description>
     </item>
     

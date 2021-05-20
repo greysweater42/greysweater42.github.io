@@ -5,10 +5,20 @@
     <link>https://greysweater42.github.io/categories/projects/</link>
     <description>Recent content in Projects on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 19 Jan 2020 20:17:16 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 20 May 2021 16:40:46 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>fiat 126 v ferrari</title>
+      <link>https://greysweater42.github.io/fiat_ferrari/</link>
+      <pubDate>Thu, 20 May 2021 16:40:46 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/fiat_ferrari/</guid>
+      <description>1. Can you tell the difference between these two cars?    Me neither, but let&amp;rsquo;s see if a convolutional neural network can.
+2. What am I doing? I am practicing my CNN skills on a subject that is particularly close to my heart: a legendary vehicle Fiat 126p in which I was travelling around Poland with my family in the 1990s. To me this was the best car in the world and it left many cars behind in various categories, mainly styling and&amp;hellip; well, styling.</description>
+    </item>
     
     <item>
       <title>neural networks vs stock market</title>

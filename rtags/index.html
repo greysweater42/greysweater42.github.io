@@ -146,28 +146,6 @@
     
       
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
-        <div class="dropdown-menu scrollable-menu">
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
-          
-        </div>
-      </li>
-    
-      
-      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
         <div class="dropdown-menu scrollable-menu">
           
@@ -204,6 +182,28 @@
     
       
       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">DevOps</a>
         <div class="dropdown-menu scrollable-menu">
           
@@ -226,6 +226,14 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/vagrant/">vagrant</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Genomics</a>
+        <div class="dropdown-menu scrollable-menu">
           
         </div>
       </li>
@@ -325,7 +333,7 @@
 <p><code>rTags</code> let you jump directly to the definition of a function under your cursor. Modern IDE&rsquo;s provide this functionality, so why wouldn&rsquo;t you have it in vim?</p>
 <h2 id="2-how-to-use-them">2. How to use them?</h2>
 <p>You don&rsquo;t necessarily have to read the articles from #3 (unless you want to understand what you are doing). All you have to do is run <code>:RBuildTags</code>, Nvim-R will create a <code>tags</code> file in your current directory and vim will automatically read this file each time you open any .R file in this directory. As simple as that.</p>
-<p>To move into a function&rsquo;s definition, type <!-- raw HTML omitted -->CTRL<!-- raw HTML omitted -->+<!-- raw HTML omitted -->]<!-- raw HTML omitted -->, just like in vim&rsquo;s help files.</p>
+<p>To move into a function&rsquo;s definition, type <kbd>CTRL</kbd>+<kbd>]</kbd>, just like in vim&rsquo;s help files.</p>
 <p>Remember to re-run <code>:RBuildTags</code> each time you add a new function to your project in order to update the list of tags. If you reload tags quite often, consider adding a special mapping to your .vimrc, e.g.:</p>
 <pre><code class="language-{vimscript}" data-lang="{vimscript}">autocmd FileType r nmap &lt;buffer&gt; &lt;F6&gt; :RBuildTags&lt;CR&gt;
 </code></pre><h2 id="3-useful-links">3. Useful links:</h2>

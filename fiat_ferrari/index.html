@@ -316,271 +316,219 @@
 <div class="article-categories">
   
     <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
-    <a href="https://greysweater42.github.io/categories/machine-learning" role="button">Machine learning </a>
-    &emsp;
-  
-    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
-    <a href="https://greysweater42.github.io/categories/data-engineering" role="button">Data engineering </a>
+    <a href="https://greysweater42.github.io/categories/projects" role="button">projects </a>
     &emsp;
   </br>
 </div>
 <div class="article-title">
   
-  useful processing
+  fiat 126 v ferrari
 
 </div>
 <div class="article-info">
-    May 17, 2019 &emsp;  &emsp; 5 minutes read
+    May 20, 2021 &emsp;  &emsp; 6 minutes read
 </div>
 
-
-
-
-<div id="what-is-useful-processing" class="section level2">
-<h2>1. What is useful processing?</h2>
-<ul>
-<li>many machine learning algorithms require the same kinds of data preprocessing in order for them to work properly. In other words, theses kinds of processing are useful.</li>
-</ul>
+<h2 id="1-can-you-tell-the-difference-between-these-two-cars">1. Can you tell the difference between these two cars?</h2>
+<div style="overflow: hidden;">
+    <div class="column" style="float: left; width: 50%; padding: 10px;">
+        <img src="https://greysweater42.github.io/fiat_ferrari/fiat.jpg" style="width: 100%;"/>
+    </div>
+    <div class="column" style="float: left; width: 50%; padding: 10px;">
+        <img src="https://greysweater42.github.io/fiat_ferrari/ferrari.jpg" style="width: 100%;"/> 
+    </div>
 </div>
-<div id="examples" class="section level2">
-<h2>2. Examples</h2>
-<div id="one-hot-encoding" class="section level3">
-<h3>one-hot encoding</h3>
-<p><em>R</em></p>
-<pre class="r"><code># data.table
-dt_iris &lt;- data.table::as.data.table(iris)
-mltools::one_hot(dt_iris)</code></pre>
-<pre><code>##      Sepal.Length Sepal.Width Petal.Length Petal.Width Species_setosa
-##   1:          5.1         3.5          1.4         0.2              1
-##   2:          4.9         3.0          1.4         0.2              1
-##   3:          4.7         3.2          1.3         0.2              1
-##   4:          4.6         3.1          1.5         0.2              1
-##   5:          5.0         3.6          1.4         0.2              1
-##  ---                                                                 
-## 146:          6.7         3.0          5.2         2.3              0
-## 147:          6.3         2.5          5.0         1.9              0
-## 148:          6.5         3.0          5.2         2.0              0
-## 149:          6.2         3.4          5.4         2.3              0
-## 150:          5.9         3.0          5.1         1.8              0
-##      Species_versicolor Species_virginica
-##   1:                  0                 0
-##   2:                  0                 0
-##   3:                  0                 0
-##   4:                  0                 0
-##   5:                  0                 0
-##  ---                                     
-## 146:                  0                 1
-## 147:                  0                 1
-## 148:                  0                 1
-## 149:                  0                 1
-## 150:                  0                 1</code></pre>
-<pre class="r"><code># caret
-library(caret)
-dummy &lt;- caret::dummyVars(&quot; ~ .&quot;, data = iris)
-head(predict(dummy, iris))</code></pre>
-<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species.setosa
-## 1          5.1         3.5          1.4         0.2              1
-## 2          4.9         3.0          1.4         0.2              1
-## 3          4.7         3.2          1.3         0.2              1
-## 4          4.6         3.1          1.5         0.2              1
-## 5          5.0         3.6          1.4         0.2              1
-## 6          5.4         3.9          1.7         0.4              1
-##   Species.versicolor Species.virginica
-## 1                  0                 0
-## 2                  0                 0
-## 3                  0                 0
-## 4                  0                 0
-## 5                  0                 0
-## 6                  0                 0</code></pre>
-<pre class="r"><code># dplyr is not that clever
-library(dplyr)
-iris %&gt;%
-  mutate(&quot;Species_setosa&quot; = ifelse(Species == &quot;setosa&quot;, 1, 0)) %&gt;%
-  mutate(&quot;Species_virgninica&quot; = ifelse(Species == &quot;virgninica&quot;, 1, 0)) %&gt;%
-  mutate(&quot;Species_versicolor&quot; = ifelse(Species == &quot;versicolor&quot;, 1, 0)) %&gt;%
-  head()</code></pre>
-<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species Species_setosa
-## 1          5.1         3.5          1.4         0.2  setosa              1
-## 2          4.9         3.0          1.4         0.2  setosa              1
-## 3          4.7         3.2          1.3         0.2  setosa              1
-## 4          4.6         3.1          1.5         0.2  setosa              1
-## 5          5.0         3.6          1.4         0.2  setosa              1
-## 6          5.4         3.9          1.7         0.4  setosa              1
-##   Species_virgninica Species_versicolor
-## 1                  0                  0
-## 2                  0                  0
-## 3                  0                  0
-## 4                  0                  0
-## 5                  0                  0
-## 6                  0                  0</code></pre>
-<p>As you can see, <code>caret</code> recognised dummy variables (<code>Species</code>) and processed them to binary variables.</p>
-<p>TODO: <code>library(dummies); library(onehot)</code></p>
-<p><em>Python</em></p>
-<pre class="python"><code># https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OneHotEncoder
-from sklearn import datasets
+<p>Me neither, but let&rsquo;s see if a convolutional neural network can.</p>
+<h2 id="2-what-am-i-doing">2. What am I doing?</h2>
+<p>I am practicing my CNN skills on a subject that is particularly close to my heart: a legendary vehicle Fiat 126p in which I was travelling around Poland with my family in the 1990s. To me this was the best car in the world and it left many cars behind in various categories, mainly styling and&hellip; well, styling.</p>
+<p>My goal is to learn a neural network to tell if a picture presents a Fiat 126 or La Ferrari (should one say &ldquo;a&rdquo; La Ferrari?). Sounds super easy for a human, but let&rsquo;s see whether an artificial neural networks can compete with real, human neural networks in this task.</p>
+<h2 id="3-data">3. Data</h2>
+<p>Data for this task are obviously images, which can be downloaded from e.g. Google Images or Bing. This time I&rsquo;ve used bing for it&rsquo;s relatively simple API and a chance to try Azure out, as you need to be a registered user there to use the API. Here comes the code for downloading images of Fiats and Ferraris:</p>
+<pre><code class="language-{python}" data-lang="{python}">import requests
+import os
+from pathlib import Path
+from PIL import Image
+from io import BytesIO
 
-data = datasets.load_iris()
-y = [data.target_names[i] for i in data.target]
+from dotenv import load_dotenv  # I love this package
 
-# integer encode
-label_encoder = LabelEncoder()
-integer_encoded = label_encoder.fit_transform(y)
-print(integer_encoded[:5])
-# binary encode</code></pre>
-<pre><code>## [0 0 0 0 0]</code></pre>
-<pre class="python"><code>onehot_encoder = OneHotEncoder(sparse=False)
-integer_encoded = integer_encoded.reshape(len(integer_encoded), 1)
-onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
-print(onehot_encoded[:5])</code></pre>
-<pre><code>## [[1. 0. 0.]
-##  [1. 0. 0.]
-##  [1. 0. 0.]
-##  [1. 0. 0.]
-##  [1. 0. 0.]]</code></pre>
+load_dotenv()
+
+
+SEARCH_URL = &quot;https://api.bing.microsoft.com/v7.0/images/search&quot;
+HEADERS = {&quot;Ocp-Apim-Subscription-Key&quot;: os.environ[&quot;AZURE_SUBSCRIPTION_KEY&quot;]}
+
+
+def image_to_hex(image):
+    &quot;&quot;&quot; converts image to hex for unique file name &quot;&quot;&quot;
+    # https://stackoverflow.com/a/49692185
+    img = image.resize((10, 10), Image.ANTIALIAS)
+    img = img.convert(&quot;L&quot;)
+    pixel_data = list(img.getdata())
+    avg_pixel = sum(pixel_data) / len(pixel_data)
+    bits = &quot;&quot;.join([&quot;1&quot; if (px &gt;= avg_pixel) else &quot;0&quot; for px in pixel_data])
+    hex_representation = str(hex(int(bits, 2)))[2:][::-1].upper()  # for deduplication
+    return hex_representation
+
+
+def download_images(cars, colors):
+    # https://docs.microsoft.com/en-us/azure/cognitive-services/bing-image-search/quickstarts/python
+    data_path = Path(&quot;data&quot;)
+    data_path.mkdir(exist_ok=True)
+    images_urls = dict()
+    for car in cars:
+        images_urls[car] = []
+        car_path = data_path / car.replace(&quot; &quot;, &quot;-&quot;)
+        car_path.mkdir(exist_ok=True)
+        for color in colors:
+            params = {&quot;q&quot;: f&quot;{car} {color}&quot;, &quot;count&quot;: 100}
+            response = requests.get(SEARCH_URL, headers=HEADERS, params=params)
+            response.raise_for_status()
+            search_results = response.json()
+            thumbnail_urls = [
+                img[&quot;thumbnailUrl&quot;] for img in search_results[&quot;value&quot;]
+            ]
+            for url in thumbnail_urls:
+                image_data = requests.get(url)
+                image_data.raise_for_status()
+                image = Image.open(BytesIO(image_data.content))
+                image_hex = image_to_hex(image)
+                file_name = car_path / f&quot;{color}_{image_hex}.jpg&quot;
+                image.save(file_name)
+
+
+if __name__ == &quot;__main__&quot;:
+    cars = [&quot;fiat 126&quot;, &quot;la ferrari&quot;]
+    colors = [&quot;blue&quot;, &quot;yellow&quot;, &quot;red&quot;, &quot;green&quot;, &quot;white&quot;, &quot;black&quot;]
+    download_images(cars, colors)
+</code></pre><p>After a few trials I realized I needed to balance the dataset by providing another layer: color. Ferraris are not always red after all. Another issue was that API happened to respond with duplicates, which I had to deduplicate for training. In general I prefer to have the dataset clean and ready for training as soon as possible, so I have done this in this step: I used hex hashes, which can be deduplicated much easier than the whole images. <a href="https://en.wikipedia.org/wiki/Perceptual_hashing">Phashes</a> are also a common solution to this problem.</p>
+<p>Having downloaded the data, I moved on to training.</p>
+<h2 id="4-lets-learn-something">4. Let&rsquo;s learn something</h2>
+<h3 id="libraries-first">Libraries first</h3>
+<pre><code class="language-{python}" data-lang="{python}">import torch
+import torch.nn as nn
+from torch.utils.data import DataLoader
+from torchvision import models
+from torchvision.datasets import ImageFolder
+from torchvision.transforms import (Compose, RandomHorizontalFlip,
+                                    RandomResizedCrop, Resize, ToTensor)
+from tqdm import tqdm  # progress bar useful during training
+</code></pre><p>I&rsquo;ve used pytorch for its popularity and simplicity.</p>
+<h3 id="data---second">Data - second</h3>
+<pre><code class="language-{python}" data-lang="{python}"># minimal augmentation
+augmentation = Compose(
+    [
+        RandomResizedCrop((256, 256), scale=(0.8, 1.0), ratio=(1.0, 1.0)),
+        RandomHorizontalFlip(),
+        ToTensor(),
+    ]
+)
+transformers = Compose([Resize((256, 256)), ToTensor()])
+
+train_dataset = ImageFolder(&quot;data/train&quot;, transform=augmentation)
+train_loader = DataLoader(train_dataset, batch_size=10, shuffle=True)
+
+val_dataset = ImageFolder(&quot;data/validation&quot;, transform=transformers)
+val_loader = DataLoader(val_dataset, batch_size=10, shuffle=True)
+</code></pre><p>When I was downloading data with bing, I already saved them in proper localizations:</p>
+<pre><code>.
+├── train
+│   ├── fiat-126
+│   └── la-ferrari
+└── validation
+    ├── fiat-126
+    └── la-ferrari
+</code></pre><p>so I can easily use torchvisions&rsquo; <code>ImageFolder</code> now. I&rsquo;ve used basic augmentation to see if it the learning still works well. There&rsquo;s no need to optimize pre-maturely ;)</p>
+<h3 id="here-comes-the-net">Here comes the net</h3>
+<pre><code class="language-{python}" data-lang="{python}">class Net(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.model = models.mobilenet_v2(pretrained=True)
+
+        # freeze all the layers except the last two
+        for param in self.model.features[:-2].parameters():
+            param.requires_grad = False
+
+        self.model.classifier = nn.Sequential(
+            # self.model. ... - classifier layer's name depends on the model
+            nn.Linear(self.model.classifier[1].in_features, 500),
+            nn.ReLU(),
+            nn.Dropout(),
+            nn.Linear(500, 2),
+        )
+
+    def forward(self, x):
+        return self.model(x)
+</code></pre><p>I&rsquo;ve used mobilenet_v2 for no particular reason: this is such a simple task that probably any network would work just fine. Of course as long as we talk about transfer learning: I downloaded only about 500 images and trained the net on them.</p>
+<h3 id="and-training">And training</h3>
+<pre><code class="language-{python}" data-lang="{python}">device = &quot;cuda&quot;
+net = Net()
+net.to(device)
+optimizer = torch.optim.Adam(net.parameters(), lr=0.0001)
+criterion = nn.CrossEntropyLoss()
+
+for i in tqdm(range(3), desc=&quot;epoch&quot;, position=1):
+    for inputs, labels in tqdm(train_loader, desc=&quot;training&quot;, position=0):
+        outputs = net(inputs.to(device))
+        loss = criterion(outputs, labels.to(device))
+        optimizer.zero_grad()  # zero the previous gradients
+        loss.backward()  # calculates the gradient on weights
+        optimizer.step()  # goes down the gradient
+</code></pre><p>Nothing fancy, just standard pytorch. The only thing worth mentioning is tqdm which I&rsquo;ve discovered recently when deep diving into <a href="https://greysweater42.github.io/fastai">fastai</a>. It makes progress bars way more readible.</p>
+<p>One more thing: 3 epochs is more than enough, but as long as I use CUDA and the dataset has only 500 images, it doesn&rsquo;t make much difference after all. Maybe even freezing the last two CNN layers of the network (which I unfroze so they could fine-tune to Fiat and Ferrari) wouldn&rsquo;t change much.</p>
+<h2 id="5-what-did-you-learn-then">5. What did you learn then?</h2>
+<p>Let&rsquo;s see how our neural network does on validation dataset:</p>
+<pre><code class="language-{python}" data-lang="{python}">os = []
+ls = []
+for inputs, labels in tqdm(val_loader):
+    outputs = net(inputs.to(device))
+    os.append(outputs.argmax(dim=1).to(&quot;cpu&quot;))
+    ls.append(labels.to(&quot;cpu&quot;))
+
+os = torch.cat(os)
+ls = torch.cat(ls)
+print(&quot;\nvalidation set accuracy:&quot;, (os == ls).sum() / len(os))
+</code></pre><p>The accuracy is, quite shockingly, 100%. I don&rsquo;t think I will ever learn a better model. I am quite sure, actually. 100% sure.</p>
+<h2 id="6-but-does-it-really-work">6. But.. does it really work?</h2>
+<p>There are several ways to find out. One of them is Grad-CAM implemented e.g. <a href="https://github.com/jacobgil/pytorch-grad-cam">here - pytorch-grad-cam</a> which I&rsquo;ve described shortly <a href="https://greysweater42.github.io/xai/#cam---class-activation-mapping">here</a>.</p>
+<pre><code class="language-{python}" data-lang="{python}">import numpy as np
+import PIL.Image
+from pytorch_grad_cam import GradCAM
+from pytorch_grad_cam.utils.image import show_cam_on_image
+from torchvision import transforms
+
+# the last convolutional layer
+# in your case it may be different, depends on the model/net
+target_layer = net.model.features[-1]
+
+im, label = val_dataset[0]  # a random image from validation set
+input_tensor = im.unsqueeze(dim=0)
+im_rgb = np.array(transforms.ToPILImage()(input_tensor[0]).convert(&quot;RGB&quot;)) / 255
+cam = GradCAM(model=net, target_layer=target_layer, use_cuda=True)
+
+grayscale_cam = cam(input_tensor=input_tensor, target_category=label)
+grayscale_cam = grayscale_cam[0, :]
+visualization = show_cam_on_image(im_rgb, grayscale_cam)
+
+PIL.Image.fromarray(visualization)  # displays the image
+</code></pre><p>Let&rsquo;s take a look at some of the images interpreted by Grad-CAM:</p>
+<div style="overflow: hidden;">
+    <div class="column" style="float: left; width: 50%; padding: 10px;">
+        <img src="https://greysweater42.github.io/fiat_ferrari/fiat_grad_cam1.png" style="width: 100%;"/>
+    </div>
+    <div class="column" style="float: left; width: 50%; padding: 10px;">
+        <img src="https://greysweater42.github.io/fiat_ferrari/fiat_grad_cam2.png" style="width: 100%;"/> 
+    </div>
 </div>
-<div id="scaling" class="section level3">
-<h3>scaling</h3>
-<p>In R it’s extremely simple.
-<em>base R</em></p>
-<pre class="r"><code>scale(1:5)</code></pre>
-<pre><code>##            [,1]
-## [1,] -1.2649111
-## [2,] -0.6324555
-## [3,]  0.0000000
-## [4,]  0.6324555
-## [5,]  1.2649111
-## attr(,&quot;scaled:center&quot;)
-## [1] 3
-## attr(,&quot;scaled:scale&quot;)
-## [1] 1.581139</code></pre>
-<pre class="r"><code>mean(1:5)</code></pre>
-<pre><code>## [1] 3</code></pre>
-<pre class="r"><code>sd(1:5)</code></pre>
-<pre><code>## [1] 1.581139</code></pre>
-<pre class="r"><code>sc &lt;- scale(iris[,1:4])
-head(sc)</code></pre>
-<pre><code>##      Sepal.Length Sepal.Width Petal.Length Petal.Width
-## [1,]   -0.8976739  1.01560199    -1.335752   -1.311052
-## [2,]   -1.1392005 -0.13153881    -1.335752   -1.311052
-## [3,]   -1.3807271  0.32731751    -1.392399   -1.311052
-## [4,]   -1.5014904  0.09788935    -1.279104   -1.311052
-## [5,]   -1.0184372  1.24503015    -1.335752   -1.311052
-## [6,]   -0.5353840  1.93331463    -1.165809   -1.048667</code></pre>
-<pre class="r"><code>attributes(sc)</code></pre>
-<pre><code>## $dim
-## [1] 150   4
-## 
-## $dimnames
-## $dimnames[[1]]
-## NULL
-## 
-## $dimnames[[2]]
-## [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot; 
-## 
-## 
-## $`scaled:center`
-## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
-##     5.843333     3.057333     3.758000     1.199333 
-## 
-## $`scaled:scale`
-## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
-##    0.8280661    0.4358663    1.7652982    0.7622377</code></pre>
-<p><em>Python</em></p>
-<pre class="python"><code>from sklearn.preprocessing import scale, StandardScaler
-from sklearn import datasets
-import numpy as np
-
-# simple approach
-sc = scale(np.arange(1, 6))
-print(np.std(sc))</code></pre>
-<pre><code>## 0.9999999999999999</code></pre>
-<pre class="python"><code>print(np.mean(sc))
-
-# and a way compatible with pandas</code></pre>
-<pre><code>## 0.0</code></pre>
-<pre class="python"><code>data = datasets.load_iris()
-X, y = data.data, data.target
-
-scaler = StandardScaler()
-scaled_df = scaler.fit_transform(X)
-
-print(scaled_df.mean(axis=0))</code></pre>
-<pre><code>## [-1.69031455e-15 -1.84297022e-15 -1.69864123e-15 -1.40924309e-15]</code></pre>
-<pre class="python"><code>print(scaled_df.std(axis=0))</code></pre>
-<pre><code>## [1. 1. 1. 1.]</code></pre>
+<div style="overflow: hidden;">
+    <div class="column" style="float: left; width: 50%; padding: 10px;">
+        <img src="https://greysweater42.github.io/fiat_ferrari/ferrari_grad_cam1.png" style="width: 100%;"/>
+    </div>
+    <div class="column" style="float: left; width: 50%; padding: 10px;">
+        <img src="https://greysweater42.github.io/fiat_ferrari/ferrari_grad_cam2.png" style="width: 100%;"/> 
+    </div>
 </div>
-<div id="splitting-your-dataset-into-train-and-test-subsets" class="section level3">
-<h3>splitting your dataset into train and test subsets</h3>
-<p>The idea for the following solution comes from <a href="https://stackoverflow.com/questions/17200114/how-to-split-data-into-training-testing-sets-using-sample-function">this post at stackoverflow</a>.</p>
-<p><em>base R</em></p>
-<pre class="r"><code>train_test_split &lt;- function(test_proportion = 0.75, dataset) {
-    smp_size &lt;- floor(test_proportion * nrow(dataset))
-    train_ind &lt;- sample(seq_len(nrow(dataset)), size = smp_size)
-
-    train &lt;- dataset[train_ind, ]
-    test &lt;- dataset[-train_ind, ]
-    return(list(train = train, test = test))
-}
-library(gsubfn)</code></pre>
-<pre><code>## Warning: no DISPLAY variable so Tk is not available</code></pre>
-<pre class="r"><code>list[train, test] &lt;- train_test_split(0.8, iris)</code></pre>
-<p><em>caret R</em></p>
-<pre class="r"><code>library(caret)
-# ..., the random sampling is done within the
-# levels of ‘y’ when ‘y’ is a factor in an attempt to balance the class
-# distributions within the splits.
-# I provide package&#39;s name before function&#39;s name for clarity
-trainIndex &lt;- caret::createDataPartition(iris$Species, p=0.7, list = FALSE, 
-                                         times = 1)
-train &lt;- iris[trainIndex,]
-test &lt;- iris[-trainIndex,]</code></pre>
-<p><em>Python - sklearn</em></p>
-<pre class="python"><code>from sklearn import datasets
-from sklearn.model_selection import train_test_split
-
-data = datasets.load_iris()
-
-X, y = data.data, data.target
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.33, random_state=42)</code></pre>
-<p><em>Python - pandas</em></p>
-<pre class="python"><code>import pandas as pd
-
-# data = pd.DataFrame(data)
-# train = data.sample(frac=0.8)
-# test = data.drop(train.index)</code></pre>
-</div>
-<div id="sklearn-pipeline" class="section level3">
-<h3>sklearn pipeline</h3>
-<ul>
-<li><a href="https://towardsdatascience.com/a-simple-example-of-pipeline-in-machine-learning-with-scikit-learn-e726ffbb6976">a short article about sklearn pipelines</a></li>
-</ul>
-<pre class="python"><code>from sklearn.svm import SVC
-from sklearn.preprocessing import StandardScaler
-from sklearn import datasets
-
-data = datasets.load_iris()
-X, y = data.data, data.target
-
-# one way
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
-
-svc = SVC()
-svc.fit(X_scaled, y)
-
-# or another - with pipeline</code></pre>
-<pre><code>## SVC()</code></pre>
-<pre class="python"><code>from sklearn.pipeline import Pipeline
-
-svc = Pipeline([(&#39;scaler&#39;, StandardScaler()), (&#39;SVM&#39;, SVC())])
-svc.fit(X, y)</code></pre>
-<pre><code>## Pipeline(steps=[(&#39;scaler&#39;, StandardScaler()), (&#39;SVM&#39;, SVC())])</code></pre>
-<p>TODO: <code>pd.get_dummies()</code></p>
-</div>
-</div>
+<p>It can be clearly seen that the neural network actually looks <em>at the cars</em>, which is very important. I learned a shallow neural network on this very same dataset once, it&rsquo;s accuracy was incomparably lower (75%) and it turned out that its predictions were based on the trees behind the cars (or rather: big green areas), as Fiats are much more often photographed in nature. This network clearly could not scale well.</p>
 
 </div>
 

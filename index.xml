@@ -5,10 +5,20 @@
     <link>https://greysweater42.github.io/</link>
     <description>Recent content on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 08 Apr 2021 18:19:38 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 20 May 2021 16:40:46 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>fiat 126 v ferrari</title>
+      <link>https://greysweater42.github.io/fiat_ferrari/</link>
+      <pubDate>Thu, 20 May 2021 16:40:46 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/fiat_ferrari/</guid>
+      <description>1. Can you tell the difference between these two cars?    Me neither, but let&amp;rsquo;s see if a convolutional neural network can.
+2. What am I doing? I am practicing my CNN skills on a subject that is particularly close to my heart: a legendary vehicle Fiat 126p in which I was travelling around Poland with my family in the 1990s. To me this was the best car in the world and it left many cars behind in various categories, mainly styling and&amp;hellip; well, styling.</description>
+    </item>
     
     <item>
       <title>keras</title>
@@ -206,8 +216,8 @@ Confusion matrix is confusing at all as the name may suggest.</description>
       <pubDate>Thu, 07 Feb 2019 11:27:29 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/featuretools/</guid>
-      <description>featuretools (TODO)
-https://blog.featurelabs.com/deep-feature-synthesis/
+      <description># This is not a proper blog post yet, just my notes. featuretools (TODO)
+ https://blog.featurelabs.com/deep-feature-synthesis/
 https://towardsdatascience.com/why-automated-feature-engineering-will-change-the-way-you-do-machine-learning-5c15bf188b96
 https://docs.featuretools.com/#minute-quick-start
 https://blog.featurelabs.com/featuretools-on-spark-2/</description>
@@ -219,11 +229,10 @@ https://blog.featurelabs.com/featuretools-on-spark-2/</description>
       <pubDate>Tue, 05 Feb 2019 17:33:24 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/cassandra/</guid>
-      <description>cassandra (TODO)
-Installation is described on the cassandra webpage, but it didn&amp;rsquo;t work for me, so I&amp;rsquo;ve decided to use cassandra&amp;rsquo;s docker image.
+      <description># This is not a proper blog post yet, just my notes. cassandra (TODO)
+ Installation is described on the cassandra webpage, but it didn&amp;rsquo;t work for me, so I&amp;rsquo;ve decided to use cassandra&amp;rsquo;s docker image.
 This is a very nice tutorial of setting up a 3-node cluster of cassandra od docker, creating a simple table, populating it with data and retrieving results.
-Looks like a decent example of using cassandra on (docker with python)[https://mannekentech.com/2017/01/02/playing-with-a-cassandra-cluster-via-docker/].
-CQL</description>
+Looks like a decent example of using cassandra on (docker with python)[https://mannekentech.</description>
     </item>
     
     <item>
@@ -232,11 +241,11 @@ CQL</description>
       <pubDate>Tue, 05 Feb 2019 09:34:23 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/passing_arguments/</guid>
-      <description>passing arguments (TODO)
-caffee
+      <description># This is not a proper blog post yet, just my notes. passing arguments (TODO)
+ caffee
 R A good article on passing arguments to R scripts
 You can read the docs of commandArgs for more info, but the general use is very simple:
-args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector of values Rscript file.R one two 3 If trailingOnly is set to FALSE, args will contain some other argument values, e.g. &amp;ldquo;&amp;ndash;slave&amp;rdquo;, &amp;ldquo;&amp;ndash;no-restore&amp;rdquo;, which are usually not particularly useful and are definitely not provided by the user.</description>
+args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector of values Rscript file.R one two 3 If trailingOnly is set to FALSE, args will contain some other argument values, e.</description>
     </item>
     
     <item>
@@ -278,8 +287,8 @@ args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector o
       <pubDate>Sun, 06 Jan 2019 19:44:53 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/caffee/</guid>
-      <description>caffee (TODO)
-caffee</description>
+      <description># This is not a proper blog post yet, just my notes. caffee (TODO)
+ caffee</description>
     </item>
     
     <item>
@@ -288,8 +297,8 @@ caffee</description>
       <pubDate>Sun, 06 Jan 2019 19:36:46 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/theano/</guid>
-      <description>theano (TODO)
-theano vs tensorflow</description>
+      <description># This is not a proper blog post yet, just my notes. theano (TODO)
+ theano vs tensorflow</description>
     </item>
     
     <item>
@@ -397,10 +406,10 @@ theano vs tensorflow</description>
       <pubDate>Fri, 09 Nov 2018 23:01:35 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/hugo/</guid>
-      <description>hugo (TODO)
-A short tutorial
+      <description># This is not a proper blog post yet, just my notes. hugo (TODO)
+ A short tutorial
 A really good introductory film:
-And a &amp;hellip;
+ And a &amp;hellip;
 Clone your favourite theme do /themes
 Update config.toml based on the themes&amp;rsquo; website
 moving your site to Amazon S3
@@ -426,8 +435,8 @@ In general, Rmarkdown is just markdown with a possibility to add R chunks of cod
       <pubDate>Sun, 21 Oct 2018 20:49:20 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/redis/</guid>
-      <description>redis (TODO)
-docker pull redis import redis import pandas as pd # https://www.youtube.com/watch?v=Hbt56gFj998 # https://redis-py.readthedocs.io/en/latest/ # open up a redis-server session in redis/src/redis-server redis_host = &amp;quot;localhost&amp;quot; redis_port = 6379 redis_password = &amp;quot;&amp;quot; r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_password, decode_responses=True) r.flushall() # save data to redis d = {key: str(value) for key, value in zip(list(&#39;abcdefghij&#39;), range(10))} for key, value in d.items(): r.set(key, value) # get data from redis vals = dict() for key in r.</description>
+      <description># This is not a proper blog post yet, just my notes. redis (TODO)
+ docker pull redis import redis import pandas as pd # https://www.youtube.com/watch?v=Hbt56gFj998 # https://redis-py.readthedocs.io/en/latest/ # open up a redis-server session in redis/src/redis-server redis_host = &amp;quot;localhost&amp;quot; redis_port = 6379 redis_password = &amp;quot;&amp;quot; r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_password, decode_responses=True) r.flushall() # save data to redis d = {key: str(value) for key, value in zip(list(&#39;abcdefghij&#39;), range(10))} for key, value in d.</description>
     </item>
     
     <item>
@@ -458,8 +467,8 @@ docker pull redis import redis import pandas as pd # https://www.youtube.com/wat
       <pubDate>Tue, 21 Aug 2018 17:56:38 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/gitlab_ci/</guid>
-      <description>gitlab-ci (TODO)
-or gitlab Continuous Integration &amp;amp; Deployment/Continuous Delivery
+      <description># This is not a proper blog post yet, just my notes. gitlab-ci (TODO)
+ or gitlab Continuous Integration &amp;amp; Deployment/Continuous Delivery
 link to documentation
 example of use in python and flask
 how aboout installing gitlab locally?
@@ -472,8 +481,8 @@ https://medium.com/90seconds/continuous-integration-and-deployment-for-data-pipe
       <pubDate>Sat, 18 Aug 2018 14:33:57 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/kafka/</guid>
-      <description>kafka (TODO)
-kafka tutorial
+      <description># This is not a proper blog post yet, just my notes. kafka (TODO)
+ kafka tutorial
 A gentle Introduction to Stream Processing
 Kafka on docker</description>
     </item>
@@ -484,8 +493,8 @@ Kafka on docker</description>
       <pubDate>Sat, 18 Aug 2018 14:24:14 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/marathon/</guid>
-      <description>marathon (TODO)
-marathon If you want to have Marathon up and running, follow this tutorial.</description>
+      <description># This is not a proper blog post yet, just my notes. marathon (TODO)
+ marathon If you want to have Marathon up and running, follow this tutorial.</description>
     </item>
     
     <item>
