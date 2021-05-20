@@ -243,6 +243,8 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Projects</a>
         <div class="dropdown-menu scrollable-menu">
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/fiat_ferrari/">fiat 126 v ferrari</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/finance_nn/">neural networks vs stock market</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/vim_vs_emacs/">vim vs emacs - text mining to settle the editor war</a>
@@ -368,8 +370,8 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     5     6    10    12    16    17    18    24    26    35 
-## FALSE  TRUE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE</code></pre>
+<pre><code>##     3     5     9    13    15    16    17    18    25    29 
+## FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
@@ -471,7 +473,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.9488889</code></pre>
+<pre><code>## [1] 0.9066667</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],
