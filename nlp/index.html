@@ -320,7 +320,7 @@
 
 </div>
 <div class="article-info">
-    Dec 23, 2018 &emsp;  &emsp; 6 minutes read
+    Dec 23, 2018 &emsp;  &emsp; 7 minutes read
 </div>
 
 <h2 id="1-what-is-nlp-and-why-should-you-care">1. What is nlp and why should you care?</h2>
@@ -404,7 +404,14 @@ Sounds like text mining? The former concentrates more on predictive modeling, wh
 <h3 id="learning-classification">Learning (classification)</h3>
 <ul>
 <li>
-<p><strong>LSTM</strong> - for me the best resource to understand those was <a href="https://web.stanford.edu/class/cs379c/archive/2018/class_messages_listing/content/Artificial_Neural_Network_Technology_Tutorials/OlahLSTM-NEURAL-NETWORK-TUTORIAL-15.pdf">this article from Stanford University</a>.</p>
+<p><strong>RNN</strong> or <strong>Recurrent Neural Network</strong> is a type of artificial neural network used for working on <em>sequence</em> data, so it can be used not only for sentences, which are sequences of words (tokens), but also for time series or any type of observation, which can be indexed reasonably. The main idea is to pass on the output from the current cell to the following one, so each cell ends up with two inputs eventually: the &ldquo;original&rdquo; one, i.e. a numerical representation of the word from the sentence and the output of the previous cell.</p>
+</li>
+<li>
+<p><strong>LSTM</strong> - LSTMs are the type of recurrent neural newtorks, which solve the vanishing gradient problem (when the network does not rememeber what was happening many layers earlier) in a savvy way: they use their own, specially created &ldquo;highways&rdquo; to pass the &ldquo;old&rdquo; information (&ldquo;old&rdquo; meaning from the beginning of the sentence) throughout the whole sentence. It resembles the natural way of understanding the spoken language by humans: when we listen to someone speaking, we subconsciously summarize, remember and pass on what we have heard, so when the sentence is finished we can understand it as a whole.</p>
+<ul>
+<li>For me the best resource to understand those was <a href="https://web.stanford.edu/class/cs379c/archive/2018/class_messages_listing/content/Artificial_Neural_Network_Technology_Tutorials/OlahLSTM-NEURAL-NETWORK-TUTORIAL-15.pdf">this article from Stanford University</a>.</li>
+<li>and one more, for a broader view of where LSTMs come from and how to use them in keras: <a href="https://www.amazon.pl/Deep-Learning-Python-Fran%C3%A7ois-Chollet/dp/1617294438/ref=asc_df_1617294438/?tag=plshogostdde-21&amp;linkCode=df0&amp;hvadid=504635615230&amp;hvpos=&amp;hvnetw=g&amp;hvrand=10537409729516130816&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9061060&amp;hvtargid=pla-356949152624&amp;psc=1">Deep Learning with Python by François Chollet</a>, chapter 6: Deep learning for text and sequences.</li>
+</ul>
 </li>
 <li>
 <p><strong>BERT</strong> - I have a very basic intuition on how this works thanks to <a href="https://arxiv.org/abs/1810.04805">BERT&rsquo;s original paper</a> and I just use it :) with <a href="https://github.com/codertimo/BERT-pytorch">BERT-pytorch</a>.</p>
