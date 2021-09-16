@@ -70,16 +70,6 @@ import numpy as np from sklearn.datasets import load_iris from sklearn.linear_mo
     </item>
     
     <item>
-      <title>pandas</title>
-      <link>https://greysweater42.github.io/pandas/</link>
-      <pubDate>Fri, 25 Jan 2019 13:46:12 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/pandas/</guid>
-      <description>This is not a proper blog post yet, just my notes. pandas (TODO)   1. What is pandas and why would you use it?  pandas is a Python package created for working with tables known as DataFrames;
- it is the only reasonable Python package for this purpose, which makes Python a little modest comparing to R (base, data.table, dplyr - every one of them has a better interface than pandas) when we process tables;</description>
-    </item>
-    
-    <item>
       <title>pytorch basics</title>
       <link>https://greysweater42.github.io/pytorch_basics/</link>
       <pubDate>Sun, 06 Jan 2019 17:44:32 +0100</pubDate>
@@ -174,18 +164,6 @@ import numpy as np from sklearn.datasets import load_iris from sklearn.linear_mo
     </item>
     
     <item>
-      <title>decorators</title>
-      <link>https://greysweater42.github.io/decorators/</link>
-      <pubDate>Sun, 12 Aug 2018 15:30:35 +0200</pubDate>
-      
-      <guid>https://greysweater42.github.io/decorators/</guid>
-      <description>1. What are decorators and why would you use them?  decorators in Python are special functions that take a function as an argument and slightly change it’s behaviour, e.g. it’s return value;
- you can write your own decorators, which is rather easy (I highly recommend Fluent Python as a reference)
- but there are already many useful decorators available in Python.
-  I am not going to describe here how to write your own decorator as, to be honest, I used them only twice in my career.</description>
-    </item>
-    
-    <item>
       <title>testing</title>
       <link>https://greysweater42.github.io/testing/</link>
       <pubDate>Sun, 04 Feb 2018 12:02:23 +0100</pubDate>
@@ -194,17 +172,6 @@ import numpy as np from sklearn.datasets import load_iris from sklearn.linear_mo
       <description>1. What is testing and why would you use it?   testing or test-driven development (TDD) is a discipline, which relies on writing a test for every functionality before creating it;
   at first the test will fail, as we have not provided the proper functionality yet. Our goal is to fulfill this functionality, so the test will pass.
   In reality you modify your tests as you create the functionality or even write the tests after you are finished writing it.</description>
-    </item>
-    
-    <item>
-      <title>ggplot(2)</title>
-      <link>https://greysweater42.github.io/ggplot2/</link>
-      <pubDate>Fri, 24 Mar 2017 09:03:49 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/ggplot2/</guid>
-      <description>1. What is ggplot(2) and why would you use it?  ggplot2 is an R package which makes creating nice-looking plots easy;
- the plots you create are highly customizable;
-  Once you learn ggplot2, you will not make any production plots using basic R. However, due to it’s verbosity, for simple exploratory analysis I still use basic functions: plot, lines, hist and boxplot.</description>
     </item>
     
   </channel>

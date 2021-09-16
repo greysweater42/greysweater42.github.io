@@ -5,30 +5,10 @@
     <link>https://greysweater42.github.io/categories/data-engineering/</link>
     <description>Recent content in Data engineering on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 17 May 2019 15:44:38 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 04 Dec 2018 21:32:35 +0100</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/data-engineering/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>useful processing</title>
-      <link>https://greysweater42.github.io/useful_processing/</link>
-      <pubDate>Fri, 17 May 2019 15:44:38 +0200</pubDate>
-      
-      <guid>https://greysweater42.github.io/useful_processing/</guid>
-      <description>1. What is useful processing?  many machine learning algorithms require the same kinds of data preprocessing in order for them to work properly. In other words, theses kinds of processing are useful.   2. Examples one-hot encoding R
-# data.table dt_iris &amp;lt;- data.table::as.data.table(iris) mltools::one_hot(dt_iris) ## Sepal.Length Sepal.Width Petal.Length Petal.Width Species_setosa ## 1: 5.1 3.5 1.4 0.2 1 ## 2: 4.9 3.0 1.4 0.2 1 ## 3: 4.7 3.</description>
-    </item>
-    
-    <item>
-      <title>pandas</title>
-      <link>https://greysweater42.github.io/pandas/</link>
-      <pubDate>Fri, 25 Jan 2019 13:46:12 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/pandas/</guid>
-      <description>This is not a proper blog post yet, just my notes. pandas (TODO)   1. What is pandas and why would you use it?  pandas is a Python package created for working with tables known as DataFrames;
- it is the only reasonable Python package for this purpose, which makes Python a little modest comparing to R (base, data.table, dplyr - every one of them has a better interface than pandas) when we process tables;</description>
-    </item>
     
     <item>
       <title>hadoop</title>

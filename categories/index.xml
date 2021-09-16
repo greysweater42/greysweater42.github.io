@@ -5,10 +5,19 @@
     <link>https://greysweater42.github.io/categories/</link>
     <description>Recent content in Categories on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 20 May 2021 16:40:46 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 31 Aug 2021 18:32:03 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Machine learning</title>
+      <link>https://greysweater42.github.io/categories/machine-learning/</link>
+      <pubDate>Tue, 31 Aug 2021 18:32:03 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Projects</title>
@@ -16,15 +25,6 @@
       <pubDate>Thu, 20 May 2021 16:40:46 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/categories/projects/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine learning</title>
-      <link>https://greysweater42.github.io/categories/machine-learning/</link>
-      <pubDate>Thu, 08 Apr 2021 18:19:38 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/categories/machine-learning/</guid>
       <description></description>
     </item>
     
@@ -56,20 +56,20 @@
     </item>
     
     <item>
-      <title>Data engineering</title>
-      <link>https://greysweater42.github.io/categories/data-engineering/</link>
-      <pubDate>Fri, 17 May 2019 15:44:38 +0200</pubDate>
+      <title>R</title>
+      <link>https://greysweater42.github.io/categories/r/</link>
+      <pubDate>Sun, 23 Dec 2018 20:19:18 +0100</pubDate>
       
-      <guid>https://greysweater42.github.io/categories/data-engineering/</guid>
+      <guid>https://greysweater42.github.io/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R</title>
-      <link>https://greysweater42.github.io/categories/r/</link>
-      <pubDate>Fri, 11 Jan 2019 21:18:57 +0100</pubDate>
+      <title>Data engineering</title>
+      <link>https://greysweater42.github.io/categories/data-engineering/</link>
+      <pubDate>Tue, 04 Dec 2018 21:32:35 +0100</pubDate>
       
-      <guid>https://greysweater42.github.io/categories/r/</guid>
+      <guid>https://greysweater42.github.io/categories/data-engineering/</guid>
       <description></description>
     </item>
     
