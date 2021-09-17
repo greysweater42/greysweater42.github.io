@@ -79,6 +79,16 @@ args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector o
     </item>
     
     <item>
+      <title>pandas</title>
+      <link>https://greysweater42.github.io/pandas/</link>
+      <pubDate>Fri, 25 Jan 2019 13:46:12 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/pandas/</guid>
+      <description>This is not a proper blog post yet, just my notes. pandas (TODO)   1. What is pandas and why would you use it?  pandas is a Python package created for working with tables known as DataFrames;
+ it is the only reasonable Python package for this purpose, which makes Python a little modest comparing to R (base, data.table, dplyr - every one of them has a better interface than pandas) when we process tables;</description>
+    </item>
+    
+    <item>
       <title>caffee</title>
       <link>https://greysweater42.github.io/caffee/</link>
       <pubDate>Sun, 06 Jan 2019 19:44:53 +0100</pubDate>
@@ -114,6 +124,17 @@ moving your site to Amazon S3
 Why would you do this?
   you want to have your own domain, like tomis9.com, not tomis9.github.io
   you want to find out what Amazon offers for cloud computing - this is a good training project</description>
+    </item>
+    
+    <item>
+      <title>Rmarkdown total basics</title>
+      <link>https://greysweater42.github.io/file/</link>
+      <pubDate>Fri, 09 Nov 2018 23:01:35 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/file/</guid>
+      <description>This is not a proper blog post yet, just my notes. Rmarkdown (TODO)  Before you begin, check out a very nice cheatsheet available at https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf
+Vim key mappings are rather intuitive, pretty similar to basic r filetype mappings:  open up a console window,  rmarkdown::render()s this file and shows the result in your favourite browser.
+In general, Rmarkdown is just markdown with a possibility to add R chunks of code and execute them.</description>
     </item>
     
     <item>

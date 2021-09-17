@@ -95,6 +95,27 @@ import numpy as np from sklearn.datasets import load_iris from sklearn.linear_mo
     </item>
     
     <item>
+      <title>model validation</title>
+      <link>https://greysweater42.github.io/validation/</link>
+      <pubDate>Thu, 23 May 2019 12:46:03 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/validation/</guid>
+      <description>1. What is model validation and why would you do it? You learned your model and naturally you are wondering how good it is. There are several ways to find out, like measuring the accuracy of predictions, but you may also want to check where exactly particular predictions come from, as this is far from obvious for “black box” models.
+ 2. Examples cross-validation  confusion matrix https://www.rdocumentation.org/packages/caret/versions/3.45/topics/confusionMatrix
+Confusion matrix is confusing at all as the name may suggest.</description>
+    </item>
+    
+    <item>
+      <title>useful processing</title>
+      <link>https://greysweater42.github.io/useful_processing/</link>
+      <pubDate>Fri, 17 May 2019 15:44:38 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/useful_processing/</guid>
+      <description>1. What is useful processing?  many machine learning algorithms require the same kinds of data preprocessing in order for them to work properly. In other words, theses kinds of processing are useful.   2. Examples one-hot encoding R
+# data.table dt_iris &amp;lt;- data.table::as.data.table(iris) mltools::one_hot(dt_iris) ## Sepal.Length Sepal.Width Petal.Length Petal.Width Species_setosa ## 1: 5.1 3.5 1.4 0.2 1 ## 2: 4.9 3.0 1.4 0.2 1 ## 3: 4.7 3.</description>
+    </item>
+    
+    <item>
       <title>basic machine learning algorithms</title>
       <link>https://greysweater42.github.io/ml/</link>
       <pubDate>Mon, 22 Apr 2019 18:05:21 +0200</pubDate>
@@ -103,6 +124,18 @@ import numpy as np from sklearn.datasets import load_iris from sklearn.linear_mo
       <description>1. What is machine learning and why would you use it?   it&amp;rsquo;s a rather complicated, yet beautiful tool for boldly going where no man has gone before.
   in other words, it enables you to extract valuable information from data.
   2. Examples of the most popular machine learning algorithms in Python and R We&amp;rsquo;ll be working on iris dataset, which is easily available in Python (from sklearn import datasets; datasets.</description>
+    </item>
+    
+    <item>
+      <title>decision trees</title>
+      <link>https://greysweater42.github.io/decision_trees/</link>
+      <pubDate>Fri, 11 Jan 2019 21:18:57 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/decision_trees/</guid>
+      <description>1. What are decision trees and why would you use them?  decision trees are among the most popular classification algorithms;
+ they divide the dataset hierarchically starting from the full dataset, until the stop criterium is met, e.g. the minimum size of a leaf and the purity of leaf;
+ in general they are easy to understand, interpret and visualise
+ however they are not very efficient, but they can scale, i.</description>
     </item>
     
     <item>
@@ -139,6 +172,17 @@ import numpy as np from sklearn.datasets import load_iris from sklearn.linear_mo
       
       <guid>https://greysweater42.github.io/nlp/</guid>
       <description>1. What is nlp and why should you care?   NLP or natural language processing (not neuro-linguistic programming. This disambiguation makes searching on the internet a real pain) is a group of methods/algorithms that deal with text data. Sounds like text mining? The former concentrates more on predictive modeling, while the latter on exploratory data analysis. In practice some of the algorithms may be used both for prediction and exploration (LDA, for example).</description>
+    </item>
+    
+    <item>
+      <title>nls</title>
+      <link>https://greysweater42.github.io/nls/</link>
+      <pubDate>Sun, 28 Jan 2018 22:52:21 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/nls/</guid>
+      <description>1. What is nls and why would you use it?  nls, or nonlinear least squares is a statistical method used to describe a process as a nonlinear function of deterministic variables and a random variable;
+ you may think of it as an older and stronger brother of linear regression - more robust, powerful, smarter and difficult to understand ;)
+   2. A “Hello World” example Let’s assume we want to model US population as a function of year.</description>
     </item>
     
   </channel>

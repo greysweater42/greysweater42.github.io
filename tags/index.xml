@@ -5,10 +5,28 @@
     <link>https://greysweater42.github.io/tags/</link>
     <description>Recent content in Tags on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 01 Jan 2019 18:17:38 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jan 2019 14:12:24 +0100</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R</title>
+      <link>https://greysweater42.github.io/tags/r/</link>
+      <pubDate>Sat, 26 Jan 2019 14:12:24 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>text-mining</title>
+      <link>https://greysweater42.github.io/tags/text-mining/</link>
+      <pubDate>Sat, 26 Jan 2019 14:12:24 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/text-mining/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>tensorflow</title>
@@ -16,15 +34,6 @@
       <pubDate>Tue, 01 Jan 2019 18:17:38 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/tags/tensorflow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>https://greysweater42.github.io/tags/r/</link>
-      <pubDate>Sun, 23 Dec 2018 20:19:18 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/tags/r/</guid>
       <description></description>
     </item>
     
@@ -164,6 +173,15 @@
     </item>
     
     <item>
+      <title>decorators</title>
+      <link>https://greysweater42.github.io/tags/decorators/</link>
+      <pubDate>Sun, 12 Aug 2018 15:30:35 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/decorators/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Marathon</title>
       <link>https://greysweater42.github.io/tags/marathon/</link>
       <pubDate>Sun, 12 Aug 2018 15:29:44 +0200</pubDate>
@@ -178,6 +196,15 @@
       <pubDate>Sun, 12 Aug 2018 15:29:44 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/tags/mesos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debugging</title>
+      <link>https://greysweater42.github.io/tags/debugging/</link>
+      <pubDate>Thu, 15 Feb 2018 15:17:57 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/debugging/</guid>
       <description></description>
     </item>
     
@@ -200,11 +227,101 @@
     </item>
     
     <item>
+      <title>C&#43;&#43;</title>
+      <link>https://greysweater42.github.io/tags/c&#43;&#43;/</link>
+      <pubDate>Sun, 04 Feb 2018 12:03:14 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>https://greysweater42.github.io/tags/oop/</link>
+      <pubDate>Sun, 04 Feb 2018 12:00:04 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistics</title>
+      <link>https://greysweater42.github.io/tags/statistics/</link>
+      <pubDate>Sun, 28 Jan 2018 22:52:21 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data.table</title>
+      <link>https://greysweater42.github.io/tags/data.table/</link>
+      <pubDate>Mon, 11 Dec 2017 14:26:39 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/data.table/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dplyr</title>
+      <link>https://greysweater42.github.io/tags/dplyr/</link>
+      <pubDate>Mon, 11 Dec 2017 14:26:39 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/dplyr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggplot2</title>
+      <link>https://greysweater42.github.io/tags/ggplot2/</link>
+      <pubDate>Mon, 11 Dec 2017 14:26:39 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/ggplot2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>readr</title>
+      <link>https://greysweater42.github.io/tags/readr/</link>
+      <pubDate>Mon, 11 Dec 2017 14:26:39 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/readr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tidyverse</title>
+      <link>https://greysweater42.github.io/tags/tidyverse/</link>
+      <pubDate>Mon, 11 Dec 2017 14:26:39 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/tidyverse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>web-dev</title>
       <link>https://greysweater42.github.io/tags/web-dev/</link>
       <pubDate>Fri, 24 Mar 2017 09:13:23 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/tags/web-dev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lubridate</title>
+      <link>https://greysweater42.github.io/tags/lubridate/</link>
+      <pubDate>Fri, 03 Mar 2017 13:46:45 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/lubridate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dataframes</title>
+      <link>https://greysweater42.github.io/tags/dataframes/</link>
+      <pubDate>Wed, 01 Mar 2017 13:07:39 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/dataframes/</guid>
       <description></description>
     </item>
     
