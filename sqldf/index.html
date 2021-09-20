@@ -330,16 +330,18 @@
 
 <div id="what-is-sqldf-and-why-would-you-use-it" class="section level2">
 <h2>1. What is sqldf and why would you use it?</h2>
-<p><code>sqldf</code> package lets you treat any data.frame object as an sql table. You can write queries as if you were in a database. Pretty useless, comparing to, say, data.table or dplyr + tidyverse.</p>
-<p>Despite it’s uselessness, it works like a charm.</p>
+<p><code>sqldf</code> package lets you treat any <code>data.frame</code> object as an sql table, which means that you can write queries just as if you were using an sql database. Since the emergence of libraries such as data.table or dplyr + tidyverse, <code>sqldf</code> turns out to be fairly useless, so now it is rather a curiosity than a game-changer.</p>
+<p>Despite its uselessness, it works like a charm.</p>
 </div>
-<div id="a-few-basic-examples" class="section level2">
-<h2>2. A few basic examples:</h2>
+<div id="a-few-simple-examples" class="section level2">
+<h2>2. A few simple examples:</h2>
+<p>Semicolon at the end of each query is not obligatory.</p>
 <p>Load the package:</p>
 <pre class="r"><code>library(sqldf)</code></pre>
 <pre><code>## Warning: no DISPLAY variable so Tk is not available</code></pre>
-<p>Selecting specific columns:</p>
-<pre class="r"><code>sqldf(&#39;select mpg, cyl, disp from mtcars where cyl = 6&#39;)</code></pre>
+<p>Selecting specific columns (known as “projection operator”):</p>
+<pre class="r"><code># mtcars is a pre-defined data frame and is already available in the global environment
+sqldf(&#39;select mpg, cyl, disp from mtcars where cyl = 6&#39;)</code></pre>
 <pre><code>##    mpg cyl  disp
 ## 1 21.0   6 160.0
 ## 2 21.0   6 160.0
@@ -348,7 +350,7 @@
 ## 5 19.2   6 167.6
 ## 6 17.8   6 167.6
 ## 7 19.7   6 145.0</code></pre>
-<p>A simple where clause:</p>
+<p>A simple where clause (known as “selection operator”):</p>
 <pre class="r"><code>sqldf(&#39;select * from mtcars where mpg &gt; 21&#39;)</code></pre>
 <pre><code>##     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## 1  22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
@@ -369,7 +371,7 @@
 ## 1   4     11
 ## 2   6      7
 ## 3   8     14</code></pre>
-<p>Joins:</p>
+<p>Joining:</p>
 <pre class="r"><code>customers &lt;- data.frame(
   id_customers = c(1, 2, 3),
   name = c(&quot;Zidane&quot;, &quot;Figo&quot;, &quot;Beckham&quot;)
@@ -397,11 +399,11 @@ sqldf(&quot;select * from customers c join orders o on c.id_customers = o.id_cus
 ## 5 19.2
 ## 6 17.8
 ## 7 19.7</code></pre>
-<p>As you can see, all the sql operations are available in <code>sqldf</code>.</p>
+<p>As you can see, all of the most common sql operations are available in <code>sqldf</code>.</p>
 </div>
 <div id="links" class="section level2">
 <h2>3. Links</h2>
-<p>A longer <code>sqldf</code> tutorial is available <a href="http://jasdumas.com/tech-short-papers/sqldf_tutorial.html#">here</a>.</p>
+<p>A more in-depth <code>sqldf</code> tutorial is available <a href="http://jasdumas.com/tech-short-papers/sqldf_tutorial.html#">here</a>.</p>
 </div>
 
 </div>

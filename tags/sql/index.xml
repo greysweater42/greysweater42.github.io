@@ -38,10 +38,8 @@
       <pubDate>Wed, 01 Mar 2017 13:07:39 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/sqldf/</guid>
-      <description>1. What is sqldf and why would you use it? sqldf package lets you treat any data.frame object as an sql table. You can write queries as if you were in a database. Pretty useless, comparing to, say, data.table or dplyr + tidyverse.
-Despite it’s uselessness, it works like a charm.
- 2. A few basic examples: Load the package:
-library(sqldf) ## Warning: no DISPLAY variable so Tk is not available Selecting specific columns:</description>
+      <description>1. What is sqldf and why would you use it? sqldf package lets you treat any data.frame object as an sql table, which means that you can write queries just as if you were using an sql database. Since the emergence of libraries such as data.table or dplyr + tidyverse, sqldf turns out to be fairly useless, so now it is rather a curiosity than a game-changer.
+Despite its uselessness, it works like a charm.</description>
     </item>
     
   </channel>
