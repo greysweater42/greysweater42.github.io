@@ -330,13 +330,13 @@
 
 <div id="what-is-reshape2-and-why-would-you-use-it" class="section level2">
 <h2>1. What is reshape2 and why would you use it?</h2>
-<p><code>reshape2</code> is an R package that let’s you change the shape of any dataframe, i.e. to pivot and to “unpivot”.</p>
+<p><code>reshape2</code> is an R package that lets you change the shape of any dataframe, i.e. to pivot and to “unpivot”.</p>
 <p>Keep in mind that if your favourite R package for dataframes manipulation is <a href="http://tomis9.com/data.table">data.table</a>, functions <em>dcast</em> and <em>melt</em> are already in this package and work exactly the same as those in <code>reshape2</code>.</p>
 </div>
-<div id="a-hello-world-example" class="section level2">
-<h2>2. A “Hello World” example</h2>
+<div id="a-few-simple-examples" class="section level2">
+<h2>2. A few simple examples</h2>
 <p>In fact there are only two functions worth mentioning: <em>dcast</em>, which is equivalent to MS Excel pivot table, and <em>melt</em>, which does the opposite or unpivots a table.</p>
-<p>An example dataframe:</p>
+<p>Here’s an example dataframe:</p>
 <pre class="r"><code>d &lt;- data.frame(
   account_no = paste(rep(7, 5), 1:5, sep=&quot;&quot;),
   Jan = rnorm(5, 10, 1),
@@ -344,12 +344,12 @@
   Mar = rnorm(5, 10, 3)
 )
 print(d)</code></pre>
-<pre><code>##   account_no       Jan       Feb       Mar
-## 1         71  9.141324 10.716173  5.227886
-## 2         72 10.564509 10.274923  6.817844
-## 3         73  9.598920 11.685326 13.499353
-## 4         74 10.383653  7.084437 14.768640
-## 5         75 10.739765 14.983442 13.657879</code></pre>
+<pre><code>##   account_no      Jan       Feb       Mar
+## 1         71 10.17507  7.037241  7.748398
+## 2         72 12.00141 11.375260 11.218228
+## 3         73 10.26802  6.952967 18.595269
+## 4         74 10.45492 10.975934  7.121958
+## 5         75 10.41618  9.501092 11.182865</code></pre>
 <p>Transormation into a normalized table (unpivot):</p>
 <pre class="r"><code>dn &lt;- reshape2::melt(
   data = d, 
@@ -359,33 +359,33 @@ print(d)</code></pre>
 )
 print(dn)</code></pre>
 <pre><code>##    account_no month   revenue
-## 1          71   Jan  9.141324
-## 2          72   Jan 10.564509
-## 3          73   Jan  9.598920
-## 4          74   Jan 10.383653
-## 5          75   Jan 10.739765
-## 6          71   Feb 10.716173
-## 7          72   Feb 10.274923
-## 8          73   Feb 11.685326
-## 9          74   Feb  7.084437
-## 10         75   Feb 14.983442
-## 11         71   Mar  5.227886
-## 12         72   Mar  6.817844
-## 13         73   Mar 13.499353
-## 14         74   Mar 14.768640
-## 15         75   Mar 13.657879</code></pre>
+## 1          71   Jan 10.175072
+## 2          72   Jan 12.001406
+## 3          73   Jan 10.268018
+## 4          74   Jan 10.454919
+## 5          75   Jan 10.416182
+## 6          71   Feb  7.037241
+## 7          72   Feb 11.375260
+## 8          73   Feb  6.952967
+## 9          74   Feb 10.975934
+## 10         75   Feb  9.501092
+## 11         71   Mar  7.748398
+## 12         72   Mar 11.218228
+## 13         73   Mar 18.595269
+## 14         74   Mar  7.121958
+## 15         75   Mar 11.182865</code></pre>
 <p>And back to the previous format using a pivot:</p>
 <pre class="r"><code>reshape2::dcast(
   data = dn, 
   formula = account_no ~ month, 
   value.var = &quot;revenue&quot;
 )</code></pre>
-<pre><code>##   account_no       Jan       Feb       Mar
-## 1         71  9.141324 10.716173  5.227886
-## 2         72 10.564509 10.274923  6.817844
-## 3         73  9.598920 11.685326 13.499353
-## 4         74 10.383653  7.084437 14.768640
-## 5         75 10.739765 14.983442 13.657879</code></pre>
+<pre><code>##   account_no      Jan       Feb       Mar
+## 1         71 10.17507  7.037241  7.748398
+## 2         72 12.00141 11.375260 11.218228
+## 3         73 10.26802  6.952967 18.595269
+## 4         74 10.45492 10.975934  7.121958
+## 5         75 10.41618  9.501092 11.182865</code></pre>
 </div>
 <div id="links" class="section level2">
 <h2>3. Links</h2>

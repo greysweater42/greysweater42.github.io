@@ -754,9 +754,9 @@ library(lubridate) ## Warning in system(&amp;quot;timedatectl&amp;quot;, intern 
       <pubDate>Wed, 01 Mar 2017 13:07:39 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/reshape2/</guid>
-      <description>1. What is reshape2 and why would you use it? reshape2 is an R package that let’s you change the shape of any dataframe, i.e. to pivot and to “unpivot”.
+      <description>1. What is reshape2 and why would you use it? reshape2 is an R package that lets you change the shape of any dataframe, i.e. to pivot and to “unpivot”.
 Keep in mind that if your favourite R package for dataframes manipulation is data.table, functions dcast and melt are already in this package and work exactly the same as those in reshape2.
- 2. A “Hello World” example In fact there are only two functions worth mentioning: dcast, which is equivalent to MS Excel pivot table, and melt, which does the opposite or unpivots a table.</description>
+ 2. A few simple examples In fact there are only two functions worth mentioning: dcast, which is equivalent to MS Excel pivot table, and melt, which does the opposite or unpivots a table.</description>
     </item>
     
     <item>
