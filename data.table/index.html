@@ -322,7 +322,7 @@
 
 </div>
 <div class="article-info">
-    Mar 2, 2017 &emsp;  &emsp; 4 minutes read
+    Mar 2, 2017 &emsp;  &emsp; 5 minutes read
 </div>
 
 
@@ -331,27 +331,24 @@
 <div id="what-is-data.table-and-why-would-you-use-it" class="section level2">
 <h2>1. What is data.table and why would you use it?</h2>
 <ul>
-<li><p>data.table is an R packge which let’s you work on tabular datasets quickly and easily;</p></li>
-<li><p>comparing to base R or <a href="http://tomis9.com/tidyverse/#/dplyr">dplyr</a> it’s significantly faster;</p></li>
-<li><p>data.table has a concise and SQL-like syntax.</p></li>
+<li><p>data.table is an R packge which lets you work on tabular datasets quickly and easily</p></li>
+<li><p>comparing to base R or <a href="https://greysweater42.github.io/tidyverse/#/dplyr">dplyr</a> it’s significantly faster</p></li>
+<li><p>data.table has a concise and SQL-like syntax</p></li>
 </ul>
 </div>
 <div id="basic-functionalities" class="section level2">
 <h2>2. Basic functionalities</h2>
 <div id="creating-a-data.table" class="section level3">
 <h3>Creating a data.table</h3>
+<p>works exactly the same as creating a data.frame. The methods <code>as.data.table()</code> and <code>as.data.frame()</code> are analogical as well.</p>
 <pre class="r"><code>library(data.table)
 
-df &lt;- data.frame(x = c(&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;a&quot;,&quot;a&quot;),
-                 v = rnorm(5))
-
-dt &lt;- data.table(x = c(&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;a&quot;,&quot;a&quot;),
-                 v = rnorm(5))</code></pre>
-<p>is exactly the same as creating a data.frame. The method <code>as.data.table()</code> works exaclty the same as <code>as.data.frame()</code>.</p>
+df &lt;- data.frame(x = c(&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;a&quot;,&quot;a&quot;), v = rnorm(5))
+dt &lt;- data.table(x = c(&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;a&quot;,&quot;a&quot;), v = rnorm(5))</code></pre>
 </div>
 <div id="filtering" class="section level3">
 <h3>Filtering</h3>
-<p>Let’s create a sample dataset first, baased on mtcars table:</p>
+<p>Let’s create a simple dataset first, based on <code>datasets::mtcars</code> data.frame:</p>
 <pre class="r"><code>sample_dataset &lt;- as.data.table(datasets::mtcars)</code></pre>
 <p>Yes, you already have <em>datasets</em> package installed.</p>
 <pre class="r"><code>sample_dataset[cyl == 6]</code></pre>
@@ -363,7 +360,11 @@ dt &lt;- data.table(x = c(&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;a&quot
 ## 5: 19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
 ## 6: 17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
 ## 7: 19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6</code></pre>
-<p>What happened? We chose only those cars, which have 6 cylinders. Data.table already knew that we mean a column named <code>cyl</code>, not an object from outside of the square brackets.</p>
+<p>What happened? We chose only those cars, which have 6 cylinders. Data.table already knew by saying <code>cyl</code> we meant a column named <code>cyl</code>, not an object from outside of the square brackets, e.g. global environment. In other words, inside the square brackets there is a separate environement, in which there are objects representing data stored in columns.</p>
+<blockquote>
+<p>In my humble opinion, this feature makes working on tabular data much more convenient comparing to pandas, hence I slightly prefer R to Python regarding tabular data.
+There even is a Python version of data.table called <a href="https://datatable.readthedocs.io/en/latest/index.html">datatable</a>. Looking forward to try it out.</p>
+</blockquote>
 </div>
 <div id="selecting-columns" class="section level3">
 <h3>Selecting columns</h3>
@@ -376,7 +377,7 @@ dt &lt;- data.table(x = c(&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;a&quot
 ## 5: 18.7   8  360</code></pre>
 <p>What happened here?</p>
 <ul>
-<li><p>we used a special fucntion from data.table package: <code>.()</code>, which works just like vectors, but inside data.tables square brackets it treats columns as separate objects, so to work on column <code>mpg</code>, you simply type <code>mpg</code> instead of <code>"mpg"</code> or <code>sample_dataset$mpg</code></p></li>
+<li><p>we used a special function from data.table package: <code>.()</code>, which works just like vectors, but inside data.table’s square brackets it treats columns as separate objects, so to work on column <code>mpg</code>, you simply type <code>mpg</code> instead of <code>"mpg"</code> or <code>sample_dataset$mpg</code></p></li>
 <li><p>in square brackets we first provided a comma, as the first argument is always filtering. If we want to skip filtering, we simply write a comma;</p></li>
 <li><p>we chose the first five elements from our dataset. We could write even more square brackets after the whole statement and it would work as a pipe, but this would be too dplyr-ish.</p></li>
 </ul>
@@ -389,17 +390,17 @@ dt &lt;- data.table(x = c(&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;a&quot
 ## 2:   4 26.66364    11
 ## 3:   8 15.10000    14</code></pre>
 <ul>
-<li><p>group by is the last statement inside the square brackets. In the example above, we group by column cyl;</p></li>
-<li><p>in the select clause we do exactly the same thing as in SQL statements;</p></li>
+<li><p>group by is the last possible statement inside the square brackets. In the example above, we group by column cyl;</p></li>
+<li><p>in the <em>select</em> clause we do exactly the same thing as in SQL statements;</p></li>
 <li><p><code>.N</code> means <em>number of</em> or simply <em>count</em>.</p></li>
 </ul>
 </div>
 <div id="reading-and-writing-data" class="section level3">
 <h3>Reading and writing data</h3>
-<p>data.table has the fastest reading and writing functions available in R. These are:</p>
+<p><code>data.table</code> has the fastest reading and writing functions available in R. These are:</p>
 <pre class="r"><code>fwrite(x = mtcars, file = &#39;mtcars.csv&#39;)
 ds &lt;- fread(file = &#39;mtcars.csv&#39;)</code></pre>
-<p><code>fread</code> is pretty clever. It recognises if a file has headers, columns datatypes and separators. What I like the most in these functions is that I literally <em>never</em> have to provide any details about the file. Object and file names are always enough for data.table.</p>
+<p><code>fread</code> is pretty clever. It recognises whether a file has headers, columns datatypes and separators. What I like the most in these functions is that I literally <em>never</em> have to provide any details about the file. Object and file names are always enough for data.table.</p>
 </div>
 <div id="ordering-data" class="section level3">
 <h3>Ordering data</h3>
