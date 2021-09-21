@@ -55,16 +55,6 @@
     </item>
     
     <item>
-      <title>mlops</title>
-      <link>https://greysweater42.github.io/mlops/</link>
-      <pubDate>Wed, 17 Feb 2021 16:56:08 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/mlops/</guid>
-      <description>This is not a proper blog post yet, just my notes, hence it is in &amp;ldquo;scratchpad&amp;rdquo; category.
- 1. What and why 2. DVC 3. mlflow  disclaimer: This is just my opinion. I believe that measuring performance in data science is extremely difficult. When we hire employees, we strive to quantify their skills as if it was possible to create an embedding of a person in a form of a vector or even a scalar.</description>
-    </item>
-    
-    <item>
       <title>pytorch</title>
       <link>https://greysweater42.github.io/pytorch/</link>
       <pubDate>Wed, 17 Feb 2021 16:13:51 +0100</pubDate>
@@ -101,17 +91,6 @@
   usually performs very well even on default hyperparameters
   is resilient to missing values and ourliers
   provides excellect results</description>
-    </item>
-    
-    <item>
-      <title>linux tools</title>
-      <link>https://greysweater42.github.io/linux_tools/</link>
-      <pubDate>Wed, 05 Feb 2020 11:31:21 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/linux_tools/</guid>
-      <description>htop a good explanation
-a more detailed explanation
-the linux command line book p. 113 - top, which is an older brother of htop</description>
     </item>
     
     <item>
@@ -223,31 +202,6 @@ Confusion matrix is confusing at all as the name may suggest.</description>
     </item>
     
     <item>
-      <title>featuretools</title>
-      <link>https://greysweater42.github.io/featuretools/</link>
-      <pubDate>Thu, 07 Feb 2019 11:27:29 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/featuretools/</guid>
-      <description># This is not a proper blog post yet, just my notes. featuretools (TODO)
- https://blog.featurelabs.com/deep-feature-synthesis/
-https://towardsdatascience.com/why-automated-feature-engineering-will-change-the-way-you-do-machine-learning-5c15bf188b96
-https://docs.featuretools.com/#minute-quick-start
-https://blog.featurelabs.com/featuretools-on-spark-2/</description>
-    </item>
-    
-    <item>
-      <title>cassandra</title>
-      <link>https://greysweater42.github.io/cassandra/</link>
-      <pubDate>Tue, 05 Feb 2019 17:33:24 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/cassandra/</guid>
-      <description># This is not a proper blog post yet, just my notes. cassandra (TODO)
- Installation is described on the cassandra webpage, but it didn&amp;rsquo;t work for me, so I&amp;rsquo;ve decided to use cassandra&amp;rsquo;s docker image.
-This is a very nice tutorial of setting up a 3-node cluster of cassandra od docker, creating a simple table, populating it with data and retrieving results.
-Looks like a decent example of using cassandra on (docker with python)[https://mannekentech.</description>
-    </item>
-    
-    <item>
       <title>passing arguments to scripts</title>
       <link>https://greysweater42.github.io/passing_arguments/</link>
       <pubDate>Tue, 05 Feb 2019 09:34:23 +0100</pubDate>
@@ -277,7 +231,8 @@ args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector o
       <pubDate>Fri, 25 Jan 2019 13:46:12 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/pandas/</guid>
-      <description>This is not a proper blog post yet, just my notes.   1. What is pandas and why would you use it?  pandas is a Python package created for working with tables known as DataFrames;
+      <description>This is not a proper blog post yet, just my notes.   &amp;lt;&amp;gt;&amp;lt;&amp;gt;&amp;lt;&amp;gt;&amp;lt;&amp;gt;
+1. What is pandas and why would you use it?  pandas is a Python package created for working with tables known as DataFrames;
  it is the only reasonable Python package for this purpose, which makes Python a little modest comparing to R (base, data.table, dplyr - every one of them has a better interface than pandas) when we process tables;</description>
     </item>
     
@@ -291,26 +246,6 @@ args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector o
  they divide the dataset hierarchically starting from the full dataset, until the stop criterium is met, e.g. the minimum size of a leaf and the purity of leaf;
  in general they are easy to understand, interpret and visualise
  however they are not very efficient, but they can scale, i.</description>
-    </item>
-    
-    <item>
-      <title>caffee</title>
-      <link>https://greysweater42.github.io/caffee/</link>
-      <pubDate>Sun, 06 Jan 2019 19:44:53 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/caffee/</guid>
-      <description># This is not a proper blog post yet, just my notes. caffee (TODO)
- caffee</description>
-    </item>
-    
-    <item>
-      <title>theano</title>
-      <link>https://greysweater42.github.io/theano/</link>
-      <pubDate>Sun, 06 Jan 2019 19:36:46 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/theano/</guid>
-      <description># This is not a proper blog post yet, just my notes. theano (TODO)
- theano vs tensorflow</description>
     </item>
     
     <item>
@@ -412,35 +347,6 @@ args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector o
     </item>
     
     <item>
-      <title>Hugo</title>
-      <link>https://greysweater42.github.io/hugo/</link>
-      <pubDate>Fri, 09 Nov 2018 23:01:35 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/hugo/</guid>
-      <description># This is not a proper blog post yet, just my notes. hugo (TODO)
- A short tutorial
-A really good introductory film:
- And a &amp;hellip;
-Clone your favourite theme do /themes
-Update config.toml based on the themes&amp;rsquo; website
-moving your site to Amazon S3
-Why would you do this?
-  you want to have your own domain, like tomis9.com, not tomis9.github.io
-  you want to find out what Amazon offers for cloud computing - this is a good training project</description>
-    </item>
-    
-    <item>
-      <title>Rmarkdown total basics</title>
-      <link>https://greysweater42.github.io/file/</link>
-      <pubDate>Fri, 09 Nov 2018 23:01:35 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/file/</guid>
-      <description>This is not a proper blog post yet, just my notes. Rmarkdown (TODO)  Before you begin, check out a very nice cheatsheet available at https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf
-Vim key mappings are rather intuitive, pretty similar to basic r filetype mappings:  open up a console window,  rmarkdown::render()s this file and shows the result in your favourite browser.
-In general, Rmarkdown is just markdown with a possibility to add R chunks of code and execute them.</description>
-    </item>
-    
-    <item>
       <title>redis</title>
       <link>https://greysweater42.github.io/redis/</link>
       <pubDate>Sun, 21 Oct 2018 20:49:20 +0200</pubDate>
@@ -470,42 +376,6 @@ In general, Rmarkdown is just markdown with a possibility to add R chunks of cod
   using sqlAlchemy has several advantages:
   you will avoid using long sql strings in your code, which are difficult to read without syntax highlighting (unless you keep you sql queries in separate sql files);
   you are not vulnerable to sql injection attacks anymore;</description>
-    </item>
-    
-    <item>
-      <title>gitlab-ci</title>
-      <link>https://greysweater42.github.io/gitlab_ci/</link>
-      <pubDate>Tue, 21 Aug 2018 17:56:38 +0200</pubDate>
-      
-      <guid>https://greysweater42.github.io/gitlab_ci/</guid>
-      <description># This is not a proper blog post yet, just my notes. gitlab-ci (TODO)
- or gitlab Continuous Integration &amp;amp; Deployment/Continuous Delivery
-link to documentation
-example of use in python and flask
-how aboout installing gitlab locally?
-https://medium.com/90seconds/continuous-integration-and-deployment-for-data-pipelines-at-90-seconds-53bf10521ea7</description>
-    </item>
-    
-    <item>
-      <title>kafka</title>
-      <link>https://greysweater42.github.io/kafka/</link>
-      <pubDate>Sat, 18 Aug 2018 14:33:57 +0200</pubDate>
-      
-      <guid>https://greysweater42.github.io/kafka/</guid>
-      <description># This is not a proper blog post yet, just my notes. kafka (TODO)
- kafka tutorial
-A gentle Introduction to Stream Processing
-Kafka on docker</description>
-    </item>
-    
-    <item>
-      <title>marathon</title>
-      <link>https://greysweater42.github.io/marathon/</link>
-      <pubDate>Sat, 18 Aug 2018 14:24:14 +0200</pubDate>
-      
-      <guid>https://greysweater42.github.io/marathon/</guid>
-      <description># This is not a proper blog post yet, just my notes. marathon (TODO)
- marathon If you want to have Marathon up and running, follow this tutorial.</description>
     </item>
     
     <item>

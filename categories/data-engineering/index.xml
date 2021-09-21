@@ -26,7 +26,8 @@
       <pubDate>Fri, 25 Jan 2019 13:46:12 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/pandas/</guid>
-      <description>This is not a proper blog post yet, just my notes.   1. What is pandas and why would you use it?  pandas is a Python package created for working with tables known as DataFrames;
+      <description>This is not a proper blog post yet, just my notes.   &amp;lt;&amp;gt;&amp;lt;&amp;gt;&amp;lt;&amp;gt;&amp;lt;&amp;gt;
+1. What is pandas and why would you use it?  pandas is a Python package created for working with tables known as DataFrames;
  it is the only reasonable Python package for this purpose, which makes Python a little modest comparing to R (base, data.table, dplyr - every one of them has a better interface than pandas) when we process tables;</description>
     </item>
     
