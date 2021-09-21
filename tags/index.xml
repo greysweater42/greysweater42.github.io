@@ -47,24 +47,6 @@
     </item>
     
     <item>
-      <title>Data engineering</title>
-      <link>https://greysweater42.github.io/tags/data-engineering/</link>
-      <pubDate>Tue, 04 Dec 2018 21:32:35 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/tags/data-engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hadoop</title>
-      <link>https://greysweater42.github.io/tags/hadoop/</link>
-      <pubDate>Tue, 04 Dec 2018 21:32:35 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/tags/hadoop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>DevOps</title>
       <link>https://greysweater42.github.io/tags/devops/</link>
       <pubDate>Mon, 03 Dec 2018 15:01:35 +0100</pubDate>
@@ -79,6 +61,15 @@
       <pubDate>Mon, 03 Dec 2018 15:01:35 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data engineering</title>
+      <link>https://greysweater42.github.io/tags/data-engineering/</link>
+      <pubDate>Fri, 23 Nov 2018 12:58:49 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/tags/data-engineering/</guid>
       <description></description>
     </item>
     

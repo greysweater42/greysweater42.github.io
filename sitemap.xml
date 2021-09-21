@@ -233,16 +233,6 @@
   </url>
   
   <url>
-    <loc>https://greysweater42.github.io/tags/data-engineering/</loc>
-    <lastmod>2018-12-04T21:32:35+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://greysweater42.github.io/tags/hadoop/</loc>
-    <lastmod>2018-12-04T21:32:35+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://greysweater42.github.io/hadoop/</loc>
     <lastmod>2018-12-04T21:32:35+01:00</lastmod>
   </url>
@@ -260,6 +250,11 @@
   <url>
     <loc>https://greysweater42.github.io/git/</loc>
     <lastmod>2018-12-03T15:01:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://greysweater42.github.io/tags/data-engineering/</loc>
+    <lastmod>2018-11-23T12:58:49+02:00</lastmod>
   </url>
   
   <url>

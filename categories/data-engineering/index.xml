@@ -36,10 +36,9 @@
       <pubDate>Tue, 04 Dec 2018 21:32:35 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/hadoop/</guid>
-      <description>1. What is hadoop and why would you use it?   hadoop is the first popular big data tool ever;
-  it let&amp;rsquo;s you &amp;ldquo;quickly&amp;rdquo; compute huge amounts of data thanks to dividing computation into many machines (a cluster of machines); &amp;ldquo;quickly&amp;rdquo; comparing to a standard, one-machine approach;
-  you can store and easily access huge amounts of data thanks to hadoop&amp;rsquo;s distributed file system (hdfs);
-  in general, hadoop is a cornerstone of big data.</description>
+      <description>1. What is hadoop and why would you use it?   hadoop is the first ever popular big data tool;
+  it lets you quickly compute huge amounts of data thanks to dividing computation into many machines i.e. a cluster of machines; (quickly comparing to a standard, one-machine approach);
+  you can store and easily access huge amounts of data thanks to hadoop&amp;rsquo;s distributed file system (hdfs);</description>
     </item>
     
     <item>

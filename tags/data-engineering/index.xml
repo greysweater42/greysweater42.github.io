@@ -5,22 +5,10 @@
     <link>https://greysweater42.github.io/tags/data-engineering/</link>
     <description>Recent content in Data engineering on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 04 Dec 2018 21:32:35 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 23 Nov 2018 12:58:49 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/tags/data-engineering/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>hadoop</title>
-      <link>https://greysweater42.github.io/hadoop/</link>
-      <pubDate>Tue, 04 Dec 2018 21:32:35 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/hadoop/</guid>
-      <description>1. What is hadoop and why would you use it?   hadoop is the first popular big data tool ever;
-  it let&amp;rsquo;s you &amp;ldquo;quickly&amp;rdquo; compute huge amounts of data thanks to dividing computation into many machines (a cluster of machines); &amp;ldquo;quickly&amp;rdquo; comparing to a standard, one-machine approach;
-  you can store and easily access huge amounts of data thanks to hadoop&amp;rsquo;s distributed file system (hdfs);
-  in general, hadoop is a cornerstone of big data.</description>
-    </item>
     
     <item>
       <title>spark</title>
