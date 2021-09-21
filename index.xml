@@ -730,8 +730,9 @@ However, there are certain cases when OOP may come up helpful:
       <pubDate>Fri, 03 Mar 2017 13:46:45 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/lubridate/</guid>
-      <description>1. What is lubridate and why would you use it?  it’s an R package that makes working with dates easy;
- because in basic, no-frills R working with dates may be a little bit daunting
+      <description>1. What is lubridate and why would you use it?  it’s an R package that makes working with dates easy
+ because in base R working with dates may be a little bit daunting
+ the only disadvantage is performance, so use it for small datasets only
    2. A few “Hello World” examples Load the package
 library(lubridate) ## Warning in system(&amp;quot;timedatectl&amp;quot;, intern = TRUE): running command &amp;#39;timedatectl&amp;#39; ## had status 1 Convert a string to class Date:</description>
     </item>

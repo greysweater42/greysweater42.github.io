@@ -207,18 +207,6 @@ However, there are certain cases when OOP may come up helpful:
     </item>
     
     <item>
-      <title>lubridate</title>
-      <link>https://greysweater42.github.io/lubridate/</link>
-      <pubDate>Fri, 03 Mar 2017 13:46:45 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/lubridate/</guid>
-      <description>1. What is lubridate and why would you use it?  it’s an R package that makes working with dates easy;
- because in basic, no-frills R working with dates may be a little bit daunting
-   2. A few “Hello World” examples Load the package
-library(lubridate) ## Warning in system(&amp;quot;timedatectl&amp;quot;, intern = TRUE): running command &amp;#39;timedatectl&amp;#39; ## had status 1 Convert a string to class Date:</description>
-    </item>
-    
-    <item>
       <title>sqldf</title>
       <link>https://greysweater42.github.io/sqldf/</link>
       <pubDate>Wed, 01 Mar 2017 13:07:39 +0100</pubDate>

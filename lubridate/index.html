@@ -322,7 +322,7 @@
 
 </div>
 <div class="article-info">
-    Mar 3, 2017 &emsp;  &emsp; 1 minutes read
+    Mar 3, 2017 &emsp;  &emsp; 2 minutes read
 </div>
 
 
@@ -331,8 +331,9 @@
 <div id="what-is-lubridate-and-why-would-you-use-it" class="section level2">
 <h2>1. What is lubridate and why would you use it?</h2>
 <ul>
-<li><p>it’s an R package that makes working with dates easy;</p></li>
-<li><p>because in basic, no-frills R working with dates may be a little bit daunting</p></li>
+<li><p>it’s an R package that makes working with dates easy</p></li>
+<li><p>because in base R working with dates may be a little bit daunting</p></li>
+<li><p>the only disadvantage is performance, so use it for small datasets only</p></li>
 </ul>
 </div>
 <div id="a-few-hello-world-examples" class="section level2">
@@ -365,7 +366,7 @@ print(d)</code></pre>
 <pre><code>## [1] &quot;1410-07-15&quot;</code></pre>
 <pre class="r"><code>class(d)</code></pre>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
-<p>Now, analogical to python’s <code>datetime.now()</code>:</p>
+<p><code>now</code>, the same as <code>datetime.now()</code> in Python’s datetime package:</p>
 <pre class="r"><code># the base way
 n &lt;- Sys.time()
 # the lubridate way
@@ -374,11 +375,11 @@ n &lt;- now()</code></pre>
 <pre class="r"><code>hour(n)</code></pre>
 <pre><code>## [1] 18</code></pre>
 <pre class="r"><code>minute(n)</code></pre>
-<pre><code>## [1] 29</code></pre>
+<pre><code>## [1] 35</code></pre>
 <pre class="r"><code>second(n)</code></pre>
-<pre><code>## [1] 38.00607</code></pre>
+<pre><code>## [1] 10.45606</code></pre>
 <p>Days of the week</p>
-<pre class="r"><code>wday(d)  # numbering starts from Sunday! you can adjust it, read ?wday</code></pre>
+<pre class="r"><code>wday(d)  # numbering starts from Sunday! you can adjust it, have a look at ?wday</code></pre>
 <pre><code>## [1] 1</code></pre>
 <p>Adding / subtracting dates:</p>
 <pre class="r"><code>print(d)</code></pre>
