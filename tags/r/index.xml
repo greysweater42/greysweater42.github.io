@@ -180,22 +180,6 @@ However, there are certain cases when OOP may come up helpful:
     </item>
     
     <item>
-      <title>shiny</title>
-      <link>https://greysweater42.github.io/shiny/</link>
-      <pubDate>Fri, 24 Mar 2017 09:13:23 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/shiny/</guid>
-      <description>1. What is shiny and why would you use it?  shiny is an R package that let&amp;rsquo;s you create dynamic web applications without any knowledge of html, css and javascript, php etc. Pure R.  Sounds like a dream?
-  Advantages:
-  easy to learn the basics;
-  easy to set up.
-    Disadvantages:
-  scalability;
-  performance;
-  in order to make the application work the way you want to, you have to involve javascript, html and css.</description>
-    </item>
-    
-    <item>
       <title>ggplot(2)</title>
       <link>https://greysweater42.github.io/ggplot2/</link>
       <pubDate>Fri, 24 Mar 2017 09:03:49 +0100</pubDate>
