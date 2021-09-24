@@ -309,7 +309,7 @@
 <div id="what-is-tidyverse-and-why-would-you-use-it" class="section level2">
 <h2>1. What is tidyverse and why would you use it?</h2>
 <ul>
-<li><p><a href="https://www.tidyverse.org/">tidyverse</a> is a collection of R packages that make working on data a much nicer experience than using base R;</p></li>
+<li><p><a href="https://www.tidyverse.org/">tidyverse</a> is a collection of R packages that make working on data a much nicer experience comparing to base R;</p></li>
 <li><p>it consists of tidyr, dplyr, ggplot2, tibble and a few more.</p></li>
 </ul>
 <p>To be honest, I prefer <a href="http://tomis9.com/data.table">data.table</a> to tidyverse, as it resembles basic R data.frames, is faster, more concise and, IMHO, more SQL-ish. But it takes longer to master and may be more difficult to understand, even your own code after some time. So, there is no obvious choice between data.table and dplyr.</p>
@@ -318,7 +318,7 @@
 <h2>2. A few “Hello World” examples</h2>
 <div id="readr" class="section level3">
 <h3>readr</h3>
-<p>Or how do we read and write data in <code>tidyverse</code>.</p>
+<p>Or how we read and write data in <code>tidyverse</code>.</p>
 <p>Nobody uses basic R functions to read tabular data anymore. <code>data.table::fread()</code> and <code>readr::read_csv()</code> are smarter and faster.</p>
 <p>Let’s create a sample dataset:</p>
 <pre class="r"><code>sample_data &lt;- data.frame(
@@ -351,30 +351,22 @@ class(sample_data)</code></pre>
 <pre><code>## # A tibble: 5 x 2
 ##   col_a col_b
 ##   &lt;chr&gt; &lt;dbl&gt;
-## 1 a        83
-## 2 b        49
-## 3 c        94
-## 4 d        36
-## 5 e        87</code></pre>
+## 1 a        30
+## 2 b        10
+## 3 c        45
+## 4 d        79
+## 5 e        96</code></pre>
 <p>Tibbles do not differ much from data.frames, except (according to the documentation, i.e. <code>?tibble::tibble</code>):</p>
 <blockquote>
-<pre><code>‘tibble()’ is a trimmed down version of ‘data.frame()’ that:
-
-   • Never coerces inputs (i.e. strings stay as strings!).
-
-   • Never adds ‘row.names’.
-
-   • Never munges column names.
-
-   • Only recycles length 1 inputs.
-
-   • Evaluates its arguments lazily and in order.
-
-   • Adds ‘tbl_df’ class to output.
-
-   • Automatically adds column names.
-
-‘data_frame()’ is an alias to ‘tibble()’.</code></pre>
+<p>‘tibble()’ is a trimmed down version of ‘data.frame()’ that:</p>
+<p>• Never coerces inputs (i.e. strings stay as strings!).</p>
+<p>• Never adds ‘row.names’.</p>
+<p>• Never munges column names.</p>
+<p>• Only recycles length 1 inputs.</p>
+<p>• Evaluates its arguments lazily and in order.</p>
+<p>• Adds ‘tbl_df’ class to output.</p>
+<p>• Automatically adds column names.</p>
+<p>‘data_frame()’ is an alias to ‘tibble()’.</p>
 </blockquote>
 <p>Btw, to create a tibble by hand, you use:</p>
 <pre class="r"><code>tibble::data_frame(a = 1:5, b = letters[1:5])</code></pre>
@@ -424,7 +416,7 @@ class(sample_data)</code></pre>
 <li><p>we used one of basic R datasets: mtcars;</p></li>
 <li><p>we piped it with <code>%&gt;%</code> to the next function <em>(piping, or pipelines, is one of the oldest Unix concepts, dating back to 1970s)</em>;</p></li>
 <li><p>we used a <code>select</code> to select columns we were interested in, just like in SQL;</p></li>
-<li><p>we used a <code>filter</code> function just as SQL’s where clause;</p></li>
+<li><p>we used a <code>filter</code> function just as SQL’s <code>where</code> clause;</p></li>
 <li><p>we ordered the dataset with <code>arrange</code>;</p></li>
 <li><p>we added two new columns with <code>mutate</code>;</p></li>
 <li><p>we used a <code>head()</code> function to print only a few first rows of our dataframe.</p></li>
@@ -444,7 +436,7 @@ class(sample_data)</code></pre>
 <li><p>we aggregated our data with <code>group_by</code> in the same way as we do in SQL;</p></li>
 <li><p>we wrote the aggregation functions: <code>n()</code> stands for number of objects or <code>count</code> in SQL and <code>mean()</code> is an example of an aggreagtion function (<code>sum</code>, <code>sd</code>, <code>median</code>, …)</p></li>
 </ul>
-<p>Another example of grouping, woth count (count is exactly the same as <code>group_by() %&gt;% summarise(n = n())</code>, but shorter):</p>
+<p>Another example of grouping, with count (count is exactly the same as <code>group_by() %&gt;% summarise(n = n())</code>, but shorter):</p>
 <pre class="r"><code>mtcars %&gt;% 
     count(cyl)</code></pre>
 <pre><code>##   cyl  n
@@ -454,7 +446,7 @@ class(sample_data)</code></pre>
 </div>
 <div id="ggplot2" class="section level3">
 <h3>ggplot2</h3>
-<p>I prepared a separate tutorial for <a href="http://tomis9.com/ggplot2">ggplot2</a>.</p>
+<p>I prepared a separate tutorial for <a href="https://greysweater42.github.io/ggplot2">ggplot2</a>.</p>
 </div>
 </div>
 <div id="curiosities" class="section level2">
