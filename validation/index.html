@@ -344,14 +344,14 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     4     5    11    13    15    19    20    21    23    29 
-## FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE</code></pre>
+<pre><code>##     1     2     8     9    12    16    17    19    24    25 
+## FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    11    0
-##      TRUE      4   15</code></pre>
+##      FALSE    10    0
+##      TRUE      5   15</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
@@ -363,26 +363,26 @@ confusionMatrix(predict(m2, test), test$Species)</code></pre>
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         11          0
-##   versicolor      4         15
+##   setosa         10          0
+##   versicolor      5         15
 ##                                           
-##                Accuracy : 0.8667          
-##                  95% CI : (0.6928, 0.9624)
+##                Accuracy : 0.8333          
+##                  95% CI : (0.6528, 0.9436)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 2.974e-05       
+##     P-Value [Acc &gt; NIR] : 0.0001625       
 ##                                           
-##                   Kappa : 0.7333          
+##                   Kappa : 0.6667          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 0.1336          
+##  Mcnemar&#39;s Test P-Value : 0.0736383       
 ##                                           
-##             Sensitivity : 0.7333          
+##             Sensitivity : 0.6667          
 ##             Specificity : 1.0000          
 ##          Pos Pred Value : 1.0000          
-##          Neg Pred Value : 0.7895          
+##          Neg Pred Value : 0.7500          
 ##              Prevalence : 0.5000          
-##          Detection Rate : 0.3667          
-##    Detection Prevalence : 0.3667          
-##       Balanced Accuracy : 0.8667          
+##          Detection Rate : 0.3333          
+##    Detection Prevalence : 0.3333          
+##       Balanced Accuracy : 0.8333          
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
