@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>greysweater42&#39;s cookbook</title>
+  <link rel="shortcut icon" type='image/x-icon' href="https://greysweater42.github.io/favicon.ico"/> 
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">        
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Fascinate&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="https://greysweater42.github.io/css/bootstrap-toc.css">
+
+  
+  <link rel="stylesheet" href="https://greysweater42.github.io/css/darcula.css">
+
+  
+  <link rel="stylesheet" href="https://greysweater42.github.io/css/style.css">
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNMCY8RRGL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NNMCY8RRGL');
+  </script>
+
+</head>
+
+
+<body data-spy="scroll" data-target="#toc">
+
+
+
+<nav id="navbar" class="navbar navbar-expand-md fixed-top navbar-hide transition">
+
+  
+  <a class="navbar-brand"></a>
+
+  <button class="navbar-toggler float-xs-right" data-toggle="collapse" data-target="#collapsibleNavbar">
+    Menu
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="https://greysweater42.github.io">Home</a>
+      </li>
+      
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/async_thread/">async/threads</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/decorators/">decorators</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/fastai/">fastai</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/flask/">flask</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/ggplot2/">ggplot2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/keras/">keras</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/learning_tensorflow/">learning tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pyenv/">pyenv, virtualenv, freeze</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">R</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/data.table/">data.table</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/debugging/">debugging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/ggplot2/">ggplot2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/lubridate/">lubridate</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/nls/">nls</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/sqldf/">sqldf</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tidyverse/">tidyverse</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/fastai/">fastai</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/keras/">keras</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/learning_tensorflow/">learning tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/validation/">model validation</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/nlp/">nlp</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/nls/">nls</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pca/">PCA / SVD</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/async_thread/">async/threads</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">DevOps</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/bash/">bash</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/docker/">docker</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/flask/">flask</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/git/">git</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/heroku/">heroku</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/mesos/">mesos</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pyenv/">pyenv, virtualenv, freeze</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/vagrant/">vagrant</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Projects</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/fiat_ferrari/">fiat 126 v ferrari</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/finance_nn/">neural networks vs stock market</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/vim_vs_emacs/">vim vs emacs - text mining to settle the editor war</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/cookbook/">writing a cookbook</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
+          
+        </div>
+      </li>
+    
+    </ul>
+
+  </div>  
+
+</nav>
+
+
+
+<div class="jumbotron text-center" id="header">
+
+  <div id="header-title">
+      <a href="https://greysweater42.github.io">greysweater42&#39;s cookbook</a>
+  </div>
+
+  <p style="color: white;">data science tutorials and snippets prepared by greysweater42</p> 
+
+</div>
+
+
+<nav id="toc" data-toggle="toc" class="sticky-top d-none d-xl-block"></nav>
+
+<div class="article">
+
+<div class="article-categories">
+  
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/python" role="button">Python </a>
+    &emsp;
+  
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/data-engineering" role="button">Data engineering </a>
+    &emsp;
+  </br>
+</div>
+<div class="article-title">
+  
+  async/threads
+
+</div>
+<div class="article-info">
+    Sep 29, 2021 &emsp;  &emsp; 11 minutes read
+</div>
+
+<h2 id="1-what-does-asynchronous-and-threading-mean-and-why-is-it-important">1. What does &ldquo;asynchronous&rdquo; and &ldquo;threading&rdquo; mean and why is it important?</h2>
+<p>Let&rsquo;s begin with the definition of processes and threads provided <a href="https://stackoverflow.com/a/200511">Gerald of Stackoverflow</a>:</p>
+<blockquote>
+<p>A process is a collection of code, memory, data and other resources. A thread is a sequence of code that is executed within the scope of the process. You can (usually) have multiple threads executing concurrently within the same process.</p>
+</blockquote>
+<p><em>Asynchrounous</em> usually refers to using many processes, while <em>threading</em> - many threads within one process.</p>
+<ul>
+<li>
+<p>It is particurarily useful in data engineering, because it can significantly reduce the time of data processing (which can also be done if you use <a href="https://www.pypy.org/">PyPy</a>)</p>
+</li>
+<li>
+<p>Unfortunately there are at leat 4 Python packages used for async/threading, which makes working with them a little confusing. What are the differences between them and which one to choose?</p>
+</li>
+</ul>
+<h2 id="2-traditional-approaches">2. Traditional approaches</h2>
+<h3 id="21-concurrentfutures">2.1 concurrent.futures</h3>
+<p>This chapter was inspired by an excellent book <a href="https://www.oreilly.com/library/view/fluent-python/9781491946237/">Fluent Python by Luciano Ramalho</a>, chapter 17: Concurrency with Futures.</p>
+<h4 id="211-threads">2.1.1 threads</h4>
+<p>Let&rsquo;s say we want to run a trivial function <code>sleep_int</code> several times. Obviously we want to do this concurrently / in parallel.</p>
+<pre><code class="language-{python}" data-lang="{python}">import time
+from concurrent import futures
+from datetime import datetime
+
+from tqdm import tqdm  # pip install tqdm
+
+
+def sleep_int(i):
+    time.sleep(i)
+    return i
+</code></pre><p>This is how we can approach this using threads. In general, as threads are all in the same process, GIL (Global Interpreter Lock) would not allow our <code>sleep_int</code> runs to run at the same time, unless they are <code>sleep</code>ing or read/write data (input/output). In our case we <code>sleep</code>, so we can use threads in the same way as processes.</p>
+<pre><code class="language-{python}" data-lang="{python}">with futures.ThreadPoolExecutor(max_workers=3) as executor:
+    results = executor.map(sleep_int, range(5))
+    print(type(results))
+    for result in results:
+        # time when a task is finished and its result
+        print(f&quot;{datetime.now().strftime('%H:%M:%S.%f')}: {result}&quot;)
+</code></pre><pre><code>&lt;class 'generator'&gt;
+17:57:44.577651: 0
+17:57:45.578580: 1
+17:57:46.579840: 2
+17:57:47.580866: 3
+17:57:49.582768: 4
+</code></pre><p>We can see that <code>results</code> is of class <code>generator</code>, which means in practice, that:</p>
+<ul>
+<li>it is an iterable object, which resembles lists,</li>
+<li>but we do not known its length until it tells us &ldquo;this is the end&rdquo;,</li>
+<li>and items of generator are <em>ephemeral</em>, which means they disappear as soon as you move to another item of the generator (I guess <em>ephemeral</em> may not be the best word to describe this feature, but you get the idea).</li>
+</ul>
+<p>Another interesting fact is that we defined 3 threads (<code>max_workers=3</code>) to be run simultaneously, so we can see that:</p>
+<ul>
+<li>runs 0, 1 and 2 started at the same time (around <code>17:57:44.577</code>) and they occupied all 3 available threads,</li>
+<li>but run 3 started also around <code>17:57:44.577</code>, because run 0 took 0 seconds,</li>
+<li>and run 4 started around <code>17:57:45.58</code>, right after run 1 ended and freed one of the threads.</li>
+</ul>
+<h4 id="212-processes">2.1.2 processes</h4>
+<p>There are only two difference between using processes and threads in <code>concurrent.futures</code>:</p>
+<ul>
+<li>instead of <code>ThreadPoolExecutor</code> we write <code>ProcessPoolExecutor</code>,</li>
+<li>and our function, in this case <code>sleep_int</code> uses separate processes, not just separate threads of one process, so it can run any group of functions simultaneously, not only those which <code>sleep</code> or read/write (input/output).</li>
+</ul>
+<p>An analogical example of using multiple processes:</p>
+<pre><code>with futures.ProcessPoolExecutor(3) as executor:
+    results = executor.map(sleep_int, range(5))
+    for result in results:
+        print(f&quot;{datetime.now().strftime('%H:%M:%S.%f')}: {result}&quot;)
+</code></pre><h4 id="213-progress-bars-and-error-handling">2.1.3 progress bars and error handling</h4>
+<p>We usually want to run our code in parallel/concurrently to save time, when the task is time-consuming. But solving this kind of problem has two disadvantages:</p>
+<ul>
+<li>we do not know how long the task is going to last</li>
+<li>we fear error on one of the runs, which forces us to run everything again.</li>
+</ul>
+<p>Luckily there are ways to address these issues:</p>
+<ul>
+<li>use progress bar, in this case tqdm</li>
+<li>and handle errors, preferably outside of sleep_int function</li>
+</ul>
+<p>Unfortunately we can not use our convenient <code>executor.map</code> friend this time.
+We need to dive a little deeper into <code>concurrent.futures</code> and use <code>futures.as_completed()</code>, which takes an interable object of futures to be executed and generates their results when they end.</p>
+<pre><code>n = 5
+with futures.ProcessPoolExecutor(max_workers=3) as executor:
+    to_do = [executor.submit(sleep_int, i) for i in range(n)]
+    done_iter = futures.as_completed(to_do)
+    # since done_iter is a generator, we should provide total length to tqdm
+    for future in tqdm(done_iter, total=n):
+        try:
+            res = future.result()
+        except ValueError: ## e.g. &quot;sleep length must be non-negative&quot;
+            res = 0    
+        print(f&quot;{datetime.now().strftime('%H:%M:%S.%f')}: {res}&quot;)
+</code></pre><h3 id="22-threading">2.2 threading</h3>
+<p>Threading in Python may be useful only for input/output bound tasks, but it works also work sleep function, as input/output and sleep both can be run simultaneously on multiple threads, despite GIL.
+Anyway the following example is not particurarily useful, because <code>threading</code> is a more low-level package comparing to <code>concurrent</code>, so in practice it is more convenient to use <code>concurrent</code>.</p>
+<p>To sum up, in practice if you really want to use threads, you should use <code>concurrent.futures</code>, but in general you will want to use many processes, not many threads of one process.</p>
+<pre><code class="language-{python}" data-lang="{python}">import threading
+import time
+from datetime import datetime
+
+
+def sleep_int(i):
+    time.sleep(i)
+    print(f&quot;{datetime.now().strftime('%H:%M:%S.%f')}: {i}&quot;)
+    return 1
+
+threads = []
+
+for i in range(5):
+    t = threading.Thread(target=sleep_int, args=[i])
+    t.start()
+    threads.append(t)
+
+for thread in threads:
+    thread.join()
+
+print(&quot;done&quot;)
+</code></pre><pre><code>00:37:10.190047: 0
+00:37:11.191345: 1
+00:37:12.192518: 2
+00:37:13.193746: 3
+00:37:14.194839: 4
+done
+</code></pre><p>As you can see, for each run of <code>sleep_int</code> function we created a separate thread using <code>threading.Thread</code> constructor, started them - this is the moment when the computation starts in the background, on a separate thread - and added each of them to the <code>threads</code> list, so we could <code>.join()</code> each of the threads later. Joining threads means that the main thread in which the script is run will wait until all the <code>threading.Thread</code>s are over before continuing, in this case &ldquo;done&rdquo; was printed when all the <code>threading.Thread</code>s were finished.</p>
+<h3 id="23-multiprocessing">2.3 multiprocessing</h3>
+<h4 id="231-simplest-case">2.3.1 simplest case</h4>
+<p>All you ever need to know about multiprocessing is available in <a href="https://docs.python.org/3/library/multiprocessing.html">Python&rsquo;s docs on multiprocessing</a>, but as this is quite a demanding and time-consuming lecture, let me shorten it a little.</p>
+<p><code>multiprocessing</code> at first sight works exactly the same as <code>concurrent.futures.ProcessPoolExecutor</code>, as you can see in the example below:</p>
+<pre><code>import time
+from datetime import datetime
+from multiprocessing import Pool
+
+
+def sleep_int(i):
+    time.sleep(i)
+    return i
+
+
+with Pool(3) as executor:
+    print(datetime.now().strftime('%H:%M:%S.%f'))
+    results = executor.map(sleep_int, range(5))
+    print(type(results))
+    for result in results:
+        print(f&quot;{datetime.now().strftime('%H:%M:%S.%f')}: {result}&quot;)
+</code></pre><pre><code>22:52:57.521025
+&lt;class 'list'&gt;
+22:53:02.528105: 0
+22:53:02.528179: 1
+22:53:02.528197: 2
+22:53:02.528210: 3
+22:53:02.528222: 4
+</code></pre><p>but there is one quite important difference: the <code>results</code> object is not a generator, but a list, so we may receive the results as soon as all the futures are ended. In this case, after 5 seconds (<code>sleep_int(4)</code> started right after <code>sleep_int(1)</code> finished, just as a process was freed). A list however has an advatage: it&rsquo;s objects are always available, i.e. they are not <em>ephemeral</em>.</p>
+<h4 id="232-using-tqdm-with-multiprocessing">2.3.2 using tqdm with multiprocessing</h4>
+<p>There is a simple way for executor to return a generator instead of a list: an <code>imap</code> method instead of <code>map</code>. This minor change lets us use tqdm for monitoring progress, but we still have to provide the length of the generator by ourselves.</p>
+<pre><code class="language-{python}" data-lang="{python}">from tqdm import tqdm
+
+with Pool(3) as executor:
+    results = executor.imap(sleep_int, range(5))
+    for result in tqdm(results, total=5):
+        print(f&quot;{datetime.now().strftime('%H:%M:%S.%f')}: {result}&quot;)
+</code></pre><h4 id="233-similarity-to-threading">2.3.3 similarity to threading</h4>
+<p>Multiprocessing API is very similar to threading&rsquo;s. If you don&rsquo;t use <code>Pool</code>, you define separate processes in a loop, start them and after that, join them, but this is rarely used in practice.</p>
+<pre><code class="language-{python}" data-lang="{python}">processes = []
+
+for i in range(5):
+    p = Process(target=sleep_int, args=[i])
+    p.start()
+    processes.append(p)
+
+for process in processes:
+    process.join()
+</code></pre><h4 id="234-global-variables">2.3.4 global variables</h4>
+<p>In general when you use multiprocessing, separate processes do not communicate with each other nor they do not have any side effects. But there are two posiibilites if you really need one of these features:</p>
+<ul>
+<li>
+<p>shared memory</p>
+</li>
+<li>
+<p>server process</p>
+</li>
+</ul>
+<p>both of them are fairly straightfoward and are thoroughly described in <a href="https://docs.python.org/3/library/multiprocessing.html#sharing-state-between-processes">docs</a>.</p>
+<h2 id="3-more-sophisticated-approaches">3. More sophisticated approaches</h2>
+<h3 id="31-asyncio">3.1 asyncio</h3>
+<h4 id="311-coroutine---high-level-api">3.1.1 coroutine - high-level API</h4>
+<p>According to <a href="https://docs.python.org/3/library/asyncio.html">asyncio docs</a>,</p>
+<blockquote>
+<p>Coroutines declared with the async/await syntax is the preferred way of writing asyncio applications</p>
+</blockquote>
+<p>so it seems to be different to most tutorials I&rsquo;ve seen so far (e.g. <a href="https://www.youtube.com/watch?v=BI0asZuqFXM">sentdex&rsquo;s</a> or <em>Fluent Python</em>, Chapter 18: Concurrency with asyncio), which propose low-level API: event loops, which I describe later in this blog post.</p>
+<p>BTW, <em>Fluent Python</em> suggests using an older syntax for <code>asyncio</code>, specifically <a href="https://docs.python.org/3/library/asyncio-task.html#generator-based-coroutines">generator-base coroutines</a>, which currently is deprecated.</p>
+<p>To be clear, in this context a <em>coroutine</em> is a function declared as <code>async def</code> function.</p>
+<p>A simple example of asyncio using coroutine:</p>
+<pre><code class="language-{python}" data-lang="{python}">import asyncio
+from datetime import datetime
+
+
+async def sleep_int(i):
+    await asyncio.sleep(i)  # asyncio strongly prefers asyncio.sleep over time.sleep
+    print(f&quot;{datetime.now().strftime('%H:%M:%S.%f')}: {i}&quot;)
+    return i
+
+
+async def coro():
+    # aws - short for awaitables
+    aws = [asyncio.create_task(sleep_int(i)) for i in range(5)]
+    return await asyncio.gather(*aws)
+
+
+results = asyncio.run(coro())  # run coroutine
+print(results)
+</code></pre><pre><code>10:44:33.451405: 0
+10:44:34.452606: 1
+10:44:35.452879: 2
+10:44:36.453250: 3
+10:44:37.453631: 4
+[0, 1, 2, 3, 4]
+</code></pre><p>Once you get used to the somehow unusual syntax (<code>async</code> and <code>await</code>), concurrency with <code>asyncio</code> has rather similar API to <code>multiprocessing</code> or <code>threading</code>: we define a function, which will be run asynchronously, <code>create_task</code>s (called <code>Process</code>es in multiprocessing) and <code>await</code> for them to finish (called <code>join</code> in multiprocessing).</p>
+<p>Unfortunately defining the number of available processes (or Pool size in multiprocessing) is more difficult and requires using <a href="https://stackoverflow.com/a/48486557">semaphores</a>.</p>
+<h4 id="312-event-loop---low-level-api">3.1.2 event loop - low-level API</h4>
+<p>Here&rsquo;s an example of asyncio with event loop instead of coroutine. This solution is not recommended by asyncio docs, but it is more popular among asycion tutorials. It works exactly the same as coroutine described before, except you cannot retrieve what your function returns.</p>
+<pre><code class="language-{python}" data-lang="{python}">import asyncio
+from datetime import datetime
+
+
+async def sleep_int(i):
+    await asyncio.sleep(i)  # asyncio strongly prefers asyncio.sleep over time.sleep
+    print(f&quot;{datetime.now().strftime('%H:%M:%S.%f')}: {i}&quot;)
+    return i
+
+
+loop = asyncio.get_event_loop()
+tasks = [loop.create_task(sleep_int(i)) for i in range(5)]
+try:
+    loop.run_until_complete(asyncio.wait(tasks))
+finally:
+    loop.close()
+</code></pre><p>The <code>try-except-finally</code> block is used here to assure that the event loop will always be closed.</p>
+<h3 id="32-ray">3.2 ray</h3>
+<p><a href="https://github.com/ray-project/ray">Ray</a> (<a href="https://docs.ray.io/en/latest/index.html">docs</a>) is a multitool for machine learning, and one of its features is multiptocessing. The syntax is very simple and similar to other packages:</p>
+<pre><code>import time
+from datetime import datetime
+
+import ray
+
+ray.init()
+
+
+@ray.remote
+def sleep_int(i):
+    time.sleep(i)
+    print(f&quot;{datetime.now().strftime('%H:%M:%S.%f')}: {i}&quot;)
+    return i
+
+
+futures = [sleep_int.remote(i) for i in range(5)]
+results = ray.get(futures)
+print(results)
+</code></pre><pre><code>(pid=17741) 12:17:50.872821: 0
+(pid=17740) 12:17:51.873061: 1
+(pid=17738) 12:17:52.869560: 2
+(pid=17737) 12:17:53.870272: 3
+[0, 1, 2, 3, 4]
+(pid=17735) 12:17:54.875371: 4
+</code></pre><h3 id="33-celery">3.3 celery</h3>
+<p>Celery works quite differently comparing to the tools described before:</p>
+<ul>
+<li>you run a separate instance of celery application, called <code>worker</code>, on which your <code>task</code> will be executed,</li>
+<li>and a separate queue app, usually redis,</li>
+<li>and then you can prompt the worker (via queue) to run the task.</li>
+</ul>
+<p>There is an excellent <a href="https://docs.celeryproject.org/en/stable/index.html">documentation</a> with pretty good <a href="https://docs.celeryproject.org/en/stable/getting-started/index.html">introductory tutorials</a>, but from my own experience the best way to learn how celery works is by trial-and-error: just try out various ideas and see if they work or not, then move on to documentation to understand <em>why</em> they work.</p>
+<p>Here&rsquo;s a simple example of celery:</p>
+<pre><code class="language-{bash}" data-lang="{bash}">pip install celery
+pip install sqlalchemy  # for sqlite backend
+</code></pre><p>tasks.py</p>
+<pre><code class="language-{python}" data-lang="{python}">from celery import Celery
+import time
+
+BROKER_URL = &quot;sqla+sqlite:///celery.db&quot;
+BACKEND_URL = &quot;db+sqlite:///celery_results.db&quot;
+app = Celery(broker=BROKER_URL, backend=BACKEND_URL)
+
+
+@app.task
+def sleep_int(i):
+    time.sleep(i)
+    return i
+</code></pre><p>We&rsquo;ve created a <code>Celery</code> app instance and provided information about the queue. In the case above we chose <code>sqlite</code>, but in production you would rather use redis in docker conteiner or or on a separate server. Then the URLs would look more like this:</p>
+<pre><code class="language-{python}" data-lang="{python}">BROKER_URL = 'redis://172.18.0.2:6379/0'
+BACKEND_URL = 'redis://172.18.0.2:6379/0'
+</code></pre><p>Run the celery instance with:</p>
+<pre><code class="language-{bash}" data-lang="{bash}">celery -A tasks worker --loglevel=INFO
+</code></pre><p>where <code>tasks</code> is a name of the file <code>tasks.py</code>. This should print something like this:</p>
+<pre><code> -------------- celery@td v5.1.2 (sun-harmonics)
+--- ***** ----- 
+-- ******* ---- Linux-5.10.0-1045-oem-x86_64-with-glibc2.31 2021-10-01 13:47:46
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .&gt; app:         __main__:0x7f8f0bd2f370
+- ** ---------- .&gt; transport:   sqla+sqlite:///celery.db
+- ** ---------- .&gt; results:     sqlite:///celery_results.db
+- *** --- * --- .&gt; concurrency: 8 (prefork)
+-- ******* ---- .&gt; task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .&gt; celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . tasks.sleep_int
+
+[2021-10-01 13:47:46,667: INFO/MainProcess] Connected to sqla+sqlite:///celery.db
+[2021-10-01 13:47:46,681: INFO/MainProcess] celery@td ready.
+</code></pre><p>Then you can write a separate file with the following content:</p>
+<p>run.py</p>
+<pre><code class="language-{python}" data-lang="{python}">from tasks import sleep_int
+for i in range(5):
+    sleep_int.apply_async((i,))
+</code></pre><p>and run it with <code>python run.py</code> (or run the libes above from python console) and see the results in celery log:</p>
+<pre><code>[2021-10-01 13:48:18,869: INFO/MainProcess] Task tasks.sleep_int[205c72bb-60ca-4166-a7a1-53dbb05f952a] received
+[2021-10-01 13:48:19,920: INFO/ForkPoolWorker-1] Task tasks.sleep_int[205c72bb-60ca-4166-a7a1-53dbb05f952a] succeeded in 1.0483712660006859s: 1
+[2021-10-01 13:48:46,032: INFO/MainProcess] Task tasks.sleep_int[2aa3c291-3807-492f-b8bc-3fb3ed282759] received
+[2021-10-01 13:48:47,066: INFO/ForkPoolWorker-2] Task tasks.sleep_int[2aa3c291-3807-492f-b8bc-3fb3ed282759] succeeded in 1.0317802720001055s: 1
+[2021-10-01 13:52:10,168: INFO/MainProcess] Task tasks.sleep_int[edfdb82a-1c37-4004-b87e-6195646f8f57] received
+[2021-10-01 13:52:10,181: INFO/MainProcess] Task tasks.sleep_int[3131e2bd-8454-4828-b6ec-7c428b2d2e06] received
+[2021-10-01 13:52:10,192: INFO/MainProcess] Task tasks.sleep_int[4de05146-0a48-4980-88fb-414a37c74514] received
+[2021-10-01 13:52:10,202: INFO/ForkPoolWorker-3] Task tasks.sleep_int[edfdb82a-1c37-4004-b87e-6195646f8f57] succeeded in 0.03295764599897666s: 0
+[2021-10-01 13:52:10,206: INFO/MainProcess] Task tasks.sleep_int[c4bb963f-72ef-44c9-bd97-4cb3f432caaa] received
+[2021-10-01 13:52:10,216: INFO/MainProcess] Task tasks.sleep_int[4b9db51e-13f1-427d-9f15-83e3cca0f10a] received
+[2021-10-01 13:52:11,214: INFO/ForkPoolWorker-4] Task tasks.sleep_int[3131e2bd-8454-4828-b6ec-7c428b2d2e06] succeeded in 1.03144066400273s: 1
+[2021-10-01 13:52:12,225: INFO/ForkPoolWorker-5] Task tasks.sleep_int[4de05146-0a48-4980-88fb-414a37c74514] succeeded in 2.0326271019985143s: 2
+[2021-10-01 13:52:13,241: INFO/ForkPoolWorker-6] Task tasks.sleep_int[c4bb963f-72ef-44c9-bd97-4cb3f432caaa] succeeded in 3.0335887920009554s: 3
+[2021-10-01 13:52:14,251: INFO/ForkPoolWorker-7] Task tasks.sleep_int[4b9db51e-13f1-427d-9f15-83e3cca0f10a] succeeded in 4.03322789899903s: 4
+</code></pre><p><code>celery</code> ran all the tasks and printed their results. Retrieving the results back to the run.py is possible, but rather complicated and this is not really what celery was meant to do. Beside that minor disadvantage, celery has many advantages:</p>
+<ul>
+<li>you can easily scale it into many machines. There may be a separate worker on each machine, which can consume task prompts from queue (redis), which can also be on a separate machine. Hence it works perfectly with Kubernetes</li>
+<li>as it can scale to many machines, it is comparable to spark, but celery is (IMHO) a much mature and easy-to-maintain piece of software</li>
+<li>it has a reasonably good GUI called <a href="https://flower.readthedocs.io/en/latest/">flower</a></li>
+<li>you can write your own asynchronous pipelines using e.g. <a href="https://docs.celeryproject.org/en/stable/userguide/canvas.html#chains">chains</a></li>
+</ul>
+<p>To sum up, using celery is more of an architectural decision, because it usually runs on several machines. I was lucky to be working with this tool for more than a year and I highly recommend it.</p>
+<h3 id="34-pyspark">3.4 (py)spark</h3>
+<p>I wrote a <a href="https://greysweater42.github.io/spark">separate blog post about spark</a>. Keep in mind that spark is used primarily for big data.</p>
+
+</div>
+
+<div class="jumbotron text-center" id="footer">
+
+  made using &emsp;
+  <br class="d-xl-none">
+  <a href="https://gohugo.io/">Hugo</a> |
+  <a href="https://getbootstrap.com/">Bootstrap</a> |
+  <a href="https://highlightjs.org/">highlightjs</a> |
+  <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> |
+  <a href="https://fonts.google.com/">Google fonts</a> &emsp;
+  <br class="d-xl-none">
+  <a href="https://github.com/tomis9/cookbook">github</a> |
+  <a href="https://pages.github.com/">github pages</a> |
+  <br>
+  about me: <a href="https://www.linkedin.com/in/tomasz-dyrka-490766127/">LinkedIn</a>
+
+</div>
+
+</body>
+
+
+
+<script src="https://greysweater42.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<script src="https://greysweater42.github.io/js/bootstrap-toc.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+$(window).scroll(function() {
+  
+  if ($(window).scrollTop() > 100 ) {
+    $('.navbar').removeClass('navbar-hide');
+    $('.navbar').addClass('navbar-show');
+  } else {
+    $('.navbar').removeClass('navbar-show');
+    $('.navbar').addClass('navbar-hide');
+  };   	
+});
+</script>
+
+</html>
+

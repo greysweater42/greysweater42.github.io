@@ -5,10 +5,28 @@
     <link>https://greysweater42.github.io/categories/</link>
     <description>Recent content in Categories on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 31 Aug 2021 18:32:03 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 29 Sep 2021 00:14:48 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data engineering</title>
+      <link>https://greysweater42.github.io/categories/data-engineering/</link>
+      <pubDate>Wed, 29 Sep 2021 00:14:48 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/categories/data-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://greysweater42.github.io/categories/python/</link>
+      <pubDate>Wed, 29 Sep 2021 00:14:48 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/categories/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Machine learning</title>
@@ -29,15 +47,6 @@
     </item>
     
     <item>
-      <title>Python</title>
-      <link>https://greysweater42.github.io/categories/python/</link>
-      <pubDate>Thu, 08 Apr 2021 18:19:38 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>DevOps</title>
       <link>https://greysweater42.github.io/categories/devops/</link>
       <pubDate>Sun, 19 Jan 2020 14:31:25 +0100</pubDate>
@@ -52,15 +61,6 @@
       <pubDate>Fri, 31 May 2019 15:29:17 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/categories/scratchpad/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data engineering</title>
-      <link>https://greysweater42.github.io/categories/data-engineering/</link>
-      <pubDate>Fri, 17 May 2019 15:44:38 +0200</pubDate>
-      
-      <guid>https://greysweater42.github.io/categories/data-engineering/</guid>
       <description></description>
     </item>
     

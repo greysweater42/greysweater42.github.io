@@ -5,10 +5,21 @@
     <link>https://greysweater42.github.io/</link>
     <description>Recent content on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 31 Aug 2021 18:32:03 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 29 Sep 2021 00:14:48 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>async/threads</title>
+      <link>https://greysweater42.github.io/async_thread/</link>
+      <pubDate>Wed, 29 Sep 2021 00:14:48 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/async_thread/</guid>
+      <description>1. What does &amp;ldquo;asynchronous&amp;rdquo; and &amp;ldquo;threading&amp;rdquo; mean and why is it important? Let&amp;rsquo;s begin with the definition of processes and threads provided Gerald of Stackoverflow:
+ A process is a collection of code, memory, data and other resources. A thread is a sequence of code that is executed within the scope of the process. You can (usually) have multiple threads executing concurrently within the same process.
+ Asynchrounous usually refers to using many processes, while threading - many threads within one process.</description>
+    </item>
     
     <item>
       <title>PCA / SVD</title>
