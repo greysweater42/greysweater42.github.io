@@ -301,240 +301,151 @@
 
 <nav id="toc" data-toggle="toc" class="sticky-top d-none d-xl-block"></nav>
 
-<div class="list-div">
-  <div class="article-title">
-    <object type="image/svg+xml" data="/folder.svg" height="30px" width="30px">.</object> 
-    DevOps
-  </div>
+<div class="article">
 
+<div class="article-categories">
   
-  <br>
-  <br>
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/projects" role="button">Projects </a>
+    &emsp;
+  </br>
+</div>
+<div class="article-title">
+  
+  reading mate
 
-  <center>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2020</h3>
+</div>
+<div class="article-info">
+    Sep 27, 2021 &emsp;  &emsp; 5 minutes read
+</div>
 
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Jan 19, 2020 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/bash/"> 
-              bash 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            3
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2019</h3>
+<h2 id="1-is-it-ok-to-judge-people-by-the-books-they-read">1. Is it OK to judge people by the books they read?</h2>
+<p>Well, not really. Personally, from time to time I read complete crap purposedly, out of curiosity and to form my own opinion about it (I didn&rsquo;t like 50 Shades of Gray as much as I had expected) and sometimes I read books which may seem completely contradictory to my views/beliefs, because I try to be open and give them a chance to convince me (which sometimes happens, but e.g. Osho&rsquo;s meditation techinques were a little too extreme for me).</p>
+<p>But still, anytime I visit someone and I see a plentiful bookshelf, I can&rsquo;t help myself but analyse it thouroughly and make a judgment on my host. Sorry for being superficial.</p>
+<p>Who knows, maybe this person would be my reading mate?</p>
+<h2 id="2-is-there-any-way-to-automate-finding-new-reading-mates">2. Is there any way to automate finding new reading mates?</h2>
+<p>Wow, this is going to be a true <a href="https://img.devrant.com/devrant/rant/r_2516404_bkZxN.jpg">programmer move</a>.</p>
+<p>Theoretically, I could take a picture of my friend&rsquo;s bookshelf with my smartphone, and the app that I wrote would:</p>
+<ul>
+<li>
+<p>transform an image into a list of books</p>
+</li>
+<li>
+<p>compare this list to a list of books that I read and tell how many of these book we both read</p>
+</li>
+<li>
+<p>or tell me something more about his/her personality, if there is any research on connection between personality and books of your choice.</p>
+</li>
+</ul>
+<p>In this particular blog post I will stick to the first dot only, because smartphone app development is not really my cup of tea, and the last dot is super difficult and&hellip; as I wrote at the beginning, I wouldn&rsquo;t really believe it.</p>
+<h2 id="3-reading-text-from-an-image">3. Reading text from an image</h2>
+<p>is a fairly popular machine learning problem, known as OCR, or Optical Character Recognition. Let&rsquo;s move on to the specifics:</p>
+<ul>
+<li>
+<p>This time I want to get my hands dirty with <a href="https://greysweater42.github.io/keras">keras</a>, because by now I have never used it in practice.</p>
+</li>
+<li>
+<p>There are a few OCR problems that are solved using keras from which I can learn, like <a href="https://keras.io/examples/vision/captcha_ocr/">captcha reading</a> which is an excellent example when machine learning engineers make new jobs in programming</p>
+</li>
+<li>
+<p>and a few keras-based python packages supporting OCR, including <a href="https://github.com/faustomorales/keras-ocr">keras-ocr</a>.</p>
+</li>
+</ul>
+<h2 id="4-solution">4. Solution</h2>
+<p>Task turned out to be quite simple, so I didn&rsquo;t have tweak, not even know keras at all. Here&rsquo;s ahwt I had to do:</p>
+<ul>
+<li>read an image from the internet</li>
+</ul>
+<div style="overflow: hidden;padding: 10px;">
+    <img src="https://greysweater42.github.io/reading_mate/raw_image.jpg" style="width: 100%;"/>
+</div>
+<ul>
+<li>use <code>keras_ocr</code> to find letters/words in this imamge</li>
+<li>segregate these words, so they made book titles</li>
+</ul>
+<p>Here comes the code:</p>
+<pre><code class="language-{python}" data-lang="{python}">import matplotlib.pyplot as plt
+import keras_ocr
+import numpy as np
 
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Aug 13, 2019 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/heroku/"> 
-              heroku 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            1
-             
-              minute 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2018</h3>
 
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Dec 16, 2018 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/rocker/"> 
-              rocker 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            2
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Dec 3, 2018 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/git/"> 
-              git 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            4
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Aug 14, 2018 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/vagrant/"> 
-              vagrant 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            2
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Aug 13, 2018 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/flask/"> 
-              flask 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            4
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Aug 12, 2018 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/pyenv/"> 
-              pyenv, virtualenv, freeze 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            2
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Aug 12, 2018 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/mesos/"> 
-              mesos 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            2
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Aug 12, 2018 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/docker/"> 
-              docker 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            4
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Feb 4, 2018 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/testing/"> 
-              testing 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            5
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  </center>
+def read_image():
+    url = &quot;https://pbs.twimg.com/media/E7zIo5RXMAQ9kEV.jpg&quot;
+    image = keras_ocr.tools.read(url)  # 1
+    im = np.flip(image.transpose((1, 0, 2)), 0)  # rotate image counterclockwise
+    return im
+
+
+def read_titles(pred):
+    books = []
+    coords_max = 0
+    for text in pred:
+        letters, coords = text
+        if min(coords[:, 1]) &gt; coords_max:
+            if books:
+                books[-1] = [x for _, x in sorted(zip(order, books[-1]))]
+            order = []
+            books.append([])
+        books[-1].append(letters)
+        coords_max = max(coords[:, 1])
+        order.append(min(coords[:, 0]))
+
+    titles = [&quot; &quot;.join(b).upper() for b in books]
+    return [t for t in titles if len(t) &gt; 10]
+
+
+def plot_predictions(im, pred):
+    _, axs = plt.subplots(nrows=1, figsize=(20, 20))
+    return keras_ocr.tools.drawAnnotations(image=im, predictions=pred, ax=axs)
+
+
+def main():
+    im = read_image()
+    pipeline = keras_ocr.pipeline.Pipeline()  # 2
+    pred = pipeline.recognize([im])[0]  # 3
+    plot_predictions(im, pred)
+    print(read_titles(pred))  # 4
+
+main()
+</code></pre><p>The code is, IMHO, surpisingly short if we considered how difficult the task actually is. Most of the work is done by <code>keras_ocr</code> package, but a few parts may seem a little confusing:</p>
+<ul>
+<li>#1 I used <code>keras_ocr.tools.read(url)</code>, a function provided by <code>keras_ocr</code>, to read image from the internet</li>
+<li>#2 predictions are made using a Pipeline, which I defined in this place</li>
+<li>#3 this is how the pipeline is executed to make a prediction</li>
+<li>#4 <code>read_titles</code> is a simple function, which groups words by books, creating titles and authors</li>
+</ul>
+<h2 id="5-results">5. Results</h2>
+<div style="overflow: hidden;padding: 10px;">
+    <img src="https://greysweater42.github.io/reading_mate/output.png" style="width: 100%;"/>
+</div>
+<pre><code>['SPUFFORD FRANCIS LIGHI PERPETUAL', 
+'S  GREAT CIRCLE', 
+'SUNJEEV SAHOTA CHINA ROOM', 
+'BEWILDERMENT RICHARD POWERS', 
+'THE JORTUNE MEN MOHAMED NADIFA', 
+'NO ONE IS TALKING ABOUT THIS PATRICIA LOCKWOOD', 
+'MARY LAWSON A TOWN CALLED SOLACE', 
+'AN ISLAND KAREN JENNINGS', 
+'KAZUO ISHIGURO KLARA AND THE SUN', 
+'TIR SWEETNESS O WATER NATHA HARRIS', 
+'THE PROMISE DAMON GALGUT', 
+'RACHELCUSK SECOND PLACE', 
+'ARUDPRAGASAM ANUK NORTH PASSAGE A']
+</code></pre><p><code>keras_ocr</code> clearly can read some text, but not perfectly:</p>
+<ul>
+<li>it has problems with reading rotated text, that is why before the prediction I rotated the picture by 90 degrees counterclockwise</li>
+<li>sometimes it simply misreads the text, which is fine: no model is perfect. Some mistakes though are quite ambiguous, take the fifth book from the top: <em>The Fortune Man</em>. The &ldquo;F&rdquo; could be easliy misread by a human as well, while others result rather from the font used: <em>RACHELCUSK</em> (third from bottom) looks like one word, doesn&rsquo;t it? To sum up: the algorithm ususally works just fine in <em>normal</em> cases and makes mistakes in those cases, where human might also have problems.</li>
+</ul>
+<p>Another issue is that this algorithm cannot tell the difference between the author and the title, which is obvious; I sometimes can&rsquo;t tell it myself either.</p>
+<h2 id="6-summary">6. Summary</h2>
+<p>It was quite fun to use OCR, but it seems that reading is a little more that just recognizing letters, e.g. you have to know:</p>
+<ul>
+<li>the direction of the text (quite obvious for human)</li>
+<li>little bit about the language, e.g. know, that <em>Rachel</em> is a name</li>
+<li>the language you recognize. In this particular case we can tell the author from the title, but what if the books were not in English, but in some exotic language (like Polish? ;)) and we know there is know word like <em>juture</em>, but there is something like <em>future</em>, and <em>J</em> looks a little like <em>F</em></li>
+</ul>
+<p>All of these problems can be addressed programatically, i.e. solved, but it would require much more sophisticated software.</p>
+
 </div>
 
 <div class="jumbotron text-center" id="footer">
