@@ -59,7 +59,7 @@
       
       <guid>https://greysweater42.github.io/keras/</guid>
       <description>1. What is keras and why would you still use pytorch?   Just kidding with pytorch ;) but still you will have to choose between these two (or even more) frameworks at the very early stage of the analysis.
-  Keras is a high-level framework for working with neural networks, written in Python and capable of running on top of either TensorFlow, Microsoft Cognitive Toolkit (CNTK) or Theano</description>
+  Keras is a high-level framework for working with neural networks, written in Python and capable of running on top of either TensorFlow, Microsoft Cognitive Toolkit (CNTK) or Theano.</description>
     </item>
     
     <item>
