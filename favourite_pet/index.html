@@ -306,209 +306,213 @@
 <div class="article-categories">
   
     <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
-    <a href="https://greysweater42.github.io/categories/python" role="button">Python </a>
-    &emsp;
-  
-    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
-    <a href="https://greysweater42.github.io/categories/data-engineering" role="button">Data engineering </a>
-    &emsp;
-  
-    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
-    <a href="https://greysweater42.github.io/categories/scratchpad" role="button">scratchpad </a>
+    <a href="https://greysweater42.github.io/categories/projects" role="button">projects </a>
     &emsp;
   </br>
 </div>
 <div class="article-title">
   
-  pandas
+  favourite pet?
 
 </div>
 <div class="article-info">
-    Jan 25, 2019 &emsp;  &emsp; 4 minutes read
+    Oct 13, 2021 &emsp;  &emsp; 5 minutes read
 </div>
 
+<h2 id="1-what-am-i-doing">1. What am I doing?</h2>
+<p>I&rsquo;m trying to find out if you can tell if a person is talking about their <em>Python</em> or <em>dog</em>, when the person does not use any of the words &ldquo;python&rdquo; or &ldquo;dog&rdquo;.</p>
+<p>Apart from being funny for me, I want to practice creating and learning RNNs, LSTMs in particular.</p>
+<h2 id="2-dataset">2. Dataset</h2>
+<p>is taken from reddit, because of its simple API. This time <a href="https://praw.readthedocs.io/en/stable/">praw</a>, which is an excellent python package for downloading any information/data from reddit was not enough, as it allows to get only 1000 posts at a time. For this project I needed more, so I used <a href="https://psaw.readthedocs.io/en/latest/">psaw</a>, which may work as a thin wrapper around <code>praw</code> and does not have such constraint.</p>
+<p>Here&rsquo;s the code that I used to download the data:</p>
+<pre><code class="language-{python}" data-lang="{python}">import praw
+import pandas as pd
+import json
+from pathlib import Path
+from tqdm import tqdm
+from psaw import PushshiftAPI
 
 
+# reading reddit credentials
+reddit_creds_path = Path.home() / &quot;cookbook&quot; / &quot;scratchpad&quot; / &quot;rnn&quot; / &quot;creds.json&quot;
+with open(reddit_creds_path, &quot;r&quot;) as f:
+    reddit_creds = json.load(f)
 
-<div align="center">
-<h2>
-This is not a proper blog post yet, just my notes.
-</h2>
-</div>
-<p>&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;</p>
-<div id="what-is-pandas-and-why-would-you-use-it" class="section level1">
-<h1>1. What is <code>pandas</code> and why would you use it?</h1>
+# setting up a connection
+reddit = praw.Reddit(
+    client_id=reddit_creds[&quot;client_id&quot;],
+    client_secret=reddit_creds[&quot;client_secret&quot;],
+    user_agent=&quot;python_or_dog&quot;,
+    username=reddit_creds[&quot;username&quot;],
+    password=reddit_creds[&quot;password&quot;],
+)
+api = PushshiftAPI(reddit)
+
+# a function for downloading posts
+def get_data(api, subreddit_name):
+    submissions = api.search_submissions(limit=10000, subreddit=subreddit_name)
+    bodies = []
+    for submission in tqdm(submissions, total=10000):
+        bodies.append(submission.selftext)
+    topics_data = pd.DataFrame(dict(body=bodies, label=subreddit_name))
+    return topics_data
+
+
+# downloading posts
+all_posts = dict()
+for pet in [&quot;dogs&quot;, &quot;Python&quot;]:
+    raw_data = get_data(api, subreddit_name=pet)
+    all_posts[pet] = raw_data[raw_data[&quot;body&quot;].str.len() &gt; 200]
+    print(&quot;downloading {} finished&quot;.format(pet))
+    del raw_data  # save some memory
+
+# saving results
+result = pd.concat(all_posts.values())
+save_path = Path.home() / &quot;cookbook&quot; / &quot;scratchpad&quot; / &quot;rnn&quot;
+result.to_csv(save_path / &quot;posts_reddit.csv&quot;, index=False)
+</code></pre><p>I&rsquo;ve decided to filter out those posts, which were shorter than 200 characters, as they probably do not convey enough information for the neural network.</p>
+<h2 id="3-network">3. Network</h2>
+<h3 id="why-keras-not-pytorch">Why keras, not pytorch?</h3>
+<p>This time I used <a href="https://greysweater42.github.io/keras">keras</a> for creating and learning an LSTM network. I tried to use pytorch as well, but the library for working with text in pytorch is called <a href="https://pytorch.org/text/stable/index.html">torchtext</a> and is nowhere near as good as other pytorch add-ons like torchvision, for several reasons:</p>
 <ul>
-<li><p><code>pandas</code> is a Python package created for working with tables known as <code>DataFrame</code>s;</p></li>
-<li><p>it is the only reasonable Python package for this purpose, which makes Python a little modest comparing to R (base, data.table, dplyr - every one of them has a better interface than pandas) when we process tables;</p></li>
+<li>
+<p>if you deal with a huge amount of data, which is often the case, you have to write your own generator as a sublass of data loader (which is not very difficult, but works exactly the same for every project, so could be provided by the package), while torchvision already has it;</p>
+</li>
+<li>
+<p>the API for datasets which fit into memory, e.g. stored in csv files, has a rather non-intuitive syntax: you have to define each column of the csv file and provide it to the data reader (<code>fields</code> argument):</p>
+</li>
 </ul>
-<p>Even though I use pandas almost every day, there are certain solutions that I constantly forget about.</p>
-</div>
-<div id="examples" class="section level1">
-<h1>2. Examples</h1>
-<p>One of the simplest, yet powerful interfaces to work with tables has SQL, so I will describe <code>pandas</code>’ equivalents to SQL’s functions.</p>
-<p>But first let’s prepare a dataset:</p>
-<pre class="python"><code>import pandas as pd
-import re
-from sklearn.datasets import load_iris
-import matplotlib.pyplot as plt
+<pre><code class="language-{python}" data-lang="{python}"># dataset
+LABEL = data.LabelField()
+POST = data.Field(tokenize=&quot;spacy&quot;, lower=True, tokenizer_language=&quot;en_core_web_sm&quot;)
+fields = [(&quot;body&quot;, POST), (&quot;label&quot;, LABEL)]
+dataset = data.TabularDataset(path=&quot;pytorch_data.csv&quot;, format=&quot;CSV&quot;, fields=fields)
+train, test = dataset.split(split_ratio=[0.8, 0.2])
+</code></pre><p>where it is not obvious how the data is stored. <code>torchtext</code> for each observation uses an object of class Example, which consists of two (or more) objects of class Example: text and label, which I find rather counter-intuituve. For my purpose, which is classification, storing text and label as instances of the same class seems wrong as they are of different types: <em>text</em> and <em>qualitative</em> (multinomial), in this case: <em>binary</em>.</p>
+<p>Beside that, <code>keras</code>'s training is much more concise:</p>
+<pre><code class="language-{python}" data-lang="{python}">history = model.fit(train, epochs=3, validation_data=test, validation_steps=30)
+</code></pre><p>comparing to <code>pytorch</code>'s:</p>
+<pre><code class="language-{python}" data-lang="{python}">epochs = 10
+for epoch in range(1, epochs + 1):
+    # training
+    model.train()
+    training_loss = 0.0
+    for batch in tqdm(train_iterator):
+        optimizer.zero_grad()
+        predict = model(batch.body)
+        loss = criterion(predict.squeeze(), batch.label.to(torch.float32))
+        loss.backward()
+        optimizer.step()
+        training_loss += loss.data.item() * batch.body.size(0)
+
+    # evaluation on test set
+    model.eval()
+    test_loss = 0.0
+    for batch in tqdm(test_iterator):
+        predict = model(batch.body)
+        loss = criterion(predict.squeeze(), batch.label.to(torch.float32))
+        test_loss += loss.data.item() * batch.body.size(0)
+    print(f&quot;Epoch: {epoch}, training loss: {training_loss}, test loss: {test_loss}&quot;)
+</code></pre><p>and both of the training methods above do exactly the same&hellip; well, actually <code>model.fit</code> does even more. In this case pytorch seems to be a little bit too low-level, so maybe a good idea would be to use <a href="https://greysweater42.github.io/fastai/">fastai</a>, but still keras is a much more mature framework than fastai, which lacks in-depth documentation, various tutorials, wide community&hellip;</p>
+<h3 id="preparing-data">Preparing data</h3>
+<p>The easiest way to read any amount of text data into a <code>keras</code> network is to use <code>text_dataset_from_directory</code>, but the data must be stored in a specific format:</p>
+<pre><code>.
+├── train
+│   ├── dog
+│   │   ├── 1.txt
+│   │   ├── 2.txt
+│   │   └── ...
+│   └── Python
+│       ├── 1.txt
+│       ├── 2.txt
+│       └── ...
+└── test
+    ├── dog
+    │   ├── 1.txt
+    │   ├── 2.txt
+    │   └── ...
+    └── Python
+        ├── 1.txt
+        ├── 2.txt
+        └── ...
+</code></pre><p>The script below transforms csv file into the format above.</p>
+<pre><code class="language-{python}" data-lang="{python}">import pandas as pd
 import numpy as np
+from collections import defaultdict
+from pathlib import Path
+
+DATA_PATH = Path(&quot;data&quot;)
 
 
-def prepare_iris_as_in_r():
-    iris_raw = load_iris()
-    colnames = [re.sub(&#39; &#39;, &#39;_&#39;, re.sub(&#39; \(cm\)&#39;, &#39;&#39;, x))
-                for x in iris_raw.feature_names]
-    iris = pd.DataFrame(iris_raw.data, columns=colnames)
-    species = pd.DataFrame({&#39;species_index&#39;: range(3),
-                            &#39;species&#39;: iris_raw.target_names})
-    iris[&#39;species_index&#39;] = iris_raw.target
-    iris = pd.merge(iris, species, on=&#39;species_index&#39;)
-    iris.drop(&#39;species_index&#39;, axis=1, inplace=True)
-    return iris</code></pre>
-<p>We’ve been working on this dataset in almost every post I wrote for this blog. It’s rather small and simple, so we will not take advantage of <code>pandas</code>’s processing efficiency.</p>
-<pre class="python"><code>iris = prepare_iris_as_in_r()</code></pre>
-<div id="reading-data-from-a-file" class="section level2">
-<h2>reading data from a file</h2>
-<p>In our examples we will not be doing this, because we have already loeaded the data from <code>sklearn</code>. You can do it with:</p>
-<pre class="python"><code>data = pd.read_csv()</code></pre>
-<blockquote>
-<p>Don’t name your datasets <code>data</code>. Everything we work on is data, so this name conveys no information. I named our dataset that way for the same reason as in most tutorials the default password is “password”.</p>
-</blockquote>
-<p>useful parameters:</p>
-<ul>
-<li><p><code>sep</code></p></li>
-<li><p><code>delimiter</code></p></li>
-<li><p><code>header</code></p></li>
-</ul>
-<p>Parameters are rather self-explanatory. And yes, I know that in SQL we don’t read files ;)</p>
-</div>
-<div id="where-filtering" class="section level2">
-<h2>WHERE filtering</h2>
-<p>The easiest way to filter a <code>DataFrame</code> is by using:</p>
-<pre><code>iris[iris.species == &quot;setosa&quot;].head()
-iris[~iris.sepal_length.isna()].head()</code></pre>
-</div>
-</div>
-<div id="select-2-selecting" class="section level1">
-<h1>SELECT 2 selecting</h1>
-<pre class="python"><code>iris[[&#39;species&#39;, &#39;sepal_width&#39;]]</code></pre>
-<pre><code>##        species  sepal_width
-## 0       setosa          3.5
-## 1       setosa          3.0
-## 2       setosa          3.2
-## 3       setosa          3.1
-## 4       setosa          3.6
-## ..         ...          ...
-## 145  virginica          3.0
-## 146  virginica          2.5
-## 147  virginica          3.0
-## 148  virginica          3.4
-## 149  virginica          3.0
-## 
-## [150 rows x 2 columns]</code></pre>
-</div>
-<div id="proper-ways-of-selection-filtering" class="section level1">
-<h1>proper ways of selection + filtering</h1>
-</div>
-<div id="loc---you-may-use-ranges-as-well-as-names" class="section level1">
-<h1><code>loc</code> - you may use ranges as well as names</h1>
-<pre class="python"><code>iris.loc[:10, [&#39;species&#39;, &#39;sepal_length&#39;]]</code></pre>
-<pre><code>##    species  sepal_length
-## 0   setosa           5.1
-## 1   setosa           4.9
-## 2   setosa           4.7
-## 3   setosa           4.6
-## 4   setosa           5.0
-## 5   setosa           5.4
-## 6   setosa           4.6
-## 7   setosa           5.0
-## 8   setosa           4.4
-## 9   setosa           4.9
-## 10  setosa           5.4</code></pre>
-</div>
-<div id="iloc---you-can-use-unly-ranges" class="section level1">
-<h1><code>iloc</code> - you can use unly ranges</h1>
-<pre class="python"><code>iris.iloc[:10, :3]</code></pre>
-<pre><code>##    sepal_length  sepal_width  petal_length
-## 0           5.1          3.5           1.4
-## 1           4.9          3.0           1.4
-## 2           4.7          3.2           1.3
-## 3           4.6          3.1           1.5
-## 4           5.0          3.6           1.4
-## 5           5.4          3.9           1.7
-## 6           4.6          3.4           1.4
-## 7           5.0          3.4           1.5
-## 8           4.4          2.9           1.4
-## 9           4.9          3.1           1.5</code></pre>
-</div>
-<div id="group-by-3-aggregating" class="section level1">
-<h1>GROUP BY 3 aggregating</h1>
-<pre class="python"><code>iris.groupby(&#39;species&#39;).agg({&#39;sepal_length&#39;: sum, &#39;petal_length&#39;: np.median})</code></pre>
-<pre><code>##             sepal_length  petal_length
-## species                               
-## setosa             250.3          1.50
-## versicolor         296.8          4.35
-## virginica          329.4          5.55</code></pre>
-<pre><code>pd.DataFrame({&#39;count&#39; : df1.groupby( [ &quot;Name&quot;, &quot;City&quot;] ).size()}).reset_index()</code></pre>
-</div>
-<div id="join-4-joining" class="section level1">
-<h1>JOIN 4 joining</h1>
-</div>
-<div id="plotting" class="section level1">
-<h1>plotting</h1>
-<pre class="python"><code>iris.groupby(&#39;species&#39;).size().plot.bar()
-plt.show()</code></pre>
-<p><img src="https://greysweater42.github.io/pandas_files/figure-html/unnamed-chunk-8-1.png" /><!-- --></p>
-</div>
-<div id="ordering" class="section level1">
-<h1>ordering</h1>
-</div>
-<div id="pivot-table" class="section level1">
-<h1>pivot table</h1>
-</div>
-<div id="indexes-or-series-vs.-dataframe" class="section level1">
-<h1>indexes, or Series vs. DataFrame</h1>
-<p>You may have noticed that pandas uses indexes extensively, which may be not very intuitive if you come with R or SQL background (especially that index in pandas is means something different than in SQL, which <em>is</em> misleading). In general the easiest way to cope with their problematic nature is trying to avoid them.</p>
-<pre class="python"><code>plt.scatter(iris.sepal_length, iris.sepal_width)</code></pre>
-<p><img src="https://greysweater42.github.io/pandas_files/figure-html/unnamed-chunk-9-1.png" /><!-- --></p>
-</div>
-<div id="todo" class="section level1">
-<h1>TODO</h1>
-<pre class="python"><code>import numpy as np
-col1 = list(&#39;abcdefghij&#39;)
-start_date = pd.date_range(pd.datetime.today(), periods=10).tolist()</code></pre>
-<pre><code>## &lt;string&gt;:1: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.</code></pre>
-<pre class="python"><code>end_date = pd.date_range(pd.datetime.today(), periods=10).tolist()
+def main():
+    data = pd.read_csv(&quot;posts_reddit.csv&quot;)
+    data[&quot;body&quot;] = data[&quot;body&quot;].str.replace(&quot;dog&quot;, &quot;pet&quot;, case=False)
+    data[&quot;body&quot;] = data[&quot;body&quot;].str.replace(&quot;Python&quot;, &quot;pet&quot;, case=False)
+    data[&quot;stage&quot;] = np.random.choice([&quot;train&quot;, &quot;test&quot;], len(data), p=[0.8, 0.2])
 
-df = pd.DataFrame(dict(col1=col1, start_date=start_date, end_date=end_date))
+    nums = dict(train=defaultdict(lambda: 1), test=defaultdict(lambda: 1))
+    for _, (body, label, stage) in data.iterrows():
+        path = DATA_PATH / stage / label
+        path.mkdir(exist_ok=True, parents=True)
+        with open(path / f&quot;{nums[stage][label]}.txt&quot;, &quot;w&quot;) as f:
+            f.write(body)
+        nums[stage][label] += 1
 
-df.melt(id_vars=&#39;col1&#39;, 
-        value_vars=[&#39;start_date&#39;, &#39;end_date&#39;],
-        var_name=&#39;is_start_end&#39;,
-        value_name=&#39;date&#39;)</code></pre>
-<pre><code>##    col1 is_start_end                       date
-## 0     a   start_date 2021-10-19 13:32:52.177309
-## 1     b   start_date 2021-10-20 13:32:52.177309
-## 2     c   start_date 2021-10-21 13:32:52.177309
-## 3     d   start_date 2021-10-22 13:32:52.177309
-## 4     e   start_date 2021-10-23 13:32:52.177309
-## 5     f   start_date 2021-10-24 13:32:52.177309
-## 6     g   start_date 2021-10-25 13:32:52.177309
-## 7     h   start_date 2021-10-26 13:32:52.177309
-## 8     i   start_date 2021-10-27 13:32:52.177309
-## 9     j   start_date 2021-10-28 13:32:52.177309
-## 10    a     end_date 2021-10-19 13:32:52.182168
-## 11    b     end_date 2021-10-20 13:32:52.182168
-## 12    c     end_date 2021-10-21 13:32:52.182168
-## 13    d     end_date 2021-10-22 13:32:52.182168
-## 14    e     end_date 2021-10-23 13:32:52.182168
-## 15    f     end_date 2021-10-24 13:32:52.182168
-## 16    g     end_date 2021-10-25 13:32:52.182168
-## 17    h     end_date 2021-10-26 13:32:52.182168
-## 18    i     end_date 2021-10-27 13:32:52.182168
-## 19    j     end_date 2021-10-28 13:32:52.182168</code></pre>
-</div>
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre><p>When the data is ready, we can train the network (for working with GPU check out <a href="https://greysweater42.github.io/keras/#gpu-support">my blog post on keras</a>):</p>
+<pre><code class="language-{python}" data-lang="{python}">import numpy as np
+import tensorflow as tf
+from tensorflow.keras.utils import text_dataset_from_directory
+from pathlib import Path
+
+VOCAB_SIZE = 10000
+DATA_PATH = Path(&quot;data&quot;)
+
+train = text_dataset_from_directory(
+    DATA_PATH / &quot;train&quot;, labels=&quot;inferred&quot;, batch_size=32
+)
+test = text_dataset_from_directory(DATA_PATH / &quot;test&quot;, labels=&quot;inferred&quot;, batch_size=32)
+
+encoder = tf.keras.layers.TextVectorization(max_tokens=VOCAB_SIZE)
+encoder.adapt(train.map(lambda text, label: text))
+
+model = tf.keras.Sequential(
+    [
+        encoder,
+        tf.keras.layers.Embedding(
+            input_dim=len(encoder.get_vocabulary()),
+            output_dim=300,
+            mask_zero=True,
+        ),
+        tf.keras.layers.LSTM(100),
+        tf.keras.layers.Dense(1),
+    ]
+)
+model.compile(
+    loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
+    optimizer=tf.keras.optimizers.Adam(1e-4),
+    metrics=[&quot;accuracy&quot;],
+)
+history = model.fit(train, epochs=3, validation_data=test, validation_steps=30)
+print(&quot;accuracy: &quot;,  history.history['val_accuracy'][-1])
+
+ls = []
+y_hat = []
+for texts, labels in test:
+    y_hat.append(model.predict(texts).reshape(-1)) 
+    ls.append(labels.numpy())
+
+ls = np.concatenate(ls)
+y_hat = np.concatenate(y_hat)
+
+from sklearn.metrics import confusion_matrix
+print(confusion_matrix(ls, y_hat &gt; 0))
+</code></pre><pre><code>accuracy:  0.987500011920929
+[[ 347    5]
+ [  14 1185]]
+</code></pre><p>I&rsquo;m satisfied  with the resulting accuracy of 98.75%, but you can always challenge it using e.g. bidirectional or multilayer LSTM.</p>
 
 </div>
 

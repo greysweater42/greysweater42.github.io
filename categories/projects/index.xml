@@ -5,10 +5,21 @@
     <link>https://greysweater42.github.io/categories/projects/</link>
     <description>Recent content in Projects on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 27 Sep 2021 00:32:01 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 13 Oct 2021 22:07:37 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>favourite pet?</title>
+      <link>https://greysweater42.github.io/favourite_pet/</link>
+      <pubDate>Wed, 13 Oct 2021 22:07:37 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/favourite_pet/</guid>
+      <description>1. What am I doing? I&amp;rsquo;m trying to find out if you can tell if a person is talking about their Python or dog, when the person does not use any of the words &amp;ldquo;python&amp;rdquo; or &amp;ldquo;dog&amp;rdquo;.
+Apart from being funny for me, I want to practice creating and learning RNNs, LSTMs in particular.
+2. Dataset is taken from reddit, because of its simple API. This time praw, which is an excellent python package for downloading any information/data from reddit was not enough, as it allows to get only 1000 posts at a time.</description>
+    </item>
     
     <item>
       <title>reading mate</title>
