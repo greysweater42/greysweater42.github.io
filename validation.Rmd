@@ -154,7 +154,7 @@ where TPR is True Positive Rate and TNR is True Negative Rate. These two are oft
 
 - specificity 90%, meaning that among all the people who have *not* got Covid, 90% are labeled "negative".
 
-Similarily to precision and recall, while creating a model you have to choose between high sensitivity and high recall.
+Similarily to precision and recall, while creating a model you have to choose between high sensitivity and high specificity.
 
 ### c) ROC, AUC 
 

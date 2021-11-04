@@ -372,14 +372,14 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     1     6     9    12    13    14    17    22    23    34 
-## FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE</code></pre>
+<pre><code>##     3     4     8    11    12    14    17    21    22    24 
+## FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    14    4
-##      TRUE      1   11</code></pre>
+##      FALSE    15    2
+##      TRUE      0   13</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
@@ -392,26 +392,26 @@ confusionMatrix(predict(m2, test), test$Species)</code></pre>
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         14          4
-##   versicolor      1         11
+##   setosa         15          2
+##   versicolor      0         13
 ##                                           
-##                Accuracy : 0.8333          
-##                  95% CI : (0.6528, 0.9436)
+##                Accuracy : 0.9333          
+##                  95% CI : (0.7793, 0.9918)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 0.0001625       
+##     P-Value [Acc &gt; NIR] : 4.34e-07        
 ##                                           
-##                   Kappa : 0.6667          
+##                   Kappa : 0.8667          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 0.3710934       
+##  Mcnemar&#39;s Test P-Value : 0.4795          
 ##                                           
-##             Sensitivity : 0.9333          
-##             Specificity : 0.7333          
-##          Pos Pred Value : 0.7778          
-##          Neg Pred Value : 0.9167          
+##             Sensitivity : 1.0000          
+##             Specificity : 0.8667          
+##          Pos Pred Value : 0.8824          
+##          Neg Pred Value : 1.0000          
 ##              Prevalence : 0.5000          
-##          Detection Rate : 0.4667          
-##    Detection Prevalence : 0.6000          
-##       Balanced Accuracy : 0.8333          
+##          Detection Rate : 0.5000          
+##    Detection Prevalence : 0.5667          
+##       Balanced Accuracy : 0.9333          
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
@@ -477,7 +477,7 @@ FP &amp; TN
 <li><p>sensitivity (TPR) 95%, meaning that among all the people who have got Covid, 95% of them are labeled “positive” by this test;</p></li>
 <li><p>specificity 90%, meaning that among all the people who have <em>not</em> got Covid, 90% are labeled “negative”.</p></li>
 </ul>
-<p>Similarily to precision and recall, while creating a model you have to choose between high sensitivity and high recall.</p>
+<p>Similarily to precision and recall, while creating a model you have to choose between high sensitivity and high specificity.</p>
 </div>
 </div>
 <div id="c-roc-auc" class="section level3">
@@ -513,7 +513,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.9822222</code></pre>
+<pre><code>## [1] 0.96</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],
