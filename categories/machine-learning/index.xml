@@ -100,9 +100,8 @@ import numpy as np from sklearn.datasets import load_iris from sklearn.linear_mo
       <pubDate>Thu, 23 May 2019 12:46:03 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/validation/</guid>
-      <description>1. What is model validation and why would you do it? You learned your model and naturally you are wondering how good it is. There are several ways to find out, like measuring the accuracy of predictions, but you may also want to check where exactly particular predictions come from, as this is far from obvious for “black box” models.
- 2. Examples cross-validation  confusion matrix https://www.rdocumentation.org/packages/caret/versions/3.45/topics/confusionMatrix
-Confusion matrix is confusing at all as the name may suggest.</description>
+      <description>1. What is model validation and why would you do it? You learned your model and naturally you are wondering how good it is. There is no universal measure of “goodness”, so usually you have to combine a few different measures and by getting a broader picture, make the final decision: whether your model is worth anything ;).
+In machine learning the two most popular problems are classification and regression (in machine learning regression refers to the problems, where a real value is predicted, not a class as for classification; in statistics it rather refers to linear regression and its derivatives, i.</description>
     </item>
     
     <item>

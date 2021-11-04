@@ -316,7 +316,7 @@
 
 </div>
 <div class="article-info">
-    May 23, 2019 &emsp;  &emsp; 4 minutes read
+    May 23, 2019 &emsp;  &emsp; 6 minutes read
 </div>
 
 
@@ -324,20 +324,32 @@
 
 <div id="what-is-model-validation-and-why-would-you-do-it" class="section level2">
 <h2>1. What is model validation and why would you do it?</h2>
-<p>You learned your model and naturally you are wondering how good it is. There are several ways to find out, like measuring the accuracy of predictions, but you may also want to check where exactly particular predictions come from, as this is far from obvious for “black box” models.</p>
+<p>You learned your model and naturally you are wondering how good it is. There is no universal measure of “goodness”, so usually you have to combine a few different measures and by getting a broader picture, make the final decision: whether your model is worth anything ;).</p>
+<p>In machine learning the two most popular problems are <strong>classification</strong> and <strong>regression</strong> (in machine learning regression refers to the problems, where a <em>real</em> value is predicted, not a class as for classification; in statistics it rather refers to linear regression and its derivatives, i.e. a statistical model, which is a group of statistical hypotheses), and both of them use different measures.</p>
 </div>
-<div id="examples" class="section level2">
-<h2>2. Examples</h2>
-<div id="cross-validation" class="section level3">
-<h3>cross-validation</h3>
+<div id="classification-metrics" class="section level2">
+<h2>2. Classification metrics</h2>
+<p>Let’s say you created a simple classifier, e.g. using logistic regression. The classifier does not return classes though, but the probability that this particular observation belongs to class 1. As what we need are classes, not probabilities, we have to somehow <em>map</em> these probabilities into classes. The easiest way to achieve this is by using a function like:</p>
+<p><span class="math display">\[ f(t) = \begin{cases} 1 &amp; \text{when $p \geqslant t$} \\ 0 &amp; \text{when $p &lt; t$} \\ \end{cases} \]</span></p>
+<p>where <span class="math inline">\(t\)</span> is a threshold set by <em>you</em>. Choose wisely ;)</p>
+<p>All of the methods presented below assume that you have already chosen the threshold (confusion matrix and its derivatives), or abstract from choosing it (ROC, AUC).</p>
+<div id="a-confusion-matrix" class="section level3">
+<h3>a) confusion matrix</h3>
+<div id="theory" class="section level4">
+<h4>- theory</h4>
+<p>Confusion matrix is not at all as confusing as the name may suggest. It is arguably the most basic measure of quality of a model and being an experienced data scientist you can immediately tell if the model is good or not. The definition:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+TP &amp; FN \\
+FP &amp; TN 
+\end{bmatrix}
+\]</span></p>
+<p>where <strong>real values</strong> are in <em>rows</em>, <strong>predictions</strong> are in <em>columns</em>, and <em>T</em> means <em>true</em>, <em>F</em> means <em>false</em>, <em>P</em> means <em>positive</em> and <em>N</em> means <em>negative</em>.</p>
 </div>
-<div id="confusion-matrix" class="section level3">
-<h3>confusion matrix</h3>
-<p><a href="https://www.rdocumentation.org/packages/caret/versions/3.45/topics/confusionMatrix" class="uri">https://www.rdocumentation.org/packages/caret/versions/3.45/topics/confusionMatrix</a></p>
-<p>Confusion matrix is confusing at all as the name may suggest.</p>
+<div id="examples" class="section level4">
+<h4>- examples</h4>
 <ul>
-<li><p>base R</p></li>
-<li><p>dataset preparation (described in more detail <a href="http://tomis9.com/useful_processing">here</a>)</p></li>
+<li>base R</li>
 </ul>
 <pre class="r"><code># prepare the dataset
 library(caret)</code></pre>
@@ -360,18 +372,19 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     1     2     7     8    11    15    19    20    22    30 
-## FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</code></pre>
+<pre><code>##     5     7    15    16    17    19    20    22    28    30 
+## FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    12    1
-##      TRUE      3   14</code></pre>
+##      FALSE     9    2
+##      TRUE      6   13</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
-<p><code>caret</code> provides a much broader summary of confusion matrix:</p>
+<p>We will use a <a href="https://www.rdocumentation.org/packages/caret/versions/3.45/topics/confusionMatrix">confusionMatrix</a> function. Keep in mind that <code>caret</code> is a huge machine learning library, almost an entire new language inside R, so introducing it into your code just for the sake of confusion matrix may be an overkill.</p>
+<p>Still, <code>caret</code> provides a much broader summary of confusion matrix:</p>
 <pre class="r"><code>library(caret)
 m2 &lt;- train(Species ~ Sepal.Length, train, method = &quot;glm&quot;, family = binomial)
 confusionMatrix(predict(m2, test), test$Species)</code></pre>
@@ -379,26 +392,26 @@ confusionMatrix(predict(m2, test), test$Species)</code></pre>
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         12          1
-##   versicolor      3         14
+##   setosa          9          2
+##   versicolor      6         13
 ##                                           
-##                Accuracy : 0.8667          
-##                  95% CI : (0.6928, 0.9624)
+##                Accuracy : 0.7333          
+##                  95% CI : (0.5411, 0.8772)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 2.974e-05       
+##     P-Value [Acc &gt; NIR] : 0.008062        
 ##                                           
-##                   Kappa : 0.7333          
+##                   Kappa : 0.4667          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 0.6171          
+##  Mcnemar&#39;s Test P-Value : 0.288844        
 ##                                           
-##             Sensitivity : 0.8000          
-##             Specificity : 0.9333          
-##          Pos Pred Value : 0.9231          
-##          Neg Pred Value : 0.8235          
+##             Sensitivity : 0.6000          
+##             Specificity : 0.8667          
+##          Pos Pred Value : 0.8182          
+##          Neg Pred Value : 0.6842          
 ##              Prevalence : 0.5000          
-##          Detection Rate : 0.4000          
-##    Detection Prevalence : 0.4333          
-##       Balanced Accuracy : 0.8667          
+##          Detection Rate : 0.3000          
+##    Detection Prevalence : 0.3667          
+##       Balanced Accuracy : 0.7333          
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
@@ -426,14 +439,28 @@ lr.fit(X_train, y_train)</code></pre>
 <pre><code>## [[18  1]
 ##  [ 1 13]]</code></pre>
 </div>
-<div id="roc-auc" class="section level3">
-<h3>ROC, AUC</h3>
-<p>Let’s say you created a simple classifier, e.g. using logistic regression. The classifier does not return classes though, but the probability that this particular observation belongs to class 1. As what we need are classes, not probabilities, we have to somehow <em>map</em> these probabilities into classes. The easiest way to achieve this is by using a function like:</p>
-<p><span class="math display">\[ f(t) = \begin{cases} 1 &amp; \text{when $p \geqslant t$} \\ 0 &amp; \text{when $p &lt; t$} \\ \end{cases} \]</span></p>
-<p>where <span class="math inline">\(t\)</span> is a threshold set by <em>you</em>. Choose wisely ;)</p>
-<p>Choosing a proper value of <span class="math inline">\(t\)</span> is known as a “Precision / Recall tradeoff”:</p>
+</div>
+<div id="b-confusion-matrix-derivatives-precisionrecall-sensisivityspecificity-etc." class="section level3">
+<h3>b) confusion matrix derivatives: precision/recall, sensisivity/specificity etc.</h3>
+<p>Looking at confusion matrix may be a little confusing though, as you have to extract information from four numbers. Couldn’t we use one or two numbers to make things easier?</p>
 <ul>
-<li><p><a href="https://towardsdatascience.com/precision-vs-recall-386cf9f89488">a wonderful, intuitive article</a></p></li>
+<li><a href="https://towardsdatascience.com/precision-vs-recall-386cf9f89488">precision/recall trade-off</a></li>
+</ul>
+<p>There are two measures based on confusion matrix that are particurarily interesting, called precision and recall:</p>
+<p><span class="math display">\[ \textrm{precision} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FP}} \]</span></p>
+<p><span class="math display">\[ \textrm{recall} = \textrm{sensitivity} = \textrm{TPR} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FN}} \]</span></p>
+<p>where TPR means True Positive Rate. Why is this a trade-off? Because you want to maximize both of these measures, but while one goes up, the other goes down.</p>
+<p>The values of confusion matrix, on which precision and recall are based, result from the value of the threshold: you can choose a threshold which maximizes any of these measures, depending on your study. You may want the model to be:</p>
+<ul>
+<li><p><em>conserrvative</em>, i.e. predict “1” only if it is sure it is “1”: then you choose high threshold and get high precision and low recall (few observations are marked as “1”)</p></li>
+<li><p><em>liberal</em>, i.e. predict “1” when the model vaguely believes it might be “1”: then you choose low threshold, get low precision and high recall (many observations are marked as “1”).</p></li>
+<li><p>sensitivity/specificity</p></li>
+</ul>
+</div>
+<div id="c-roc-auc" class="section level3">
+<h3>c) ROC, AUC</h3>
+<p>TODO</p>
+<ul>
 <li><p><a href="https://towardsdatascience.com/beyond-accuracy-precision-and-recall-3da06bea9f6c">another good article</a></p></li>
 <li><p><a href="https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5">A wonderful article about AUC and ROC curves</a>. There is no nedd to duplicate it.</p></li>
 </ul>
@@ -463,16 +490,19 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.9755556</code></pre>
+<pre><code>## [1] 0.9</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
 <pre><code>## [1] 1</code></pre>
+</div>
+<div id="cross-validation" class="section level3">
+<h3>cross-validation</h3>
+<p>TODO</p>
 <p><a href="https://towardsdatascience.com/supervised-machine-learning-model-validation-a-step-by-step-approach-771109ae0253" class="uri">https://towardsdatascience.com/supervised-machine-learning-model-validation-a-step-by-step-approach-771109ae0253</a></p>
 <p>ROC - TPR vs FPR, where</p>
-<p><span class="math display">\[ \textrm{TPR} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FP}} \]</span></p>
 <p>TPR - True Positive Rate
 TP - True Positive
 FP - False Positive</p>
