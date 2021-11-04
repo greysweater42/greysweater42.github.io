@@ -109,7 +109,16 @@ print(confusion_matrix(lr.predict(X_test), y_test))
 
 Looking at confusion matrix may be a little confusing though, as you have to extract information from four numbers. Couldn't we use one or two numbers to make things easier?
 
-- [precision/recall trade-off](https://towardsdatascience.com/precision-vs-recall-386cf9f89488)
+#### - [precision/recall trade-off](https://towardsdatascience.com/precision-vs-recall-386cf9f89488)
+
+Just a helpful reminder of confusion matrix:
+
+$$
+\begin{bmatrix}
+TP & FN \\
+FP & TN 
+\end{bmatrix}
+$$
 
 There are two measures based on confusion matrix that are particurarily interesting, called precision and recall:
 
@@ -121,12 +130,23 @@ where TPR means True Positive Rate. Why is this a trade-off? Because you want to
 
 The values of confusion matrix, on which precision and recall are based, result from the value of the threshold: you can choose a threshold which maximizes any of these measures, depending on your study. You may want the model to be:
 
-- *conserrvative*, i.e. predict "1" only if it is sure it is "1": then you choose high threshold and get high precision and low recall (few observations are marked as "1")
+- *conservative*, i.e. predict "1" only if it is sure it is "1": then you choose high threshold and get high precision and low recall (few observations are marked as "1")
 
 - *liberal*, i.e. predict "1" when the model vaguely believes it might be "1": then you choose low threshold, get low precision and high recall (many observations are marked as "1").
 
-- sensitivity/specificity
+In other words:
 
+- precision: among those predicted as P, what percentage was truelly P?
+
+- recall: among true P, how many was predicted as P?
+
+#### - sensitivity/specificity *(pol: sensitivity - czułość, specificity - swoistość)*
+
+Let's begin with the definitions:
+
+$$ \textrm{recall} = \textrm{sensitivity} = \textrm{TPR} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FN}} $$
+
+$$ \textrm{specificity} = \textrm{FPR} = \frac{\textrm{TN}}{\textrm{TN} + \textrm{FP}} $$
 
 ### c) ROC, AUC 
 

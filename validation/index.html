@@ -372,14 +372,14 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     5     7    15    16    17    19    20    22    28    30 
-## FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE</code></pre>
+<pre><code>##     2     5    12    15    19    23    24    28    32    39 
+## FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE     9    2
-##      TRUE      6   13</code></pre>
+##      FALSE    13    2
+##      TRUE      2   13</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
@@ -392,26 +392,26 @@ confusionMatrix(predict(m2, test), test$Species)</code></pre>
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa          9          2
-##   versicolor      6         13
+##   setosa         13          2
+##   versicolor      2         13
 ##                                           
-##                Accuracy : 0.7333          
-##                  95% CI : (0.5411, 0.8772)
+##                Accuracy : 0.8667          
+##                  95% CI : (0.6928, 0.9624)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 0.008062        
+##     P-Value [Acc &gt; NIR] : 2.974e-05       
 ##                                           
-##                   Kappa : 0.4667          
+##                   Kappa : 0.7333          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 0.288844        
+##  Mcnemar&#39;s Test P-Value : 1               
 ##                                           
-##             Sensitivity : 0.6000          
+##             Sensitivity : 0.8667          
 ##             Specificity : 0.8667          
-##          Pos Pred Value : 0.8182          
-##          Neg Pred Value : 0.6842          
+##          Pos Pred Value : 0.8667          
+##          Neg Pred Value : 0.8667          
 ##              Prevalence : 0.5000          
-##          Detection Rate : 0.3000          
-##    Detection Prevalence : 0.3667          
-##       Balanced Accuracy : 0.7333          
+##          Detection Rate : 0.4333          
+##    Detection Prevalence : 0.5000          
+##       Balanced Accuracy : 0.8667          
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
@@ -443,19 +443,36 @@ lr.fit(X_train, y_train)</code></pre>
 <div id="b-confusion-matrix-derivatives-precisionrecall-sensisivityspecificity-etc." class="section level3">
 <h3>b) confusion matrix derivatives: precision/recall, sensisivity/specificity etc.</h3>
 <p>Looking at confusion matrix may be a little confusing though, as you have to extract information from four numbers. Couldn’t we use one or two numbers to make things easier?</p>
-<ul>
-<li><a href="https://towardsdatascience.com/precision-vs-recall-386cf9f89488">precision/recall trade-off</a></li>
-</ul>
+<div id="precisionrecall-trade-off" class="section level4">
+<h4>- <a href="https://towardsdatascience.com/precision-vs-recall-386cf9f89488">precision/recall trade-off</a></h4>
+<p>Just a helpful reminder of confusion matrix:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+TP &amp; FN \\
+FP &amp; TN 
+\end{bmatrix}
+\]</span></p>
 <p>There are two measures based on confusion matrix that are particurarily interesting, called precision and recall:</p>
 <p><span class="math display">\[ \textrm{precision} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FP}} \]</span></p>
 <p><span class="math display">\[ \textrm{recall} = \textrm{sensitivity} = \textrm{TPR} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FN}} \]</span></p>
 <p>where TPR means True Positive Rate. Why is this a trade-off? Because you want to maximize both of these measures, but while one goes up, the other goes down.</p>
 <p>The values of confusion matrix, on which precision and recall are based, result from the value of the threshold: you can choose a threshold which maximizes any of these measures, depending on your study. You may want the model to be:</p>
 <ul>
-<li><p><em>conserrvative</em>, i.e. predict “1” only if it is sure it is “1”: then you choose high threshold and get high precision and low recall (few observations are marked as “1”)</p></li>
+<li><p><em>conservative</em>, i.e. predict “1” only if it is sure it is “1”: then you choose high threshold and get high precision and low recall (few observations are marked as “1”)</p></li>
 <li><p><em>liberal</em>, i.e. predict “1” when the model vaguely believes it might be “1”: then you choose low threshold, get low precision and high recall (many observations are marked as “1”).</p></li>
-<li><p>sensitivity/specificity</p></li>
 </ul>
+<p>In other words:</p>
+<ul>
+<li><p>precision: among those predicted as P, what percentage was truelly P?</p></li>
+<li><p>recall: among true P, how many was predicted as P?</p></li>
+</ul>
+</div>
+<div id="sensitivityspecificity-pol-sensitivity---czułość-specificity---swoistość" class="section level4">
+<h4>- sensitivity/specificity <em>(pol: sensitivity - czułość, specificity - swoistość)</em></h4>
+<p>Let’s begin with the definitions:</p>
+<p><span class="math display">\[ \textrm{recall} = \textrm{sensitivity} = \textrm{TPR} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FN}} \]</span></p>
+<p><span class="math display">\[ \textrm{specificity} = \textrm{FPR} = \frac{\textrm{TN}}{\textrm{TN} + \textrm{FP}} \]</span></p>
+</div>
 </div>
 <div id="c-roc-auc" class="section level3">
 <h3>c) ROC, AUC</h3>
@@ -490,7 +507,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.9</code></pre>
+<pre><code>## [1] 0.8533333</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],
