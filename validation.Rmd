@@ -146,7 +146,15 @@ Let's begin with the definitions:
 
 $$ \textrm{recall} = \textrm{sensitivity} = \textrm{TPR} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FN}} $$
 
-$$ \textrm{specificity} = \textrm{FPR} = \frac{\textrm{TN}}{\textrm{TN} + \textrm{FP}} $$
+$$ \textrm{specificity} = \textrm{TNR} = \frac{\textrm{TN}}{\textrm{TN} + \textrm{FP}} $$
+
+where TPR is True Positive Rate and TNR is True Negative Rate. These two are often used in medicine for testing if a person has a specific condition (is sick/ill) or not. Say we have a test for coronavirus:
+
+- sensitivity (TPR) 95%, meaning that among all the people who have got Covid, 95% of them are labeled "positive" by this test;
+
+- specificity 90%, meaning that among all the people who have *not* got Covid, 90% are labeled "negative".
+
+Similarily to precision and recall, while creating a model you have to choose between high sensitivity and high recall.
 
 ### c) ROC, AUC 
 
