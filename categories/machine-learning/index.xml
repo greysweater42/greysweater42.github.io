@@ -18,7 +18,7 @@
       <guid>https://greysweater42.github.io/pillow/</guid>
       <description>1. What is pillow and why would you use it? Pillow is a Python package for working with images. It is invaluable for working with image datasets, but personally I find its API rather hard to remember, so here I present a few of the most popular applications of pillow for machine learning.
 A quick note on installation:
-pip install pillow 2. Applications a) displaying an image in a VSCode interactive session (which IMHO provides the best environment for data scientists at the moment) This one is fairly straightforward:</description>
+pip install pillow 2. Applications a) displaying an image in a VSCode interactive session  IMHO VSCode provides the best environment for data scientists at the moment.</description>
     </item>
     
     <item>
