@@ -383,7 +383,7 @@ with Image.open(&quot;image.jpg&quot;) as im:
     draw.rectangle(coords, fill=(0, 0, 0, 127))
     draw.polygon(poly_coords, fill=(200, 100, 0, 127))
     im = Image.alpha_composite(im, overlay)
-    im = im.convert('RGB')  # re-conversion to RGB may be neede for saving as jpg
+    im = im.convert('RGB')  # re-conversion to RGB may be needed for saving as jpg
 
     # text
     draw = ImageDraw.Draw(im)  # resetting draw after semi-transparent rectangle
