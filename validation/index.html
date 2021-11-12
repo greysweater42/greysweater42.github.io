@@ -376,14 +376,14 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     6     7     8     9    17    21    25    26    28    29 
+<pre><code>##     8    18    21    24    25    26    27    29    32    39 
 ## FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    15    2
-##      TRUE      0   13</code></pre>
+##      FALSE    15    1
+##      TRUE      0   14</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
@@ -396,26 +396,26 @@ confusionMatrix(predict(m2, test), test$Species)</code></pre>
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         15          2
-##   versicolor      0         13
+##   setosa         15          1
+##   versicolor      0         14
 ##                                           
-##                Accuracy : 0.9333          
-##                  95% CI : (0.7793, 0.9918)
+##                Accuracy : 0.9667          
+##                  95% CI : (0.8278, 0.9992)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 4.34e-07        
+##     P-Value [Acc &gt; NIR] : 2.887e-08       
 ##                                           
-##                   Kappa : 0.8667          
+##                   Kappa : 0.9333          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 0.4795          
+##  Mcnemar&#39;s Test P-Value : 1               
 ##                                           
 ##             Sensitivity : 1.0000          
-##             Specificity : 0.8667          
-##          Pos Pred Value : 0.8824          
+##             Specificity : 0.9333          
+##          Pos Pred Value : 0.9375          
 ##          Neg Pred Value : 1.0000          
 ##              Prevalence : 0.5000          
 ##          Detection Rate : 0.5000          
-##    Detection Prevalence : 0.5667          
-##       Balanced Accuracy : 0.9333          
+##    Detection Prevalence : 0.5333          
+##       Balanced Accuracy : 0.9667          
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
@@ -517,7 +517,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.9844444</code></pre>
+<pre><code>## [1] 0.9044444</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],
