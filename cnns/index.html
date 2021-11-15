@@ -312,72 +312,111 @@
 <div class="article-categories">
   
     <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
-    <a href="https://greysweater42.github.io/categories/data-engineering" role="button">Data engineering </a>
+    <a href="https://greysweater42.github.io/categories/machine-learning" role="button">Machine learning </a>
     &emsp;
   </br>
 </div>
 <div class="article-title">
   
-  hadoop
+  CNNs
 
 </div>
 <div class="article-info">
-    Dec 4, 2018 &emsp;  &emsp; 2 minutes read
+    Nov 5, 2021 &emsp;  &emsp; 5 minutes read
 </div>
 
-<h2 id="1-what-is-hadoop-and-why-would-you-use-it">1. What is hadoop and why would you use it?</h2>
+<h2 id="1-what-are-cnns-and-why-would-you-care">1. What are CNNs and why would you care?</h2>
+<p>CNN stands for convolutional neural network, which is a type of artificial neural network used primarily for image classification, detection and segmentation.</p>
+<p>CNN also means Cable News Network, or one of the most popular TV networks in US, but who cares.</p>
+<h2 id="2-but-what-is-a-convolutionhttpsenwikipediaorgwikiconvolution">2. But what is a <a href="https://en.wikipedia.org/wiki/Convolution">convolution</a>?</h2>
+<p>A convolution is a measure of similarity between two functions <em>f(t)</em> and <em>g(t)</em> depending on the moment t, so it actually is another function, <em>h(t)</em>. For continues functions it is defined as an integral over product of all the possible shifts between two functions (shift being usually denoted as $\tau$), hence the definition:</p>
+<p>$$ (f * g)(t) = \int f(\tau) g(t-\tau) d\tau $$</p>
+<p>If you don&rsquo;t feel confident with this formula, there are plenty of tutorials on youtube, like <a href="https://www.youtube.com/watch?v=N-zd-T17uiE">this one</a>, but to get the full picture I recommend familiarizing yourself with digital signal processing, e.g. Fourier transform or wavelet transform, to get a feeling of how and why signals are processed.</p>
+<p>But if you don&rsquo;t feel comfortable with integrals, you may have a look at the discrete case:</p>
+<p>$$ (f*g)[n] = \sum_{m=-\infty}^{\infty} f[m]g[n-m] $$</p>
+<p>where you can clearly see that a convolution is a function, which is a combination of two functions, and has high values if the two functions are &ldquo;alike&rdquo; at specific moment of time.</p>
+<p>For more information you can refer to the beginning of Ian Goodfellow&rsquo;s <em>Deep Learning</em>, chapter 9: Convolutional Networks.</p>
+<h2 id="3-simple-examples-of-a-convolution">3. Simple examples of a convolution</h2>
+<h3 id="a-implemented-by-hand">a) implemented &ldquo;by hand&rdquo;</h3>
+<p>Let&rsquo;s define some data:</p>
+<pre><code class="language-{python}" data-lang="{python}">import numpy as np
+
+f = np.zeros(12)
+f[8] = 1
+f[9] = -1
+
+g = np.array([0., 1., -1., 0.])
+</code></pre><p>We defined two simple functions: <em>f</em> ang <em>g</em>, which look exaclty the same at some point. The second one is much shorter though, but this is not a problem for convolution: it simply assumes that the other values of the function are zeroes.</p>
+<p>Let&rsquo;s apply a convolution to these functions:</p>
+<pre><code class="language-{python}" data-lang="{python}">s = max(len(f), len(g))
+x = np.concatenate([np.zeros(s), f, np.zeros(30)])
+y = np.concatenate([np.zeros(s), g, np.zeros(len(f) - len(g)), np.zeros(s)])
+
+c = np.zeros(len(f) + len(g) - 1)
+for t in range(len(f)):
+    for tau in range(-s, s):
+        c[t] += x[s+tau] * y[s+t-tau]
+
+print(c)
+</code></pre><pre><code>[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  1. -2.  1.  0.  0.  0.]
+</code></pre><p>First, we declared a margin called <code>s</code>, which is just for convenience of numpy during shifting. In a loop we multiply specific values of the function, just as in the discrete convolution case, but this time I used variable names for continues convolution: t and tau, instead of n and m.</p>
+<p>The convolution has length 15, which is a sum of lengths of domains of f and g, minus 1 (the number of possible combinations, when <em>f</em> and <em>g</em> are in contact).</p>
+<h3 id="b-using-numpy">b) using numpy</h3>
+<p>Couldn&rsquo;t be easier:</p>
+<pre><code class="language-{python}" data-lang="{python}">print(np.convolve(f, g))
+</code></pre><pre><code>[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  1. -2.  1.  0.  0.  0.]
+</code></pre><p>Same result as before.</p>
+<h3 id="c-using-pytorch">c) using pytorch</h3>
+<p>Pytorch, being a framework for artifical neural networks, contains a function called <em>convolution</em>. Let&rsquo;s see how it works:</p>
+<pre><code class="language-{python}" data-lang="{python}">import torch
+
+f = torch.zeros(12)
+f[8] = 1
+f[9] = -1
+g = torch.tensor([0., 1., -1., 0.])
+
+conv = torch.nn.Conv1d(1, 1, (1, 4), bias=False)
+conv.weight = torch.nn.Parameter(g.unsqueeze(0).unsqueeze(0).unsqueeze(0))
+# batch_size = 1, &quot;image&quot; &quot;depth&quot;: 1 (not RGB), &quot;image&quot; size: 20x1
+f = f.unsqueeze(0).unsqueeze(0).unsqueeze(0)
+print(conv(f).detach()[0][0][0])
+</code></pre><pre><code>tensor([ 0.,  0.,  0.,  0.,  0.,  0., -1.,  2., -1.])
+</code></pre><p>In this case we had to <code>unsqueeze</code> (add a dimension) to our function/array several times, so it was perceived as an image of size 20x1, depth 1 and belonging to a batch of size 1, because you use all of these parameters for training a NN and they are the defaults for pytorch.</p>
+<p>Curiously, the results are slighlty different for pytorch, comparing to e.g. numpy: it turns out that pytorch uses cross-correlation instead of convolution, which in fact makes no difference, as they are almost exaclty the same transformations (<a href="https://en.wikipedia.org/wiki/Cross-correlation#Properties">just have a look at Wikipedia</a>). A small discussion about this you may find also on <a href="https://stackoverflow.com/questions/66640802/why-are-pytorch-convolutions-implemented-as-cross-correlations">stackoverflow</a>.</p>
+<h2 id="4-what-are-the-differences-between-convolutional-and-fully-connected-layers">4. What are the differences between convolutional and fully-connected layers?</h2>
+<p>The answer I would have given before deep diving into convolutions:</p>
+<blockquote>
+<p>Well, these are just completely different things.</p>
+</blockquote>
+<p>But now, as I got smarter ;), I know that they are surprisingly similar. At first sight the differences are:</p>
+<blockquote>
+<p>Fully-connected layer takes as input a <em>n</em>-dimensional vector, but a convolutional layer a <em>x</em> by <em>y</em> by <em>d</em> tensor.</p>
+</blockquote>
+<p>This does not have to be the case. Convolutional layer <em>can</em> take a <em>x</em> by <em>y</em> by <em>d</em> tensor as input, but can also take a <em>n</em>-dimmensional vector. Actually it is widely used for image classification thanks to its shape-awareness.</p>
+<blockquote>
+<p>Fully-connected layer produces a <em>n</em>-dimensional vector, while convolutional layer a <em>a</em> by <em>b</em> by <em>k</em> tensor (where a ~= (x + padding) / stride etc.) and <em>k</em> is the number of kernels.</p>
+</blockquote>
+<p>This also does not have to be case. You can set the number of kernels to 1, which would immediately make it more similar to a fully-connected layer and if your input is an <em>n</em>-dimensional vector, the output would also be a <em>n</em>-dimensional vector (it might be <em>n+/-k</em>, depending on specification).</p>
+<blockquote>
+<p>There are completely different algorithms to produce an output: convolution and matrix multiplication.</p>
+</blockquote>
+<p><em>Completely</em> is a subjective term, they just are different, yet they share some similarities. In fact we could understand convolution as a specific, selective and iterative kind of matrix multiplication. There are other differences, but IMHO considering a convolution as a remote relative of matrix multiplication is an interesting point of view, which is worth exploring.</p>
+<h2 id="5-what-are-some-quirks-in-cnns-which-are-unpresent-in-other-types-of-networks">5. What are some quirks in CNNs, which are unpresent in other types of networks?</h2>
 <ul>
 <li>
-<p>hadoop is the first ever popular big data tool;</p>
+<p>stride and padding</p>
 </li>
 <li>
-<p>it lets you <em>quickly</em> compute huge amounts of data thanks to dividing computation into many machines i.e. a cluster of machines; (<em>quickly</em> comparing to a standard, one-machine approach);</p>
+<p>pooling</p>
 </li>
 <li>
-<p>you can store and easily access huge amounts of data thanks to hadoop&rsquo;s distributed file system (hdfs);</p>
+<p>activation - this actually works the same</p>
 </li>
 <li>
-<p>in general, hadoop is a cornerstone of big data.</p>
-</li>
-</ul>
-<h2 id="2-installation">2. Installation</h2>
-<p>In production environment Hadoop should be installed on several interconnected machines, called a cluster. I&rsquo;m not going to explain how to do this, as this is usually a task for sysadmins/DevOps guys, and not for data scientists. However it is very usufeul to have your own one-node hadoop installation on your laptop for practising basic big data solutions. This is what we&rsquo;re going to install in this section.</p>
-<p><a href="hadoop.sh">Here</a>&lsquo;s a little script that I wrote which installs and runs hadoop. You can execute it with</p>
-<pre><code>sudo bash hadoop.sh
-</code></pre><p>but I recommend running it line by line, so you would understand what you are doing and what is needed to have hadoop running.</p>
-<h2 id="3-hello-world-examples">3. &ldquo;Hello World&rdquo; examples</h2>
-<p>You probably expect that knowing Hadoop will let you do Big Data. It would, but in reality nobody uses Hadoop to run data processing anymore. <a href="http://tomis9.com/spark">Spark</a> and <a href="http://tomis9.com/hive">Hive</a> have much nicer apis, and do the same tasks faster.</p>
-<p>But there is still one functionality that was not replaced: a file system, called <em>hadoop distributed file system</em> or <em>hdfs</em>, where limited disk capacity is no longer a problem.</p>
-<p>There are a couple of useful commands to remember. Their resemblance to bash commands is quite obvious.</p>
-<p>ls - list files in a given directory</p>
-<pre><code>hdfs dfs -ls &lt;dir&gt;
-</code></pre><p>mkdir - create a directory</p>
-<pre><code>hdfs dfs -mkdir &lt;path&gt;
-</code></pre><p>put - upload file to hdfs</p>
-<pre><code>hdfs dfs -put &lt;localSrc&gt; &lt;dest&gt;
-</code></pre><p>copyFromLocal - copy file local to hdfs, obviously</p>
-<pre><code>hdfs dfs -copyFromLocal &lt;localSrc&gt; &lt;dest&gt;
-</code></pre><p>get - download file from hdfs</p>
-<pre><code>hdfs dfs -get &lt;src&gt; &lt;localDest&gt;
-</code></pre><p>copyToLocal - copy file from hdfs to local, obviously</p>
-<pre><code>hdfs dfs -copyToLocal &lt;src&gt; &lt;localDest&gt;
-</code></pre><p>mv - move file from one directory to another or rename a file</p>
-<pre><code>hdfs dfs -mv &lt;src&gt; &lt;dest&gt;
-</code></pre><p>cp - copy file from one directory to another</p>
-<pre><code>hdfs dfs -cp &lt;src&gt; &lt;dest&gt;
-</code></pre><p>rm - remove a file from hdfs (<code>-rm -r</code> - remove recursively)</p>
-<pre><code>hdfs dfs -rm &lt;dir&gt;
-</code></pre><p>More commands are available <a href="https://data-flair.training/blogs/top-hadoop-hdfs-commands-tutorial/">here</a>.</p>
-<h2 id="4-subjects-still-to-cover">4. Subjects still to cover</h2>
-<ul>
-<li>
-<p>Hadoop GUI (TODO)</p>
+<p>XAI works quite well, especially <a href="https://greysweater42.github.io/fiat_ferrari/#6-but-does-it-really-work">grad-cam</a></p>
 </li>
 <li>
-<p>example of MapReduce: wordcount (TODO)</p>
-</li>
-<li>
-<p><a href="https://github.com/RevolutionAnalytics/RHadoop/wiki">RHadoop</a> (TODO)</p>
+<p>regularization - data augmentation and dropout (should dropout be used for CNNs?)</p>
 </li>
 </ul>
 

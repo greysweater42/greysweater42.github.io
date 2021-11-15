@@ -165,6 +165,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/cnns/">CNNs</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/fastai/">fastai</a>
@@ -376,46 +378,47 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     8    18    21    24    25    26    27    29    32    39 
-## FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre><code>##     2     4     6     7    11    15    17    19    21    26 
+## FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    15    1
-##      TRUE      0   14</code></pre>
+##      FALSE     7    3
+##      TRUE      8   12</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
 <p>We will use a <a href="https://www.rdocumentation.org/packages/caret/versions/3.45/topics/confusionMatrix">confusionMatrix</a> function. Keep in mind that <code>caret</code> is a huge machine learning library, almost an entire new language inside R, so introducing it into your code just for the sake of confusion matrix may be an overkill.</p>
 <p>Still, <code>caret</code> provides a much broader summary of confusion matrix:</p>
 <pre class="r"><code>library(caret)
-m2 &lt;- train(Species ~ Sepal.Length, train, method = &quot;glm&quot;, family = binomial)
-confusionMatrix(predict(m2, test), test$Species)</code></pre>
+m2 &lt;- train(Species ~ Sepal.Length, train, method = &quot;glm&quot;, family = binomial)</code></pre>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre class="r"><code>confusionMatrix(predict(m2, test), test$Species)</code></pre>
 <pre><code>## Confusion Matrix and Statistics
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         15          1
-##   versicolor      0         14
+##   setosa          7          3
+##   versicolor      8         12
 ##                                           
-##                Accuracy : 0.9667          
-##                  95% CI : (0.8278, 0.9992)
+##                Accuracy : 0.6333          
+##                  95% CI : (0.4386, 0.8007)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 2.887e-08       
+##     P-Value [Acc &gt; NIR] : 0.1002          
 ##                                           
-##                   Kappa : 0.9333          
+##                   Kappa : 0.2667          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 1               
+##  Mcnemar&#39;s Test P-Value : 0.2278          
 ##                                           
-##             Sensitivity : 1.0000          
-##             Specificity : 0.9333          
-##          Pos Pred Value : 0.9375          
-##          Neg Pred Value : 1.0000          
+##             Sensitivity : 0.4667          
+##             Specificity : 0.8000          
+##          Pos Pred Value : 0.7000          
+##          Neg Pred Value : 0.6000          
 ##              Prevalence : 0.5000          
-##          Detection Rate : 0.5000          
-##    Detection Prevalence : 0.5333          
-##       Balanced Accuracy : 0.9667          
+##          Detection Rate : 0.2333          
+##    Detection Prevalence : 0.3333          
+##       Balanced Accuracy : 0.6333          
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
@@ -517,7 +520,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.9044444</code></pre>
+<pre><code>## [1] 0.9888889</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],

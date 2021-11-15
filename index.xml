@@ -22,6 +22,17 @@ pip install pillow 2. Applications a) displaying an image in a VSCode interactiv
     </item>
     
     <item>
+      <title>CNNs</title>
+      <link>https://greysweater42.github.io/cnns/</link>
+      <pubDate>Fri, 05 Nov 2021 10:16:34 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/cnns/</guid>
+      <description>1. What are CNNs and why would you care? CNN stands for convolutional neural network, which is a type of artificial neural network used primarily for image classification, detection and segmentation.
+CNN also means Cable News Network, or one of the most popular TV networks in US, but who cares.
+2. But what is a convolution? A convolution is a measure of similarity between two functions f(t) and g(t) depending on the moment t, so it actually is another function, h(t).</description>
+    </item>
+    
+    <item>
       <title>favourite pet?</title>
       <link>https://greysweater42.github.io/favourite_pet/</link>
       <pubDate>Wed, 13 Oct 2021 22:07:37 +0200</pubDate>
