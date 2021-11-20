@@ -378,14 +378,14 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##    10    14    16    18    20    21    22    25    30    33 
-## FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre><code>##     2     4     7     8     9    16    19    30    36    40 
+## FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    14    3
-##      TRUE      1   12</code></pre>
+##      FALSE    13    4
+##      TRUE      2   11</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
@@ -393,32 +393,34 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <p>Still, <code>caret</code> provides a much broader summary of confusion matrix:</p>
 <pre class="r"><code>library(caret)
 m2 &lt;- train(Species ~ Sepal.Length, train, method = &quot;glm&quot;, family = binomial)</code></pre>
-<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
 <pre class="r"><code>confusionMatrix(predict(m2, test), test$Species)</code></pre>
 <pre><code>## Confusion Matrix and Statistics
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         14          3
-##   versicolor      1         12
+##   setosa         13          4
+##   versicolor      2         11
 ##                                           
-##                Accuracy : 0.8667          
-##                  95% CI : (0.6928, 0.9624)
+##                Accuracy : 0.8             
+##                  95% CI : (0.6143, 0.9229)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 2.974e-05       
+##     P-Value [Acc &gt; NIR] : 0.0007155       
 ##                                           
-##                   Kappa : 0.7333          
+##                   Kappa : 0.6             
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 0.6171          
+##  Mcnemar&#39;s Test P-Value : 0.6830914       
 ##                                           
-##             Sensitivity : 0.9333          
-##             Specificity : 0.8000          
-##          Pos Pred Value : 0.8235          
-##          Neg Pred Value : 0.9231          
+##             Sensitivity : 0.8667          
+##             Specificity : 0.7333          
+##          Pos Pred Value : 0.7647          
+##          Neg Pred Value : 0.8462          
 ##              Prevalence : 0.5000          
-##          Detection Rate : 0.4667          
+##          Detection Rate : 0.4333          
 ##    Detection Prevalence : 0.5667          
-##       Balanced Accuracy : 0.8667          
+##       Balanced Accuracy : 0.8000          
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
@@ -520,7 +522,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.8688889</code></pre>
+<pre><code>## [1] 0.8577778</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],

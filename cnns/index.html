@@ -367,7 +367,7 @@ print(c)
 </code></pre><pre><code>[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  1. -2.  1.  0.  0.  0.]
 </code></pre><p>Same result as before.</p>
 <h3 id="c-using-pytorch">c) using pytorch</h3>
-<p>Pytorch, being a framework for artifical neural networks, contains a function called <em>convolution</em>. Let&rsquo;s see how it works:</p>
+<p>Pytorch, being a framework for artifical neural networks, has a function called <em>convolution</em>. Let&rsquo;s see how it works:</p>
 <pre><code class="language-{python}" data-lang="{python}">import torch
 
 f = torch.zeros(12)
@@ -383,7 +383,7 @@ print(conv(f).detach()[0][0][0])
 </code></pre><pre><code>tensor([ 0.,  0.,  0.,  0.,  0.,  0., -1.,  2., -1.])
 </code></pre><p>In this case we had to <code>unsqueeze</code> (add a dimension) to our function/array several times, so it was perceived as an image of size 20x1, depth 1 and belonging to a batch of size 1, because you use all of these parameters for training a NN and they are the defaults for pytorch.</p>
 <p>Curiously, the results are slighlty different for pytorch, comparing to e.g. numpy: it turns out that pytorch uses cross-correlation instead of convolution, which in fact makes no difference, as they are almost exaclty the same transformations (<a href="https://en.wikipedia.org/wiki/Cross-correlation#Properties">just have a look at Wikipedia</a>). A small discussion about this you may find also on <a href="https://stackoverflow.com/questions/66640802/why-are-pytorch-convolutions-implemented-as-cross-correlations">stackoverflow</a>.</p>
-<h2 id="4-what-are-the-differences-between-convolutional-and-fully-connected-layers">4. What are the differences between convolutional and fully-connected layers?</h2>
+<h2 id="4-differences-between-convolutional-and-fully-connected-layers">4. Differences between convolutional and fully-connected layers</h2>
 <p>The answer I would have given before deep diving into convolutions:</p>
 <blockquote>
 <p>Well, these are just completely different things.</p>
@@ -401,7 +401,7 @@ print(conv(f).detach()[0][0][0])
 <p>There are completely different algorithms to produce an output: convolution and matrix multiplication.</p>
 </blockquote>
 <p><em>Completely</em> is a subjective term, they just are different, yet they share some similarities. In fact we could understand convolution as a specific, selective and iterative kind of matrix multiplication. There are other differences, but IMHO considering a convolution as a remote relative of matrix multiplication is an interesting point of view, which is worth exploring.</p>
-<h2 id="5-what-are-some-quirks-in-cnns-which-are-unpresent-in-other-types-of-networks">5. What are some quirks in CNNs, which are unpresent in other types of networks?</h2>
+<h2 id="5-quirks-in-cnns">5. Quirks in CNNs</h2>
 <ul>
 <li>
 <p>stride and padding</p>
@@ -442,9 +442,9 @@ conv2.weight = torch.nn.Parameter(u(g))
 print(all(conv1(u(f))[0][0][0][::2] == conv2(u(f))[0][0][0]))  # the same
 </code></pre><pre><code>True
 </code></pre><blockquote>
-<p>I used a recurrent unsqueezer, as the only way I found to avoid writing <code>unsqueeze(0).unsqueeze(0).unsqueeze(0)</code>. Theoretically you can use <code>view()</code>, but it works slighlty differently for 2D tensors, so I tend to avoid it (similar to <code>resize</code> as a transformer in torchvision and <code>torch.reshape</code> - may seem like distant relatives, but are used in completely different contexts).
-Having recollected how downsampling works in CNNs, let&rsquo;s move back to upsampling. There are two popular ways to perform upsampling in pytorch. The easy way:</p>
+<p>I used a recurrent unsqueezer, as the only way I found to avoid writing <code>unsqueeze(0).unsqueeze(0).unsqueeze(0)</code>. Theoretically you can use <code>view()</code>, but it works slighlty differently for 2D tensors, so I tend to avoid it (similar to <code>resize</code> as a transformer in torchvision and <code>torch.reshape</code> - may seem like distant relatives, but are used in completely different contexts).</p>
 </blockquote>
+<p>Now that we&rsquo;ve recollected how downsampling works in CNNs, let&rsquo;s move back to upsampling. There are two popular ways to perform upsampling in pytorch. The easy way:</p>
 <pre><code class="language-{python}" data-lang="{python}">print(conv2(u(f)))  # downsampled
 upsample = torch.nn.Upsample(scale_factor=(1, 2))
 print(upsample(conv2(u(f))))  # back to the previous dimensions
