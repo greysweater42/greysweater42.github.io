@@ -322,7 +322,7 @@
 
 </div>
 <div class="article-info">
-    Nov 5, 2021 &emsp;  &emsp; 5 minutes read
+    Nov 5, 2021 &emsp;  &emsp; 7 minutes read
 </div>
 
 <h2 id="1-what-are-cnns-and-why-would-you-care">1. What are CNNs and why would you care?</h2>
@@ -419,6 +419,48 @@ print(conv(f).detach()[0][0][0])
 <p>regularization - data augmentation and dropout (should dropout be used for CNNs?)</p>
 </li>
 </ul>
+<h2 id="6-transposed-convolution-and-upsampling">6. Transposed convolution and upsampling</h2>
+<p>If you work on image segmentation, you surely come across the idea of &ldquo;upsampling* or *transposed convolution*. In short, image segmentation relies on a concept of encoding (downsampling) an image into a lower dimension and bringing it back to the initial size with decoding (upsampling) to predict a mask (an image where each pixel belongs to a class, usually reflected in color). Downsampling is usually done with *pooling* or convolution with *stride*. Both of these methods have the same effect: they chose every second (for stride=2 or maxpool_size=2) pixel from feature map.</p>
+<p>Let&rsquo;s have a look at a modest prove (proving by showing an example is <em>not</em> a proving&hellip;) ok, let&rsquo;s show an example which <em>shows</em> that <code>stride</code> is the same think as taking every n-th element of a tensor:</p>
+<pre><code class="language-{python}" data-lang="{python}">import torch
+import torch.nn as nn
+
+# unsqueeze(0) n times
+u = lambda x, n=3: u(x.unsqueeze(0), n-1) if n &gt; 0 else x
+
+f = torch.zeros(12)
+f[8] = 1
+f[9] = -1
+g = torch.tensor([0.0, 1.0, -1.0, 0.0])
+
+kwargs = dict(in_channels=1, out_channels=1, kernel_size=(1, 4), bias=False)
+conv1 = torch.nn.Conv1d(**kwargs)  # stride 1
+conv1.weight = torch.nn.Parameter(u(g))
+conv2 = torch.nn.Conv1d(**kwargs, stride=2)  # stride 2
+conv2.weight = torch.nn.Parameter(u(g))
+
+print(all(conv1(u(f))[0][0][0][::2] == conv2(u(f))[0][0][0]))  # the same
+</code></pre><pre><code>True
+</code></pre><blockquote>
+<p>I used a recurrent unsqueezer, as the only way I found to avoid writing <code>unsqueeze(0).unsqueeze(0).unsqueeze(0)</code>. Theoretically you can use <code>view()</code>, but it works slighlty differently for 2D tensors, so I tend to avoid it (similar to <code>resize</code> as a transformer in torchvision and <code>torch.reshape</code> - may seem like distant relatives, but are used in completely different contexts).
+Having recollected how downsampling works in CNNs, let&rsquo;s move back to upsampling. There are two popular ways to perform upsampling in pytorch. The easy way:</p>
+</blockquote>
+<pre><code class="language-{python}" data-lang="{python}">print(conv2(u(f)))  # downsampled
+upsample = torch.nn.Upsample(scale_factor=(1, 2))
+print(upsample(conv2(u(f))))  # back to the previous dimensions
+</code></pre><pre><code>tensor([[[[ 0.,  0.,  0., -1., -1.]]]], grad_fn=&lt;ThnnConv2DBackward0&gt;)
+tensor([[[[ 0.,  0.,  0.,  0.,  0.,  0., -1., -1., -1., -1.]]]],
+       grad_fn=&lt;UpsampleNearest2DBackward1&gt;)
+</code></pre><p>The <code>Upsample</code> module can take various parameters depending on how you want the data to be upsampled. The default way presented above simply repeats the value <code>scale_factor</code> n times, just as numpy&rsquo;s <code>np.reapeat</code> function. More on that in <a href="https://pytorch.org/docs/stable/generated/torch.nn.Upsample.html">pytorch docs</a>.</p>
+<p>But there is a smarter, learnable approach to upsampling: you can actually use a specific kernel just as if you were doing an operation inverse to convolution (which, mathematically speaking, is not strictly <em>inverse</em>).</p>
+<pre><code class="language-{python}" data-lang="{python}">convtrans = torch.nn.ConvTranspose1d(**kwargs, stride=2)
+convtrans.weight.data = u(g)
+print(convtrans(conv2(u(f))).shape == u(f).shape)  # the same shapes after unpooling/upsampling
+print(convtrans(conv2(u(f))))
+</code></pre><pre><code>True
+tensor([[[[ 0.,  0.,  0.,  0.,  0.,  0.,  0., -1.,  1., -1.,  1.,  0.]]]],
+       grad_fn=&lt;SlowConvTranspose2DBackward0&gt;)
+</code></pre><p>As you can see, transposed convolution restores the initial size of the tensor, but the tensor has different values, so the operation is not fully <em>inverse</em> (probably there is a way to inverse the kernel properly, but haven&rsquo;t figured it out yet).</p>
 
 </div>
 
