@@ -5,10 +5,23 @@
     <link>https://greysweater42.github.io/</link>
     <description>Recent content on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 10 Nov 2021 16:04:17 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 27 Nov 2021 15:01:58 +0100</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UNet</title>
+      <link>https://greysweater42.github.io/unet/</link>
+      <pubDate>Sat, 27 Nov 2021 15:01:58 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/unet/</guid>
+      <description>1. What is UNet? UNet is a popular deep convolutional neural network used for object (image) segmentation.
+2. How to learn UNet? When I approach a new subject, I usually follow this path:
+  Get a general idea of the subject.
+  Find a working implementation and run it. I found [it] pretty quickly.
+  Build a working example on my own, which does not necessarily have to work perfectly, but it must have all the crucial functionalities to do their job.</description>
+    </item>
     
     <item>
       <title>pillow</title>
