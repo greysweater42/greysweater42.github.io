@@ -33,17 +33,6 @@ args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector o
     </item>
     
     <item>
-      <title>pandas</title>
-      <link>https://greysweater42.github.io/pandas/</link>
-      <pubDate>Fri, 25 Jan 2019 13:46:12 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/pandas/</guid>
-      <description>This is not a proper blog post yet, just my notes.   &amp;lt;&amp;gt;&amp;lt;&amp;gt;&amp;lt;&amp;gt;&amp;lt;&amp;gt;
-1. What is pandas and why would you use it?  pandas is a Python package created for working with tables known as DataFrames;
- it is the only reasonable Python package for this purpose, which makes Python a little modest comparing to R (base, data.table, dplyr - every one of them has a better interface than pandas) when we process tables;</description>
-    </item>
-    
-    <item>
       <title>redis</title>
       <link>https://greysweater42.github.io/redis/</link>
       <pubDate>Sun, 21 Oct 2018 20:49:20 +0200</pubDate>
