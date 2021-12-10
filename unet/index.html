@@ -411,6 +411,9 @@ class DumbNet(nn.Module):
         x_out = self.out(x_up)
         return x_out
 </code></pre><p>with down and upsampling.</p>
+<h2 id="4-where-to-go-next">4. Where to go next?</h2>
+<p>In practice you may not want to write you own version of UNet or copy-paste code from any implementation published on github. Instead you can use <a href="https://github.com/qubvel/segmentation_models.pytorch">segmentation models package</a>, which already has many interesting segmentation models implemented.</p>
+<p>But tweaking this package is another story :)</p>
 
 </div>
 
