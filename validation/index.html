@@ -217,8 +217,6 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
           
         </div>
@@ -244,8 +242,6 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/pyenv/">pyenv, virtualenv, freeze</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/vagrant/">vagrant</a>
           
@@ -376,14 +372,14 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     7     8    12    21    23    36    37    40    41    42 
-## FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</code></pre>
+<pre><code>##     1     6     8    12    13    16    18    26    27    29 
+## FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    14    1
-##      TRUE      1   14</code></pre>
+##      FALSE    13    1
+##      TRUE      2   14</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
@@ -396,26 +392,26 @@ confusionMatrix(predict(m2, test), test$Species)</code></pre>
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         14          1
-##   versicolor      1         14
+##   setosa         13          1
+##   versicolor      2         14
 ##                                           
-##                Accuracy : 0.9333          
-##                  95% CI : (0.7793, 0.9918)
+##                Accuracy : 0.9             
+##                  95% CI : (0.7347, 0.9789)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 4.34e-07        
+##     P-Value [Acc &gt; NIR] : 4.215e-06       
 ##                                           
-##                   Kappa : 0.8667          
+##                   Kappa : 0.8             
 ##                                           
 ##  Mcnemar&#39;s Test P-Value : 1               
 ##                                           
-##             Sensitivity : 0.9333          
+##             Sensitivity : 0.8667          
 ##             Specificity : 0.9333          
-##          Pos Pred Value : 0.9333          
-##          Neg Pred Value : 0.9333          
+##          Pos Pred Value : 0.9286          
+##          Neg Pred Value : 0.8750          
 ##              Prevalence : 0.5000          
-##          Detection Rate : 0.4667          
-##    Detection Prevalence : 0.5000          
-##       Balanced Accuracy : 0.9333          
+##          Detection Rate : 0.4333          
+##    Detection Prevalence : 0.4667          
+##       Balanced Accuracy : 0.9000          
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
@@ -517,7 +513,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.8711111</code></pre>
+<pre><code>## [1] 0.9288889</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],

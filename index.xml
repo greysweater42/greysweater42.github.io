@@ -591,9 +591,8 @@ args &amp;lt;- commandArgs(trailingOnly = TRUE) print(args) # args is a vector o
       <pubDate>Sun, 04 Feb 2018 12:02:23 +0100</pubDate>
       
       <guid>https://greysweater42.github.io/testing/</guid>
-      <description>1. What is testing and why would you use it?   testing or test-driven development (TDD) is a discipline, which relies on writing a test for every functionality before creating it;
-  at first the test will fail, as we have not provided the proper functionality yet. Our goal is to fulfill this functionality, so the test will pass.
-  In reality you modify your tests as you create the functionality or even write the tests after you are finished writing it.</description>
+      <description>1. What is testing and why would you do it?   testing or test-driven development (TDD) is a discipline, which relies on writing a test for every functionality before creating it (in reality you often end up writing tests afterwards)
+  at first the test will fail, as we have not provided the proper functionality yet. Our goal is to fulfill this functionality, so the test will pass (in reality you usually write tests so that later you can code more&amp;hellip; inattentively, and tests point out your mistakes before reaching pruduction environment)</description>
     </item>
     
     <item>

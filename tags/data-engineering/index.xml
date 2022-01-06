@@ -32,16 +32,5 @@
   You may get the information of how and when the program was executed, e.g. who was using it&amp;rsquo;s functionalities and if all the pieces of your program finished correctly.</description>
     </item>
     
-    <item>
-      <title>testing</title>
-      <link>https://greysweater42.github.io/testing/</link>
-      <pubDate>Sun, 04 Feb 2018 12:02:23 +0100</pubDate>
-      
-      <guid>https://greysweater42.github.io/testing/</guid>
-      <description>1. What is testing and why would you use it?   testing or test-driven development (TDD) is a discipline, which relies on writing a test for every functionality before creating it;
-  at first the test will fail, as we have not provided the proper functionality yet. Our goal is to fulfill this functionality, so the test will pass.
-  In reality you modify your tests as you create the functionality or even write the tests after you are finished writing it.</description>
-    </item>
-    
   </channel>
 </rss>

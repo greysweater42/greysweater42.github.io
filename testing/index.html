@@ -217,8 +217,6 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
-          
             <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
           
         </div>
@@ -244,8 +242,6 @@
             <a class="dropdown-item" href="https://greysweater42.github.io/pyenv/">pyenv, virtualenv, freeze</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
-          
-            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/vagrant/">vagrant</a>
           
@@ -310,14 +306,6 @@
 <div class="article-categories">
   
     <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
-    <a href="https://greysweater42.github.io/categories/devops" role="button">DevOps </a>
-    &emsp;
-  
-    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
-    <a href="https://greysweater42.github.io/categories/data-engineering" role="button">Data engineering </a>
-    &emsp;
-  
-    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
     <a href="https://greysweater42.github.io/categories/r" role="button">R </a>
     &emsp;
   
@@ -335,16 +323,15 @@
     Feb 4, 2018 &emsp;  &emsp; 5 minutes read
 </div>
 
-<h2 id="1-what-is-testing-and-why-would-you-use-it">1. What is testing and why would you use it?</h2>
+<h2 id="1-what-is-testing-and-why-would-you-do-it">1. What is testing and why would you do it?</h2>
 <ul>
 <li>
-<p>testing or <a href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a> (TDD) is a discipline, which relies on writing a test for every functionality <em>before</em> creating it;</p>
+<p>testing or <a href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a> (TDD) is a discipline, which relies on writing a test for every functionality <em>before</em> creating it (in reality you often end up writing tests afterwards)</p>
 </li>
 <li>
-<p>at first the test will fail, as we have not provided the proper functionality yet. Our goal is to fulfill this functionality, so the test will pass.</p>
+<p>at first the test will fail, as we have not provided the proper functionality yet. Our goal is to fulfill this functionality, so the test will pass (in reality you usually write tests so that later you can code more&hellip; inattentively, and tests point out your mistakes before reaching pruduction environment)</p>
 </li>
 </ul>
-<p>In reality you modify your tests as you create the functionality or even write the tests after you are finished writing it. It&rsquo;s OK as long as you remember to cover all the functions with tests.</p>
 <h2 id="2-hello-world-examples">2. &ldquo;Hello World&rdquo; examples</h2>
 <h3 id="r-testthat">R (testthat)</h3>
 <p>Let&rsquo;s go through testing two simple functions:</p>
@@ -394,10 +381,10 @@ test_that(
 <p>we provided a context - this is the first message that appears in tests summary and serves as a title for this particular group of tests;</p>
 </li>
 </ul>
-<p><em>Couriously, in order to run test properly, you <em>have to</em> provide context <a href="https://stackoverflow.com/questions/50083521/error-in-xmethod-attempt-to-apply-non-function-in-testthat-test-when">link</a></em>.</p>
+<p><em>Couriously, in order to run test properly, <a href="https://stackoverflow.com/questions/50083521/error-in-xmethod-attempt-to-apply-non-function-in-testthat-test-when">you <em>have to</em> provide context</a></em>.</p>
 <ul>
 <li>
-<p>we wrote a function <code>divider</code>, which divides two numbers and <code>summer</code>, which adds twwo numbers (clever!); as you can see, there is a strange bug in <code>summer</code></p>
+<p>we wrote a function <code>divider</code>, which divides two numbers and <code>summer</code>, which adds two numbers (clever!); as you can see, there is a strange bug in <code>summer</code></p>
 </li>
 <li>
 <p><code>test_that</code> functions belong to <code>testthat</code> package and they will check if these functions run properly;</p>
@@ -427,7 +414,7 @@ OK:       4
 Failed:   1
 Warnings: 0
 Skipped:  0
-</code></pre><p>Information, that 4 tests have passed, one has failed. The one that failes was in 37th line of the test file, when we were &lsquo;checking proper summing by summer&rsquo;. According to <code>summer</code> two and three is not five.</p>
+</code></pre><p>As we can see, 4 tests have passed, one has failed. The one that failed was in 37th line of the test file, when we were &lsquo;checking proper summing by summer&rsquo;. According to <code>summer</code>, two and three is not five <code>¯\_(ツ)_/¯</code>.</p>
 <h3 id="python-pytest">Python (pytest)</h3>
 <p>When testing Python code, I usually use <code>pytest</code>, however <code>unittest</code> still seems seems to be standard among the community, quite surprisingly. The main advantage of <code>pytest</code> comparing to <code>unittest</code> is it&rsquo;s simplicity: it may take even less than a minute to start being productiove with testing.</p>
 <p>Let&rsquo;s create a very simple function and save it to a file:</p>
@@ -454,7 +441,7 @@ test_divider.py .                                                             [1
 
 ============================= 1 passed in 0.01 seconds ==============================
 </code></pre><p>that the test passed. If you want to receive more specific information, use the verbose flag: <code>pytest -v</code>.</p>
-<p>What happens if the test failes? Let&rsquo;s write another test, which will clearly cause an error:</p>
+<p>What happens if the test fails? Let&rsquo;s write another test, which will clearly cause an error:</p>
 <p>test_divider.py</p>
 <pre><code>from func import divider
 
@@ -492,6 +479,15 @@ E       ZeroDivisionError: division by zero
 func.py:2: ZeroDivisionError
 =========================== 1 failed, 1 passed in 0.02 seconds ============================
 </code></pre><p>As we can see, dividing by zero raises a ZeroDivisionError.</p>
+<h3 id="python-testing-extensions">Python testing extensions</h3>
+<ul>
+<li>
+<p><strong>fixtures</strong> are used to extract a common, integral and independent part of many test functions to a separate object. This can be e.g. a database connection or a csv file or, in fact, any object.</p>
+</li>
+<li>
+<p><strong>mocking</strong> - its name is quite self-explanatory: it substitutes a function/method/object from e.g. a separate package with the one provided by us. May be used for mocking database connections, http requests, reading csv files - virtually any I/O operation, or if we test a method, which uses other methods of a class: we can mock the other methods, as they are tested separately. But beware! Never change the behavior and tests of the other methods! Actually you should never change the tests anyway.</p>
+</li>
+</ul>
 <h2 id="3-useful-links">3. Useful links</h2>
 <ul>
 <li>
@@ -514,10 +510,13 @@ func.py:2: ZeroDivisionError
 <li>
 <p><a href="https://docs.python-guide.org/writing/tests/">Probably the best book with snippets and &ldquo;Hello World&rdquo; examples: The Hitchhiker&rsquo;s Guide to Python</a></p>
 </li>
+<li>
+<p><a href="https://docs.pytest.org/en/6.2.x/contents.html">last but not least - excellent Pytest&rsquo;s docs</a></p>
+</li>
 </ul>
 </li>
 </ul>
-<h2 id="4-subjects-still-to-cover">4. Subjects still to cover</h2>
+<h2 id="4-subjects-still-to-cover-in-this-blogpost">4. Subjects still to cover in this blogpost</h2>
 <ul>
 <li>unittest, coverage (TODO)</li>
 </ul>
