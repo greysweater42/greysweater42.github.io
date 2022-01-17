@@ -5,10 +5,21 @@
     <link>https://greysweater42.github.io/categories/machine-learning/</link>
     <description>Recent content in Machine learning on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 27 Nov 2021 15:01:58 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 15 Jan 2022 17:49:33 +0100</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bias/variance trade-off</title>
+      <link>https://greysweater42.github.io/bias_variance/</link>
+      <pubDate>Sat, 15 Jan 2022 17:49:33 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/bias_variance/</guid>
+      <description>1. Why an article about such a fairly straightforward subject as bias/variance trade-off? IMHO, the subject is straightforward only superficially, so it may leave us with a false feeling of comprehension. From my statistician&amp;rsquo;s point of view, there is a little more to think about.
+2. When do we face this dillema? When we assess the quality of our model.
+To do that, we use validation methods and metrics. One of the basic rules is that we calculate the metrics on the test set.</description>
+    </item>
     
     <item>
       <title>UNet</title>

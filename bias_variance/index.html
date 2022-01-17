@@ -303,46 +303,72 @@
 
 <nav id="toc" data-toggle="toc" class="sticky-top d-none d-xl-block"></nav>
 
-<div class="list-div">
-  <div class="article-title">
-    <object type="image/svg+xml" data="/folder.svg" height="30px" width="30px">.</object> 
-    flask-JSONRPC
-  </div>
+<div class="article">
 
+<div class="article-categories">
   
-  <br>
-  <br>
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/machine-learning" role="button">Machine learning </a>
+    &emsp;
+  </br>
+</div>
+<div class="article-title">
+  
+  bias/variance trade-off
 
-  <center>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2018</h3>
+</div>
+<div class="article-info">
+    Jan 15, 2022 &emsp;  &emsp; 3 minutes read
+</div>
 
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Aug 13, 2018 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/flask/"> 
-              flask 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            4
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  </center>
+<h2 id="1-why-an-article-about-such-a-fairly-straightforward-subject-as-biasvariance-trade-off">1. Why an article about such a fairly straightforward subject as bias/variance trade-off?</h2>
+<p>IMHO, the subject is straightforward only superficially, so it may leave us with a false feeling of comprehension. From my statistician&rsquo;s point of view, there is a little more to think about.</p>
+<h2 id="2-when-do-we-face-this-dillema">2. When do we face this dillema?</h2>
+<p><strong>When we assess the quality of our model.</strong></p>
+<p>To do that, we use <a href="https://greysweater42.github.io/validation">validation methods and metrics</a>. One of the basic rules is that we calculate the metrics on the <strong>test set</strong>. A commonly used metric for regression problems is MSE (Mean Squared Error), which corresponds to variance of the error (for many algorithms error by definition has mean 0).</p>
+<p>MSE consists of 3 components:</p>
+<ul>
+<li>
+<p>irreducible error, usually denoted as $\epsilon$ (in statistics) or $\xi$ (in machine learning), which is the noise that is far beyond the reach of the model, e.g. <a href="https://en.wikipedia.org/wiki/Observational_error">measurement error</a>, and we have no chance to predict it</p>
+</li>
+<li>
+<p>bias (squared), which is a systematic error of our model resulting from a wrong (e.g. too simple) function of the process. In literature a common example is using linear regression instead of a generalization of <a href="https://greysweater42.github.io/nls">logistic function</a>. In this case a basic model validity test, e.g. <a href="https://en.wikipedia.org/wiki/White_test">White test</a> for heteroskedasticity would fail, but in general case we use more sophisticated/complex models than linear regression.</p>
+</li>
+<li>
+<p>variance, which results from the following assumptions:</p>
+<ul>
+<li>our training dataset was perfectly (without biases and with perfect stratification) sampled from the population (which we are <em>not</em> sure of); it other words, it makes a <em>representative</em> sample of the population. This assumption is usually omitted in literature, as we assume that the exact subsample of the population that we work on was chosen deterministically. Or that as we can&rsquo;t measure it, this kind of error is irreducible.</li>
+</ul>
+<blockquote>
+<p>I&rsquo;m going to look closer at this assumption. We obviously have no data but our full dataset to prove the unrepresentativeness of our dataset, but <em>omitting</em> this subject does not mean it is negligible (this sort of thinking is a common logical fallacy). Thing gets interesting with bootstrap, even more with bootstrap with subsampling, when we actually <em>have</em> access to more observations.</p>
+</blockquote>
+<ul>
+<li>
+<p>the <em>noise</em> of the training dataset is minimal, so we can safely adjust our model to fit the exact values of the training data.</p>
+</li>
+<li>
+<p>in result, the model fits too tightly to the training dataset and does not generalize well to new data. In other words, the new dataset (e.g. test dataset) has <strong>too much variance</strong> for our model to understand.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>In short:</p>
+<p>$$ Error(x_0) = Irreducible Error + Bias^2 + Variance $$</p>
+<p>from <a href="">The Elements of Statistical Learning, 2nd Edition by Hastie, Tibshirani, Friedman</a>, eq. 7.9, which slowly becomes my all-time ml/statistics textbook.</p>
+<h2 id="3-connotations">3. Connotations</h2>
+<ul>
+<li>
+<p><strong>High bias</strong> results from too simplistic representation of the data. In other words, we can say the model has too low <strong>complexity</strong>, <strong>flexibility</strong> or too few <strong>degrees of freedom</strong>.</p>
+</li>
+<li>
+<p>Models with <strong>low bias</strong> are commonly called <strong>underfitted</strong>.</p>
+</li>
+<li>
+<p><strong>High variance</strong> goes with <strong>overfitting</strong>. Overfitting results from high variance.</p>
+</li>
+</ul>
+<p>//TODO: connotations with learning curves</p>
+
 </div>
 
 <div class="jumbotron text-center" id="footer">
