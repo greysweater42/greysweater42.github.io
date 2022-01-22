@@ -163,10 +163,9 @@ Apart from being funny for me, I want to practice creating and learning RNNs, LS
       <guid>https://greysweater42.github.io/xgboost/</guid>
       <description>1. What is XGBoost and why would you use it?   xgboost is one of the most popular supervised learning algorithms
   it&amp;rsquo;s popularity results from a few factors:
-  it&amp;rsquo;s easy to use
-  is available in R and Python, with sklearn api
-  usually performs very well even on default hyperparameters
-  is resilient to missing values and ourliers
+  it is available in R and Python, with sklearn api, so it is easy to use
+  usually performs very well even with default hyperparameters
+  it is robust against missing values and outliers
   provides excellect results</description>
     </item>
     
