@@ -165,6 +165,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/bayes/">bayes</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/bias_variance/">bias/variance trade-off</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/cnns/">CNNs</a>
@@ -374,14 +376,14 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     8    10    14    19    20    24    26    31    34    35 
-## FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<pre><code>##     2     3     5    18    19    26    30    32    34    37 
+## FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    13    2
-##      TRUE      2   13</code></pre>
+##      FALSE    12    3
+##      TRUE      3   12</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
@@ -394,26 +396,26 @@ confusionMatrix(predict(m2, test), test$Species)</code></pre>
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         13          2
-##   versicolor      2         13
+##   setosa         12          3
+##   versicolor      3         12
 ##                                           
-##                Accuracy : 0.8667          
-##                  95% CI : (0.6928, 0.9624)
+##                Accuracy : 0.8             
+##                  95% CI : (0.6143, 0.9229)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 2.974e-05       
+##     P-Value [Acc &gt; NIR] : 0.0007155       
 ##                                           
-##                   Kappa : 0.7333          
+##                   Kappa : 0.6             
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 1               
+##  Mcnemar&#39;s Test P-Value : 1.0000000       
 ##                                           
-##             Sensitivity : 0.8667          
-##             Specificity : 0.8667          
-##          Pos Pred Value : 0.8667          
-##          Neg Pred Value : 0.8667          
-##              Prevalence : 0.5000          
-##          Detection Rate : 0.4333          
-##    Detection Prevalence : 0.5000          
-##       Balanced Accuracy : 0.8667          
+##             Sensitivity : 0.8             
+##             Specificity : 0.8             
+##          Pos Pred Value : 0.8             
+##          Neg Pred Value : 0.8             
+##              Prevalence : 0.5             
+##          Detection Rate : 0.4             
+##    Detection Prevalence : 0.5             
+##       Balanced Accuracy : 0.8             
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
@@ -515,7 +517,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.9466667</code></pre>
+<pre><code>## [1] 0.9133333</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],

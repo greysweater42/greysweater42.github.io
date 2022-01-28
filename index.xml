@@ -5,10 +5,21 @@
     <link>https://greysweater42.github.io/</link>
     <description>Recent content on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 15 Jan 2022 17:49:33 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 23 Jan 2022 11:13:58 +0100</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bayes</title>
+      <link>https://greysweater42.github.io/bayes/</link>
+      <pubDate>Sun, 23 Jan 2022 11:13:58 +0100</pubDate>
+      
+      <guid>https://greysweater42.github.io/bayes/</guid>
+      <description>1. Why yet another article about Bayes&amp;rsquo; theorem and bayesian inference? There seem to be enough of them on the net.
+From my perspective the articles available on the internet (by internet I mean medium or towardsdatascience) are:
+  written from the probabilistic/mathematical point of view, which has little in common with statistical inference, which is the practical use of Bayes&amp;rsquo; theorem (italics is a small wink at mathematicians, whose work is usually theoretical) and concentrate on the intution, which fits mathematical perspective, but not statistical</description>
+    </item>
     
     <item>
       <title>bias/variance trade-off</title>
