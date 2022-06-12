@@ -5,10 +5,21 @@
     <link>https://greysweater42.github.io/categories/devops/</link>
     <description>Recent content in DevOps on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 19 Jan 2020 14:31:25 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 14 May 2022 13:39:27 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://greysweater42.github.io/kubernetes/</link>
+      <pubDate>Sat, 14 May 2022 13:39:27 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/kubernetes/</guid>
+      <description>What is Kubernetes? Kubernetes (sometimes &amp;ldquo;abbreviated&amp;rdquo; to k8s) is a cluster management tool. A cluster is obviously a group of servers. Managing in this case relies on deployment (in containers), assigning and setting limits on resources like CPU and RAM, rolling back etc.
+Kubernetes is arguably the most popular infrastructure-management tool nowadays, which complies to the infractructure as code standard.
+How to learn kubernetes? The easiest way (IMHO) is by setiing up the simplest possible cluster locally on your own laptop.</description>
+    </item>
     
     <item>
       <title>bash</title>
