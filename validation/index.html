@@ -378,48 +378,57 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     2     4     6     9    10    11    13    14    20    22 
-## FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre><code>##     6     7     9    14    16    19    22    24    30    32 
+## FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    15    0
-##      TRUE      0   15</code></pre>
+##      FALSE    13    4
+##      TRUE      2   11</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
 <p>We will use a <a href="https://www.rdocumentation.org/packages/caret/versions/3.45/topics/confusionMatrix">confusionMatrix</a> function. Keep in mind that <code>caret</code> is a huge machine learning library, almost an entire new language inside R, so introducing it into your code just for the sake of confusion matrix may be an overkill.</p>
 <p>Still, <code>caret</code> provides a much broader summary of confusion matrix:</p>
 <pre class="r"><code>library(caret)
-m2 &lt;- train(Species ~ Sepal.Length, train, method = &quot;glm&quot;, family = binomial)
-confusionMatrix(predict(m2, test), test$Species)</code></pre>
+m2 &lt;- train(Species ~ Sepal.Length, train, method = &quot;glm&quot;, family = binomial)</code></pre>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre><code>## Warning: glm.fit: algorithm did not converge</code></pre>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre class="r"><code>confusionMatrix(predict(m2, test), test$Species)</code></pre>
 <pre><code>## Confusion Matrix and Statistics
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         15          0
-##   versicolor      0         15
-##                                      
-##                Accuracy : 1          
-##                  95% CI : (0.8843, 1)
-##     No Information Rate : 0.5        
-##     P-Value [Acc &gt; NIR] : 9.313e-10  
-##                                      
-##                   Kappa : 1          
-##                                      
-##  Mcnemar&#39;s Test P-Value : NA         
-##                                      
-##             Sensitivity : 1.0        
-##             Specificity : 1.0        
-##          Pos Pred Value : 1.0        
-##          Neg Pred Value : 1.0        
-##              Prevalence : 0.5        
-##          Detection Rate : 0.5        
-##    Detection Prevalence : 0.5        
-##       Balanced Accuracy : 1.0        
-##                                      
-##        &#39;Positive&#39; Class : setosa     
+##   setosa         13          4
+##   versicolor      2         11
+##                                           
+##                Accuracy : 0.8             
+##                  95% CI : (0.6143, 0.9229)
+##     No Information Rate : 0.5             
+##     P-Value [Acc &gt; NIR] : 0.0007155       
+##                                           
+##                   Kappa : 0.6             
+##                                           
+##  Mcnemar&#39;s Test P-Value : 0.6830914       
+##                                           
+##             Sensitivity : 0.8667          
+##             Specificity : 0.7333          
+##          Pos Pred Value : 0.7647          
+##          Neg Pred Value : 0.8462          
+##              Prevalence : 0.5000          
+##          Detection Rate : 0.4333          
+##    Detection Prevalence : 0.5667          
+##       Balanced Accuracy : 0.8000          
+##                                           
+##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
 <pre class="python"><code>from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -519,7 +528,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.9333333</code></pre>
+<pre><code>## [1] 0.9311111</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],

@@ -326,7 +326,7 @@
 
 </div>
 <div class="article-info">
-    Jan 25, 2019 &emsp;  &emsp; 8 minutes read
+    Jan 25, 2019 &emsp;  &emsp; 9 minutes read
 </div>
 
 
@@ -598,6 +598,27 @@ print(grouped.agg({&#39;result&#39;: functions}))</code></pre>
 ##          good      11.0  15.0  2.828427   13.0   0.153846  2.0</code></pre>
 <p>To sum up, grouping and aggregating works a little like list comprehensions (do sth for each item) or map-reduce: <code>groupby</code> divides the dataset into items, and <code>agg</code> runs a function on each of the items.</p>
 </div>
+</div>
+<div id="other-interesting-commandsarguments" class="section level2">
+<h2>3. Other interesting commands/arguments:</h2>
+<ul>
+<li><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.select_dtypes.html">select_dtypes</a>: <code>df.select_dtypes(include="object")</code> or <code>df.select_dtypes(exlude="object")</code> chooses onlt those columns, which fulfils criterium</li>
+<li><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rename.html">rename</a>: <code>df.rename(columns={"current_name": "new_name", ...})</code> - instead of saying <code>rename(..., axis=1)</code>, you can say <code>df.rename(columns={...})</code>, which is a little bit more readable
+`</li>
+<li><p><a href="https://pandas.pydata.org/docs/user_guide/categorical.html">categorical data</a>: <code>df['some_class'].astype('category')</code> - keeping categorial data as <code>category</code> type is more memory-efficient, as values are stored as integers, and their names ar stored in something similar to a <code>dict</code></p></li>
+<li><p><a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.replace.html">replace - not str.replace</a>: <code>series.replace('other', 'unknown')</code> - exact synonym to <code>series.loc[series == "other"] = "unknown"</code>, but shorter, and you can also use regex like this: <code>pd.Series(["ab", "ac", "bc"]).replace("a.*", "zz", regex=True)</code>, which replaces <code>ab</code> and <code>ac</code> with <code>zz</code></p></li>
+<li><p><a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.get.html">str.get()</a>: <code>series.str.get(-1)</code> - gets the last element of an itarable object, which is <em>in</em> the series: if it is a string - takes the last letter, if a list/tuple - the last element of that list/tuple</p></li>
+<li><p><a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.split.html">str.split</a>: <code>series.str.split('_', n=2, expand=True)</code> - this command splits the strings by underscore, but only to the second (<code>n=2</code>) occurence of underscore, and <code>expand</code>s the result into several (in this case: 3) columns. An interesting variation of <code>expand</code> is <code>explode</code>: <code>series.explode()</code>, which converts a series of lists into a series by concatenating lists, so the result is a series, in opposite to <code>str.split(..., expand=True)</code>, where the result is a dataframe</p></li>
+<li><p><a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.replace.html">str.replace</a>: <code>series.str.replace("a.*", "zz", regex=True)</code> - replace everything that starts with <code>a</code> with <code>zz</code>; <code>regex=True</code> is mandatory in order to use regex</p></li>
+<li><p><a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.match.html">str.match</a>: <code>series.str.match("a.*")</code> - marks all the values that start with <code>a</code> as True, the rest is False. In contrast to <code>str.replace</code>, <code>str.match</code> uses rregex by default</p></li>
+<li><p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.nlargest.html">nlargest</a>: <code>df.nlargest(5, columns="class1")</code> - returns 5 rows with the largest values of class1</p></li>
+<li><p><a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read_csv</a>: <code>pd.read_csv</code> has milions of parameters, but one of them is particularily interesting: <code>pd.read_csv(..., dtype={"col1": int})</code>, which automatically reads the data in a proper format. This can be useful if you don’t vae an ORM to store information on data types, yet you want the columns to have proper dtypes, even if the whole column is empty (which may happen if you download data from spark)</p></li>
+<li><p>axis: it is possible to write <code>axis=0</code> or <code>axis=1</code>, but <code>axis="rows"</code> and <code>axis="columns"</code> are much more readable</p></li>
+</ul>
+</div>
+<div id="references" class="section level2">
+<h2>4. References</h2>
+<p>I highly recommend this book: <a href="https://www.manning.com/books/pandas-in-action">Pandas in action</a>, to all the readers.</p>
 </div>
 
 </div>
