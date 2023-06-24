@@ -320,66 +320,89 @@
 </div>
 <div class="article-title">
   
-  hadoop
+  RabbimtMQ
 
 </div>
 <div class="article-info">
-    Dec 4, 2018 &emsp;  &emsp; 2 minutes read
+    Jun 24, 2023 &emsp;  &emsp; 3 minutes read
 </div>
 
-<h2 id="1-what-is-hadoop-and-why-would-you-use-it">1. What is hadoop and why would you use it?</h2>
+<h2 id="1-what-is-rabbitmq-and-why-do-we-need-it">1. What is RabbitMQ and why do we need it?</h2>
+<p>RabbitMQ is a message broker, which means that it enables communication between services. Probably the most popular way of communication is TCP, but it has a couple of drawbacks, which rabbitmq solves, for example:</p>
 <ul>
-<li>
-<p>hadoop is the first ever popular big data tool;</p>
-</li>
-<li>
-<p>it lets you <em>quickly</em> compute huge amounts of data thanks to dividing computation into many machines i.e. a cluster of machines; (<em>quickly</em> comparing to a standard, one-machine approach);</p>
-</li>
-<li>
-<p>you can store and easily access huge amounts of data thanks to hadoop&rsquo;s distributed file system (hdfs);</p>
-</li>
-<li>
-<p>in general, hadoop is a cornerstone of big data.</p>
-</li>
+<li><strong>lower coupling</strong> between services, so when consumer is down, the messages are not lost</li>
+<li>lots of messages at once don&rsquo;t overwhelm the consumer: it can process them one by one at its own pace</li>
 </ul>
-<h2 id="2-installation">2. Installation</h2>
-<p>In production environment Hadoop should be installed on several interconnected machines, called a cluster. I&rsquo;m not going to explain how to do this, as this is usually a task for sysadmins/DevOps guys, and not for data scientists. However it is very usufeul to have your own one-node hadoop installation on your laptop for practising basic big data solutions. This is what we&rsquo;re going to install in this section.</p>
-<p><a href="hadoop.sh">Here</a>&lsquo;s a little script that I wrote which installs and runs hadoop. You can execute it with</p>
-<pre><code>sudo bash hadoop.sh
-</code></pre><p>but I recommend running it line by line, so you would understand what you are doing and what is needed to have hadoop running.</p>
-<h2 id="3-hello-world-examples">3. &ldquo;Hello World&rdquo; examples</h2>
-<p>You probably expect that knowing Hadoop will let you do Big Data. It would, but in reality nobody uses Hadoop to run data processing anymore. <a href="http://tomis9.com/spark">Spark</a> and <a href="http://tomis9.com/hive">Hive</a> have much nicer apis, and do the same tasks faster.</p>
-<p>But there is still one functionality that was not replaced: a file system, called <em>hadoop distributed file system</em> or <em>hdfs</em>, where limited disk capacity is no longer a problem.</p>
-<p>There are a couple of useful commands to remember. Their resemblance to bash commands is quite obvious.</p>
-<p>ls - list files in a given directory</p>
-<pre><code>hdfs dfs -ls &lt;dir&gt;
-</code></pre><p>mkdir - create a directory</p>
-<pre><code>hdfs dfs -mkdir &lt;path&gt;
-</code></pre><p>put - upload file to hdfs</p>
-<pre><code>hdfs dfs -put &lt;localSrc&gt; &lt;dest&gt;
-</code></pre><p>copyFromLocal - copy file local to hdfs, obviously</p>
-<pre><code>hdfs dfs -copyFromLocal &lt;localSrc&gt; &lt;dest&gt;
-</code></pre><p>get - download file from hdfs</p>
-<pre><code>hdfs dfs -get &lt;src&gt; &lt;localDest&gt;
-</code></pre><p>copyToLocal - copy file from hdfs to local, obviously</p>
-<pre><code>hdfs dfs -copyToLocal &lt;src&gt; &lt;localDest&gt;
-</code></pre><p>mv - move file from one directory to another or rename a file</p>
-<pre><code>hdfs dfs -mv &lt;src&gt; &lt;dest&gt;
-</code></pre><p>cp - copy file from one directory to another</p>
-<pre><code>hdfs dfs -cp &lt;src&gt; &lt;dest&gt;
-</code></pre><p>rm - remove a file from hdfs (<code>-rm -r</code> - remove recursively)</p>
-<pre><code>hdfs dfs -rm &lt;dir&gt;
-</code></pre><p>More commands are available <a href="https://data-flair.training/blogs/top-hadoop-hdfs-commands-tutorial/">here</a>.</p>
-<h2 id="4-subjects-still-to-cover">4. Subjects still to cover</h2>
+<p>and also provides additional features:</p>
+<ul>
+<li>better <strong>scalability</strong>: there can be more than one consumer with the same amount of effort from producer&rsquo;s perspective (in TCP&rsquo;s case producer sends as many messages as there are receivers, while in the case of RabbitMQ - only one)</li>
+</ul>
+<p>In order to provide these functionalities RabbitMQ implements <strong>AMQP</strong> (Advanced Message Queueing Protocol) in which the producer does not produce directly to a message queue, but to an <strong>exchange</strong>, which further redirects the messages to queues. How does an exchange know which queues to send messages to? The user defines <strong>bindings</strong>, which provide this information, and each of the bindings has its own id called <strong>binding key</strong>.</p>
+<p>The message can be distrubuted to queues in a couple of ways:</p>
+<ul>
+<li>fanout - exchange distributes messages to all of the binded queues</li>
+<li>direct - message contains a <strong>routing key</strong>, which corresponds to the name of <em>binding key</em> of where the message should be sent</li>
+<li>topic - message contains a <em>routing key</em> just as in the case of <em>direct</em> exchange, but the matching between the routing key and the binding key name does not have to be exact (more info <a href="https://www.rabbitmq.com/tutorials/tutorial-five-python.html">here</a>)</li>
+<li>default (implemented in RabbitMQ, but not part of AMQP) - routing key corresponds directly to the name of the queue, so it bypasses the binding key</li>
+</ul>
+<p>Other remarks:</p>
+<ul>
+<li>from the management perspective, RabbitMQ&rsquo;s architecture sets <strong>clear boundaries between DevOps and developers</strong>, who still benefit from tremendous flexibililty of the system, because the whole route of the message is defined in its metadata</li>
+<li>it is <strong>cross-language</strong>, which means that producer and consumer can be written in different programming languages</li>
+<li>provides <strong>acknowledgements</strong>, which are confirmations sent back from the consumer to the queue that the message was received</li>
+</ul>
+<h2 id="2-example-usage">2. Example usage</h2>
+<p>Let&rsquo;s set RabbitMQ up inside of a docker container on local machine:</p>
+<pre><code>docker run -d --hostname my-rabbit --name some-rabbit rabbitmq:3
+</code></pre><p>Now you are able to access the web UI at <a href="http://localhost:15672/">http://localhost:15672/</a>, and log in with username: guest, password: guest.</p>
+<p>In most of my blog posts I describe example usage here, but RabbitMQ already wrote an excellent tutorial, so I would not write a better one anyway. Here&rsquo;s the <a href="https://www.rabbitmq.com/tutorials/tutorial-one-python.html">link</a>.</p>
+<p>And here are snippets copy-pasted from the this tutorial, with a minor refactor:</p>
+<p><em>producer:</em></p>
+<pre><code>import pika
+
+parameters = pika.ConnectionParameters('localhost')
+with pika.BlockingConnection(parameters) as connection:
+    channel = connection.channel()
+
+    channel.queue_declare(queue='task_queue', durable=True)
+
+    channel.basic_publish(exchange='', routing_key='task_queue', body='Hello World!')
+    print(&quot; [x] Sent 'Hello World!'&quot;)
+
+</code></pre><p><em>consumer:</em></p>
+<pre><code>import pika
+import time
+
+
+def callback(ch, method, properties, body):
+    print(&quot; [x] Received %r&quot; % body.decode())
+    time.sleep(body.count(b'.'))
+    print(&quot; [x] Done&quot;)
+    ch.basic_ack(delivery_tag=method.delivery_tag)
+
+
+parameters = pika.ConnectionParameters('localhost')
+with pika.BlockingConnection(parameters) as connection:
+    channel = connection.channel()
+
+    channel.queue_declare(queue='task_queue', durable=True)
+    print(' [*] Waiting for messages. To exit press CTRL+C')
+
+
+    channel.basic_qos(prefetch_count=1)
+    channel.basic_consume(queue='task_queue', on_message_callback=callback)
+
+    channel.start_consuming()
+</code></pre><h2 id="3-resources">3. Resources:</h2>
 <ul>
 <li>
-<p>Hadoop GUI (TODO)</p>
+<p><a href="https://www.youtube.com/watch?v=7rkeORD4jSw">excellent introductory tutorial prepared by IBM</a></p>
 </li>
 <li>
-<p>example of MapReduce: wordcount (TODO)</p>
+<p><a href="https://www.rabbitmq.com/tutorials/tutorial-one-python.html">official docs which show how to use RabbitMQ with Python client</a></p>
 </li>
 <li>
-<p><a href="https://github.com/RevolutionAnalytics/RHadoop/wiki">RHadoop</a> (TODO)</p>
+<p><a href="https://www.rabbitmq.com/download.html">setup with docker</a></p>
 </li>
 </ul>
 
