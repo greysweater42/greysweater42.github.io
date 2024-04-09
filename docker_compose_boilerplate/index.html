@@ -337,7 +337,7 @@ services:
 
   app:
     build: .
-    image: test/app:latest
+    image: test_simple_http_server:latest
     command: [&quot;python3&quot;, &quot;-m&quot;, &quot;http.server&quot;, &quot;9000&quot;]
     environment:
       - SOME_ENV_VARIABLE=test
