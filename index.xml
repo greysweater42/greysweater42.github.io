@@ -5,10 +5,21 @@
     <link>https://greysweater42.github.io/</link>
     <description>Recent content on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Jun 2023 13:16:44 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 09 Apr 2024 09:41:56 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker-compose boilerplate</title>
+      <link>https://greysweater42.github.io/docker_compose_boilerplate/</link>
+      <pubDate>Tue, 09 Apr 2024 09:41:56 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/docker_compose_boilerplate/</guid>
+      <description>docker-compose boilerplate I don&amp;rsquo;t write docker-compose files that often. Usually there is only on docker-compose file per project, and when every project last for a couple of months&amp;hellip; I tend to forget what the components of a docker-compose.yml file are.
+Here&amp;rsquo;s a boilerplate for a docker-compose.yml file:
+version: &#39;3&#39; services: app: build: . image: test_simple_http_server:latest command: [&amp;quot;python3&amp;quot;, &amp;quot;-m&amp;quot;, &amp;quot;http.server&amp;quot;, &amp;quot;9000&amp;quot;] environment: - SOME_ENV_VARIABLE=test volumes: - .:/app ports: - &amp;quot;9000:9000&amp;quot; depends_on: - mysql # https://hub.</description>
+    </item>
     
     <item>
       <title>RabbimtMQ</title>

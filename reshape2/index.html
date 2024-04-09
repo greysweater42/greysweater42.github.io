@@ -237,6 +237,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/docker/">docker</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/docker_compose_boilerplate/">docker-compose boilerplate</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/flask/">flask</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/git/">git</a>
@@ -346,12 +348,12 @@
   Mar = rnorm(5, 10, 3)
 )
 print(d)</code></pre>
-<pre><code>##   account_no       Jan       Feb       Mar
-## 1         71 10.399798  7.522734  5.908945
-## 2         72  9.954839 10.292123 11.248589
-## 3         73 10.866906  8.418008  9.320020
-## 4         74  9.914023 11.820109  4.998074
-## 5         75  9.298906 11.929943 11.023395</code></pre>
+<pre><code>##   account_no      Jan       Feb       Mar
+## 1         71  6.67576 11.698061 11.098894
+## 2         72 10.19659 12.591354 11.601565
+## 3         73 10.45670  7.401585  4.828026
+## 4         74 11.45115 11.157054  8.739429
+## 5         75 10.63747  5.334067 17.826988</code></pre>
 <p>Transormation into a normalized table (unpivot):</p>
 <pre class="r"><code>dn &lt;- reshape2::melt(
   data = d, 
@@ -361,33 +363,33 @@ print(d)</code></pre>
 )
 print(dn)</code></pre>
 <pre><code>##    account_no month   revenue
-## 1          71   Jan 10.399798
-## 2          72   Jan  9.954839
-## 3          73   Jan 10.866906
-## 4          74   Jan  9.914023
-## 5          75   Jan  9.298906
-## 6          71   Feb  7.522734
-## 7          72   Feb 10.292123
-## 8          73   Feb  8.418008
-## 9          74   Feb 11.820109
-## 10         75   Feb 11.929943
-## 11         71   Mar  5.908945
-## 12         72   Mar 11.248589
-## 13         73   Mar  9.320020
-## 14         74   Mar  4.998074
-## 15         75   Mar 11.023395</code></pre>
+## 1          71   Jan  6.675760
+## 2          72   Jan 10.196589
+## 3          73   Jan 10.456702
+## 4          74   Jan 11.451155
+## 5          75   Jan 10.637469
+## 6          71   Feb 11.698061
+## 7          72   Feb 12.591354
+## 8          73   Feb  7.401585
+## 9          74   Feb 11.157054
+## 10         75   Feb  5.334067
+## 11         71   Mar 11.098894
+## 12         72   Mar 11.601565
+## 13         73   Mar  4.828026
+## 14         74   Mar  8.739429
+## 15         75   Mar 17.826988</code></pre>
 <p>And back to the previous format using a pivot:</p>
 <pre class="r"><code>reshape2::dcast(
   data = dn, 
   formula = account_no ~ month, 
   value.var = &quot;revenue&quot;
 )</code></pre>
-<pre><code>##   account_no       Jan       Feb       Mar
-## 1         71 10.399798  7.522734  5.908945
-## 2         72  9.954839 10.292123 11.248589
-## 3         73 10.866906  8.418008  9.320020
-## 4         74  9.914023 11.820109  4.998074
-## 5         75  9.298906 11.929943 11.023395</code></pre>
+<pre><code>##   account_no      Jan       Feb       Mar
+## 1         71  6.67576 11.698061 11.098894
+## 2         72 10.19659 12.591354 11.601565
+## 3         73 10.45670  7.401585  4.828026
+## 4         74 11.45115 11.157054  8.739429
+## 5         75 10.63747  5.334067 17.826988</code></pre>
 </div>
 <div id="links" class="section level2">
 <h2>3. Links</h2>

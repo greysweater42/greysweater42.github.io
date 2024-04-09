@@ -5,10 +5,19 @@
     <link>https://greysweater42.github.io/categories/</link>
     <description>Recent content in Categories on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Jun 2023 13:16:44 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 09 Apr 2024 09:41:56 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DevOps</title>
+      <link>https://greysweater42.github.io/categories/devops/</link>
+      <pubDate>Tue, 09 Apr 2024 09:41:56 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/categories/devops/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Data engineering</title>
@@ -16,15 +25,6 @@
       <pubDate>Sat, 24 Jun 2023 13:16:44 +0200</pubDate>
       
       <guid>https://greysweater42.github.io/categories/data-engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DevOps</title>
-      <link>https://greysweater42.github.io/categories/devops/</link>
-      <pubDate>Sat, 14 May 2022 13:39:27 +0200</pubDate>
-      
-      <guid>https://greysweater42.github.io/categories/devops/</guid>
       <description></description>
     </item>
     

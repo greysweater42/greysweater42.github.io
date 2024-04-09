@@ -311,46 +311,57 @@
 
 <nav id="toc" data-toggle="toc" class="sticky-top d-none d-xl-block"></nav>
 
-<div class="list-div">
-  <div class="article-title">
-    <object type="image/svg+xml" data="/folder.svg" height="30px" width="30px">.</object> 
-    logging
-  </div>
+<div class="article">
 
+<div class="article-categories">
   
-  <br>
-  <br>
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/devops" role="button">DevOps </a>
+    &emsp;
+  </br>
+</div>
+<div class="article-title">
+  
+  docker-compose boilerplate
 
-  <center>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2018</h3>
+</div>
+<div class="article-info">
+    Apr 9, 2024 &emsp;  &emsp; 1 minutes read
+</div>
 
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Oct 20, 2018 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/logging/"> 
-              logging 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            3
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  </center>
+<h2 id="docker-compose-boilerplate">docker-compose boilerplate</h2>
+<p>I don&rsquo;t write docker-compose files that often. Usually there is only on docker-compose file per project, and when every project last for a couple of months&hellip; I tend to forget what the components of a docker-compose.yml file are.</p>
+<p>Here&rsquo;s a boilerplate for a <code>docker-compose.yml</code> file:</p>
+<pre><code>version: '3'
+services:
+
+  app:
+    build: .
+    image: test_simple_http_server:latest
+    command: [&quot;python3&quot;, &quot;-m&quot;, &quot;http.server&quot;, &quot;9000&quot;]
+    environment:
+      - SOME_ENV_VARIABLE=test
+    volumes:
+      - .:/app
+    ports:
+      - &quot;9000:9000&quot;
+    depends_on:
+      - mysql
+
+  # https://hub.docker.com/_/mysql
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - &quot;3306:3306&quot;
+</code></pre><p>for a simple <code>Dockerfile</code>:</p>
+<pre><code>from python:3.10
+</code></pre><p>Once the containers are up and running, you can test if everything works with</p>
+<pre><code>curl 127.0.0.1:9000
+</code></pre>
 </div>
 
 <div class="jumbotron text-center" id="footer">
