@@ -237,7 +237,7 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/docker/">docker</a>
           
-            <a class="dropdown-item" href="https://greysweater42.github.io/docker_compose_boilerplate/">docker-compose boilerplate</a>
+            <a class="dropdown-item" href="https://greysweater42.github.io/docker_compose_boilerplate/">docker-compose biolerplate</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/flask/">flask</a>
           
@@ -322,7 +322,7 @@
 </div>
 <div class="article-title">
   
-  docker-compose boilerplate
+  docker-compose biolerplate
 
 </div>
 <div class="article-info">
@@ -330,14 +330,14 @@
 </div>
 
 <h2 id="docker-compose-boilerplate">docker-compose boilerplate</h2>
-<p>I don&rsquo;t write docker-compose files that often. Usually there is only on docker-compose file per project, and when every project last for a couple of months&hellip; I tend to forget what the components of a docker-compose.yml file are.</p>
+<p>I don&rsquo;t write docker-compose files that often. Usually there is only one docker-compose file per project, and when each project lasts for a couple of months&hellip; I tend to forget what the components of a docker-compose.yml file are.</p>
 <p>Here&rsquo;s a boilerplate for a <code>docker-compose.yml</code> file:</p>
 <pre><code>version: '3'
 services:
 
   app:
     build: .
-    image: test_simple_http_server:latest
+    image: test/app:latest
     command: [&quot;python3&quot;, &quot;-m&quot;, &quot;http.server&quot;, &quot;9000&quot;]
     environment:
       - SOME_ENV_VARIABLE=test
@@ -358,9 +358,7 @@ services:
     ports:
       - &quot;3306:3306&quot;
 </code></pre><p>for a simple <code>Dockerfile</code>:</p>
-<pre><code>from python:3.10
-</code></pre><p>Once the containers are up and running, you can test if everything works with</p>
-<pre><code>curl 127.0.0.1:9000
+<pre><code>from python3.10
 </code></pre>
 </div>
 
