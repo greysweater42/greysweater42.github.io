@@ -318,76 +318,55 @@
 <div class="article-categories">
   
     <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
-    <a href="https://greysweater42.github.io/categories/r" role="button">R </a>
-    &emsp;
-  
-    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
-    <a href="https://greysweater42.github.io/categories/devops" role="button">DevOps </a>
+    <a href="https://greysweater42.github.io/categories/machine-learning" role="button">Machine learning </a>
     &emsp;
   </br>
 </div>
 <div class="article-title">
   
-  rocker
+  Fourier transform
 
 </div>
 <div class="article-info">
-    Dec 16, 2018 &emsp;  &emsp; 2 minutes read
+    Sep 16, 2021 &emsp;  &emsp; 2 minutes read
 </div>
 
-<h2 id="1-what-is-rocker-and-why-would-you-use-it">1. What is rocker and why would you use it?</h2>
+<h2 id="1-what-is-fourier-transform-and-when-can-it-be-useful">1. What is Fourier transform and when can it be useful?</h2>
+<p>Fourier transform is a method for representing a signal, time series or any other data than can be ordered (not necessarily chronologically, but this is usually the case) in a way where we can clearly see frequencies/seasonality.</p>
+<p>Fourier discovered (not sure if mathematicians actually <em>invent</em> or <em>discover</em> stuff) that any signal can be represented as a sum of different sinuses and cosinuses. The differences between them are their frequencies.</p>
+<p>The most common way of plotting a signal is with time on x axis and values/magnitude/measurements on y axis. It is useful for several purposes, e.g. we can see the trend and changes in variance over time. But signals are sometimes additive functions of many signals</p>
+<p>$$ y_i = \sum_{k=1}^{K} x_{ki} $$</p>
+<p>some of which may be seasonal. Fourier transform can extract the seasonality from the data, which afterwards can be treated as the interesting part of the data or the noise, e.g. in financial data we may want to get rid of the seasonality, while in brainwaves the &ldquo;waves&rdquo; are what interests us the most.</p>
+<h2 id="2-understanding-the-concept">2. Understanding the concept</h2>
+<p>Fourier transform is quite an advanced piece of mathematics. I recommend starting with the following subbjects:</p>
+<p><a href="https://www.youtube.com/watch?v=ppWPuXsnf1Q&amp;list=PLZHQObOWTQDP5CVelJJ1bNDouqrAhVPev">Lockdown math with 3Blue1Brown</a></p>
+<ul>
+<li>imaginary numbers. Even if you are familiar with them, this will be an excellent introduction to Euler&rsquo;s formula.</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=T647CGsuOVU&amp;list=PLiaHhY2iBX9g6KIvZ_703G3KJXapKkNaF&amp;index=1">Imaginary numbers and how to see them</a></p>
 <ul>
 <li>
-<p><code>rocker</code> is <a href="http://tomis9.com/docker">docker</a> container specially prepared for working with R programming language;</p>
+<p>Euler&rsquo;s formula. If you have ever studied mathematics at the university, you probably have already heard about it. In this case you would have to understand it a little bit better.</p>
 </li>
 <li>
-<p>it is useful if your R model is a part of a microservice system based on docker containers;</p>
-</li>
-<li>
-<p>you can run R/shiny-server/rstudio-server on any machine you want. The only requirement is docker.</p>
+<p>Fourier transform <a href="https://www.youtube.com/watch?v=1JnayXHhjlg">https://www.youtube.com/watch?v=1JnayXHhjlg</a></p>
 </li>
 </ul>
-<h2 id="2-rocker-versions">2. Rocker versions</h2>
-<p><a href="https://hub.docker.com/u/rocker/">An official site</a> of rocker proposes a few versions of r images. The most interesting ones:</p>
+<h2 id="3-how-i-understand-the-concept">3. How I understand the concept</h2>
+<p>Being an econometrics graduate (which stands for statistics in economics) I find this flow of reasoning the most appealing:</p>
 <ul>
-<li>
-<p><a href="https://hub.docker.com/r/rocker/rstudio">rstudio</a> with rstudio server installed, to which you can connect with your favourite Internet browser;</p>
-</li>
-<li>
-<p><a href="https://hub.docker.com/r/rocker/shiny">shiny</a> with shiny server installed, where you can easily publish your shiny applications. This may be particularly useful for Windows Server users, who may find it difficult to install a shiny server directly;</p>
-</li>
-<li>
-<p><a href="https://hub.docker.com/r/rocker/r-ver">r-ver</a> with, well, basic R version installed.</p>
-</li>
+<li>Fourier transform resembles linear regression models, where the exogenic variables are all possible sinus functions:</li>
 </ul>
-<h2 id="3-example-of-dockerfile">3. Example of Dockerfile</h2>
-<p>A nice tutorial on writing a Dockerfile you will <a href="http://tomis9.com/docker">here</a>. As <code>rocker</code>'s Dockerfile has it&rsquo;s specific quirks, I present it in a separate blog post.</p>
-<pre><code>FROM rocker/r-ver:3.5.1
-
-RUN Rscript -e &quot;install.packages('futile.logger')&quot;
-
-RUN R -e &quot;install.packages('devtools')&quot;
-
-RUN install2.r -e bookdown rticles
-
-CMD R
-</code></pre><p>We used 3 different methods to install packages. All of them all synonyms, so you can use whichever you like. Probably <code>install2.r</code> has the cleanest syntax.</p>
-<p>The you can build your image with:</p>
-<pre><code>docker build -t my_rocker:0.1 .
-</code></pre><p>And you&rsquo;re good to go!</p>
-<h2 id="4-useful-links">4. Useful links</h2>
+<p>$$ y_t = \beta_1 \sin(t \cdot 2\pi) + \beta_2 \sin(t \cdot 2\pi / 2) + \beta_3 \sin(t \cdot 2\pi / 3) + &hellip;$$</p>
 <ul>
-<li><a href="http://ropenscilabs.github.io/r-docker-tutorial/">pretty much this tutorial, but much better and written by someone else</a>;</li>
+<li>or in short</li>
 </ul>
-<p><em>hah, that&rsquo;s funny. The guy who wrote the tutorial above started the first lesson with the words:</em></p>
-<blockquote>
-<p>What is Docker and Why should I use it?</p>
-</blockquote>
-<p><em>so in the same manner as I start every blog post.</em></p>
-<h2 id="5-subjects-still-to-cover">5. Subjects still to cover</h2>
+<p>$$ y_t = \sum_{k=1}^{K} \beta_k \sin(t \cdot 2\pi / k) $$</p>
 <ul>
-<li>packrat (TODO)</li>
+<li>linear regression for comparison:</li>
 </ul>
+<p>$$ y_t = \sum_{k=1}^{K} \beta_k x_{kt} + \epsilon_t $$</p>
+<p>so linear regression also has as error term. Fourier transform, in this case: Discrete Fourier Transform, as we are dealing with a sum of sinusoids, not an integral over all posiible sinusoids, can match perfectly to the data, without an error. In other words, you can represent any time series of length <em>t</em> with a sum of <em>t</em> sinusoids of various frequencies.</p>
 
 </div>
 

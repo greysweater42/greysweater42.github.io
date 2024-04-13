@@ -68,6 +68,16 @@ CNN also means Cable News Network, or one of the most popular TV networks in US,
     </item>
     
     <item>
+      <title>Fourier transform</title>
+      <link>https://greysweater42.github.io/fourier/</link>
+      <pubDate>Thu, 16 Sep 2021 15:44:46 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/fourier/</guid>
+      <description>1. What is Fourier transform and when can it be useful? Fourier transform is a method for representing a signal, time series or any other data than can be ordered (not necessarily chronologically, but this is usually the case) in a way where we can clearly see frequencies/seasonality.
+Fourier discovered (not sure if mathematicians actually invent or discover stuff) that any signal can be represented as a sum of different sinuses and cosinuses.</description>
+    </item>
+    
+    <item>
       <title>PCA / SVD</title>
       <link>https://greysweater42.github.io/pca/</link>
       <pubDate>Tue, 31 Aug 2021 18:32:03 +0200</pubDate>
