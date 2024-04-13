@@ -382,14 +382,14 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <pre class="r"><code>y_test[1:10]</code></pre>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>y_hat_test[1:10]</code></pre>
-<pre><code>##     1     3     7    12    14    21    27    28    29    30 
-## FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre><code>##     3     6     9    10    13    14    16    17    19    26 
+## FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE</code></pre>
 <p>so now we may use a simple <code>table()</code> function to create a confusion matrix:</p>
 <pre class="r"><code>table(y_hat_test, y_test)</code></pre>
 <pre><code>##           y_test
 ## y_hat_test FALSE TRUE
-##      FALSE    15    6
-##      TRUE      0    9</code></pre>
+##      FALSE    13    3
+##      TRUE      2   12</code></pre>
 <ul>
 <li>R caret</li>
 </ul>
@@ -397,32 +397,37 @@ y_hat_test &lt;- predict(m, test[,1:4], type = &quot;response&quot;) &gt; 0.5</c
 <p>Still, <code>caret</code> provides a much broader summary of confusion matrix:</p>
 <pre class="r"><code>library(caret)
 m2 &lt;- train(Species ~ Sepal.Length, train, method = &quot;glm&quot;, family = binomial)</code></pre>
-<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre><code>## Warning: glm.fit: algorithm did not converge</code></pre>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
 <pre class="r"><code>confusionMatrix(predict(m2, test), test$Species)</code></pre>
 <pre><code>## Confusion Matrix and Statistics
 ## 
 ##             Reference
 ## Prediction   setosa versicolor
-##   setosa         15          6
-##   versicolor      0          9
+##   setosa         13          3
+##   versicolor      2         12
 ##                                           
-##                Accuracy : 0.8             
-##                  95% CI : (0.6143, 0.9229)
+##                Accuracy : 0.8333          
+##                  95% CI : (0.6528, 0.9436)
 ##     No Information Rate : 0.5             
-##     P-Value [Acc &gt; NIR] : 0.0007155       
+##     P-Value [Acc &gt; NIR] : 0.0001625       
 ##                                           
-##                   Kappa : 0.6             
+##                   Kappa : 0.6667          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 0.0412268       
+##  Mcnemar&#39;s Test P-Value : 1.0000000       
 ##                                           
-##             Sensitivity : 1.0000          
-##             Specificity : 0.6000          
-##          Pos Pred Value : 0.7143          
-##          Neg Pred Value : 1.0000          
+##             Sensitivity : 0.8667          
+##             Specificity : 0.8000          
+##          Pos Pred Value : 0.8125          
+##          Neg Pred Value : 0.8571          
 ##              Prevalence : 0.5000          
-##          Detection Rate : 0.5000          
-##    Detection Prevalence : 0.7000          
-##       Balanced Accuracy : 0.8000          
+##          Detection Rate : 0.4333          
+##    Detection Prevalence : 0.5333          
+##       Balanced Accuracy : 0.8333          
 ##                                           
 ##        &#39;Positive&#39; Class : setosa          
 ## </code></pre>
@@ -524,7 +529,7 @@ plot_roc_get_auc(
   pred = predict(m, test[,1:4], type = &quot;response&quot;),
   test_labels = as.integer(test[[&quot;Species&quot;]]) - 1)</code></pre>
 <p><img src="https://greysweater42.github.io/validation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre><code>## [1] 0.8733333</code></pre>
+<pre><code>## [1] 0.8933333</code></pre>
 <pre class="r"><code>rf &lt;- randomForest::randomForest(Species ~ ., data = train)
 plot_roc_get_auc(
   pred = predict(rf, test[, 1:4], type = &quot;prob&quot;)[,&#39;versicolor&#39;],

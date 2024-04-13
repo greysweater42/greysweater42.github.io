@@ -5,10 +5,22 @@
     <link>https://greysweater42.github.io/categories/projects/</link>
     <description>Recent content in Projects on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 13 Oct 2021 22:07:37 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 13 Apr 2024 13:47:06 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NBA Serverless Lambda</title>
+      <link>https://greysweater42.github.io/nba-serverless-lambda/</link>
+      <pubDate>Sat, 13 Apr 2024 13:47:06 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/nba-serverless-lambda/</guid>
+      <description>Example of using serverless framework with Python link to the github repository
+This simple project demonstrates how you can use serverless framework to run a simple python function in AWS Lambda.
+The function downloads the scores of the NBA games from yesterday and saves them to s3 bucket.
+How it works Creating lambda function in AWS from scratch is a little bit tedious. Fortunately there is a serverless framework software which facilitates it.</description>
+    </item>
     
     <item>
       <title>favourite pet?</title>

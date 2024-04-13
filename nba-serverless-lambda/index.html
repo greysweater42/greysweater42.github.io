@@ -311,187 +311,87 @@
 
 <nav id="toc" data-toggle="toc" class="sticky-top d-none d-xl-block"></nav>
 
-<div class="list-div">
-  <div class="article-title">
-    <object type="image/svg+xml" data="/folder.svg" height="30px" width="30px">.</object> 
-    Projects
-  </div>
+<div class="article">
 
+<div class="article-categories">
   
-  <br>
-  <br>
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/projects" role="button">projects </a>
+    &emsp;
+  </br>
+</div>
+<div class="article-title">
+  
+  NBA Serverless Lambda
 
-  <center>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2024</h3>
+</div>
+<div class="article-info">
+    Apr 13, 2024 &emsp;  &emsp; 3 minutes read
+</div>
 
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Apr 13, 2024 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/nba-serverless-lambda/"> 
-              NBA Serverless Lambda 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            3
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2021</h3>
+<h2 id="example-of-using-serverless-framework-with-python">Example of using <code>serverless framework</code> with Python</h2>
+<p><em><a href="https://github.com/greysweater42/nba-serverless">link to the github repository</a></em></p>
+<p>This simple project demonstrates how you can use <a href="https://www.serverless.com/">serverless framework</a> to run a simple python function in AWS Lambda.</p>
+<p>The function downloads the scores of the NBA games from yesterday and saves them to s3 bucket.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>Creating lambda function in AWS from scratch is a little bit tedious. Fortunately there is a <code>serverless framework</code> software which facilitates it.</p>
+<p>We use <code>serverless</code> in a node container (since it is easier to install <code>serverless</code> with <code>npm</code>). In the same container we install <code>Python</code>, in which we write a function that we want to be executed in AWA lambda.</p>
+<p>Additionally we install <code>serverless-python-requirements</code> plugin, which enables us to automatically upload python packages (requirements) to lambda environment. Our project requires a python package, which communicates with REST API published by nba.com.</p>
+<p>Right after the start of the container, a simple init script creates a role in AWS (uses credentials provided in docker volume), which has the permission to execute lambda functions and also access s3, where the scores of nba games are saved.</p>
+<p>You&rsquo;ll find <code>serverless</code>'s config in <code>serverless.yml</code> file. You might notice the <code>http</code> section, which creates an Amazon API Gateway instance, which enables you to trigger the lambda function via URL, which you will find near the end of the <code>docker-compose</code> logs, starting with <code>app_1  | endpoint: GET -</code>.</p>
+<h2 id="triggering-and-viewing-results">Triggering and viewing results</h2>
+<p>The are 3 simple ways to trigger the execution of our lambda function:</p>
+<ul>
+<li>
+<p>using API Gateway and url provided</p>
+</li>
+<li>
+<p>using AWS Management Console -&gt; API Gateway, where in the <code>Test</code> section you can trigger the function</p>
+</li>
+<li>
+<p>using AWS Management Console -&gt; Lambda, where in the <code>Test</code> section you can trigger the function</p>
+</li>
+</ul>
+<p>The easiest way to view the results is to go to AWS Management Console -&gt; S3 -&gt; your nba bucket. The file with the game scores should be there.</p>
+<h2 id="architecture">Architecture</h2>
+<p><img src="architecture.png" alt="architecture diagram"></p>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<ul>
+<li>
+<p>AWS account and Access Key ID and Secret Key stored in <code>~/.aws/credentials</code></p>
+</li>
+<li>
+<p>s3 bucket with a name of your choice, e.g. <code>nba-daily-scores-&lt;account_name&gt;</code></p>
+</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<ol>
+<li>make sure you store your AWS access key in <code>~/.aws/credentials</code>. You may also want to set</li>
+</ol>
+<pre><code>[default]
+region = eu-central-1
+output = json
+</code></pre><p>in <code>~/.aws/config</code>.</p>
+<ol start="2">
+<li>
+<p><code>docker-compose up --build</code> will:</p>
+<ul>
+<li>
+<p>create a nodejs-based docker container</p>
+</li>
+<li>
+<p>install all relevant dependencies, including python and serverless framework</p>
+</li>
+<li>
+<p>deploy this example python application to lambda. You&rsquo;ll be able to trigger the application by sending a GET request (using either curl or your browser) to the address provided at the end of the logs from docker-compose. The endpoint is set up by serverless at Amazon API Gateway.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="resources">Resources</h2>
+<p>The code is based on this article: <a href="https://www.freecodecamp.org/news/how-to-deploy-aws-lambda-with-serverless/">https://www.freecodecamp.org/news/how-to-deploy-aws-lambda-with-serverless/</a>.</p>
+<p>This piece of documentation helps to understand how to deal with python dependencies in your code: <a href="https://www.serverless.com/plugins/serverless-python-requirements">https://www.serverless.com/plugins/serverless-python-requirements</a>.</p>
 
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Oct 13, 2021 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/favourite_pet/"> 
-              favourite pet? 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            5
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Sep 27, 2021 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/reading_mate/"> 
-              reading mate 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            5
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            May 20, 2021 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/fiat_ferrari/"> 
-              fiat 126 v ferrari 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            8
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2020</h3>
-
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Jan 19, 2020 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/finance_nn/"> 
-              neural networks vs stock market 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            3
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2019</h3>
-
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Jul 26, 2019 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/cookbook/"> 
-              writing a cookbook 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            5
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Jan 26, 2019 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/vim_vs_emacs/"> 
-              vim vs emacs - text mining to settle the editor war 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            247
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  </center>
 </div>
 
 <div class="jumbotron text-center" id="footer">
