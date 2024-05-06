@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>greysweater42&#39;s cookbook</title>
+  <link rel="shortcut icon" type='image/x-icon' href="https://greysweater42.github.io/favicon.ico"/> 
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">        
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Fascinate&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="https://greysweater42.github.io/css/bootstrap-toc.css">
+
+  
+  <link rel="stylesheet" href="https://greysweater42.github.io/css/darcula.css">
+
+  
+  <link rel="stylesheet" href="https://greysweater42.github.io/css/style.css">
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNMCY8RRGL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NNMCY8RRGL');
+  </script>
+
+</head>
+
+
+<body data-spy="scroll" data-target="#toc">
+
+
+
+<nav id="navbar" class="navbar navbar-expand-md fixed-top navbar-hide transition">
+
+  
+  <a class="navbar-brand"></a>
+
+  <button class="navbar-toggler float-xs-right" data-toggle="collapse" data-target="#collapsibleNavbar">
+    Menu
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="https://greysweater42.github.io">Home</a>
+      </li>
+      
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/async_thread/">async/threads</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/decorators/">decorators</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/fastai/">fastai</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/flask/">flask</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/ggplot2/">ggplot2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/keras/">keras</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/learning_tensorflow/">learning tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pillow/">pillow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pyenv/">pyenv, virtualenv, freeze</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">R</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/data.table/">data.table</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/debugging/">debugging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/ggplot2/">ggplot2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/lubridate/">lubridate</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/nls/">nls</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/sqldf/">sqldf</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tidyverse/">tidyverse</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/bayes/">bayes</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/bias_variance/">bias/variance trade-off</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/cnns/">CNNs</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/fastai/">fastai</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/fourier/">Fourier transform</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/keras/">keras</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/learning_tensorflow/">learning tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/validation/">model validation</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/nlp/">nlp</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/nls/">nls</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pca/">PCA / SVD</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pillow/">pillow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/async_thread/">async/threads</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rabbimtmq/">RabbimtMQ</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">DevOps</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/bash/">bash</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/docker/">docker</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/docker_compose_boilerplate/">docker-compose biolerplate</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/flask/">flask</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/git/">git</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/heroku/">heroku</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/kubernetes/">Kubernetes</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/mesos/">mesos</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pyenv/">pyenv, virtualenv, freeze</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/terraform_ec2_vpc/">terraform &#43; EC2 &#43; VPC</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/vagrant/">vagrant</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Projects</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/fiat_ferrari/">fiat 126 v ferrari</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/finance_nn/">neural networks vs stock market</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/reading_mate/">reading mate</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/vim_vs_emacs/">vim vs emacs - text mining to settle the editor war</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/cookbook/">writing a cookbook</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
+          
+        </div>
+      </li>
+    
+    </ul>
+
+  </div>  
+
+</nav>
+
+
+
+<div class="jumbotron text-center" id="header">
+
+  <div id="header-title">
+      <a href="https://greysweater42.github.io">greysweater42&#39;s cookbook</a>
+  </div>
+
+  <p style="color: white;">data science tutorials and snippets prepared by greysweater42</p> 
+
+</div>
+
+
+<nav id="toc" data-toggle="toc" class="sticky-top d-none d-xl-block"></nav>
+
+<div class="article">
+
+<div class="article-categories">
+  
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/devops" role="button">DevOps </a>
+    &emsp;
+  </br>
+</div>
+<div class="article-title">
+  
+  terraform &#43; EC2 &#43; VPC
+
+</div>
+<div class="article-info">
+    May 3, 2024 &emsp;  &emsp; 13 minutes read
+</div>
+
+<h2 id="why-would-you-bother-learning-terraform">Why would you bother learning <code>terraform</code>?</h2>
+<p>Cloud computing nowadays is omnipresent. Why? Because a lot of programmer&rsquo;s work can be outsourced (automated) using cloud, be done cheaper, and in a simpler way (more high-level).</p>
+<p>So, why don&rsquo;t all of the programmers immediately switch to the cloud? IMHO one of the problems lies in the fact that exploiting the potential of the cloud requires good understanding of DevOps concepts, like IaaC and tools that facilitate it. We&rsquo;re also entering the realm of software (cloud) architecture, which is a little bit different to standard software development, like developing a REST API or ETL pipeline.</p>
+<p>I want to learn cloud properly, because I believe in its potential. Unfortunetely most of the tutorials that I found on the internet are disappointingly shallow: they either present only the theoretical intuition on how specific services work or show how to set them up using AWS Management Console (or GCP Console), i.e. by clicking buttons in UI.</p>
+<p>This is not how I would set up my services in the cloud. It does not live up to the quality that I am used to when I write code (TDD, CI/CD, reviews, version control, disaster recovery).</p>
+<p>The tool that I came across that employs good quality code practises is <code>terraform</code>, which is (probably) the leader among IaaC solutions. It is simple enough, well documented, and broadly used, which brings a devoted community and quick responses to bugs and questions. There are also many decent tutorials available on youtube.</p>
+<p>In this short article I present an example usage of <code>terraform</code>, where I set up an EC2 instance in a VPC.</p>
+<h2 id="terraform-primer">Terraform primer</h2>
+<p>This is by no means an exhaustive description of how terraform works, but it should be informative enough to run all the code from this article on your own laptop.</p>
+<h5 id="installation">Installation</h5>
+<p>Installation is straightforward. Just follow the steps described in <a href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli">terraform&rsquo;s documentation</a>.</p>
+<h5 id="where-you-store-the-code">Where you store the code</h5>
+<p>You store the code in <code>&lt;filename&gt;.tf</code> files in your project&rsquo;s folder on your computer. The <code>.tf</code> files should definitely be added to the git repository of your project. You might name your first file <code>main.tf</code>.</p>
+<h5 id="what-is-the-structure-of-the-first-tf-file">What is the structure of the first <code>.tf</code> file</h5>
+<p>You begin your terraform file with a declaration of the cloud provider of your choice. For this tutorial we use AWS:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#960050;background-color:#1e0010">terraform</span> {
+  <span style="color:#960050;background-color:#1e0010">required_providers</span> {
+<span style="color:#a6e22e">    aws</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">      source</span>  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hashicorp/aws&#34;</span>
+<span style="color:#a6e22e">      version</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;5.47.0&#34;</span>
+    }
+  }
+}
+</code></pre></div><p>After that you might want to declare some global variables (global for this script, so terraform calls them &ldquo;local&rdquo;, ironically enough), which you will be able to use further in your resource declarations. In our case we use region and CIDR blocks.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#960050;background-color:#1e0010">locals</span> {
+<span style="color:#a6e22e">  region</span>            <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;eu-central-1&#34;</span><span style="color:#75715e"> # Frankfurt
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  vpc_cidr_block</span>    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;10.0.0.0/16&#34;</span>
+<span style="color:#a6e22e">  subnet_cidr_block</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;10.0.0.0/24&#34;</span>
+}
+</code></pre></div><p>Finally we inform terraform where we store our AWS credentials.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">provider</span> <span style="color:#e6db74">&#34;aws&#34;</span> {
+<span style="color:#a6e22e">  region</span>                   <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">local</span>.<span style="color:#960050;background-color:#1e0010">region</span>
+<span style="color:#a6e22e">  shared_credentials_files</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;~/.aws/credentials&#34;</span>]
+}
+</code></pre></div><p>I recommend storing them in a ~/.aws/credentials file, which has the following structure:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">[default]
+aws_access_key_id = YouKeyID
+aws_secret_access_key = YourSecretAccessKey
+</code></pre></div><h5 id="downloading-aws-plugin">Downloading AWS plugin</h5>
+<p>When the <code>main.tf</code> file is ready, terraform is not yet aware that this is a terrafrom project and does not have AWS plugin installed. You do it with</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">terraform init
+</code></pre></div><p>run from your project&rsquo;s directory.</p>
+<h5 id="adding-resources">Adding resources</h5>
+<p>As you will see further in this tutorial, you add resources using &ldquo;resource&rdquo; keyword:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;&lt;provider&gt;_&lt;resource_type&gt; &lt;name&gt;&#34;</span> {
+  <span style="color:#960050;background-color:#1e0010">&lt;config</span> <span style="color:#960050;background-color:#1e0010">options&gt;</span>
+}
+</code></pre></div><p>e.g.:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_instance&#34; &#34;my-first-terraform-server&#34;</span> {
+<span style="color:#a6e22e">  ami</span>           <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ami-026c3177c9bd54288&#34;</span>
+<span style="color:#a6e22e">  instance_type</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;t2.micro&#34;</span>
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;MyFirstUbuntuServer&#34;</span>
+  }
+}
+</code></pre></div><h5 id="creating-services">Creating services</h5>
+<p>When your <code>.tf</code> file is ready, you applly your changes to the cloud with</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">terraform apply
+</code></pre></div><p>command, but before you do that, you might want to preview the changes with</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">terraform plan
+</code></pre></div><p>which prints differences between the current state of the cloud (which, by the way, is kept in <code>terraform.tstate</code> file). You may find it similar to <code>git diff</code>.</p>
+<h5 id="declarative-programming">Declarative programming</h5>
+<p>You might have noticed that I often used the mord &ldquo;declare&rdquo; in this section. It is no concidence, since terraform uses <strong>declarative programming</strong> paradigm, which is short means that you define how the end result of the program should look like instead of describing how the program should achieve the result step by step.</p>
+<h5 id="reverting-changes">Reverting changes</h5>
+<p>If you want to delete a service, simply remove its declaration from <code>.tf</code> file. <code>terraform</code> is declarative, so it produces the exact architecture declared in your <code>.tf</code> file, even if some services are destroyed.</p>
+<p>There is even a more efficient way of destroying services:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">terraform destroy
+</code></pre></div><p>which stops and removes all the services declared in <code>.tf</code> file and no changes to the <code>.tf</code> file are necessary.</p>
+<h2 id="architecture">Architecture</h2>
+<img src="https://greysweater42.github.io/terraform_ec2_vpc.drawio.png" style="width: 100%;"/>
+<p>Components:</p>
+<ul>
+<li>
+<p>VPC - Virtual Private Cloud separates services from your project from other projects in your organization. AWS runs EC2 instances in VPCs, so we need to have one to run our EC2 instance.</p>
+</li>
+<li>
+<p>Public Subnet - VPCs are defined per Region, while Subnets per Availability Zone. There are 2 types of Subnets: Public and Private. The only difference between them is that you can access Public Subnet from the interet. AWS runs EC2 instances in Subnets, so we need one.</p>
+</li>
+<li>
+<p>Security Group - Provides firewall protection on the EC2 instance level. It allows only the traffic that we declare. In our case we only allow TCP requests on port 22, in other words, ssh connection.</p>
+</li>
+<li>
+<p>EC2 instance - Virtual Machine provides by AWS.</p>
+</li>
+<li>
+<p>Internet Gateway - Gateways connect networks, and this particular gateway connects our VPC to the internet.</p>
+</li>
+<li>
+<p>EC2 Service Connect - simple AWS service which allows us to connect to EC2 instance from AWS Management Console. It is very convenient for debugging and testing.</p>
+</li>
+</ul>
+<h2 id="prerequsites-or-what-components-you-need-to-set-up-an-ec2-instance">Prerequsites, or what components you need to set up an EC2 instance</h2>
+<p>Most of youtube EC2 tutorials walk you through AWS Management Console, which provides some useful defaults, including a default VPC for your EC2 instance. In production setting you would probably rather avoid using this VPC, because:</p>
+<ol>
+<li>
+<p>One should not trust the defaults (what if they change the next time we set up our infrastructure? what if they actually do something that I didn&rsquo;t predict?).</p>
+</li>
+<li>
+<p>You use terraform when your project&rsquo;s architecture is complicated and difficult to maintain with just AWS Management Console. If it is not, maybe you don&rsquo;t even need terraform at all, just create your EC2 instance using Console. When you have a lot of services, it is much easier to group them and maintain accesses in separate VPCs.</p>
+</li>
+<li>
+<p>It is quite easy to set up your own VPC once you learn how to do it. Learning might be difficult because the learning resources are scarce and obscure. In other words: why use the default one?</p>
+</li>
+<li>
+<p>It is easier and <strong>cleaner</strong> to maintain firewalls when they are in a separate VPC. &ldquo;Clean&rdquo; as in &ldquo;Clean Code&rdquo;. It&rsquo;s just better architecture.</p>
+</li>
+</ol>
+<p>(Surely you could modify the default VPC, but according to <code>open-closed principle</code> from SOLID, <em>Software entities &hellip; should be open for extension, but closed for modification</em>, so it might be a little bit more intuitive for other developers  if you do <em>not</em> modify this object and create a new one instead).</p>
+<p>So, we want to create a new VPC. Terraform makes it trivial (keep in mind that we have region defined in settings in some other place):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#75715e"># &#34;vpc&#34; is a name of this object used internally by terraform. It does not 
+</span><span style="color:#75715e"># appear anywhere in AWS
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_vpc&#34; &#34;vpc&#34;</span> {<span style="color:#75715e">
+</span><span style="color:#75715e">  # CIDR consists of 4 octets separated by dots: 10, 0, 0, and 0. 16 after slash
+</span><span style="color:#75715e">  # means that the first 16 bits (10 and 0) are reserved as Network ID (nobody 
+</span><span style="color:#75715e">  # inside of this network cannot modify them), but the remaining octets can be 
+</span><span style="color:#75715e">  # assigned to hosts, e.g. 10.0.1.100/16
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  cidr_block</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;10.0.0.0/16&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # tags are not mandatory, but the Name tag makes recognizing your 
+</span><span style="color:#75715e">  # services/objects much easier in AWS Management Console
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;VPC_EC2Setup&#34;</span>
+  }
+}
+</code></pre></div><p><em>You might be wondering where this <code>resource &quot;aws_vpc&quot; &quot;vpc&quot; {...</code> syntax come from. You&rsquo;ll find it in <a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc">terraform&rsquo;s excellent documentation</a>. Whenever you add a new resource, I recommend consulting the documentation, at least to have a look at the examples section.</em></p>
+<hr>
+<p>VPCs are defined per Region and they come with Subnets, which are defined per Availability Zone. Why would we need a Subnet? EC2 instance belongs to a particular subnet, so we don&rsquo;t want to use a default one (actually if we use our own VPC, we would not be able to create an EC2 instance withoud creating any Subnet first).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#75715e"># again, &#34;subnet&#34; is just a name used by terraform
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_subnet&#34; &#34;public_subnet&#34;</span> {<span style="color:#75715e">
+</span><span style="color:#75715e">  # we want terraform to create both VPC and Subnet at the same time. But there 
+</span><span style="color:#75715e">  # is a catch: a Subnet is configured *for a specific* VPC, so the VPC must 
+</span><span style="color:#75715e">  # exist *first* and we need to provide its ID. How do we do that? We can refer 
+</span><span style="color:#75715e">  # to the &#34;vpc&#34; object that we created previously by providing its resource 
+</span><span style="color:#75715e">  # type (aws_vpc), then its name (vpc) and then the property name that we need
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  vpc_id</span>     <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_vpc</span>.<span style="color:#960050;background-color:#1e0010">vpc</span>.<span style="color:#960050;background-color:#1e0010">id</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # 24 means that we use the first 3 octets as network id (our Subnet is a 
+</span><span style="color:#75715e">  # network here), so they are not further configurable inside of this network. 
+</span><span style="color:#75715e">  # We will be able to assing IPs like 10.0.1.0, 10.0.1.1, etc. to hosts inside 
+</span><span style="color:#75715e">  # of this network
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  cidr_block</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;10.0.1.0/24&#34;</span>
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;PublicSubnet_EC2Setup&#34;</span>
+  }
+}
+</code></pre></div><p><em>But why is this Subnet named &ldquo;Public&rdquo;? Because we want to access it from outside of this VPC. We will be using a gateway for that, an <code>Internet Gateway</code>, to be more specific.
+Subnets which are not accessible from the outside of the VPC are called &ldquo;private&rdquo; and they can be used for EC2 instances, to which the traffic is sent via a load balancer created in a public Subnet. You can read more about these differences in <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">AWS documentation</a>. Please keep in mind that the access from the internet to the Subnet is what makes it public, in other words it is its defining feature.</em></p>
+<hr>
+<p>EC2 instance requires one more prerequisite: Security Group, which is a list of rules that allow or disallow inbound and outbound traffic. In AWS Security Groups are parts of VPC, but you can also access them from EC2 interface.</p>
+<p>For now we only create the security group without providing any rules. We will get back to them when we discuss connecting our EC2 instance to the internet.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_security_group&#34; &#34;security_group&#34;</span> {<span style="color:#75715e">
+</span><span style="color:#75715e">  # here we also specify the name of the group, independently from Name tag
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  name</span>        <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SecurityGroup_EC2Setup&#34;</span>
+<span style="color:#a6e22e">  description</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Allow TLS inbound traffic&#34;</span>
+<span style="color:#a6e22e">  vpc_id</span>      <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_vpc</span>.<span style="color:#960050;background-color:#1e0010">vpc</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SecurityGroup_EC2Setup&#34;</span>
+  }
+}
+</code></pre></div><h2 id="ec2-instance">EC2 instance</h2>
+<p>Now we are ready to create our own EC2 instance, which is very simple with <code>terraform</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_instance&#34; &#34;ec2&#34;</span> {<span style="color:#75715e">
+</span><span style="color:#75715e">  # you could use any other AMI, but this one is Free Tier eligle
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  ami</span>                         <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ami-026c3177c9bd54288&#34;</span>
+<span style="color:#a6e22e">  instance_type</span>               <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;t2.micro&#34;</span>
+<span style="color:#a6e22e">  subnet_id</span>                   <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_subnet</span>.<span style="color:#960050;background-color:#1e0010">subnet</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+<span style="color:#a6e22e">  vpc_security_group_ids</span>      <span style="color:#f92672">=</span> [<span style="color:#960050;background-color:#1e0010">aws_security_group</span>.<span style="color:#960050;background-color:#1e0010">security_group</span>.<span style="color:#960050;background-color:#1e0010">id</span>]
+<span style="color:#a6e22e">  associate_public_ip_address</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;EC2_EC2Setup&#34;</span>
+  }
+}
+</code></pre></div><p><em>We need public IP address so we knew where to send request to. I still don&rsquo;t fully understand how this IP address corresponds to VPC&rsquo;s address. Does AWS have another route table to figure out which instances belong to which VPCs?</em></p>
+<h2 id="connecting-to-instance">Connecting to instance</h2>
+<p>If you look at the architecture diagram, you&rsquo;ll see that there are 3 network components that are necessary for connection from the internet: Internet Gateway, Route Table, and EC2 Service Connect. We will use the last one for our convenience only, because in production setting you would use a Key Pair, which is an EC2 feature, or not provide ssh connection at all for security reasons.</p>
+<p>Besides, current setting of our Security Group does not allow anyone in, so we will create an ingress rule for EC2 Service Connect.</p>
+<p>Let&rsquo;s begin with Internet Gateway:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_internet_gateway&#34; &#34;internet_gateway&#34;</span> {
+<span style="color:#a6e22e">  vpc_id</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_vpc</span>.<span style="color:#960050;background-color:#1e0010">vpc</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;InternetGateway_Ec2Setup&#34;</span>
+  }
+}
+</code></pre></div><p>That was simple enough. Gateways allows traffic between networks, in our case between our VPC and the Internet. But how does a gateway know where it should route traffic? We specify route rules in Route Table:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_route_table&#34; &#34;route_table&#34;</span> {
+<span style="color:#a6e22e">  vpc_id</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_vpc</span>.<span style="color:#960050;background-color:#1e0010">vpc</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+
+  <span style="color:#960050;background-color:#1e0010">route</span> {<span style="color:#75715e">
+</span><span style="color:#75715e">    # all trafic. security groups and NACLs are firewalls
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">    cidr_block</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0.0.0.0/0&#34;</span>
+<span style="color:#a6e22e">    gateway_id</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_internet_gateway</span>.<span style="color:#960050;background-color:#1e0010">internet_gateway</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+  }
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;RouteTable_EC2Setup&#34;</span>
+  }
+}
+</code></pre></div><p>Surely we could use the default one, but again, when you have multiple projects and, as a result, multiple VPCs in your company (which is the reason why you&rsquo;d use terraform), you don&rsquo;t want to use the defaults, because someone else can modify them.</p>
+<p>Interestingly, you can have many Route Tables per VPC, because each Subnet might have different security requirements (e.g. a Private Subnet would not allow any traffic in. This serves <em>kinda</em> like a firewall, but firewalls are residing <em>on</em> a network connection, while we do not <em>create</em> any connection. Cable is not plugged in.) So, we need to associate the Route Table with our Subnet:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_route_table_association&#34; &#34;route_table_association&#34;</span> {
+<span style="color:#a6e22e">  subnet_id</span>      <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_subnet</span>.<span style="color:#960050;background-color:#1e0010">subnet</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+<span style="color:#a6e22e">  route_table_id</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_route_table</span>.<span style="color:#960050;background-color:#1e0010">route_table</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+}
+</code></pre></div><p>You might notice that we allow <em>all</em> traffic to the Internet Gateway, and that&rsquo;s alright. Route Table is not firewall. For restricting specific IP addresses we use Security Groups (or NACLs, which we do not implement here. They&rsquo;re firewalls on the subnet level).</p>
+<p>Let&rsquo;s add an ingress rule to allow access for EC2 Service Connect (we need to find its IP address first) to port 22 with TCP.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#960050;background-color:#1e0010">data</span> <span style="color:#e6db74">&#34;aws_ip_ranges&#34; &#34;region_ip_ranges&#34;</span> {
+<span style="color:#a6e22e">  regions</span>  <span style="color:#f92672">=</span> [<span style="color:#960050;background-color:#1e0010">local</span>.<span style="color:#960050;background-color:#1e0010">region</span>]
+<span style="color:#a6e22e">  services</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;EC2_INSTANCE_CONNECT&#34;</span>]
+}
+
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_vpc_security_group_ingress_rule&#34; &#34;vpc_seurity_group_ingress_rule&#34;</span> {
+<span style="color:#a6e22e">  security_group_id</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_security_group</span>.<span style="color:#960050;background-color:#1e0010">security_group</span>.<span style="color:#960050;background-color:#1e0010">id</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # this is Frankfurt&#39;s IP, which allows EC2 Instance Connect to connect to this
+</span><span style="color:#75715e">  # instance
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  cidr_ipv4</span>         <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">data</span>.<span style="color:#960050;background-color:#1e0010">aws_ip_ranges</span>.<span style="color:#960050;background-color:#1e0010">region_ip_ranges</span>.<span style="color:#960050;background-color:#1e0010">cidr_blocks</span>[<span style="color:#ae81ff">0</span>]
+<span style="color:#a6e22e">  from_port</span>         <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>
+<span style="color:#a6e22e">  ip_protocol</span>       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tcp&#34;</span>
+<span style="color:#a6e22e">  to_port</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;AllowSSHIngress_EC2Setup&#34;</span>
+  }
+}
+</code></pre></div><p>Where do we get this IP address from? <code>terraform</code> apart from resources can also retrieve data from cloud providers. In this case we can get IP ranges for specific regions.</p>
+<h2 id="summary">Summary</h2>
+<p>Now that our <code>main.tf</code> file is ready:</p>
+<p>main.tf</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#960050;background-color:#1e0010">terraform</span> {
+  <span style="color:#960050;background-color:#1e0010">required_providers</span> {
+<span style="color:#a6e22e">    aws</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">      source</span>  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hashicorp/aws&#34;</span>
+<span style="color:#a6e22e">      version</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;5.47.0&#34;</span>
+    }
+  }
+}
+
+<span style="color:#960050;background-color:#1e0010">locals</span> {
+<span style="color:#a6e22e">  region</span>            <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;eu-central-1&#34;</span><span style="color:#75715e">  # Frankfurt
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  vpc_cidr_block</span>    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;10.0.0.0/16&#34;</span>
+<span style="color:#a6e22e">  subnet_cidr_block</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;10.0.0.0/24&#34;</span>
+}
+
+<span style="color:#66d9ef">provider</span> <span style="color:#e6db74">&#34;aws&#34;</span> {
+<span style="color:#a6e22e">  region</span>                   <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">local</span>.<span style="color:#960050;background-color:#1e0010">region</span>
+<span style="color:#a6e22e">  shared_credentials_files</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;~/.aws/credentials&#34;</span>]
+}
+
+<span style="color:#960050;background-color:#1e0010">data</span> <span style="color:#e6db74">&#34;aws_ip_ranges&#34; &#34;region_ip_ranges&#34;</span> {
+<span style="color:#a6e22e">  regions</span>  <span style="color:#f92672">=</span> [<span style="color:#960050;background-color:#1e0010">local</span>.<span style="color:#960050;background-color:#1e0010">region</span>]
+<span style="color:#a6e22e">  services</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;EC2_INSTANCE_CONNECT&#34;</span>]
+}
+
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_vpc&#34; &#34;vpc&#34;</span> {
+<span style="color:#a6e22e">  cidr_block</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">local</span>.<span style="color:#960050;background-color:#1e0010">vpc_cidr_block</span>
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;VPC_EC2Setup&#34;</span>
+  }
+}
+
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_subnet&#34; &#34;subnet&#34;</span> {
+<span style="color:#a6e22e">  vpc_id</span>     <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_vpc</span>.<span style="color:#960050;background-color:#1e0010">vpc</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+<span style="color:#a6e22e">  cidr_block</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">local</span>.<span style="color:#960050;background-color:#1e0010">subnet_cidr_block</span>
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Subnet_EC2Setup&#34;</span>
+  }
+}
+
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_internet_gateway&#34; &#34;internet_gateway&#34;</span> {
+<span style="color:#a6e22e">  vpc_id</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_vpc</span>.<span style="color:#960050;background-color:#1e0010">vpc</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;InternetGateway_Ec2Setup&#34;</span>
+  }
+}
+
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_route_table&#34; &#34;route_table&#34;</span> {
+<span style="color:#a6e22e">  vpc_id</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_vpc</span>.<span style="color:#960050;background-color:#1e0010">vpc</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+
+  <span style="color:#960050;background-color:#1e0010">route</span> {<span style="color:#75715e">
+</span><span style="color:#75715e">    # all trafic. Security Groups and NACLs are firewalls
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">    cidr_block</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0.0.0.0/0&#34;</span>
+<span style="color:#a6e22e">    gateway_id</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_internet_gateway</span>.<span style="color:#960050;background-color:#1e0010">internet_gateway</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+  }
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;RouteTable_EC2Setup&#34;</span>
+  }
+}
+
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_route_table_association&#34; &#34;route_table_association&#34;</span> {
+<span style="color:#a6e22e">  subnet_id</span>      <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_subnet</span>.<span style="color:#960050;background-color:#1e0010">subnet</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+<span style="color:#a6e22e">  route_table_id</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_route_table</span>.<span style="color:#960050;background-color:#1e0010">route_table</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+}
+
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_security_group&#34; &#34;security_group&#34;</span> {
+<span style="color:#a6e22e">  name</span>        <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SecurityGroup_EC2Setup&#34;</span>
+<span style="color:#a6e22e">  description</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Allow TLS inbound traffic and all outbound traffic&#34;</span>
+<span style="color:#a6e22e">  vpc_id</span>      <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_vpc</span>.<span style="color:#960050;background-color:#1e0010">vpc</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SecurityGroup_EC2Setup&#34;</span>
+  }
+}
+
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_vpc_security_group_ingress_rule&#34; &#34;vpc_seurity_group_ingress_rule&#34;</span> {
+<span style="color:#a6e22e">  security_group_id</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_security_group</span>.<span style="color:#960050;background-color:#1e0010">security_group</span>.<span style="color:#960050;background-color:#1e0010">id</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # this is Frankfurt&#39;s IP, which allows EC2 Instance Connect to connect to this
+</span><span style="color:#75715e">  # instance
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  cidr_ipv4</span>         <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">data</span>.<span style="color:#960050;background-color:#1e0010">aws_ip_ranges</span>.<span style="color:#960050;background-color:#1e0010">region_ip_ranges</span>.<span style="color:#960050;background-color:#1e0010">cidr_blocks</span>[<span style="color:#ae81ff">0</span>]
+<span style="color:#a6e22e">  from_port</span>         <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>
+<span style="color:#a6e22e">  ip_protocol</span>       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tcp&#34;</span>
+<span style="color:#a6e22e">  to_port</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;AllowSSHIngress_EC2Setup&#34;</span>
+  }
+}
+
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_instance&#34; &#34;ec2&#34;</span> {
+<span style="color:#a6e22e">  ami</span>                         <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ami-026c3177c9bd54288&#34;</span>
+<span style="color:#a6e22e">  instance_type</span>               <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;t2.micro&#34;</span>
+<span style="color:#a6e22e">  subnet_id</span>                   <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">aws_subnet</span>.<span style="color:#960050;background-color:#1e0010">subnet</span>.<span style="color:#960050;background-color:#1e0010">id</span>
+<span style="color:#a6e22e">  vpc_security_group_ids</span>      <span style="color:#f92672">=</span> [<span style="color:#960050;background-color:#1e0010">aws_security_group</span>.<span style="color:#960050;background-color:#1e0010">security_group</span>.<span style="color:#960050;background-color:#1e0010">id</span>]
+<span style="color:#a6e22e">  associate_public_ip_address</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+
+<span style="color:#a6e22e">  tags</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">    Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;EC2_EC2Setup&#34;</span>
+  }
+}
+
+</code></pre></div><p>we can set up our infrastructure in AWS using <code>terraform apply</code>.</p>
+<p>To see if everything works, go to AWS Management Console -&gt; EC2 -&gt; Instances -&gt; <instance id> -&gt; Connect -&gt; EC2 Instance Connect -&gt; Connect. You should be now connected via ssh to the EC2 instance :)</p>
+<p>And now you can destroy everything with <code>terraform destroy</code>.</p>
+<h2 id="resources">Resources</h2>
+<p>Figuring out all of the above was quite difficult. These are the resources that I found helpful:</p>
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=SLB_c_ayRMo">A really nice terraform tutorial for absolute beginners</a> - this is where I would start your journey.</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=2doSoMN2xvI">Excellent practical tutorial on VPC</a>, which walks you through step-by-step on how to set up EC2 on AWS with all the network components.</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=g2JOHLHh4rI">Excellent theoretical tutorial on VPC</a>, but you probably need only first 20-30 minutes for this project. This will give you very good theoretical background on how networking in AWS works plus some general information about networking, like what CIDR is.</p>
+</li>
+<li>
+<p>None of the tutorials that I enlisted above gave me a satisfactory explanation of how Routing Table works, so I read one chapter from <a href="https://www.dummies.com/book/technology/information-technology/networking/general-networking/networking-all-in-one-for-dummies-281780/">Networking All-in-One For Dummies by Doug Lowe</a>: Book 2 (Understanding Network Protocols), Chapter 4 (Routing).</p>
+</li>
+</ul>
+
+</div>
+
+<div class="jumbotron text-center" id="footer">
+
+  made using &emsp;
+  <br class="d-xl-none">
+  <a href="https://gohugo.io/">Hugo</a> |
+  <a href="https://getbootstrap.com/">Bootstrap</a> |
+  <a href="https://highlightjs.org/">highlightjs</a> |
+  <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> |
+  <a href="https://fonts.google.com/">Google fonts</a> &emsp;
+  <br class="d-xl-none">
+  <a href="https://github.com/greysweater42/cookbook">github</a> |
+  <a href="https://pages.github.com/">github pages</a> |
+  <br>
+  about me: <a href="https://www.linkedin.com/in/tomasz-dyrka-490766127/">LinkedIn</a>
+
+</div>
+
+</body>
+
+
+
+<script src="https://greysweater42.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<script src="https://greysweater42.github.io/js/bootstrap-toc.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+$(window).scroll(function() {
+  
+  if ($(window).scrollTop() > 100 ) {
+    $('.navbar').removeClass('navbar-hide');
+    $('.navbar').addClass('navbar-show');
+  } else {
+    $('.navbar').removeClass('navbar-show');
+    $('.navbar').addClass('navbar-hide');
+  };   	
+});
+</script>
+
+</html>
+

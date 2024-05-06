@@ -5,10 +5,20 @@
     <link>https://greysweater42.github.io/categories/devops/</link>
     <description>Recent content in DevOps on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 09 Apr 2024 09:41:56 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 03 May 2024 15:08:43 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>terraform &#43; EC2 &#43; VPC</title>
+      <link>https://greysweater42.github.io/terraform_ec2_vpc/</link>
+      <pubDate>Fri, 03 May 2024 15:08:43 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/terraform_ec2_vpc/</guid>
+      <description>Why would you bother learning terraform? Cloud computing nowadays is omnipresent. Why? Because a lot of programmer&amp;rsquo;s work can be outsourced (automated) using cloud, be done cheaper, and in a simpler way (more high-level).
+So, why don&amp;rsquo;t all of the programmers immediately switch to the cloud? IMHO one of the problems lies in the fact that exploiting the potential of the cloud requires good understanding of DevOps concepts, like IaaC and tools that facilitate it.</description>
+    </item>
     
     <item>
       <title>docker-compose biolerplate</title>
