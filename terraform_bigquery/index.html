@@ -319,187 +319,141 @@
 
 <nav id="toc" data-toggle="toc" class="sticky-top d-none d-xl-block"></nav>
 
-<div class="list-div">
-  <div class="article-title">
-    <object type="image/svg+xml" data="/folder.svg" height="30px" width="30px">.</object> 
-    Projects
-  </div>
+<div class="article">
 
+<div class="article-categories">
   
-  <br>
-  <br>
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/devops" role="button">DevOps </a>
+    &emsp;
+  
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/data-engineering" role="button">Data engineering </a>
+    &emsp;
+  </br>
+</div>
+<div class="article-title">
+  
+  terraform &#43; bigquery
 
-  <center>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2024</h3>
+</div>
+<div class="article-info">
+    May 13, 2024 &emsp;  &emsp; 4 minutes read
+</div>
 
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Apr 13, 2024 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/nba-serverless-lambda/"> 
-              NBA Serverless Lambda 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            3
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2021</h3>
+<h2 id="why-would-you-use-terraform-in-data-engineering">Why would you use <code>terraform</code> in data engineering?</h2>
+<p><code>terraform</code> is a standard in industry for setting up cloud infrastructure. You might wonder, just as I do, whether you should store your DDLs in <code>terraform</code>: it certainly is possible, but there are some drawbacks, e.g. how to handle database schema migrations? And how does it cooperate with other tools, like <a href="(https://greysweater42.github.io/airflow/)">Apache Airflow</a>? Surely there are interesing alternatives, like <a href="https://www.getdbt.com/">dbt</a> or <a href="https://cloud.google.com/dataform?hl=pl">dataform</a>.</p>
+<p>In this article I will not judge whether <code>terraform</code> is a good choice for your particular use case. But it could be.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<h4 id="gcp-project">GCP project</h4>
+<p>A &ldquo;project&rdquo; is GCP&rsquo;s abstraction to group resources and it has one billing account (one debit card attached). In GCP you always work inside of a project, so we need to create one. It is very simple: go to the GCP Console, type &ldquo;projects&rdquo; into the search bar, choose &ldquo;Create a project&rdquo;, provide its name and click &ldquo;Create&rdquo;.</p>
+<p>For this tutorial I created a project named <code>bigquery-tutorial</code>.</p>
+<p><em>Theoretically we could create project from terraform, but you usually set up payment methods manually, because you do not change them ever after programatically. It&rsquo;s not developer&rsquo;s job.</em></p>
+<h4 id="gcloud">gcloud</h4>
+<p>GCP provides a nice CLI for working with its services: <code>gcloud</code>, and terraform uses it to provision infrastructure. In order to install it, follow <a href="https://cloud.google.com/sdk/docs/install">these</a> instructions.</p>
+<p>After the installation you need to log in to your Google account with <code>gcloud auth login</code>. You might also need to run <code>gcloud auth application-default login</code>, and <code>gcloud auth application-default set-quota-project bigquery-tutorial</code>.</p>
+<h2 id="terraform-config">terraform config</h2>
+<h4 id="setup">setup</h4>
+<p><em>For primer on <code>terraform</code>, please refer to <a href="https://greysweater42.github.io/terraform_ec2_vpc/#terraform-primer">this article</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#960050;background-color:#1e0010">terraform</span> {
+  <span style="color:#960050;background-color:#1e0010">required_providers</span> {
+<span style="color:#a6e22e">    google</span> <span style="color:#f92672">=</span> {
+<span style="color:#a6e22e">      source</span>  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hashicorp/google&#34;</span>
+<span style="color:#a6e22e">      version</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;4.51.0&#34;</span>
+    }
+  }
+}
 
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Oct 13, 2021 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/favourite_pet/"> 
-              favourite pet? 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            5
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Sep 27, 2021 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/reading_mate/"> 
-              reading mate 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            5
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            May 20, 2021 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/fiat_ferrari/"> 
-              fiat 126 v ferrari 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            8
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2020</h3>
+<span style="color:#960050;background-color:#1e0010">locals</span> {
+<span style="color:#a6e22e">  region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;EUROPE-CENTRAL2&#34;</span>
+}
 
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Jan 19, 2020 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/finance_nn/"> 
-              neural networks vs stock market 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            3
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">2019</h3>
+<span style="color:#66d9ef">provider</span> <span style="color:#e6db74">&#34;google&#34;</span> {
+<span style="color:#a6e22e">  project</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bigquery-tutorial-&lt;id&gt;&#34;</span>
+<span style="color:#a6e22e">  region</span>  <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">local</span>.<span style="color:#960050;background-color:#1e0010">region</span>
+}
+</code></pre></div><p>For this tutorial I chose Europe-central2 region (Warsaw, Poland), because this is where I live. After running <code>terraform init</code> terraform installs plugins that it needs to work with GCP.</p>
+<h4 id="bucket">bucket</h4>
+<p>Creating a bucket is very simple:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;google_storage_bucket&#34; &#34;bucket&#34;</span> {
+<span style="color:#a6e22e">  name</span>          <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;some-bucket&#34;</span>
+<span style="color:#a6e22e">  location</span>      <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">local</span>.<span style="color:#960050;background-color:#1e0010">region</span><span style="color:#75715e">  # one-region bucket
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  force_destroy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
 
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Jul 26, 2019 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/cookbook/"> 
-              writing a cookbook 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            5
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-      <table>
-        <tr>
-          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
-            Jan 26, 2019 
-          </td>
-          <td id="list-titles">
-            <a href="https://greysweater42.github.io/vim_vs_emacs/"> 
-              vim vs emacs - text mining to settle the editor war 
-            </a>
-          </td>
-          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-            247
-             
-              minutes 
-             
-            read
-          </td>
-        </tr>
-      </table>
-    
-    
-    <br>
-    <br>
-  
-  </center>
+<span style="color:#a6e22e">  public_access_prevention</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;enforced&#34;</span>
+}
+</code></pre></div><p>You might notice some interesting config options here:</p>
+<ul>
+<li><code>location</code> - buckets on GCP are usually replicated across multiple regions for additional reliability and efficiency. In this case, since it&rsquo;s an example, we use a single region</li>
+<li><code>force_destroy</code> - if bucket is not empty, <code>terraform</code> will recreate/destroy it anyway. This is not a default behavior.</li>
+<li><code>public_access_prevention</code> - normally you don&rsquo;t want the bucket to be accessible from the internet, unless you host a static webpage. Public access prevention can be set either to <code>inherited</code>, whre it inherits this setting from organization&rsquo;s policy, or <code>forced</code>, where it overrides organization&rsquo;s policy and prevents the access.</li>
+</ul>
+<p>For further options you might want to refer to the <a href="https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket">documentation</a>, among which are:</p>
+<ul>
+<li>multi-region (us / eu / asia) / dual-region / region</li>
+<li>storage class (standard, nearline, coldline, archive)</li>
+<li>access control - uniform / fine-grained</li>
+<li>data protection (soft delete, object versioning, retention)</li>
+<li>encryption (google managed, CMEK)</li>
+</ul>
+<h2 id="bigquery">BigQuery</h2>
+<p><code>terraform</code> allows you to create BigQuery datasets and tables:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;google_bigquery_dataset&#34; &#34;default&#34;</span> {
+<span style="color:#a6e22e">  dataset_id</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cars_per_year&#34;</span>
+<span style="color:#a6e22e">  location</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">local</span>.<span style="color:#960050;background-color:#1e0010">region</span><span style="color:#75715e">  # one-region dataset
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;google_bigquery_table&#34; &#34;default&#34;</span> {
+<span style="color:#a6e22e">  dataset_id</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">google_bigquery_dataset</span>.<span style="color:#66d9ef">default</span>.<span style="color:#960050;background-color:#1e0010">dataset_id</span>
+<span style="color:#a6e22e">  table_id</span>   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cars&#34;</span>
+<span style="color:#a6e22e">  schema</span> <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">file</span>(<span style="color:#e6db74">&#34;./cars_schema.json&#34;</span>)<span style="color:#75715e">
+</span><span style="color:#75715e">  # we want to be able to recreate this table anytime we modify its config
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">  deletion_protection</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+
+  <span style="color:#960050;background-color:#1e0010">external_data_configuration</span> {
+<span style="color:#a6e22e">    autodetect</span>    <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+<span style="color:#a6e22e">    source_format</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;CSV&#34;</span>
+
+    <span style="color:#960050;background-color:#1e0010">csv_options</span> {
+<span style="color:#a6e22e">        quote</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;\&#34;&#34;</span>  
+        <span style="color:#a6e22e">skip_leading_rows</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#75715e">  # skips header
+</span><span style="color:#75715e"></span>    }
+
+<span style="color:#a6e22e">    source_uris</span> <span style="color:#f92672">=</span> [
+      <span style="color:#e6db74">&#34;${google_storage_bucket.bucket.url}/*.csv&#34;</span>,
+    ]
+  }
+
+<span style="color:#a6e22e">  depends_on</span> <span style="color:#f92672">=</span> [
+    <span style="color:#960050;background-color:#1e0010">google_bigquery_dataset</span>.<span style="color:#66d9ef">default</span>,
+  ]
+}
+</code></pre></div><p>where we read tables schema from a <code>cars_schema.json</code> file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+  {
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;year&#34;</span>,
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;integer&#34;</span>
+  },
+  {
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;make&#34;</span>,
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;STRING&#34;</span>
+  },
+  {
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;model&#34;</span>,
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;STRING&#34;</span>
+  },
+  {
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;body_styles&#34;</span>,
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;STRING&#34;</span>
+  }
+]
+</code></pre></div><h2 id="why-terraform-might-be-not-the-best-choice-for-bigquery">Why <code>terraform</code> might be not the best choice for BigQuery?</h2>
+<ul>
+<li>terraform creates buckets, datasets, and tables without any regard to the data. It is a little bit too easy to delete data</li>
+<li>you might want to keep your DDLs next to data processing pipelines, which enables you to use CTAS (<code>create table ... as ...</code>) syntax. Besides, whenever you modify a pipeline, you might modify a table and it is easier to do that with one tool (e.g. <code>dbt</code>)</li>
+<li>you might want to create buckets and datasets with <code>terraform</code>, but tables with some other tool</li>
+</ul>
+
 </div>
 
 <div class="jumbotron text-center" id="footer">

@@ -5,10 +5,19 @@
     <link>https://greysweater42.github.io/categories/devops/</link>
     <description>Recent content in DevOps on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 May 2024 15:08:43 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2024 07:50:45 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>terraform &#43; bigquery</title>
+      <link>https://greysweater42.github.io/terraform_bigquery/</link>
+      <pubDate>Mon, 13 May 2024 07:50:45 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/terraform_bigquery/</guid>
+      <description>Why would you use terraform in data engineering? terraform is a standard in industry for setting up cloud infrastructure. You might wonder, just as I do, whether you should store your DDLs in terraform: it certainly is possible, but there are some drawbacks, e.g. how to handle database schema migrations? And how does it cooperate with other tools, like Apache Airflow? Surely there are interesing alternatives, like dbt or dataform.</description>
+    </item>
     
     <item>
       <title>terraform &#43; EC2 &#43; VPC</title>
