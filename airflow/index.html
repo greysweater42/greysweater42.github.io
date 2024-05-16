@@ -213,6 +213,8 @@
           
             <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
           
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow_bigquery/">airflow &#43; BigQuery</a>
+          
             <a class="dropdown-item" href="https://greysweater42.github.io/async_thread/">async/threads</a>
           
             <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
@@ -343,7 +345,7 @@
 
 <h2 id="1-what-is-airflow-and-why-would-you-use-it">1. What is airflow and why would you use it?</h2>
 <ul>
-<li>airflow lets you manage your dataflow as a graph (direct acyclic graph or DAG), wchich consists of separate Tasks, and schedule them</li>
+<li>airflow manages dataflow as a graph (direct acyclic graph or <em>DAG</em>), which consists of separate tasks, and schedule them</li>
 </ul>
 <blockquote>
 <p><em>Wait</em>, you may say, <em>I can do that with cron!</em></p>
@@ -351,51 +353,51 @@
 <p>Yes, you can, but with airflow:</p>
 <ul>
 <li>
-<p>you can easily divide your app into smaller tasks and monitor their reliability and execution duration;</p>
+<p>airflow implements a well-known <code>pipeline</code> design pattern with <em>DAG</em>s, which are data engineer&rsquo;s workhorses</p>
 </li>
 <li>
-<p>the performance is more transparent;</p>
+<p>you can easily divide your app into smaller tasks and monitor their reliability and execution duration</p>
 </li>
 <li>
-<p>simple rerunning;</p>
+<p>the performance is more transparent</p>
 </li>
 <li>
-<p>simple alerting with emails;</p>
+<p>simple rerunning</p>
 </li>
 <li>
-<p>as the pipelines&rsquo; definitions are kept in code, you can generate them, or even let the user do it;</p>
+<p>simple alerting with emails</p>
 </li>
 <li>
-<p>you can (and should!) keep your pipelines&rsquo; code in a git repository;</p>
+<p>as the pipelines&rsquo; definitions are kept in code, you can generate them, or even let the user do it</p>
 </li>
 <li>
-<p>you keep the logs in one place. Unless you use ELK stack, then you don&rsquo;t use this functionality;</p>
+<p>you can (and should!) keep your pipelines&rsquo; code in a git repository</p>
 </li>
 <li>
-<p>integration with <a href="http://tomis9.com/mesos">mesos</a>, which I never used, but you can.</p>
+<p>you keep the logs in one place (unless you have some central log repository in your company implemented using e.g. ELK)</p>
 </li>
 </ul>
-<p>Convinced? ;)</p>
 <h2 id="2-installation-and-startup">2. Installation and startup</h2>
-<pre><code class="language-{bash," data-lang="{bash,">pip install airflow
-</code></pre><p>Not very complicated.</p>
-<p>Then run airflow scheduler and webservice with:</p>
-<pre><code class="language-{bash," data-lang="{bash,">airflow scheduler
-airflow webservice
-</code></pre><h2 id="3-best-practises">3. Best practises</h2>
+<p>Installation in straightforward:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install apache-airflow
+</code></pre></div><p>Then run airflow scheduler and webservice with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">airflow scheduler
+airflow webserver
+</code></pre></div><p>airflow users  create &ndash;role Admin &ndash;username admin &ndash;email admin &ndash;firstname admin &ndash;lastname admin &ndash;password admin</p>
+<h2 id="3-best-practises">3. Best practises</h2>
 <h3 id="softlinks">Softlinks</h3>
 <p>You may feel tempted to create a git repository in your DAG folder, however this is not the best solution. It&rsquo;s much easier and more logical to keep your DAG file in a repo where your project lives and softlink it with</p>
-<pre><code class="language-{bash," data-lang="{bash,">ln -s /path-to-your-project-repo/my_project_dag.py /home/me/airflow/dags/
-</code></pre><h3 id="dag-names-and-dag-file-names">DAG names and DAG file names</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ln -s /path-to-your-project-repo/my_project_dag.py /home/me/airflow/dags/
+</code></pre></div><h3 id="dag-names-and-dag-file-names">DAG names and DAG file names</h3>
 <ul>
 <li>
-<p>keep only one DAG in a file;</p>
+<p>keep only one DAG in a file</p>
 </li>
 <li>
-<p>DAG should have the same name as the file it&rsquo;s in;</p>
+<p>DAG should have the same name as the file it&rsquo;s in</p>
 </li>
 <li>
-<p>DAG&rsquo;s and file&rsquo;s name should begin with project&rsquo;s name.</p>
+<p>DAG&rsquo;s and file&rsquo;s name should begin with project&rsquo;s name</p>
 </li>
 </ul>
 <h3 id="jinja-templating">Jinja templating</h3>

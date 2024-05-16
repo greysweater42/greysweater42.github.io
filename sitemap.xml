@@ -3,22 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://greysweater42.github.io/airflow_bigquery/</loc>
+    <lastmod>2024-05-16T11:56:13+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://greysweater42.github.io/categories/</loc>
-    <lastmod>2024-05-13T07:50:45+02:00</lastmod>
+    <lastmod>2024-05-16T11:56:13+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://greysweater42.github.io/categories/data-engineering/</loc>
-    <lastmod>2024-05-13T07:50:45+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://greysweater42.github.io/categories/devops/</loc>
-    <lastmod>2024-05-13T07:50:45+02:00</lastmod>
+    <lastmod>2024-05-16T11:56:13+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://greysweater42.github.io/</loc>
+    <lastmod>2024-05-16T11:56:13+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://greysweater42.github.io/categories/devops/</loc>
     <lastmod>2024-05-13T07:50:45+02:00</lastmod>
   </url>
   
