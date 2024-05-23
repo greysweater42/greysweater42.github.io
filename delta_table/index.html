@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>greysweater42&#39;s cookbook</title>
+  <link rel="shortcut icon" type='image/x-icon' href="https://greysweater42.github.io/favicon.ico"/> 
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">        
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Fascinate&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="https://greysweater42.github.io/css/bootstrap-toc.css">
+
+  
+  <link rel="stylesheet" href="https://greysweater42.github.io/css/darcula.css">
+
+  
+  <link rel="stylesheet" href="https://greysweater42.github.io/css/style.css">
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNMCY8RRGL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NNMCY8RRGL');
+  </script>
+
+</head>
+
+
+<body data-spy="scroll" data-target="#toc">
+
+
+
+<nav id="navbar" class="navbar navbar-expand-md fixed-top navbar-hide transition">
+
+  
+  <a class="navbar-brand"></a>
+
+  <button class="navbar-toggler float-xs-right" data-toggle="collapse" data-target="#collapsibleNavbar">
+    Menu
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="https://greysweater42.github.io">Home</a>
+      </li>
+      
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Python</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/async_thread/">async/threads</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/beautiful_soup/">beautiful soup</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/decorators/">decorators</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/delta_table/">delta table</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/fastai/">fastai</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/flask/">flask</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/ggplot2/">ggplot2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/keras/">keras</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/learning_tensorflow/">learning tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pillow/">pillow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pyenv/">pyenv, virtualenv, freeze</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/sqlalchemy/">sqlAlchemy</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">R</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/cinr/">C in R</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/classess4/">classes - S4</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/data.table/">data.table</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/debugging/">debugging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/ggplot2/">ggplot2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/lubridate/">lubridate</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/nls/">nls</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/packages/">packages</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rcpp/">Rcpp</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/reshape2/">reshape2</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rmariadb/">RMariaDB (former RMySQL)</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rstanarm/">rstanarm</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rtags/">rTags</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/shiny/">shiny</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/sqldf/">sqldf</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/testing/">testing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tidyverse/">tidyverse</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Machine learning</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/ml/">basic machine learning algorithms</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/bayes/">bayes</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/bias_variance/">bias/variance trade-off</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/cnns/">CNNs</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/decision_trees/">decision trees</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/fastai/">fastai</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/fourier/">Fourier transform</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/keras/">keras</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/learning_tensorflow/">learning tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/validation/">model validation</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/nlp/">nlp</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/nls/">nls</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pca/">PCA / SVD</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pillow/">pillow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch/">pytorch</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pytorch_basics/">pytorch basics</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow/">tensorflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xai/">XAI</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/xgboost/">xgboost</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Data engineering</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow/">airflow</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/airflow_bigquery/">airflow &#43; BigQuery</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/async_thread/">async/threads</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/delta_table/">delta table</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/hadoop/">hadoop</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/logging/">logging</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pandas/">pandas</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rabbimtmq/">RabbimtMQ</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/spark/">spark</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/terraform_bigquery/">terraform &#43; bigquery</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/useful_processing/">useful processing</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">DevOps</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/bash/">bash</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/docker/">docker</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/docker_compose_boilerplate/">docker-compose biolerplate</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/flask/">flask</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/git/">git</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/heroku/">heroku</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/kubernetes/">Kubernetes</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/mesos/">mesos</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/pyenv/">pyenv, virtualenv, freeze</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/rocker/">rocker</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/terraform_bigquery/">terraform &#43; bigquery</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/terraform_ec2_vpc/">terraform &#43; EC2 &#43; VPC</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/vagrant/">vagrant</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Projects</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/fiat_ferrari/">fiat 126 v ferrari</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/finance_nn/">neural networks vs stock market</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/reading_mate/">reading mate</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/vim_vs_emacs/">vim vs emacs - text mining to settle the editor war</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/cookbook/">writing a cookbook</a>
+          
+        </div>
+      </li>
+    
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">scratchpad</a>
+        <div class="dropdown-menu scrollable-menu">
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/passing_arguments/">passing arguments to scripts</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/redis/">redis</a>
+          
+            <a class="dropdown-item" href="https://greysweater42.github.io/tensorflow_serving/">tensorflow_serving</a>
+          
+        </div>
+      </li>
+    
+    </ul>
+
+  </div>  
+
+</nav>
+
+
+
+<div class="jumbotron text-center" id="header">
+
+  <div id="header-title">
+      <a href="https://greysweater42.github.io">greysweater42&#39;s cookbook</a>
+  </div>
+
+  <p style="color: white;">data science tutorials and snippets prepared by greysweater42</p> 
+
+</div>
+
+
+<nav id="toc" data-toggle="toc" class="sticky-top d-none d-xl-block"></nav>
+
+<div class="article">
+
+<div class="article-categories">
+  
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/data-engineering" role="button">Data engineering </a>
+    &emsp;
+  
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
+    <a href="https://greysweater42.github.io/categories/python" role="button">Python </a>
+    &emsp;
+  </br>
+</div>
+<div class="article-title">
+  
+  delta table
+
+</div>
+<div class="article-info">
+    May 23, 2024 &emsp;  &emsp; 11 minutes read
+</div>
+
+<h2 id="why-would-you-use-delta-table">Why would you use delta table?</h2>
+<p>When you work on huge amounts of data, you probably use <a href="https://greysweater42.github.io/spark/">spark</a> as querying engine and store data either in <a href="https://greysweater42.github.io/spark/">spark</a> on in a cloud storage (S3 / Google Cloud Storage / Azure Storage), which together nring architecure called <code>data lake</code>.</p>
+<p>Vast amounts of data are still in tabular format, so you may feel tempted to store them in a <code>data warehouse</code>, because of its nice features, like ACID and locking. On the other hand, data warehouses do not scale (almost) indefinitely, like data lakes.</p>
+<p><code>Delta lake</code>, which is a group of <code>delta tables</code> is an implementation of a <code>data lakehouse</code>, which combines advantages of data lakes and warehouses:</p>
+<ul>
+<li>
+<p>(almost) indefinite scaling</p>
+</li>
+<li>
+<p>ACID and locking (gaining functionality equivalent to data warehouse requires additional tools, but by default we get some sort of locking)</p>
+</li>
+<li>
+<p>as a bonus we get data versioning, which is called <code>time travel</code>, and uses data partitioning in a clever way</p>
+</li>
+</ul>
+<p>Currently delta tables are heavily used by <a href="https://www.databricks.com/">databricks</a>, which is a PaaS solution to run spark clusters on data stored in cloud (AWS/GCP/Azure).</p>
+<h2 id="example-project">Example project</h2>
+<h4 id="introduction">Introduction</h4>
+<p>We want to find out if SUVs are getting more and more popular in the US.</p>
+<p>To do that, we download data on cars manufacturers: to be more specific, what car body types were available on the American market from 2003 to 2023, based on the data from <a href="https://github.com/abhionlyone/us-car-models-data">https://github.com/abhionlyone/us-car-models-data</a>. The data is published in the following way:</p>
+<ul>
+<li>
+<p>in CSV format,</p>
+</li>
+<li>
+<p>one CSV file per year, which contains car models sold on American market with the information on body style (e.g. SUV, sedan, wagon, convertible, etc).</p>
+</li>
+</ul>
+<h4 id="architecture">Architecture</h4>
+<img src="https://greysweater42.github.io/delta_table.drawio.png" style="width: 100%;"/>
+<p>The architecture can be divided into 2 components:</p>
+<ul>
+<li>
+<p>Compute, where 3 tasks reside. In production setting they might be orchestrated by a pipeline orchestrator like <a href="https://greysweater42.github.io/airflow/">airflow</a> (I also wrote about using airflow with BigQuery [here]https://greysweater42.github.io/airflow_bigquery/). For this particular project we want to use <code>delta tables</code>, which are in general data formats that can be accessed by multiple processing engines, like spark. The popular engines are currently <a href="https://docs.delta.io/latest/index.html">spark</a> and <a href="https://delta-io.github.io/delta-rs/">custom engine written in rust</a>, which allows only read and write queries, without any data manipulation. Any other data manipulation engine can be used, so we will used pandas (<a href="https://pola.rs/">polars</a> is also a popular choice). In this blog post I will show examples of both spark and delta-rs + pandas.</p>
+</li>
+<li>
+<p>Storage, where the <a href="https://www.databricks.com/glossary/medallion-architecture">medallion architecture</a> is used. In short, it consists of 3 layers, called: bronze, silver, and gold, and each of these contains cleaner data. Bronze is for raw data (no delta tables), silver for cleaned data (delta tables) and gold for aggregated clean data (delta tables). You may find more information about this architecture in <a href="https://www.oreilly.com/library/view/delta-lake-up/9781098139711/">Delta lake: Up and Running book</a>.</p>
+</li>
+</ul>
+<h4 id="implementation">Implementation</h4>
+<h5 id="prerequsites">Prerequsites</h5>
+<p>We will need a couple of python packages:</p>
+<p><em>requirements.txt</em></p>
+<pre><code>delta-spark==3.1.0
+deltalake==0.17.4
+pyspark==3.5.1
+pandas==2.2.2
+</code></pre><p><em>You might want to install other versions of these packages. In worst case scenario, you will have to debug the code below by yourself.</em></p>
+<p><em>You might rather use <a href="https://hub.docker.com/r/apache/spark">spark docker container</a> instead of installing it in virtualenv. Virtualenv worked well for me.</em></p>
+<h5 id="project-structure">Project structure</h5>
+<p>Our project consists of a couple of components, in particular we might divide them into: spark and pandas, and separate tasks. I recommed the following project structure:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.
+├── config.py
+├── main.py
+└── src
+    ├── aggregate_pandas.py
+    ├── aggregate_spark.py
+    ├── extract.py
+    ├── setup_spark.py
+    ├── transform_pandas.py
+    └── transform_spark.py
+</code></pre></div><p>Now lets have a look at each of the files of the project.</p>
+<h5 id="config">config</h5>
+<p><em>config.py</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+<span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+<span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> OrderedDict
+
+<span style="color:#f92672">from</span> pyspark.sql <span style="color:#f92672">import</span> types
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+
+
+DATA_PATH <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">&#34;data&#34;</span>)
+
+
+<span style="color:#a6e22e">@dataclass</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DATA_PATHS</span>:
+    bronze <span style="color:#f92672">=</span> DATA_PATH <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;bronze&#34;</span>
+    silver <span style="color:#f92672">=</span> DATA_PATH <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;silver&#34;</span>
+    gold <span style="color:#f92672">=</span> DATA_PATH <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;gold&#34;</span>
+
+
+DATA_PATHS<span style="color:#f92672">.</span>bronze<span style="color:#f92672">.</span>mkdir(exist_ok<span style="color:#f92672">=</span>True, parents<span style="color:#f92672">=</span>True)
+DATA_PATHS<span style="color:#f92672">.</span>silver<span style="color:#f92672">.</span>mkdir(exist_ok<span style="color:#f92672">=</span>True, parents<span style="color:#f92672">=</span>True)
+DATA_PATHS<span style="color:#f92672">.</span>gold<span style="color:#f92672">.</span>mkdir(exist_ok<span style="color:#f92672">=</span>True, parents<span style="color:#f92672">=</span>True)
+
+URL <span style="color:#f92672">=</span> (
+    <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/abhionlyone/us-car-models-data/master/{year}.csv&#34;</span>
+)
+<span style="color:#75715e"># we process 21 years: from 2003 to 2023</span>
+YEARS <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">2003</span>, <span style="color:#ae81ff">2024</span>)
+
+<span style="color:#75715e"># in silver layer we merge new batch (new year) into existing data on condition</span>
+<span style="color:#75715e"># to avoid overwriting existing rows</span>
+MERGE_CONDITION <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; and &#34;</span><span style="color:#f92672">.</span>join(
+    [
+        <span style="color:#e6db74">&#34;cars.year = new_data.year&#34;</span>,
+        <span style="color:#e6db74">&#34;cars.make = new_data.make&#34;</span>,
+        <span style="color:#e6db74">&#34;cars.model = new_data.model&#34;</span>,
+        <span style="color:#e6db74">&#34;cars.body_style = new_data.body_style&#34;</span>,
+    ]
+)
+
+<span style="color:#75715e"># we store schema of the tables here in an attempt to separate DDL from DML</span>
+SCHEMA_SPARK <span style="color:#f92672">=</span> types<span style="color:#f92672">.</span>StructType(
+    [
+        <span style="color:#75715e"># we use short type for compatibility with pandas: pandas uses 64bit int</span>
+        <span style="color:#75715e"># by default, spark uses 32. if we need to specify them manually, let&#39;s</span>
+        <span style="color:#75715e"># choose ShortType (8-bit), which is enough for storing year</span>
+        types<span style="color:#f92672">.</span>StructField(<span style="color:#e6db74">&#34;year&#34;</span>, types<span style="color:#f92672">.</span>ShortType(), True),
+        types<span style="color:#f92672">.</span>StructField(<span style="color:#e6db74">&#34;make&#34;</span>, types<span style="color:#f92672">.</span>StringType(), True),
+        types<span style="color:#f92672">.</span>StructField(<span style="color:#e6db74">&#34;model&#34;</span>, types<span style="color:#f92672">.</span>StringType(), True),
+        <span style="color:#75715e"># unfortunately spark doesn&#39;t allow reading arrays from csvs directly</span>
+        types<span style="color:#f92672">.</span>StructField(<span style="color:#e6db74">&#34;body_styles&#34;</span>, types<span style="color:#f92672">.</span>StringType(), True),
+    ]
+)
+
+<span style="color:#75715e"># we use short type for compatibility with spark: pandas uses 64-bit int by</span>
+<span style="color:#75715e"># default, while spark uses 32 bit. we need to override the defaults, so we use</span>
+<span style="color:#75715e"># 8-bit short (also known as int16), because we save a little bit of space.</span>
+<span style="color:#75715e"># OrderedDict instead of dict, because we want to keep the order of the columns</span>
+<span style="color:#75715e"># for nicer default</span>
+SCHEMA_PANDAS <span style="color:#f92672">=</span> OrderedDict(year<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>short, make<span style="color:#f92672">=</span>str, model<span style="color:#f92672">=</span>str, body_styles<span style="color:#f92672">=</span>str)
+</code></pre></div><h5 id="main">main</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
+
+<span style="color:#f92672">import</span> config
+
+<span style="color:#f92672">from</span> src.extract <span style="color:#f92672">import</span> extract
+<span style="color:#f92672">from</span> src.transform_pandas <span style="color:#f92672">import</span> transform
+<span style="color:#f92672">from</span> src.aggregate_pandas <span style="color:#f92672">import</span> aggregate
+
+<span style="color:#75715e"># from src.setup_spark import setup_dev_spark_session</span>
+<span style="color:#75715e"># from src.transform_spark import transform</span>
+<span style="color:#75715e"># from src.aggregate_spark import aggregate</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    <span style="color:#66d9ef">for</span> year <span style="color:#f92672">in</span> config<span style="color:#f92672">.</span>YEARS:
+        t0 <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>now()
+        <span style="color:#66d9ef">print</span>(year)
+        raw_data_path <span style="color:#f92672">=</span> extract(year<span style="color:#f92672">=</span>year)
+        transformed_data_path <span style="color:#f92672">=</span> transform(raw_data_path<span style="color:#f92672">=</span>raw_data_path)
+        aggregate(transformed_data_path<span style="color:#f92672">=</span>transformed_data_path)
+        <span style="color:#75715e"># spark = setup_dev_spark_session()</span>
+        <span style="color:#75715e"># transformed_data_path = transform(spark=spark, raw_data_path=raw_data_path)</span>
+        <span style="color:#75715e"># aggregate(spark=spark, transformed_data_path=transformed_data_path)</span>
+        <span style="color:#66d9ef">print</span>(datetime<span style="color:#f92672">.</span>now() <span style="color:#f92672">-</span> t0)
+</code></pre></div><p><em>Yes, I used <code>print</code> instead of <code>logging</code>, because this is</em> not <em>production code.</em></p>
+<p>This script iterates over 21 years and for each of the years runs the pipeline as is depicted in the architecture diagram: downloads one year of data, saves it into bronze layer, then cleans the data and finally aggregates it to save the result to the gold layer. Dashboard is not implemented.</p>
+<p>Some sections are commented out. The uncommented code runs the pipeline using delta-rs and pandas. The commented out sections use spark. If you uncomment them and comment the other functions from src, processing will be run using spark. You will notice that running the processing in spark is significantly slower that delta-rs + pandas, because the dataset is very small (normally for such a small dataset we would not even consider using spark, but this is just an example). For bigger datasets (terabytes of data) we would not manage to run such a processing with pandas at all. You might also run transforming with pandas and aggregating with spark or transforming with spark and aggregating with pandas, if you want. They both use the same delta table format.</p>
+<p>In the code above you can see that the functions run in the <code>for</code> loop correspond to tasks in the architecture diagram: <code>extract</code>, <code>transform</code>, and <code>aggregate</code>. <code>transform</code> also performs merging and <code>aggregate</code> also performs overwriting data in the gold layer.</p>
+<h5 id="extract">extract</h5>
+<p>This is the first part of the pipeline: downloads data from the internet.</p>
+<p><em>src/extract.py</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+
+<span style="color:#f92672">import</span> config
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract</span>(year: int) <span style="color:#f92672">-&gt;</span> Path:
+    <span style="color:#e6db74">&#34;&#34;&#34;reads raw cars csv file for a given year from the internet and saves it
+</span><span style="color:#e6db74">    to data path to the bronze layer. If the file already exists there,
+</span><span style="color:#e6db74">    downloading is skipped&#34;&#34;&#34;</span>
+    path <span style="color:#f92672">=</span> (config<span style="color:#f92672">.</span>DATA_PATHS<span style="color:#f92672">.</span>bronze <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;cars&#34;</span> <span style="color:#f92672">/</span> str(year))<span style="color:#f92672">.</span>with_suffix(<span style="color:#e6db74">&#34;.csv&#34;</span>)
+    path<span style="color:#f92672">.</span>parent<span style="color:#f92672">.</span>mkdir(parents<span style="color:#f92672">=</span>True, exist_ok<span style="color:#f92672">=</span>True)
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> path<span style="color:#f92672">.</span>exists():
+        url_year <span style="color:#f92672">=</span> config<span style="color:#f92672">.</span>URL<span style="color:#f92672">.</span>format(year<span style="color:#f92672">=</span>year)
+        df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url_year)
+        df<span style="color:#f92672">.</span>to_csv(path, index<span style="color:#f92672">=</span>False)
+    <span style="color:#66d9ef">return</span> path
+</code></pre></div><h5 id="setup-spark">setup spark</h5>
+<p>As we&rsquo;re moving to the second task of the pipeline, which is cleaning (transforming) the data, we need an important prerequisite to run the processing using spark: a spark session. For this blog post we setup a dev spark cluster with one worker node (it&rsquo;s more than enough anyway). You will find more information about local setup on <a href="https://delta.io/learn/getting-started">delta lake&rsquo;s getting started page</a>.</p>
+<p><em>src/setup_spark.py</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pyspark.sql <span style="color:#f92672">import</span> session
+<span style="color:#f92672">from</span> delta <span style="color:#f92672">import</span> configure_spark_with_delta_pip
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setup_dev_spark_session</span>() <span style="color:#f92672">-&gt;</span> session<span style="color:#f92672">.</span>SparkSession:
+    builder <span style="color:#f92672">=</span> (
+        session<span style="color:#f92672">.</span>SparkSession<span style="color:#f92672">.</span>builder<span style="color:#f92672">.</span>appName(<span style="color:#e6db74">&#34;MyApp&#34;</span>)
+        <span style="color:#f92672">.</span>config(<span style="color:#e6db74">&#34;spark.sql.extensions&#34;</span>, <span style="color:#e6db74">&#34;io.delta.sql.DeltaSparkSessionExtension&#34;</span>)
+        <span style="color:#f92672">.</span>config(
+            <span style="color:#e6db74">&#34;spark.sql.catalog.spark_catalog&#34;</span>,
+            <span style="color:#e6db74">&#34;org.apache.spark.sql.delta.catalog.DeltaCatalog&#34;</span>,
+        )
+    )
+
+    <span style="color:#75715e"># this environment should be used only for testing</span>
+    <span style="color:#75715e"># more info here https://delta.io/learn/getting-started/</span>
+    spark <span style="color:#f92672">=</span> configure_spark_with_delta_pip(builder)<span style="color:#f92672">.</span>getOrCreate()
+    <span style="color:#66d9ef">return</span> spark
+</code></pre></div><h5 id="transform-with-pandas">transform with pandas</h5>
+<p><em>src/transform_pandas.py</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> json
+<span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+
+<span style="color:#f92672">import</span> deltalake <span style="color:#f92672">as</span> dl
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+
+<span style="color:#f92672">import</span> config
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_explode_cars_on_body_style</span>(df: pd<span style="color:#f92672">.</span>DataFrame) <span style="color:#f92672">-&gt;</span> pd<span style="color:#f92672">.</span>DataFrame:
+    <span style="color:#e6db74">&#34;&#34;&#34;`body_styles` column is an array, which csv keeps as a string.
+</span><span style="color:#e6db74">    This function converts it into actual array and explodes it.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    df[<span style="color:#e6db74">&#34;body_styles&#34;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#34;body_styles&#34;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: json<span style="color:#f92672">.</span>loads(x))
+    <span style="color:#66d9ef">return</span> df<span style="color:#f92672">.</span>explode(<span style="color:#e6db74">&#34;body_styles&#34;</span>)<span style="color:#f92672">.</span>rename({<span style="color:#e6db74">&#34;body_styles&#34;</span>: <span style="color:#e6db74">&#34;body_style&#34;</span>}, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">transform</span>(raw_data_path: Path) <span style="color:#f92672">-&gt;</span> Path:
+    <span style="color:#e6db74">&#34;&#34;&#34;cleans raw data and saves it to silver layer as a delta table&#34;&#34;&#34;</span>
+    clean_data_path <span style="color:#f92672">=</span> config<span style="color:#f92672">.</span>DATA_PATHS<span style="color:#f92672">.</span>silver <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;cars&#34;</span>
+
+    <span style="color:#75715e"># we could probably read the `body_styles` column as a pyarrow array/list type</span>
+    new_batch_raw <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(
+        raw_data_path, usecols<span style="color:#f92672">=</span>config<span style="color:#f92672">.</span>SCHEMA_PANDAS<span style="color:#f92672">.</span>keys(), dtype<span style="color:#f92672">=</span>config<span style="color:#f92672">.</span>SCHEMA_PANDAS
+    )
+    new_batch_clean <span style="color:#f92672">=</span> _explode_cars_on_body_style(df<span style="color:#f92672">=</span>new_batch_raw)
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> clean_data_path<span style="color:#f92672">.</span>exists():
+        dl<span style="color:#f92672">.</span>write_deltalake(
+            clean_data_path, new_batch_clean, partition_by<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;year&#34;</span>, <span style="color:#e6db74">&#34;body_style&#34;</span>]
+        )
+    <span style="color:#66d9ef">else</span>:
+        clean_data <span style="color:#f92672">=</span> dl<span style="color:#f92672">.</span>DeltaTable(clean_data_path)
+        (
+            clean_data<span style="color:#f92672">.</span>merge(
+                source<span style="color:#f92672">=</span>new_batch_clean,
+                predicate<span style="color:#f92672">=</span>config<span style="color:#f92672">.</span>MERGE_CONDITION,
+                source_alias<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;new_data&#34;</span>,
+                target_alias<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cars&#34;</span>,
+            )
+            <span style="color:#f92672">.</span>when_not_matched_insert_all()
+            <span style="color:#f92672">.</span>execute()
+        )
+
+    <span style="color:#66d9ef">return</span> clean_data_path
+</code></pre></div><p>Our <code>body_styles</code> column comes in an interesting format: it is a json array. COnsidering that the data is stored in a CSV file, we need to read it as string and then convert to json array. And then we explode the data on this column to finally get rid of this array, which would make further processing difficult.</p>
+<p>The <code>transform</code> function has an <code>if</code> statement inside. We process the data year by year and we always merge the new batch to an already existing delta table. But what if it is the first batch ever? Then we create a new delta table.</p>
+<p>The data is partitioned by two columns: <code>year</code> and <code>body_style</code>. Year is convenient, because we receive the data per year, so a new batch of the data does not modify already existing partitions. In other words, appending a new year of data is very cheap and efficient. Partitioning on <code>body_style</code> will make filtering on this column faster. (Obviously for such a small dataset with ~500 rows per year we actually de-optimize the performance by introducing way too many files/partitions, which is an overhead for spark and delta).</p>
+<h5 id="transform-with-spark">transform with spark</h5>
+<p><em>src/transform_spark.py</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+
+<span style="color:#f92672">from</span> delta.tables <span style="color:#f92672">import</span> DeltaTable
+<span style="color:#f92672">from</span> pyspark.sql <span style="color:#f92672">import</span> functions <span style="color:#66d9ef">as</span> F, dataframe, session, types
+
+<span style="color:#f92672">import</span> config
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_explode_cars_on_body_style</span>(
+    df: dataframe<span style="color:#f92672">.</span>DataFrame,
+) <span style="color:#f92672">-&gt;</span> dataframe<span style="color:#f92672">.</span>DataFrame:
+    <span style="color:#e6db74">&#34;&#34;&#34;`body_styles` column is an array, which csv keeps as a string.
+</span><span style="color:#e6db74">    This function converts it into actual array and explodes it.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>withColumn(
+        <span style="color:#e6db74">&#34;body_styles&#34;</span>,
+        F<span style="color:#f92672">.</span>from_json(df[<span style="color:#e6db74">&#34;body_styles&#34;</span>], types<span style="color:#f92672">.</span>ArrayType(types<span style="color:#f92672">.</span>StringType())),
+    )
+    <span style="color:#66d9ef">return</span> df<span style="color:#f92672">.</span>select(
+        <span style="color:#e6db74">&#34;year&#34;</span>, <span style="color:#e6db74">&#34;make&#34;</span>, <span style="color:#e6db74">&#34;model&#34;</span>, F<span style="color:#f92672">.</span>explode(<span style="color:#e6db74">&#34;body_styles&#34;</span>)<span style="color:#f92672">.</span>alias(<span style="color:#e6db74">&#34;body_style&#34;</span>)
+    )
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">transform</span>(spark: session<span style="color:#f92672">.</span>SparkSession, raw_data_path: Path) <span style="color:#f92672">-&gt;</span> Path:
+    <span style="color:#e6db74">&#34;&#34;&#34;cleans raw data and saves it to silver layer as a delta table&#34;&#34;&#34;</span>
+    clean_data_path <span style="color:#f92672">=</span> config<span style="color:#f92672">.</span>DATA_PATHS<span style="color:#f92672">.</span>silver <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;cars&#34;</span>
+
+    new_batch_raw <span style="color:#f92672">=</span> spark<span style="color:#f92672">.</span>read<span style="color:#f92672">.</span>csv(
+        str(raw_data_path), header<span style="color:#f92672">=</span>True, schema<span style="color:#f92672">=</span>config<span style="color:#f92672">.</span>SCHEMA_SPARK, escape<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#34;&#39;</span>
+    )
+    new_batch_clean <span style="color:#f92672">=</span> _explode_cars_on_body_style(df<span style="color:#f92672">=</span>new_batch_raw)
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> clean_data_path<span style="color:#f92672">.</span>exists():
+        new_batch_clean<span style="color:#f92672">.</span>write<span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#34;delta&#34;</span>)<span style="color:#f92672">.</span>save(
+            str(clean_data_path), partitionBy<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;year&#34;</span>, <span style="color:#e6db74">&#34;body_style&#34;</span>]
+        )
+    <span style="color:#66d9ef">else</span>:
+        clean_data <span style="color:#f92672">=</span> DeltaTable<span style="color:#f92672">.</span>forPath(spark, str(clean_data_path))
+        clean_data<span style="color:#f92672">.</span>alias(<span style="color:#e6db74">&#34;cars&#34;</span>)<span style="color:#f92672">.</span>merge(
+            new_batch_clean<span style="color:#f92672">.</span>alias(<span style="color:#e6db74">&#34;new_data&#34;</span>), config<span style="color:#f92672">.</span>MERGE_CONDITION
+        )<span style="color:#f92672">.</span>whenNotMatchedInsertAll()<span style="color:#f92672">.</span>execute()
+
+    <span style="color:#66d9ef">return</span> clean_data_path
+</code></pre></div><p>This code is (surprisingly) similar to <code>transform_pandas.py</code>.</p>
+<h5 id="aggregate-in-pandas">aggregate in pandas</h5>
+<p><em>src/aggregate_pandas.py</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+
+<span style="color:#f92672">import</span> deltalake <span style="color:#f92672">as</span> dl
+
+<span style="color:#f92672">import</span> config
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">aggregate</span>(transformed_data_path: Path) <span style="color:#f92672">-&gt;</span> Path:
+    <span style="color:#e6db74">&#34;&#34;&#34;aggregates transformed cars data by year and body style and writes the
+</span><span style="color:#e6db74">    result to the gold layer&#34;&#34;&#34;</span>
+    agg_data_path <span style="color:#f92672">=</span> config<span style="color:#f92672">.</span>DATA_PATHS<span style="color:#f92672">.</span>gold <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;cars&#34;</span>
+
+    df <span style="color:#f92672">=</span> dl<span style="color:#f92672">.</span>DeltaTable(transformed_data_path)<span style="color:#f92672">.</span>to_pandas()
+    <span style="color:#75715e"># I could have written the following lines as one line, but this syntax makes</span>
+    <span style="color:#75715e"># debugging easier</span>
+    df[<span style="color:#e6db74">&#34;is_SUV&#34;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#34;body_style&#34;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;SUV&#34;</span>
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#34;year&#34;</span>, <span style="color:#e6db74">&#34;is_SUV&#34;</span>])<span style="color:#f92672">.</span>count()<span style="color:#f92672">.</span>reset_index()
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>pivot(columns<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;is_SUV&#34;</span>, index<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;year&#34;</span>, values<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model&#34;</span>)
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>rename({False: <span style="color:#e6db74">&#34;not_SUV&#34;</span>, True: <span style="color:#e6db74">&#34;SUV&#34;</span>}, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    df[<span style="color:#e6db74">&#34;all&#34;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#34;SUV&#34;</span>] <span style="color:#f92672">+</span> df[<span style="color:#e6db74">&#34;not_SUV&#34;</span>]
+    df[<span style="color:#e6db74">&#34;SUV_market_share&#34;</span>] <span style="color:#f92672">=</span> round(df[<span style="color:#e6db74">&#34;SUV&#34;</span>] <span style="color:#f92672">/</span> df[<span style="color:#e6db74">&#34;all&#34;</span>], <span style="color:#ae81ff">2</span>)
+
+    dl<span style="color:#f92672">.</span>write_deltalake(agg_data_path, df, mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;overwrite&#34;</span>)
+    <span style="color:#66d9ef">return</span> agg_data_path
+</code></pre></div><h5 id="aggregate-in-spark">aggregate in spark</h5>
+<p><em>src/aggregate_spark.py</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+
+<span style="color:#f92672">from</span> pyspark.sql <span style="color:#f92672">import</span> session, functions <span style="color:#66d9ef">as</span> F
+
+<span style="color:#f92672">import</span> config
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">aggregate</span>(spark: session<span style="color:#f92672">.</span>SparkSession, transformed_data_path: Path) <span style="color:#f92672">-&gt;</span> Path:
+    <span style="color:#e6db74">&#34;&#34;&#34;aggregates transformed cars data by year and body style and writes the
+</span><span style="color:#e6db74">    result to the gold layer&#34;&#34;&#34;</span>
+    agg_data_path <span style="color:#f92672">=</span> config<span style="color:#f92672">.</span>DATA_PATHS<span style="color:#f92672">.</span>gold <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;cars&#34;</span>
+
+    df <span style="color:#f92672">=</span> spark<span style="color:#f92672">.</span>read<span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#34;delta&#34;</span>)<span style="color:#f92672">.</span>load(str(transformed_data_path))
+    <span style="color:#75715e"># I could have written the following lines as one line, but this syntax makes</span>
+    <span style="color:#75715e"># debugging easier</span>
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74">&#34;is_SUV&#34;</span>, F<span style="color:#f92672">.</span>col(<span style="color:#e6db74">&#34;body_style&#34;</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;SUV&#34;</span>)
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#34;year&#34;</span>, <span style="color:#e6db74">&#34;is_SUV&#34;</span>])<span style="color:#f92672">.</span>count()
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupBy(<span style="color:#e6db74">&#34;year&#34;</span>)<span style="color:#f92672">.</span>pivot(<span style="color:#e6db74">&#34;is_SUV&#34;</span>)<span style="color:#f92672">.</span>sum(<span style="color:#e6db74">&#34;count&#34;</span>)
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>withColumnRenamed(<span style="color:#e6db74">&#34;false&#34;</span>, <span style="color:#e6db74">&#34;not_SUV&#34;</span>)<span style="color:#f92672">.</span>withColumnRenamed(<span style="color:#e6db74">&#34;true&#34;</span>, <span style="color:#e6db74">&#34;SUV&#34;</span>)
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74">&#34;all&#34;</span>, F<span style="color:#f92672">.</span>col(<span style="color:#e6db74">&#34;SUV&#34;</span>) <span style="color:#f92672">+</span> F<span style="color:#f92672">.</span>col(<span style="color:#e6db74">&#34;not_SUV&#34;</span>))
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74">&#34;SUV_market_share&#34;</span>, F<span style="color:#f92672">.</span>round(F<span style="color:#f92672">.</span>col(<span style="color:#e6db74">&#34;SUV&#34;</span>) <span style="color:#f92672">/</span> F<span style="color:#f92672">.</span>col(<span style="color:#e6db74">&#34;all&#34;</span>), <span style="color:#ae81ff">2</span>))
+
+    df<span style="color:#f92672">.</span>write<span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#34;delta&#34;</span>)<span style="color:#f92672">.</span>mode(<span style="color:#e6db74">&#34;overwrite&#34;</span>)<span style="color:#f92672">.</span>save(str(agg_data_path))
+    <span style="color:#66d9ef">return</span> agg_data_path
+</code></pre></div><h4 id="note-on-time-travel">Note on time travel</h4>
+<p>Time travel is implemented in a very interesting way: whenver we make a change to the delta table (whether it&rsquo;s an insert, update, or delete), only those partitions where this change happened are modified. What does &lsquo;modify&rsquo; mean here? It&rsquo;s not overwriting, but creating a new partition and storing the information on which partitions belong to this particular of the version of the table in a separate file, called transaction log (or delta log). Effectively, a delta table format consists of two types of files: a json file to store the information on history, versions, and partitions of the table, and the partitions themselves stored as parquet files.</p>
+<p>When the processing is done, you might want to review the historical versions of the gold table with the following commands:</p>
+<p><em>for pandas</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> deltalake <span style="color:#f92672">as</span> dl
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+
+
+path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;data/gold/cars&#34;</span>
+
+<span style="color:#75715e"># history as json</span>
+<span style="color:#66d9ef">print</span>(dl<span style="color:#f92672">.</span>DeltaTable(path)<span style="color:#f92672">.</span>history())
+<span style="color:#75715e"># history as table</span>
+<span style="color:#66d9ef">print</span>(pd<span style="color:#f92672">.</span>DataFrame(dl<span style="color:#f92672">.</span>DeltaTable(path)<span style="color:#f92672">.</span>history()))
+
+<span style="color:#75715e"># prints a df with one record: for 2003</span>
+<span style="color:#66d9ef">print</span>(DeltaTable(path, version<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to_pandas())
+<span style="color:#75715e"># prints a df with 2 records: dor 2003 and 2004</span>
+<span style="color:#66d9ef">print</span>(DeltaTable(path, version<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>to_pandas())
+
+dt <span style="color:#f92672">=</span> DeltaTable(path)
+dt<span style="color:#f92672">.</span>load_as_version(<span style="color:#ae81ff">1</span>)
+<span style="color:#75715e"># prints a df with two records: for 2003 and 2004</span>
+<span style="color:#66d9ef">print</span>(dt<span style="color:#f92672">.</span>to_pandas())
+</code></pre></div><p><em>for spark</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> src.setup_spark <span style="color:#f92672">import</span> setup_dev_spark_session
+<span style="color:#f92672">from</span> delta.tables <span style="color:#f92672">import</span> DeltaTable
+
+
+path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;data/gold/cars&#34;</span>
+
+spark <span style="color:#f92672">=</span> setup_dev_spark_session()
+
+<span style="color:#75715e"># read version 0 (the oldest) of the gold table</span>
+df <span style="color:#f92672">=</span> spark<span style="color:#f92672">.</span>read<span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#34;delta&#34;</span>)<span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;versionAsOf&#34;</span>, <span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>load(path)
+<span style="color:#66d9ef">print</span>(df<span style="color:#f92672">.</span>show())
+
+<span style="color:#75715e"># version history</span>
+deltaTable <span style="color:#f92672">=</span> DeltaTable<span style="color:#f92672">.</span>forPath(spark, path)
+<span style="color:#66d9ef">print</span>(deltaTable<span style="color:#f92672">.</span>history()<span style="color:#f92672">.</span>show())
+</code></pre></div><h4 id="other-remarks">Other remarks</h4>
+<ul>
+<li>
+<p>Since the data is stored in parquet files, <code>delta-rs</code> implementation sometimes uses <a href="https://arrow.apache.org/docs/python/index.html">pyarrow</a> objects (e.g. schema) for more low-level uses</p>
+</li>
+<li>
+<p>When we performed aggregation in the last step, we reprocessed all the previous years, while we could process only the new year and append it into the gold layer table. For a big dataset the performance would be significantly better.</p>
+</li>
+</ul>
+<h4 id="resources">Resources</h4>
+<ul>
+<li>
+<p><a href="https://delta-io.github.io/delta-rs">delta-rs documentation</a></p>
+</li>
+<li>
+<p><a href="https://docs.delta.io/latest/delta-intro.html">delta lake for spark documentation</a></p>
+</li>
+<li>
+<p><a href="https://www.oreilly.com/library/view/delta-lake-up/9781098139711/">Delta Lake: Up and Running book</a></p>
+</li>
+</ul>
+
+</div>
+
+<div class="jumbotron text-center" id="footer">
+
+  made using &emsp;
+  <br class="d-xl-none">
+  <a href="https://gohugo.io/">Hugo</a> |
+  <a href="https://getbootstrap.com/">Bootstrap</a> |
+  <a href="https://highlightjs.org/">highlightjs</a> |
+  <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> |
+  <a href="https://fonts.google.com/">Google fonts</a> &emsp;
+  <br class="d-xl-none">
+  <a href="https://github.com/greysweater42/cookbook">github</a> |
+  <a href="https://pages.github.com/">github pages</a> |
+  <br>
+  about me: <a href="https://www.linkedin.com/in/tomasz-dyrka-490766127/">LinkedIn</a>
+
+</div>
+
+</body>
+
+
+
+<script src="https://greysweater42.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<script src="https://greysweater42.github.io/js/bootstrap-toc.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+$(window).scroll(function() {
+  
+  if ($(window).scrollTop() > 100 ) {
+    $('.navbar').removeClass('navbar-hide');
+    $('.navbar').addClass('navbar-show');
+  } else {
+    $('.navbar').removeClass('navbar-show');
+    $('.navbar').addClass('navbar-hide');
+  };   	
+});
+</script>
+
+</html>
+

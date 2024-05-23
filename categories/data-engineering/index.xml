@@ -5,10 +5,20 @@
     <link>https://greysweater42.github.io/categories/data-engineering/</link>
     <description>Recent content in Data engineering on greaysweater42&#39;s cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 16 May 2024 11:56:13 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 23 May 2024 12:46:59 +0200</lastBuildDate>
     
 	<atom:link href="https://greysweater42.github.io/categories/data-engineering/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>delta table</title>
+      <link>https://greysweater42.github.io/delta_table/</link>
+      <pubDate>Thu, 23 May 2024 12:46:59 +0200</pubDate>
+      
+      <guid>https://greysweater42.github.io/delta_table/</guid>
+      <description>Why would you use delta table? When you work on huge amounts of data, you probably use spark as querying engine and store data either in spark on in a cloud storage (S3 / Google Cloud Storage / Azure Storage), which together nring architecure called data lake.
+Vast amounts of data are still in tabular format, so you may feel tempted to store them in a data warehouse, because of its nice features, like ACID and locking.</description>
+    </item>
     
     <item>
       <title>airflow &#43; BigQuery</title>
